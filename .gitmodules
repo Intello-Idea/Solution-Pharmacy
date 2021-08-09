@@ -7,3 +7,8 @@
 	path = Intello-Idea/auxiliary_account_report
 	url = git@github.com:Intello-Idea/auxiliary_account_report.git
 	branch = master
+
+[submodule "Intello-Idea/translate_account"]
+	path = Intello-Idea/translate_account
+	url = git@github.com:Intello-Idea/translate_account.git
+	branch = master
