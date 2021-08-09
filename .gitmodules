@@ -1,0 +1,4 @@
+[submodule "Intello-Idea/ln10_co_intello"]
+	path = Intello-Idea/ln10_co_intello
+	url = git@github.com:Intello-Idea/ln10_co_intello.git
+	branch = master
