@@ -2,3 +2,8 @@
 	path = Intello-Idea/ln10_co_intello
 	url = git@github.com:Intello-Idea/ln10_co_intello.git
 	branch = master
+
+[submodule "Intello-Idea/auxiliary_account_report"]
+	path = Intello-Idea/auxiliary_account_report
+	url = git@github.com:Intello-Idea/auxiliary_account_report.git
+	branch = master
