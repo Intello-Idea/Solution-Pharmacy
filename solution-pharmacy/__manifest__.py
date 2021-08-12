@@ -27,6 +27,8 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/products_quatator_views.xml',
+        'security/groups_security.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

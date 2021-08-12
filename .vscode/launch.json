@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "python",
+            "request": "launch",
+            "name": "Solution-Pharmacy",
+            "console": "integratedTerminal",
+            "program": "/odoo14/odoo-bin",
+            "args": [
+                "--update=solution-pharmacy --config=/odoo14/debian/odoo.conf",
+            ]
+        }
+    ],
+    "folders": [
+        {
+            "path": "/odoo14"
+        }
+    ]
+}

@@ -1,9 +1,9 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
+
     <record model="ir.ui.view" id="solution-pharmacy.list">
-      <field name="name">Solution-Pharmacy list</field>
+      <field name="name">Solution-Pharmacy list quatator</field>
       <field name="model">solution.pharmacy.quatator</field>
       <field name="arch" type="xml">
         <tree>
@@ -11,11 +11,9 @@
         </tree>
       </field>
     </record>
--->
 
-<!--
     <record model="ir.ui.view" id="solution-pharmacy.form">
-      <field name="name">Solution-Pharmacy form</field>
+      <field name="name">Solution-Pharmacy form quatator</field>
       <field name="model">solution.pharmacy.quatator</field>
       <field name="arch" type="xml">
         <form>
@@ -23,23 +21,23 @@
         </form>
       </field>
     </record>
--->
+
 
     <!-- actions opening views on models -->
-<!--
+
     <record model="ir.actions.act_window" id="solution-pharmacy.action_window">
       <field name="name">Solution-Pharmacy window</field>
       <field name="res_model">solution.pharmacy.quatator</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
+
     <!-- Top menu item -->
-<!--
+
     <menuitem name="Solution-Pharmacy" id="solution-pharmacy.menu_root" sequence="3"/>
--->
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="solution-pharmacy.menu_1" parent="solution-pharmacy.menu_root" action="solution-pharmacy.action_window"/>
--->
+
+    <menuitem name="Quatator" id="solution-pharmacy.quatator" parent="solution-pharmacy.menu_root" action="solution-pharmacy.action_window"/>
+
   </data>
 </odoo>

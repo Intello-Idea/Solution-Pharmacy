@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <record id="grp_admin" model="res.groups">
+            <field name="name">group_admin</field>
+            <field name = "implied_ids" eval = "[(4, ref ('base.group_partner_manager'))]"/>
+        </record>
+
+        <record id="grp_user" model="res.groups">
+            <field name="name">group_user</field>
+            <field name = "implied_ids" eval = "[(4, ref ('base.group_user'))]"/>
+        </record>
+
+    </data>
+</odoo>
