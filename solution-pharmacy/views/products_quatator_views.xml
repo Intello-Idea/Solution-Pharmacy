@@ -8,7 +8,10 @@
       <field name="arch" type="xml">
         <tree>
           <field name="partner_id"/>
-          <field name="type_client"/>
+          <field name="user"/>
+          <field name="date"/>
+          <field name="size"/>
+          <field name="pharmaceutical_form"/>
         </tree>
       </field>
     </record>
@@ -18,11 +21,35 @@
       <field name="model">solution.pharmacy.quatator</field>
       <field name="arch" type="xml">
         <form>
+          <header>
+            <field name="state" widget="statusbar" statusbar_visible="draft,posted,cancel"/>
+          </header>
           <sheet>
             <group>
-              <field name="partner_id"/>
-              <field name="type_client"/>
+              <group>
+                <field name="partner_id"/>
+                <field name="user"/>
+                <field name="pharmaceutical_form"/>
+              </group>
+              <group>
+                <field name="date"/>
+                <field name="size"/>
+              </group>
             </group>
+            <notebook>
+              <page string="Product" name="product_line">
+                
+              </page>
+              <page string="Raw material" name="material_line">
+                
+              </page>
+              <page string="Packaging" name="packaging_line">
+                
+              </page>
+              <page string="Tags" name="tags_line">
+                
+              </page>
+            </notebook>
           </sheet>
         </form>
       </field>
@@ -49,6 +76,5 @@
               id="solution-pharmacy.quatator" 
               parent="solution-pharmacy.menu_root" 
               action="solution-pharmacy.action_window"/>
-
   </data>
 </odoo>
