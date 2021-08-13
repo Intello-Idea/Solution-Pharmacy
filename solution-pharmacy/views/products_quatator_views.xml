@@ -7,7 +7,8 @@
       <field name="model">solution.pharmacy.quatator</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
+          <field name="partner_id"/>
+          <field name="type_client"/>
         </tree>
       </field>
     </record>
@@ -17,7 +18,12 @@
       <field name="model">solution.pharmacy.quatator</field>
       <field name="arch" type="xml">
         <form>
-          <field name="name"/>
+          <sheet>
+            <group>
+              <field name="partner_id"/>
+              <field name="type_client"/>
+            </group>
+          </sheet>
         </form>
       </field>
     </record>
@@ -33,11 +39,16 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="Solution-Pharmacy" id="solution-pharmacy.menu_root" sequence="3"/>
+    <menuitem name="Solution-Pharmacy" 
+              id="solution-pharmacy.menu_root"
+              sequence="3"/>
 
     <!-- menu categories -->
 
-    <menuitem name="Quatator" id="solution-pharmacy.quatator" parent="solution-pharmacy.menu_root" action="solution-pharmacy.action_window"/>
+    <menuitem name="Quatator" 
+              id="solution-pharmacy.quatator" 
+              parent="solution-pharmacy.menu_root" 
+              action="solution-pharmacy.action_window"/>
 
   </data>
 </odoo>
