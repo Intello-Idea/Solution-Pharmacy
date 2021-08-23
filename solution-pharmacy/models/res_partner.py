@@ -10,4 +10,3 @@ class RestPartnerType(models.Model):
                                    selection=[('specialist', 'Specialist'), ('distributor', 'Distributor'), ('patient', 'Patient')],
                                    requeried=True,
                                    store=True)
-    

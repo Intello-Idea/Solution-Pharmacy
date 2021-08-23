@@ -3,22 +3,25 @@
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="solution-pharmacy.list">
-      <field name="name">Solution-Pharmacy list quatator</field>
-      <field name="model">solution.pharmacy.quatator</field>
+      <field name="name">Solution-Pharmacy list quotator</field>
+      <field name="model">solution.pharmacy.quotator</field>
       <field name="arch" type="xml">
         <tree>
           <field name="partner_id"/>
           <field name="user"/>
-          <field name="date"/>
-          <field name="size"/>
+          <field name="product_id"/>
+          <field name="quotator_date"/>
+          <field name="expiration_date"/>
+          <field name="pricelist_id"/>
           <field name="pharmaceutical_form"/>
+          <field name="size"/>
         </tree>
       </field>
     </record>
 
     <record model="ir.ui.view" id="solution-pharmacy.form">
-      <field name="name">Solution-Pharmacy form quatator</field>
-      <field name="model">solution.pharmacy.quatator</field>
+      <field name="name">Solution-Pharmacy form quotator</field>
+      <field name="model">solution.pharmacy.quotator</field>
       <field name="arch" type="xml">
         <form>
           <header>
@@ -27,27 +30,29 @@
           <sheet>
             <group>
               <group>
+                <field name="user" options="{'no_open':True,'no_create': True}"/>
                 <field name="partner_id"/>
-                <field name="user"/>
                 <field name="pharmaceutical_form"/>
+                <field name="size"/>
               </group>
               <group>
-                <field name="date"/>
-                <field name="size"/>
+                <field name="quotator_date"/>
+                <field name="expiration_date"/>
+                <field name="pricelist_id" options="{'no_open':True,'no_create': True}"/>
+                <field name="product_id"/>
               </group>
             </group>
             <notebook>
-              <page string="Product" name="product_line">
-                
-              </page>
-              <page string="Raw material" name="material_line">
-                
-              </page>
-              <page string="Packaging" name="packaging_line">
-                
-              </page>
-              <page string="Tags" name="tags_line">
-                
+              <page string="Raw">
+                <field name="appointment_lines">
+                  <tree editable="bottom">
+                    <field name="product_id" domain="[('categ_id', 'in', ('Materias primas', 'Envases', 'Etiquetas'))]"/>
+                    <field name="product_qty"/>
+                    <field name="price_unit"/>
+                    <field name="percentage"/>
+                    <field name="appointment_id" invisible="1"/>
+                  </tree>
+                </field>
               </page>
             </notebook>
           </sheet>
@@ -55,12 +60,11 @@
       </field>
     </record>
 
-
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="solution-pharmacy.action_window">
       <field name="name">Solution-Pharmacy window</field>
-      <field name="res_model">solution.pharmacy.quatator</field>
+      <field name="res_model">solution.pharmacy.quotator</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -72,8 +76,8 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Quatator" 
-              id="solution-pharmacy.quatator" 
+    <menuitem name="Quotator" 
+              id="solution-pharmacy.quotator" 
               parent="solution-pharmacy.menu_root" 
               action="solution-pharmacy.action_window"/>
   </data>

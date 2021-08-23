@@ -4,10 +4,6 @@
         <record id="solution-pharmacy_group_specialist" model="res.groups">
             <field name="name">Group specialist</field>
         </record>
-
-        <record id="solution-pharmacy_group_patient" model="res.groups">
-            <field name="name">Group patient</field>
-        </record>
         
         <record id="solution-pharmacy_group_distributor" model="res.groups">
             <field name="name">Group distributor</field>

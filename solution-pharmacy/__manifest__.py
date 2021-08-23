@@ -20,14 +20,14 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'contacts'],
+    'depends': ['base', 'contacts', 'product', 'sale'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'views/products_quatator_views.xml',
+        'views/products_quotator_views.xml',
         'views/res_partner.xml',
         'security/groups_security.xml',
     ],
