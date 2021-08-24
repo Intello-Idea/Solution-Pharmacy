@@ -11,13 +11,15 @@ class Solution(models.Model):
     user = fields.Many2one('res.users', string='Quotator', required=True, readonly=True, default=lambda self: self.env.user)
     quotator_date = fields.Date(string="Quotator date", readonly=True, index=True, default=fields.Date.context_today)
     expiration_date = fields.Date(string="Expiration")
-    size = fields.Integer(string="size(g)")
     pharmaceutical_form = fields.Many2one('product.product', string="Pharmaceutical form")
     pricelist_id = fields.Many2one('product.pricelist', string="Pricelist", related="partner_id.property_product_pricelist", readonly=True)
     appointment_lines = fields.One2many('solution.pharmacy.quotator.lines', 'appointment_id', string="Material")
-    product_id = fields.Many2one('product.product', string="Product")
+    final_product = fields.One2many('product.lines', 'product_lines', string="Final product")
     state = fields.Selection([
         ('draft', 'Draft'),
         ('posted', 'Open'),
         ('cancel', 'Cancelled')
         ], string='Invoice Status', readonly=True)
+        
+
+

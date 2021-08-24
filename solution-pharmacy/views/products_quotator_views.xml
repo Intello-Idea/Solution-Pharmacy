@@ -9,12 +9,10 @@
         <tree>
           <field name="partner_id"/>
           <field name="user"/>
-          <field name="product_id"/>
           <field name="quotator_date"/>
           <field name="expiration_date"/>
           <field name="pricelist_id"/>
           <field name="pharmaceutical_form"/>
-          <field name="size"/>
         </tree>
       </field>
     </record>
@@ -33,23 +31,33 @@
                 <field name="user" options="{'no_open':True,'no_create': True}"/>
                 <field name="partner_id"/>
                 <field name="pharmaceutical_form"/>
-                <field name="size"/>
               </group>
               <group>
                 <field name="quotator_date"/>
                 <field name="expiration_date"/>
                 <field name="pricelist_id" options="{'no_open':True,'no_create': True}"/>
-                <field name="product_id"/>
               </group>
             </group>
             <notebook>
-              <page string="Raw">
+              <page string="Final prodcucts">
+                <field name="final_product">
+                  <tree editable="bottom">
+                    <field name="product_id"/>
+                    <field name="qty"/>
+                    <field name="size_subtotal"/>
+                    <field name="size_total"/>
+                    <field name="product_lines" invisible="1"/>
+                  </tree>
+                </field>
+              </page>
+              <page string="Raw material">
                 <field name="appointment_lines">
                   <tree editable="bottom">
                     <field name="product_id" domain="[('categ_id', 'in', ('Materias primas', 'Envases', 'Etiquetas'))]"/>
+                    <field name="percentage"/>
                     <field name="product_qty"/>
                     <field name="price_unit"/>
-                    <field name="percentage"/>
+                    <field name="price_subtotal"/>
                     <field name="appointment_id" invisible="1"/>
                   </tree>
                 </field>
@@ -70,7 +78,7 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="Solution-Pharmacy" 
+    <menuitem name="Quotator" 
               id="solution-pharmacy.menu_root"
               sequence="3"/>
 
