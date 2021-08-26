@@ -7,12 +7,12 @@
       <field name="model">solution.pharmacy.quotator</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="name"/>
           <field name="partner_id"/>
           <field name="user"/>
           <field name="quotator_date"/>
           <field name="expiration_date"/>
           <field name="pricelist_id"/>
-          <field name="pharmaceutical_form"/>
         </tree>
       </field>
     </record>
@@ -23,14 +23,14 @@
       <field name="arch" type="xml">
         <form>
           <header>
-            <field name="state" widget="statusbar" statusbar_visible="draft,posted,cancel"/>
+            <field name="state" widget="statusbar" statusbar_visible="draft,posted,cancel"/>  
           </header>
           <sheet>
             <group>
               <group>
                 <field name="user" options="{'no_open':True,'no_create': True}"/>
                 <field name="partner_id"/>
-                <field name="pharmaceutical_form"/>
+                <field name="name" required="True"/>
               </group>
               <group>
                 <field name="quotator_date"/>
@@ -39,14 +39,16 @@
               </group>
             </group>
             <notebook>
-              <page string="Final prodcucts">
+              <page string="Final products">
                 <field name="final_product">
                   <tree editable="bottom">
                     <field name="product_id"/>
                     <field name="qty"/>
                     <field name="size_subtotal"/>
                     <field name="size_total"/>
-                    <field name="product_lines" invisible="1"/>
+                    <field name="pharmaceutical_form"/>
+                    <field name="value_pharmaceutical_form"/>
+                    <field name="final_product_lines" invisible="0"/>
                   </tree>
                 </field>
               </page>
@@ -54,11 +56,12 @@
                 <field name="appointment_lines">
                   <tree editable="bottom">
                     <field name="product_id" domain="[('categ_id', 'in', ('Materias primas', 'Envases', 'Etiquetas'))]"/>
-                    <field name="percentage"/>
+                    <field name="final_product_id"/>
+                    <field name="percentage" attrs="{'readonly': [('product_id', '=', 39)]}"/>
                     <field name="product_qty"/>
                     <field name="price_unit"/>
                     <field name="price_subtotal"/>
-                    <field name="appointment_id" invisible="1"/>
+                    <field name="appointment_id" invisible="0"/>
                   </tree>
                 </field>
               </page>
