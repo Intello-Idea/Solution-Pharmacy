@@ -30,6 +30,7 @@
         'views/products_quotator_views.xml',
         'views/res_partner.xml',
         'security/groups_security.xml',
+        'data/ir_sequence_data.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
