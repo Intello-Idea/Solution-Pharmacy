@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "solution-pharmacy",
+    'name': "quotator",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -10,8 +10,8 @@
         Long description of module's purpose
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Intelloidea",
+    'website': "http://www.intelloidea.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -20,13 +20,17 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'contacts', 'product', 'sale', 'sale_management'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+	'views/products_quotator_views.xml',
+        'views/res_partner.xml',
+        'security/groups_security.xml',
+        'data/ir_sequence_data.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
