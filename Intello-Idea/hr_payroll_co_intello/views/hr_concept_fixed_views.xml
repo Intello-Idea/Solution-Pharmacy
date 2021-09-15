@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr_concept_fixed_view_form" model="ir.ui.view">
+            <field name="name">_view_form</field>
+            <field name="model">hr.concept.fixed</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                        <button name="confirm" type="object" string="Confirm"
+                                attrs="{'invisible':[('state','!=','draft')]}"
+                                groups="hr_payroll.group_hr_payroll_manager"/>
+                        <button name="validate" type="object" string="Validate"
+                                attrs="{'invisible':[('state','!=','confirmed')]}"
+                                groups="hr_payroll.group_hr_payroll_manager"/>
+                        <button name="draft" type="object" string="Go to Draft"
+                                attrs="{'invisible':[('state','!=','canceled')]}"
+                                groups="hr_payroll.group_hr_payroll_manager"/>
+                        <button name="cancel" type="object" string="Cancel"
+                                attrs="{'invisible':[('state','not in',('confirmed','validated'))]}"
+                                groups="hr_payroll.group_hr_payroll_manager"/>
+                    </header>
+                    <sheet>
+                        <field name="currency_id" invisible="1"/>
+                        <h1>
+                            <field name="name" readonly="1" force_save="1"/>
+                        </h1>
+                        <group name="general_information">
+
+                            <group attrs="{'readonly':[('state','!=','draft')]}">
+                                <field name="employee_id" required="1" attrs="{'readonly':[('state','!=','draft')]}"
+                                       options="{'no_create':True,'no_edit':True,'no_open':True}"/>
+                                <field name="contract_id" readonly="1" force_save="1"/>
+                                <field name="applicable_in" required="1" attrs="{'readonly':[('state','!=','draft')]}"
+                                       widget="many2many_tags"
+                                       options="{'no_create':True, 'no_edit':True, 'no_open':True}"/>
+                                <field name="start_date" required="1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="end_date" required="1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="input_type_id" required="1"
+                                       domain="[('is_active','=',True),('input_type','=','fixed')]"
+                                       options="{'no_create': True, 'no_create_edit':True,'no_open':True}"
+                                       attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="value" widget="monetary" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            </group>
+
+                            <group>
+                                <field name="creation_date" readonly="1" force_save="1"/>
+                                <field name="validation_date" readonly="1" force_save="1"/>
+                                <field name="rrhh_manager_id" attrs="{'readonly':[('state','!=','draft')]}"
+                                       options="{'no_create':True,'no_edit':True,'no_open':True}"/>
+                            </group>
+
+                        </group>
+
+                        <notebook>
+                            <page string="Detail">
+                                <field name="input_line_ids" readonly="1">
+                                    <tree>
+                                        <field name="input_type_id"/>
+                                        <field name="payslip_id"/>
+                                        <field name="amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+
+                        <notebook>
+                            <page string="Description">
+                                <field name="description" placeholder="Description..." widget="section_and_note_text"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_concept_fixed_view_tree" model="ir.ui.view">
+            <field name="name">_view_tree</field>
+            <field name="model">hr.concept.fixed</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="contract_id"/>
+                    <field name="employee_id"/>
+                    <field name="input_type_id"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="value"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_concept_fixed_action" model="ir.actions.act_window">
+            <field name="name">Fixed Concepts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.concept.fixed</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="hr_concept_view_search" model="ir.ui.view">
+            <field name="name">hr_concept_view_search</field>
+            <field name="model">hr.concept.fixed</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="rrhh_manager_id"/>
+                    <group>
+                        <filter name="input_type" string="Input Type" context="{'group_by':'input_type_id'}"/>
+                        <filter name="employee" string="Employee" context="{'group_by':'employee_id'}"/>
+                        <filter name="contract" string="Contract" context="{'group_by':'contract_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="hr_concept_confirm_action" model="ir.actions.server">
+            <field name="name">Confirm</field>
+            <field name="model_id" ref="hr_payroll_co_intello.model_hr_concept_fixed"/>
+            <field name="binding_model_id" ref="hr_payroll_co_intello.model_hr_concept_fixed"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4,ref('hr_payroll.group_hr_payroll_manager'))]"></field>
+            <field name="code">
+                action = records.confirm()
+            </field>
+        </record>
+
+        <record id="hr_concept_validate_action" model="ir.actions.server">
+            <field name="name">Validate</field>
+            <field name="model_id" ref="hr_payroll_co_intello.model_hr_concept_fixed"/>
+            <field name="binding_model_id" ref="hr_payroll_co_intello.model_hr_concept_fixed"/>
+            <field name="groups_id" eval="[(4,ref('hr_payroll.group_hr_payroll_manager'))]"></field>
+            <field name="state">code</field>
+            <field name="code">
+                action = records.validate()
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,768 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* theme_epithelium
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20200403\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-04 22:07+0000\n"
+"PO-Revision-Date: 2020-08-05 11:12-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_CO\n"
+"X-Generator: Poedit 2.4\n"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.contactus_thanks_ep
+msgid "&amp;times;"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.custom_layout
+msgid "- Powered <i class=\"fa fa-bolt\"/> by"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.custom_layout
+msgid "- Todos los Derechos Reservados -"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.location_epithelium_form
+msgid "Address"
+msgstr "Dirección"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.web_product
+msgid "Beneficios"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_product__benefits
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_template__benefits
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_template_inherit_only_form_view
+msgid "Benefits"
+msgstr "Beneficios"
+
+#. module: theme_epithelium
+#: model:product.template,name:theme_epithelium.product_template_website_3
+msgid "CAPILPLUS BIOTINA"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:product.template,name:theme_epithelium.product_template_website_4
+msgid "CAPILPLUS DS"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.web_master_form
+msgid ""
+"COMÓ CONSEGUIR\n"
+"                                                    TU\n"
+"                                                    FORMULA MAGISTRAL"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.custom_layout
+msgid ""
+"Categorias de productos\n"
+"                                            <i class=\"ti-angle-down\"/>"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_category_website_form
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_form_magistral_form
+msgid "Category Name"
+msgstr "Categoría"
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_template_inherit_search_view
+msgid "Category Web Site"
+msgstr "Categoría"
+
+#. module: theme_epithelium
+#: model:ir.ui.menu,name:theme_epithelium.website_category_menu
+msgid "Category website"
+msgstr "Categoría"
+
+#. module: theme_epithelium
+#: model:ir.model.fields.selection,name:theme_epithelium.selection__location_epithelium__zone__c
+msgid "Center"
+msgstr "Centro"
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.location_epithelium_form
+msgid "City"
+msgstr "Ciudad"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__city_store
+msgid "City Store"
+msgstr "Ciudad"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__google_map
+msgid "Code google map"
+msgstr "Código Google Maps"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_form_magistral__color
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_product__color
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_template__color
+msgid "Color"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.web_product
+msgid "Como usar"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.custom_layout
+msgid "Company name"
+msgstr "Nombre de empresa"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.web_product
+msgid "Composición"
+msgstr "Composición"
+
+#. module: theme_epithelium
+#: model:ir.actions.act_window,name:theme_epithelium.composition_action
+#: model:ir.model.fields,field_description:theme_epithelium.field_composition__composition
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_product__product_composition
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_template__product_composition
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.composition_form
+msgid "Composition"
+msgstr "Composición"
+
+#. module: theme_epithelium
+#: model:ir.model,name:theme_epithelium.model_composition
+msgid "Composition Epithelium"
+msgstr "Composición"
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_composition_form
+msgid "Composition Name"
+msgstr "Composición"
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.contactus_ep
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.custom_layout
+msgid "Contáctenos"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.custom_layout
+msgid "Copyright &amp;copy;"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__country_id
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.location_epithelium_form
+msgid "Country"
+msgstr "País"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_composition__create_uid
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_city_epithelium__create_uid
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__create_uid
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_category_website__create_uid
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_composition__create_uid
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_form_magistral__create_uid
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_version__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_composition__create_date
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_city_epithelium__create_date
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__create_date
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_category_website__create_date
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_composition__create_date
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_form_magistral__create_date
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_version__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.home_page_ep
+msgid "Dermocosméticos"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_composition__description
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_category_website__description
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_composition__description
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_form_magistral__description
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_product__description
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_template__description
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_version__description
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_category_website_form
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_composition_form
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_form_magistral_form
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_template_inherit_only_form_view
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_version_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_composition__display_name
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_city_epithelium__display_name
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__display_name
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_category_website__display_name
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_composition__display_name
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_form_magistral__display_name
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_version__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.web_product
+msgid "Donde encontrar"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.aboutus_ep
+msgid "EPITHELIUM S.A."
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields.selection,name:theme_epithelium.selection__location_epithelium__zone__e
+msgid "East"
+msgstr "Este"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.web_purchases
+msgid "En construcción..."
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_product__form_magistral
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_template__form_magistral
+msgid "Form Magistral"
+msgstr "Fórmula Magistral"
+
+#. module: theme_epithelium
+#: model:ir.ui.menu,name:theme_epithelium.website_form_menu
+msgid "Form magistral"
+msgstr "Fórmula Magistral"
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_form_magistral_form
+msgid "Formula mater Name"
+msgstr "Fórmula Magistral"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.web_master_forms
+msgid "FÓRMULAS MAGISTRALES"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.aboutus_ep
+msgid "Fórmula Magistral"
+msgstr "Fórmula Magistral"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.web_category
+msgid "Fórmulas Magistrales"
+msgstr "Fórmula Magistral"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.custom_layout
+msgid "Fórmulas magistrales"
+msgstr "Fórmula Magistral"
+
+#. module: theme_epithelium
+#: model:product.template,name:theme_epithelium.product_template_website_8
+msgid "HYDRAFORT FACE"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:product.template,name:theme_epithelium.product_template_website_7
+msgid "HYDRAFORT PH5"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_composition__id
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_city_epithelium__id
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__id
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_category_website__id
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_composition__id
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_form_magistral__id
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_version__id
+msgid "ID"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.aboutus_ep
+msgid "INNOVACION DERMOCOSMETICA"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_composition__icon
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_category_website__icon
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_composition__icon
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_form_magistral__icon
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_version__icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_form_magistral__image_description
+msgid "Image Description"
+msgstr "Descripción de la Imagen"
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_form_magistral_form
+msgid "Image description"
+msgstr "Descripción de la Imagen"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_form_magistral__index
+msgid "Index"
+msgstr "Índice"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.custom_layout
+msgid "Inicio"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.custom_layout
+msgid "Intello Idea"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.aboutus_ep
+msgid ""
+"Las fórmulas magistrales, es la primera unidad de negocio con la que\n"
+"                                            Epithelium se empezó dar a conocer en el mercado dermatológico del país,\n"
+"                                            ofreciendo un amplio portafolio de formulaciones que los médicos usan como\n"
+"                                            alternativa para ayudar a sus pacientes a combatir las enfermedades y\n"
+"                                            afecciones de la piel, cabello y uñas o para mejorar su apariencia física."
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_composition____last_update
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_city_epithelium____last_update
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium____last_update
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_category_website____last_update
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_composition____last_update
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_form_magistral____last_update
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_version____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_composition__write_uid
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_city_epithelium__write_uid
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__write_uid
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_category_website__write_uid
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_composition__write_uid
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_form_magistral__write_uid
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_version__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_composition__write_date
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_city_epithelium__write_date
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__write_date
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_category_website__write_date
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_composition__write_date
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_form_magistral__write_date
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_version__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.custom_layout
+msgid "Legal"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__location
+#: model:ir.ui.menu,name:theme_epithelium.website_location_menu
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.location_epithelium_form
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: theme_epithelium
+#: model:ir.model,name:theme_epithelium.model_location_city_epithelium
+msgid "Location City Epithelium"
+msgstr "Ciudad"
+
+#. module: theme_epithelium
+#: model:ir.model,name:theme_epithelium.model_location_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.location_epithelium_form
+msgid "Location Epithelium"
+msgstr "Ubicación"
+
+#. module: theme_epithelium
+#: model:ir.actions.act_window,name:theme_epithelium.location_epithelium_action
+msgid "Location epithelium"
+msgstr "Ubicación"
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.location_epithelium_form
+msgid "Location..."
+msgstr "Ubicación"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.custom_layout
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.custom_layout
+msgid "Logout"
+msgstr "Cerrar sesión"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.web_purchases
+msgid "MUY PRONTO"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.ui.menu,name:theme_epithelium.website_menuitem
+msgid "Manage website"
+msgstr "Administrar sitio web"
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_template_inherit_search_view
+msgid "Masterly Form Web Site"
+msgstr "Fórmula Magistral"
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.aboutus_ep
+msgid ""
+"Nace en el año 2009 gracias a un grupo de Médicos Dermatólogos que deciden\n"
+"                                            asociarse para ofrecer alternativas y soluciones a través de una diversidad\n"
+"                                            de productos dermocosméticos de uso comercial y magistral, con altos\n"
+"                                            estándares de calidad en su elaboración y selección de materias primas, que\n"
+"                                            promovieran la prevención, el cuidado de la salud y la belleza al mercado\n"
+"                                            colombiano, contando con certificación en B.P.E. (Buenas Prácticas de\n"
+"                                            Elaboración) por el Invima."
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_composition__name
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_city_epithelium__name
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_category_website__name
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_composition__name
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_form_magistral__name
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_version__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: theme_epithelium
+#: model:ir.model.constraint,message:theme_epithelium.constraint_product_form_magistral_Unique_order
+msgid "No puedes tener dos formulas con el mismo orden"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields.selection,name:theme_epithelium.selection__location_epithelium__zone__n
+msgid "North"
+msgstr "Norte"
+
+#. module: theme_epithelium
+#: model:ir.model.fields.selection,name:theme_epithelium.selection__location_epithelium__zone__ne
+msgid "Northeast"
+msgstr "Noreste"
+
+#. module: theme_epithelium
+#: model:ir.model.fields.selection,name:theme_epithelium.selection__location_epithelium__zone__no
+msgid "Northwest"
+msgstr "Noroeste"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.custom_layout
+msgid "Nosotros"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.home_page_ep
+msgid "PARA EL CUIDADO DE LA SALUD Y LA BELLEZA"
+msgstr ""
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.web_products_forms
+msgid "PRODUCTOS TERMINADOS"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_form_magistral__pdf
+msgid "Pdf"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.web_product
+msgid "Presentación"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_product__presentation
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_template__presentation
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_template_inherit_only_form_view
+msgid "Presentation"
+msgstr "Presentación"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_composition__product_id
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_version__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: theme_epithelium
+#: model:ir.model,name:theme_epithelium.model_product_category_website
+msgid "Product Category Epithelium"
+msgstr "Categoría"
+
+#. module: theme_epithelium
+#: model:ir.actions.act_window,name:theme_epithelium.product_category_website_action
+msgid "Product Category Website"
+msgstr "Categoría"
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.composition_form
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_template_inherit_only_form_view
+msgid "Product Composition"
+msgstr "Composición"
+
+#. module: theme_epithelium
+#: model:ir.model,name:theme_epithelium.model_product_composition
+msgid "Product Composition Epithelium"
+msgstr "Composición"
+
+#. module: theme_epithelium
+#: model:ir.actions.act_window,name:theme_epithelium.product_form_action
+msgid "Product Form Magistral"
+msgstr "Fórmula Magistral"
+
+#. module: theme_epithelium
+#: model:ir.model,name:theme_epithelium.model_product_form_magistral
+msgid "Product Form Magistral Epithelium"
+msgstr "Fórmula Magistral"
+
+#. module: theme_epithelium
+#: model:ir.model,name:theme_epithelium.model_product_template
+msgid "Product Template"
+msgstr "Plantilla del Producto"
+
+#. module: theme_epithelium
+#: model:ir.actions.act_window,name:theme_epithelium.product_version_action
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_product__product_version
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_template__product_version
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_template_inherit_only_form_view
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_version_form
+msgid "Product Version"
+msgstr "Versión"
+
+#. module: theme_epithelium
+#: model:ir.actions.act_window,name:theme_epithelium.product_website_action
+msgid "Product Website"
+msgstr "Productos"
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_category_website_form
+msgid "Product category website"
+msgstr "Categorías"
+
+#. module: theme_epithelium
+#: model:ir.ui.menu,name:theme_epithelium.website_composition_menu
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_composition_form
+msgid "Product composition"
+msgstr "Composición"
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_form_magistral_form
+msgid "Product form magistral"
+msgstr "Fórmula Magistral"
+
+#. module: theme_epithelium
+#: model:ir.model,name:theme_epithelium.model_product_version
+msgid "Product version Epithelium"
+msgstr "Version"
+
+#. module: theme_epithelium
+#: model:ir.ui.menu,name:theme_epithelium.website_product_menu
+msgid "Product website"
+msgstr "Productos"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.home_page_ep
+msgid "Productos"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:product.template,name:theme_epithelium.product_template_website_6
+msgid "REVIVAL"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:product.template,name:theme_epithelium.product_template_website_5
+msgid "SENSIBATH"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:product.template,name:theme_epithelium.product_template_website_0
+msgid "SUNSKIN EMULSION"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:product.template,name:theme_epithelium.product_template_website_1
+msgid "SUNSKIN GEL"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:product.template,name:theme_epithelium.product_template_website_2
+msgid "SUNSKIN OIL FREE"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__schedule
+msgid "Schedule"
+msgstr "Horario"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.home_page_ep
+msgid "Sin filtro"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:ir.model.fields.selection,name:theme_epithelium.selection__location_epithelium__zone__s
+msgid "South"
+msgstr "Sur"
+
+#. module: theme_epithelium
+#: model:ir.model.fields.selection,name:theme_epithelium.selection__location_epithelium__zone__se
+msgid "Southeast"
+msgstr "Sureste"
+
+#. module: theme_epithelium
+#: model:ir.model.fields.selection,name:theme_epithelium.selection__location_epithelium__zone__so
+msgid "Southwest"
+msgstr "Sur oeste"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__state_id
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.location_epithelium_form
+msgid "State"
+msgstr "Estado"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__name
+msgid "Store name"
+msgstr "Tienda"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__street
+msgid "Street"
+msgstr "Dirección"
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.location_epithelium_form
+msgid "Street..."
+msgstr "Dirección"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.contactus_thanks_ep
+msgid "Thanks!"
+msgstr "¡Gracias!"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_product__tips
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_template__tips
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_template_inherit_only_form_view
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.web_product
+msgid "Tips"
+msgstr "Consejos"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.custom_layout
+msgid "Toggle navigation"
+msgstr "Navegación de palanca"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.home_page_ep
+msgid "Ubicación"
+msgstr ""
+
+#. module: theme_epithelium
+#: model:product.template,uom_name:theme_epithelium.product_template_website_0
+#: model:product.template,uom_name:theme_epithelium.product_template_website_1
+#: model:product.template,uom_name:theme_epithelium.product_template_website_2
+#: model:product.template,uom_name:theme_epithelium.product_template_website_3
+#: model:product.template,uom_name:theme_epithelium.product_template_website_4
+#: model:product.template,uom_name:theme_epithelium.product_template_website_5
+#: model:product.template,uom_name:theme_epithelium.product_template_website_6
+#: model:product.template,uom_name:theme_epithelium.product_template_website_7
+#: model:product.template,uom_name:theme_epithelium.product_template_website_8
+msgid "Units"
+msgstr "Unidades"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_product__use
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_template__use
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_template_inherit_only_form_view
+msgid "Use"
+msgstr "Uso"
+
+#. module: theme_epithelium
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_version_form
+msgid "Version Name"
+msgstr "Nombre de la versión"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.contactus_thanks_ep
+msgid "We will get back to you shortly."
+msgstr "Nos pondremos en contacto con usted en breve."
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_product__website
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_template__website
+#: model_terms:ir.ui.view,arch_db:theme_epithelium.product_template_inherit_only_form_view
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_product__website_category
+#: model:ir.model.fields,field_description:theme_epithelium.field_product_template__website_category
+msgid "Website Category"
+msgstr "Categorías"
+
+#. module: theme_epithelium
+#: model:ir.model.fields.selection,name:theme_epithelium.selection__location_epithelium__zone__o
+msgid "West"
+msgstr "Oeste"
+
+#. module: theme_epithelium
+#: model_terms:theme.ir.ui.view,arch:theme_epithelium.contactus_thanks_ep
+msgid "Your message has been sent successfully."
+msgstr "Tu mensaje ha sido enviado exitosamente."
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__zone
+msgid "Zone"
+msgstr "Zona"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__lat
+msgid "latitude"
+msgstr "Latitud"
+
+#. module: theme_epithelium
+#: model:ir.model.fields,field_description:theme_epithelium.field_location_epithelium__lng
+msgid "length"
+msgstr "Longitud"

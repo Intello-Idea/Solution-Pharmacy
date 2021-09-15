@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="product_form_magistral_form" model="ir.ui.view">
+        <field name="name">product.form.magistral</field>
+        <field name="model">product.form.magistral</field>
+        <field name="arch" type="xml">
+            <form string="Product form magistral">
+                <sheet>
+                    <field name="icon" widget="image" class="oe_avatar"/>
+                    <div class="oe_title" modifiers="{}">
+                        <label class="oe_edit_only" for="name" string="Category Name"/>
+                        <h1>
+                            <field name="name" placeholder="Formula mater Name" modifiers="{'required':true}"/>
+                        </h1>
+                    </div>
+                    <group col="2">
+                        <group col="3">
+                            <field name="color" class=""/>
+                            <input type="color" id="favcolor" name="favcolor" value="#ff0000"/>
+                        </group>
+                    </group>
+                    <div>
+                        <separator string="Description"/>
+                        <field name="description" widget="html"/>
+                    </div>
+                    <div class="">
+                        <separator string="Image description"/>
+                        <field name="image_description" widget="image" class="" style="width:400px"/>
+                    </div>
+                    <field name="pdf" widget="pdf_viewer"></field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="product_form_action" model="ir.actions.act_window">
+        <field name="name">Product Form Magistral</field>
+        <field name="res_model">product.form.magistral</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

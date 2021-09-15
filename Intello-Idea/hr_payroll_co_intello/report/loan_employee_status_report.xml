@@ -1,0 +1,117 @@
+<odoo>
+
+    <template id="loan_employee_status">
+        <t t-call="web.html_container">
+            <t t-foreach="loans" t-as="loan">
+                <t t-call="web.external_layout">
+
+                    <div class="page pt-5">
+
+                        <div class="oe_title">
+                            <h3>Estado de Cuenta Préstamo <span t-esc="loan.name"></span></h3>
+                        </div>
+
+                        <div id="informations" class="row mt32 mb32">
+                            <div class="col-auto mw-100 mb-2" name="employee_id">
+                                <strong>Employee:</strong>
+                                <p class="m-0" t-field="loan.employee_id.name"/>
+                            </div>
+                            <div class="col-auto mw-100 mb-2" name="contract_id">
+                                <strong>Contract:</strong>
+                                <p class="m-0" t-field="loan.contract_id.name"/>
+                            </div>
+                            <div class="col-auto mw-100 mb-2" name="loan_type_id">
+                                <strong>Loan Type:</strong>
+                                <p class="m-0" t-field="loan.input_type_id.name"/>
+                            </div>
+                            <div class="col-auto mw-100 mb-2" name="approval_date">
+                                <strong>Approval Date:</strong>
+                                <p class="m-0" t-field="loan.approval_date"/>
+                            </div>
+                        </div>
+
+                        <t t-if="loan.line_ids">
+                            <table class="table table-sm o_main_table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-left"><strong>Reference</strong></th>
+                                        <th class="text-center"><strong>Quote</strong></th>
+                                        <th class="text-center"><strong>Expiration</strong></th>
+                                        <th class="text-center"><strong>Quote Value</strong></th>
+                                        <th class="text-center"><strong>Interest</strong></th>
+                                        <th class="text-center"><strong>Quote Total</strong></th>
+                                        <th class="text-center"><strong>Balance</strong></th>
+                                        <th class="text-center"><strong>State</strong></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="loan.line_ids" t-as="line">
+
+                                        <td>
+                                            <span t-field="line.loan_id.name"/>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <span t-field="line.quote"/>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <span t-field="line.expiration"/>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <span t-field="line.quote_value"/>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <span t-field="line.interest"/>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <span t-field="line.quote_total"/>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <span t-field="line.balance"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="line.state"/>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+
+                        <div id="informations" class="row mt32 mb32">
+                            <div class="col-auto mw-100 p-3" name="employee_id">
+                                <strong>Loan Amount:</strong>
+                                <p class="m-0" t-field="loan.loan_amount"/>
+                            </div>
+                            <div class="col-auto mw-100 p-3" name="contract_id">
+                                <strong>Interest Amount:</strong>
+                                <p class="m-0" t-field="loan.interest_amount"/>
+                            </div>
+
+                            <div class="col-auto mw-100 p-3" name="loan_type_id">
+                                <strong>Loan Total:</strong>
+                                <p class="m-0" t-field="loan.total_loan"/>
+                            </div>
+
+                            <div class="col-auto mw-100 p-3" name="approval_date">
+                                <strong>Paid Amount:</strong>
+                                <p class="m-0" t-field="loan.paid_mount"/>
+                            </div>
+
+                             <div class="col-auto mw-100 p-3" name="loan_balance">
+                                <strong>Loan Balance:</strong>
+                                <p class="m-0" t-field="loan.loan_balance"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

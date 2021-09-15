@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="hr_change_reason_01" model="hr.motivos.ccambios">
+            <field name="name">Aumento de SMMLV</field>
+            <field name="reason_type">salary_change</field>
+        </record>
+
+        <record id="hr_change_reason_02" model="hr.motivos.ccambios">
+            <field name="name">Aumento por desempeño</field>
+            <field name="reason_type">salary_change</field>
+        </record>
+
+        <record id="hr_change_reason_03" model="hr.motivos.ccambios">
+            <field name="name">Aumento por cambio de cargo</field>
+            <field name="reason_type">salary_change</field>
+        </record>
+
+        <record id="hr_change_reason_04" model="hr.motivos.ccambios">
+            <field name="name">Aumento por efectividad</field>
+            <field name="reason_type">salary_change</field>
+        </record>
+
+        <record id="hr_change_reason_05" model="hr.motivos.ccambios">
+            <field name="name">Ajuste temporal de salario</field>
+            <field name="reason_type">salary_change</field>
+        </record>
+
+        <record id="hr_change_reason_06" model="hr.motivos.ccambios">
+            <field name="name">Traslado por nuevo contrato</field>
+            <field name="reason_type">change_administrator</field>
+        </record>
+
+        <record id="hr_change_reason_07" model="hr.motivos.ccambios">
+            <field name="name">Traslado por falla en atención de empleado</field>
+            <field name="reason_type">change_administrator</field>
+        </record>
+
+        <record id="hr_change_reason_08" model="hr.motivos.ccambios">
+            <field name="name">Cambio de proveedor</field>
+            <field name="reason_type">change_administrator</field>
+        </record>
+
+    </data>
+</odoo>

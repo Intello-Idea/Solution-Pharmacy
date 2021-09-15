@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Cotizante Subtype-->
+        <record id="cotizante_subtype_01" model="hr.cotizante.subtype">
+            <field name="name">Sin Subtipo</field>
+            <field name="code">0</field>
+            <field name="is_active">true</field>
+            <field name="cotizante_type_ids"
+                   eval="[(6, 0, [ref('cotizante_type_01'),ref('cotizante_type_02'),ref('cotizante_type_03'),ref('cotizante_type_04'),ref('cotizante_type_05'),ref('cotizante_type_06'),ref('cotizante_type_07'),ref('cotizante_type_08'),ref('cotizante_type_09'),ref('cotizante_type_10')])]"></field>
+            <field name="description">Sin subtipo de cotizante asociado</field>
+        </record>
+
+        <record id="cotizante_subtype_02" model="hr.cotizante.subtype">
+            <field name="name">Dependiente pensionado por vejez activo</field>
+            <field name="code">1</field>
+            <field name="is_active">true</field>
+            <field name="active">true</field>
+            <field name="cotizante_type_ids"
+                   eval="[(6, 0, [ref('cotizante_type_01'),ref('cotizante_type_03'),ref('cotizante_type_07'),ref('cotizante_type_08'),ref('cotizante_type_09')])]"></field>
+            <field name="description">Son pensionados por vejez, jubilación o invalidez.</field>
+        </record>
+
+        <record id="cotizante_subtype_03" model="hr.cotizante.subtype">
+            <field name="name">Cotizante no obligado a cotización a pensiones por edad</field>
+            <field name="code">3</field>
+            <field name="is_active">true</field>
+            <field name="cotizante_type_ids"
+                   eval="[(6, 0, [ref('cotizante_type_01'),ref('cotizante_type_03'),ref('cotizante_type_07'),ref('cotizante_type_08'),ref('cotizante_type_09')])]"></field>
+            <field name="description">Son personas que nunca han cotizado al sistema de pensiones o que ya han cumplido
+                la edad suficiente reglamentada en la Ley para dejar de aportar a pensiones.</field>
+        </record>
+
+        <record id="cotizante_subtype_04" model="hr.cotizante.subtype">
+            <field name="name">Cotizante con requisitos cumplidos para pensión</field>
+            <field name="code">4</field>
+            <field name="is_active">true</field>
+            <field name="cotizante_type_ids"
+                   eval="[(6, 0, [ref('cotizante_type_01'),ref('cotizante_type_03'),ref('cotizante_type_07'),ref('cotizante_type_08'),ref('cotizante_type_09')])]"></field>
+            <field name="description">Son cotizantes que ya cumplieron todos los requisitos mínimos exigidos por los fondos de pensiones y se enceuntran en trámites para el reconocimiento de la pensión por vejez, Invalidez o cualquier otro tipo de pensión.</field>
+        </record>
+
+        <record id="cotizante_subtype_05" model="hr.cotizante.subtype">
+            <field name="name">Cotizante a quien se le ha reconocido indemnización sustitutiva o devolución de
+                saldos</field>
+            <field name="code">5</field>
+            <field name="is_active">true</field>
+            <field name="cotizante_type_ids"
+                   eval="[(6, 0, [ref('cotizante_type_01'),ref('cotizante_type_03'),ref('cotizante_type_07'),ref('cotizante_type_08'),ref('cotizante_type_09')])]"></field>
+            <field name="description">No está obligado a cotizar pensión.</field>
+        </record>
+
+        <record id="cotizante_subtype_06" model="hr.cotizante.subtype">
+            <field name="name">Cotizante perteneciente a un régimen exceptuado de pensiones</field>
+            <field name="code">6</field>
+            <field name="is_active">true</field>
+            <field name="cotizante_type_ids"
+                   eval="[(6, 0, [ref('cotizante_type_01'),ref('cotizante_type_03'),ref('cotizante_type_07'),ref('cotizante_type_08'),ref('cotizante_type_09')])]"></field>
+            <field name="description">Cotizante perteneciente a un régimen exceptuado de pensiones o entidades autorizadas a recibir aportes exclusivamente de un grupo de sus propios trabajadores.</field>
+        </record>
+
+        <record id="cotizante_subtype_07" model="hr.cotizante.subtype">
+            <field name="name">Cotizante pensionado con mesada superior a 25 SMLMV</field>
+            <field name="code">9</field>
+            <field name="is_active">true</field>
+            <field name="cotizante_type_ids"
+                   eval="[(6, 0, [ref('cotizante_type_01'),ref('cotizante_type_03'),ref('cotizante_type_07'),ref('cotizante_type_08')])]"></field>
+            <field name="description">Cotizante pensionado con mesada superior a 25 salarios mínimos legales mensuales
+                vigentes.</field>
+        </record>
+
+
+
+    </data>
+</odoo>

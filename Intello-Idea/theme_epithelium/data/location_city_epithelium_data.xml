@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="True">
+        <record id="location_city_epithelium_0" model="location.city.epithelium">
+            <field name="name">ARMENIA</field>
+        </record>
+        <record id="location_city_epithelium_1" model="location.city.epithelium">
+            <field name="name">BOGOTA D.C</field>
+        </record>
+        <record id="location_city_epithelium_2" model="location.city.epithelium">
+            <field name="name">CALI</field>
+        </record>
+        <record id="location_city_epithelium_3" model="location.city.epithelium">
+            <field name="name">CHIA</field>
+        </record>
+        <record id="location_city_epithelium_4" model="location.city.epithelium">
+            <field name="name">NEIVA</field>
+        </record>
+        <record id="location_city_epithelium_5" model="location.city.epithelium">
+            <field name="name">PEREIRA</field>
+        </record>
+        <record id="location_city_epithelium_6" model="location.city.epithelium">
+            <field name="name">BUGA</field>
+        </record>
+        <!--
+        <record id="location_epithelium_0" model="location.epithelium">
+            <field name="name">LASKIN ARMENIA</field>
+            <field name="phone">0</field>
+            <field name="street">CRA 13 A N° 1A- 139</field>
+            <field name="zone">S</field>
+            <field name="location">EDIFICÍO  PLAZUELA LOS FUNDADORES</field>
+            <field name="city">ARMENIA</field>
+        </record>
+
+        <record id="location_epithelium_1" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C CAFAM FLORESTA</field>
+            <field name="phone">0</field>
+            <field name="street">AV. CRA 68 N° 90 - 88</field>
+            <field name="location">LOCAL 2050</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+
+        <record id="location_epithelium_2" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C HACIENDA SANTA BARBARA</field>
+            <field name="phone">0</field>
+            <field name="street">CRA 7 N° 115 - 72</field>
+            <field name="location">L147</field>
+            <field name="zone">C</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+
+        <record id="location_epithelium_3" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C HACIENDA SANTA BARBARA</field>
+            <field name="phone">0</field>
+            <field name="street">CRA 7 N° 115 - 72</field>
+            <field name="location">L209</field>
+            <field name="zone">C</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+
+        <record id="location_epithelium_4" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C HACIENDA SANTA BARBARA</field>
+            <field name="phone">0</field>
+            <field name="street">CRA 7 N° 115 - 72</field>
+            <field name="location">L209</field>
+            <field name="zone"></field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+
+
+        <record id="location_epithelium_5" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C PALATINO</field>
+            <field name="phone">0</field>
+            <field name="street">CRA 7 N° 138 - 33</field>
+            <field name="location">LOCAL 132</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+
+        <record id="location_epithelium_6" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C PARQUE LA COLINA</field>
+            <field name="phone">0</field>
+            <field name="street">CRA 58 D N° 146 - 51</field>
+            <field name="location">LOCAL L -216 PISO 2</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+
+        <record id="location_epithelium_7" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C PLAZA IMPERIAL</field>
+            <field name="phone">0</field>
+            <field name="street">CRA 104 N° 148 - 07</field>
+            <field name="location"></field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+
+        <record id="location_epithelium_8" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C PORTAL 80</field>
+            <field name="phone">6124422 EXT 8032</field>
+            <field name="street">TRANSV. 100 A N° 80 A 20</field>
+            <field name="location">PISO 1 - 018</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+
+        <record id="location_epithelium_9" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C SANTAFE</field>
+            <field name="phone">6058286/87</field>
+            <field name="street">CALLE 185 N° 45 - 03</field>
+            <field name="location">PISO 3 LOCAL 3-118</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+
+        <record id="location_epithelium_10" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C SANTAFE</field>
+            <field name="phone">4872672/6058286</field>
+            <field name="street">CALLE 185 N° 45 - 03</field>
+            <field name="location">PISO 1 LOCAL 1-066</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+
+        <record id="location_epithelium_11" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C SANTAFE</field>
+            <field name="phone">6058286/87</field>
+            <field name="street">CALLE 185 N° 45 - 03</field>
+            <field name="location">PISO 1 LOCAL NI-115</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_12" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C TITAN PLAZA</field>
+            <field name="phone">0</field>
+            <field name="street">AV. CRA 72 N° 80 - 94</field>
+            <field name="location">LOCAL N 2-38</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_13" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C TITAN PLAZA</field>
+            <field name="phone">0</field>
+            <field name="street">AV. CRA 72 N° 80 - 94</field>
+            <field name="location">LOCAL N 2-015</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_14" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C UNICENTRO</field>
+            <field name="phone">0</field>
+            <field name="street">AV. CRA 15 N° 124 - 30</field>
+            <field name="location">LOCAL 2-073</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_15" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C UNICENTRO</field>
+            <field name="phone">0</field>
+            <field name="street">AV. CRA 15 N° 124 - 30</field>
+            <field name="location">LOCAL 1-179</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_16" model="location.epithelium">
+            <field name="name">BELLA PIEL GLOBAL MEDICAL CENTER</field>
+            <field name="phone">0</field>
+            <field name="street">AV. CALLE 116 N° 9 - 72</field>
+            <field name="location"></field>
+            <field name="zone">C</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_17" model="location.epithelium">
+            <field name="name">BELLAPIEL C.C ANDINO</field>
+            <field name="phone">0</field>
+            <field name="street">CR 11 No.  82 - 71</field>
+            <field name="location">LOCAL 256</field>
+            <field name="zone">C</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_18" model="location.epithelium">
+            <field name="name">BELLAPIEL CALIMA</field>
+            <field name="phone">0</field>
+            <field name="street">CC CALIMA</field>
+            <field name="location">AK 180 - AK 20</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_19" model="location.epithelium">
+            <field name="name">BELLAPIEL CENTRO MAYOR</field>
+            <field name="phone">0</field>
+            <field name="street">CC CENTRO MAYOR</field>
+            <field name="location">LOCAL 2-054 - 2-173</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_20" model="location.epithelium">
+            <field name="name">BELLAPIEL DIVER PLAZA</field>
+            <field name="phone">0</field>
+            <field name="street">CC DIVERPALZA</field>
+            <field name="location">LOCAL 178 - 180</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_21" model="location.epithelium">
+            <field name="name">BELLAPIEL GALERIAS</field>
+            <field name="phone">0</field>
+            <field name="street">CC GALERIAS</field>
+            <field name="location">LOCAL 1020</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_22" model="location.epithelium">
+            <field name="name">BELLAPIEL GRAN ESTACION</field>
+            <field name="phone">0</field>
+            <field name="street">CC GRAN ESTACION</field>
+            <field name="location">LOCAL 1-087- 1-105</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_23" model="location.epithelium">
+            <field name="name">BELLAPIEL GRAN PLAZA</field>
+            <field name="phone">0</field>
+            <field name="street">CC GRAN PLAZA</field>
+            <field name="location">LOCAL 2-064</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_24" model="location.epithelium">
+            <field name="name">BELLAPIEL HAYUELOS</field>
+            <field name="phone">0</field>
+            <field name="street">CC HAYUELOS</field>
+            <field name="location">LOCAL 1-19</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_25" model="location.epithelium">
+            <field name="name">BELLAPIEL MERCURIO</field>
+            <field name="phone">0</field>
+            <field name="street">CC MERCURIO</field>
+            <field name="location">LOCAL 204 NI- 228</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_26" model="location.epithelium">
+            <field name="name">BELLAPIEL MULTIPLAZA</field>
+            <field name="phone">0</field>
+            <field name="street">CC MULTIPLAZA</field>
+            <field name="location">LOCAL A- 150</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_27" model="location.epithelium">
+            <field name="name">BELLAPIEL PLAZA CENTRAL</field>
+            <field name="phone">0</field>
+            <field name="street">CC PLAZA CENTRAL Cra. 65 #11-50</field>
+            <field name="location">Entrada 2 Central Local 1-79</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_28" model="location.epithelium">
+            <field name="name">BELLAPIEL PLAZA DE LAS AMERICAS</field>
+            <field name="phone">1211 - 2251</field>
+            <field name="street">CC PLAZA DE LAS AMERICAS</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_29" model="location.epithelium">
+            <field name="name">BELLAPIEL SALITRE PLAZA</field>
+            <field name="phone">0</field>
+            <field name="street">CC SALITRE PLAZA</field>
+            <field name="location">LOCAL 232</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_30" model="location.epithelium">
+            <field name="name">DERMATODO</field>
+            <field name="phone">0</field>
+            <field name="street">CALLE 72 # 10 -34</field>
+            <field name="location">LOCAL 278</field>
+            <field name="zone">C</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_31" model="location.epithelium">
+            <field name="name">DERMATODO</field>
+            <field name="phone">0</field>
+            <field name="street">CC PLAZA DE LAS AMERICAS</field>
+            <field name="location">LOCAL 1040</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_32" model="location.epithelium">
+            <field name="name">DERMATODO</field>
+            <field name="phone">0</field>
+            <field name="street">CENTRO COMERCIAL GRAN ESTACION</field>
+            <field name="location">LOCAL 2065</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_33" model="location.epithelium">
+            <field name="name">DERMATODO</field>
+            <field name="phone">0</field>
+            <field name="street">CENTRO COMERCIAL SALITRE PLAZA</field>
+            <field name="location">LOCAL 164-166</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_34" model="location.epithelium">
+            <field name="name">DERMATODO C.C CEDRITOS 151</field>
+            <field name="phone">6332945 - 3138060325</field>
+            <field name="street">CALLE 15O N° 16 - 56</field>
+            <field name="location">LOCAL 1 - 99</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_35" model="location.epithelium">
+            <field name="name">DERMATODO C.C CENTRO 93</field>
+            <field name="phone">0</field>
+            <field name="street">CALLE 93 N° 14 - 20</field>
+            <field name="location">LOCAL 218</field>
+            <field name="zone">C</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_36" model="location.epithelium">
+            <field name="name">DERMATODO C.C MALL 138</field>
+            <field name="phone">6139710 - 3138091262</field>
+            <field name="street">CRA 59 A N° 136 - 95 LOCAL 7</field>
+            <field name="location"></field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_37" model="location.epithelium">
+            <field name="name">DERMATODO C.C METROPOLIS</field>
+            <field name="phone">7457550 - 3138013957</field>
+            <field name="street">CRA 68 N° 75 A 50</field>
+            <field name="location">LOCAL 216 B Y C</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_38" model="location.epithelium">
+            <field name="name">DERMATODO C.C UNICENTRO</field>
+            <field name="phone">9278512 - 3138014237</field>
+            <field name="street">AV. CRA 15 N° 124 - 30</field>
+            <field name="location">LOCAL 1 -174 ENTRADA 4</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_39" model="location.epithelium">
+            <field name="name">DERMATODO CENTRO MEDICO DE LA SABANA</field>
+            <field name="phone">3138030204</field>
+            <field name="street">CALLE 119 N° 6 A 62</field>
+            <field name="location">LOCAL 114</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_40" model="location.epithelium">
+            <field name="name">DERMATODO EDIFICIO EL BOSQUE</field>
+            <field name="phone">6278265 - 3112586842</field>
+            <field name="street">CALLE 134 N ° 7 B 83</field>
+            <field name="location">LOCAL 21</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_41" model="location.epithelium">
+            <field name="name">DERMATUS</field>
+            <field name="phone">2089</field>
+            <field name="street">CC GALERIAS</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_42" model="location.epithelium">
+            <field name="name">DERMOSALUD</field>
+            <field name="phone">3132894205</field>
+            <field name="street">CALLE 127 N° 19A - 28</field>
+            <field name="location"></field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_43" model="location.epithelium">
+            <field name="name">DERMOSALUD OLAYA</field>
+            <field name="phone">0</field>
+            <field name="street">CARRERA 21 N° 24 -80</field>
+            <field name="location">LOCAL 14</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_44" model="location.epithelium">
+            <field name="name">GALENOS CC SAN MARTIN</field>
+            <field name="phone">0</field>
+            <field name="street">CC SAN MARTIN</field>
+            <field name="location">LOCAL 1</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_45" model="location.epithelium">
+            <field name="name">GALENOS CHAPINERO</field>
+            <field name="phone">116</field>
+            <field name="street">CALLE 60 N° 9 - 83</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_46" model="location.epithelium">
+            <field name="name">GALENOS KENNEDY</field>
+            <field name="phone">0</field>
+            <field name="street">CALLE 40 N° 77A -41 SUR</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_47" model="location.epithelium">
+            <field name="name">GALENOS PIEL C.C GRANADA HILLS</field>
+            <field name="phone">0</field>
+            <field name="street">AUTOPISTA NORTE N° 146 - 48</field>
+            <field name="location"></field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_48" model="location.epithelium">
+            <field name="name">GALENOS PIEL C.C ISERRA 100</field>
+            <field name="phone">0</field>
+            <field name="street">TRANSV 55 N° 98 A 66</field>
+            <field name="location"></field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_49" model="location.epithelium">
+            <field name="name">GALENOS PIEL COUNTRY</field>
+            <field name="phone">0</field>
+            <field name="street">CRA 16 N° 82 -42</field>
+            <field name="location"></field>
+            <field name="zone">C</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_50" model="location.epithelium">
+            <field name="name">GALENOS SANTA BARBARA</field>
+            <field name="phone">0</field>
+            <field name="street">CRA 7 N° 115 - 72</field>
+            <field name="location">LOCAL A 123</field>
+            <field name="zone">C</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_51" model="location.epithelium">
+            <field name="name">MD SUPPORT C.C SUBAZAR</field>
+            <field name="phone">6838174 - 6860886 - 3213765816</field>
+            <field name="street">CRA 91 N° 145 - 99 LOCAL 163</field>
+            <field name="location"></field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_52" model="location.epithelium">
+            <field name="name">MD SUPPORT ROMA</field>
+            <field name="phone">0</field>
+            <field name="street">CALLE 57 A SUR N° 79 B - 21</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_53" model="location.epithelium">
+            <field name="name">NEODERMA TEUSAQUILLO</field>
+            <field name="phone">0</field>
+            <field name="street">CARRERA 13 N° 41 -36</field>
+            <field name="location">LOCAL 9</field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_54" model="location.epithelium">
+            <field name="name">NEODERMIS LAGO</field>
+            <field name="phone">0</field>
+            <field name="street">Cra.19 A No. 77 – 38 – Lago</field>
+            <field name="location">LOCAL 3</field>
+            <field name="zone">C</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_55" model="location.epithelium">
+            <field name="name">NEODERMIS RESTREPO</field>
+            <field name="phone">0</field>
+            <field name="street">Calle 15 # 16-11 Sur</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_56" model="location.epithelium">
+            <field name="name">PHARMAPIEL C.C BIMA</field>
+            <field name="phone">6763181</field>
+            <field name="street">AUTOPISTA NORTE CON 232</field>
+            <field name="location">LOCAL 1004</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_57" model="location.epithelium">
+            <field name="name">PHARMAPIEL C.C BULEVAR NIZA</field>
+            <field name="phone">2532804</field>
+            <field name="street">AV. CRA 58 N° 127 - 59</field>
+            <field name="location">LOCAL 199</field>
+            <field name="zone">N</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_58" model="location.epithelium">
+            <field name="name">PHARMAPIEL GALERIAS</field>
+            <field name="phone">2044</field>
+            <field name="street">CALLE 53B No. 25-81</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_59" model="location.epithelium">
+            <field name="name">PHARMAPIEL HAYUELOS</field>
+            <field name="phone">214</field>
+            <field name="street">CENTRO COMERCIAL HAYUELOS</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_60" model="location.epithelium">
+            <field name="name">PHARMAPIEL KENNEDY</field>
+            <field name="phone">0</field>
+            <field name="street">AVENIDA1 de MAYO Nº. 41C -67 SUR</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_61" model="location.epithelium">
+            <field name="name">SKINFARMA TIENDA DERMATOLOGICA</field>
+            <field name="phone">0</field>
+            <field name="street">CALLE 116 N° 9 - 58 EDIFICIO MERCURIO</field>
+            <field name="location"></field>
+            <field name="zone">C</field>
+            <field name="city">BOGOTA D.C</field>
+        </record>
+        <record id="location_epithelium_62" model="location.epithelium">
+            <field name="name">LASKIN BUGA</field>
+            <field name="phone">0</field>
+            <field name="street">CALLE 5 N° 12-12 EDIFICIO SANTA LUCIA</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">BUGA</field>
+        </record>
+        <record id="location_epithelium_63" model="location.epithelium">
+            <field name="name">BELLAPIEL CC CHIPICHAPE</field>
+            <field name="phone">0</field>
+            <field name="street">CC CHIPICHAPE</field>
+            <field name="location">LOCAL 207</field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_64" model="location.epithelium">
+            <field name="name">BELLAPIEL CC COSMOCENTRO</field>
+            <field name="phone">0</field>
+            <field name="street">CC COSMOCENTRO</field>
+            <field name="location">LOCAL 1-31</field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_65" model="location.epithelium">
+            <field name="name">BELLAPIEL CC JARDIN PLAZA</field>
+            <field name="phone">0</field>
+            <field name="street">CC JARDIN PLAZA</field>
+            <field name="location">LOCAL 186-187</field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_66" model="location.epithelium">
+            <field name="name">BELLAPIEL CC UNICENTRO</field>
+            <field name="phone">0</field>
+            <field name="street">CC UNICENTRO</field>
+            <field name="location">LOCAL 261 -262</field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_67" model="location.epithelium">
+            <field name="name">BELLAPIEL CC UNICENTRO GIRARDOT</field>
+            <field name="phone">0</field>
+            <field name="street">CC UNICENTRO</field>
+            <field name="location">LOCAL - 1-24</field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_68" model="location.epithelium">
+            <field name="name">LASKIN CHIPICHAPE</field>
+            <field name="phone">0</field>
+            <field name="street">CC CHIPICHAPE</field>
+            <field name="location">201-202</field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_69" model="location.epithelium">
+            <field name="name">LASKIN CIUDAD JARDIN</field>
+            <field name="phone">0</field>
+            <field name="street">CALLE 15 A N° 103-20</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_70" model="location.epithelium">
+            <field name="name">LASKIN IMBANACO</field>
+            <field name="phone">0</field>
+            <field name="street">CARRERA 39 N° 5A -91</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_71" model="location.epithelium">
+            <field name="name">LASKIN JARDIN PLAZA</field>
+            <field name="phone">0</field>
+            <field name="street">CC JARDIN PLAZA</field>
+            <field name="location">LOCAL 62</field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_72" model="location.epithelium">
+            <field name="name">LASKIN NORTE</field>
+            <field name="phone">0</field>
+            <field name="street">AV 6 N° 39-30</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_73" model="location.epithelium">
+            <field name="name">LASKIN OESTE</field>
+            <field name="phone">0</field>
+            <field name="street">CARRERA 2 N° 7 OESTE 130</field>
+            <field name="location">LOCAL 4</field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_74" model="location.epithelium">
+            <field name="name">LASKIN PANCE 1</field>
+            <field name="phone">0</field>
+            <field name="street">CALLE 16A N° 121 A 334</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_75" model="location.epithelium">
+            <field name="name">LASKIN PANCE 2</field>
+            <field name="phone">0</field>
+            <field name="street">CALLE 16A N° 121 A 334</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_76" model="location.epithelium">
+            <field name="name">LASKIN PASOANCHO</field>
+            <field name="phone">0</field>
+            <field name="street">CALLE 13 N° 72-06</field>
+            <field name="location">LOCAL 8</field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_77" model="location.epithelium">
+            <field name="name">LASKIN SANTA MONICA</field>
+            <field name="phone">0</field>
+            <field name="street">AV 6 AN N° 24 - 45</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_78" model="location.epithelium">
+            <field name="name">LASKIN UNICENTRO</field>
+            <field name="phone">0</field>
+            <field name="street">CC UNICENTRO |</field>
+            <field name="location">LOCAL 370</field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_79" model="location.epithelium">
+            <field name="name">LASKIN UNICENTRO OASIS</field>
+            <field name="phone">429</field>
+            <field name="street">CC UNICENTRO OASIS</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_80" model="location.epithelium">
+            <field name="name">TUDERMA</field>
+            <field name="phone">0</field>
+            <field name="street">CALLE 5B # 38-44</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_81" model="location.epithelium">
+            <field name="name">TUDERMA</field>
+            <field name="phone">0</field>
+            <field name="street">CARRERA 38 N° 5B3 - 16</field>
+            <field name="location">PISO 2</field>
+            <field name="zone">S</field>
+            <field name="city">CALI</field>
+        </record>
+        <record id="location_epithelium_82" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C CENTRO CHIA</field>
+            <field name="phone">6058286</field>
+            <field name="street">AVENIDA PRADILLA N° 9 - 00 1-33</field>
+            <field name="location"></field>
+            <field name="zone">N</field>
+            <field name="city">CHIA</field>
+        </record>
+        <record id="location_epithelium_83" model="location.epithelium">
+            <field name="name">BELLA PIEL C.C FONTANAR</field>
+            <field name="phone">8844328</field>
+            <field name="street">KM 2.5 VIA CHIA - CAJICA</field>
+            <field name="location"></field>
+            <field name="zone">N</field>
+            <field name="city">CHIA</field>
+        </record>
+        <record id="location_epithelium_84" model="location.epithelium">
+            <field name="name">DERMATODO C.C SABANA NORTE (CHIA)</field>
+            <field name="phone">8858222 - 3134979993</field>
+            <field name="street">AV. PRADILLA N° 2 A ESTE 71</field>
+            <field name="location">LOCAL 131</field>
+            <field name="zone">N</field>
+            <field name="city">CHIA</field>
+        </record>
+        <record id="location_epithelium_85" model="location.epithelium">
+            <field name="name">BELLAPIEL SANTA LUCIA PLAZA</field>
+            <field name="phone">0</field>
+            <field name="street">CC SANTA LUCIA PLAZA</field>
+            <field name="location">LOCAL 121-4</field>
+            <field name="zone">S</field>
+            <field name="city">NEIVA</field>
+        </record>
+        <record id="location_epithelium_86" model="location.epithelium">
+            <field name="name">CC SANPEDRO PLAZA</field>
+            <field name="phone">0</field>
+            <field name="street">CC SAN PEDRO PLAZA0</field>
+            <field name="location">LOCAL 152</field>
+            <field name="zone">S</field>
+            <field name="city">NEIVA</field>
+        </record>
+        <record id="location_epithelium_87" model="location.epithelium">
+            <field name="name">LASKIN CIRCUNVALAR (PEREIRA)</field>
+            <field name="phone">0</field>
+            <field name="street">AV CIRCUNVALAR N° 4 -93</field>
+            <field name="location"></field>
+            <field name="zone">S</field>
+            <field name="city">PEREIRA</field>
+        </record>
+
+        <record id="location_epithelium_88" model="location.epithelium">
+            <field name="name">LASKIN PINARES (PEREIRA)</field>
+            <field name="phone">0</field>
+            <field name="street">CARRERA 17 n° 10 - 41</field>
+            <field name="location">TORRE EPIC LOCAL 1</field>
+            <field name="zone">S</field>
+            <field name="city">PEREIRA</field>
+        </record>
+        <record id="location_epithelium_89" model="location.epithelium">
+            <field name="name">VITALDERMA</field>
+            <field name="phone">0</field>
+            <field name="street">CARRERA17 N° 8-140</field>
+            <field name="location">LOCAL 8</field>
+            <field name="zone">S</field>
+            <field name="city">PEREIRA</field>
+        </record>
+        -->
+        <!-- draft -->
+        <!--<record id="location_epithelium_" model="location.epithelium">
+            <field name="name"></field>
+            <field name="phone">0</field>
+            <field name="street"></field>
+            <field name="location"></field>
+            <field name="zone"></field>
+            <field name="city">BOGOTA D.C</field>
+        </record>-->
+
+        <!-- END DRAFT -->
+    </data>
+</odoo>

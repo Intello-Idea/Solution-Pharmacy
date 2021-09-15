@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="product_category_website_form" model="ir.ui.view">
+        <field name="name">product.category.website</field>
+        <field name="model">product.category.website</field>
+        <field name="arch" type="xml">
+            <form string="Product category website">
+                <sheet>
+                    <field name="icon" widget="image" class="oe_avatar"/>
+                    <div class="oe_title" modifiers="{}">
+                        <label class="oe_edit_only" for="name" string="Category Name"/>
+                        <h1>
+                            <field name="name" placeholder="Category Name" modifiers="{'required':true}"/>
+                        </h1>
+                    </div>
+                    <div>
+                        <separator string="Description"/>
+                        <field name="description" widget="html"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="product_category_website_action" model="ir.actions.act_window">
+        <field name="name">Product Category Website</field>
+        <field name="res_model">product.category.website</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

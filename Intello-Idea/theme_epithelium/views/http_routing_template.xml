@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="theme_epithelium_404" inherit_id="http_routing.404">
+        <xpath expr="//*[@id='wrap']" position="attributes">
+            <attribute name="class">category_area</attribute>
+        </xpath>
+    </template>
+</odoo>

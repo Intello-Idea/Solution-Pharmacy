@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Composition start -->
+    <record id="composition_form" model="ir.ui.view">
+        <field name="name">composition</field>
+        <field name="model">composition</field>
+        <field name="arch" type="xml">
+            <form string="Product Composition">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="composition" string="Composition"></field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="composition_tree_kanban" model="ir.ui.view">
+        <field name="name">composition.kanban</field>
+        <field name="model">composition</field>
+        <field name="arch" type="xml">
+            <kanban class="o_composition_kanban">
+                <field name="composition"/>
+                <field name="id"></field>
+                <field name="name"></field>
+                <field name="icon"></field>
+                <field name="description" widget="html"></field>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="color oe_kanban_color_alert oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img alt="" t-if="record.icon.raw_value"
+                                     t-att-src="kanban_image('composition', 'icon', record.id.raw_value)"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <div>
+                                    <t t-if="record.name.raw_value">
+                                        <h6>
+                                            <field name="name"></field>
+                                        </h6>
+                                    </t>
+                                </div>
+                                <div style="max-height:80px;overflow-y: auto">
+                                    <t t-if="record.description.raw_value">
+                                        <p>
+                                            <field name="description" widget="html" style="max-height:200px"></field>
+                                        </p>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="composition_action" model="ir.actions.act_window">
+        <field name="name">Composition</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">composition</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <record id="composition_action_kanban" model="ir.actions.act_window.view">
+        <field eval="0" name="sequence"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="composition_tree_kanban"/>
+        <field name="act_window_id" ref="composition_action"/>
+    </record>
+
+    <record id="composition_action_form" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="composition_form"/>
+        <field name="act_window_id" ref="composition_action"/>
+    </record>
+
+    <!-- Composition end -->
+
+    <!-- Product composition start -->
+    <record id="product_composition_form" model="ir.ui.view">
+        <field name="name">product.composition</field>
+        <field name="model">product.composition</field>
+        <field name="arch" type="xml">
+            <form string="Product composition">
+                <sheet>
+                    <field name="icon" widget="image" class="oe_avatar"/>
+                    <div class="oe_title" modifiers="{}">
+                        <label class="oe_edit_only" for="name" string="Composition Name"/>
+                        <h1>
+                            <field name="name" placeholder="Composition Name" modifiers="{'required':true}"/>
+                        </h1>
+                    </div>
+                    <div>
+                        <separator string="Description"/>
+                        <field name="description" widget="html"/>
+                    </div>
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+
+
+</odoo>

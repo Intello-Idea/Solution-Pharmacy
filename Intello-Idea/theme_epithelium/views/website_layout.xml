@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="style_ep" name="Style Epithelium" inherit_id="portal.frontend_layout">
+        <xpath expr="//head" position="inside">
+            <!--<link rel="stylesheet" type="text/css" href="/theme_epithelium/static/src/lib/bootstrap/css/bootstrap.css"/>-->
+            <!--<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>-->
+            <link rel="stylesheet" type="text/css" href="/theme_epithelium/static/src/css/owl.carousel.min.css"/>
+            <link rel="stylesheet" type="text/css" href="/theme_epithelium/static/src/css/magnific-popup.css"/>
+            <link rel="stylesheet" type="text/css" href="/theme_epithelium/static/src/css/font-awesome.min.css"/>
+            <link rel="stylesheet" type="text/css" href="/theme_epithelium/static/src/css/themify-icons.css"/>
+            <link rel="stylesheet" type="text/css" href="/theme_epithelium/static/src/css/nice-select.css"/>
+            <link rel="stylesheet" type="text/css" href="/theme_epithelium/static/src/css/flaticon.css"/>
+            <link rel="stylesheet" type="text/css" href="/theme_epithelium/static/src/css/gijgo.css"/>
+            <link rel="stylesheet" type="text/css" href="/theme_epithelium/static/src/css/animate.css"/>
+            <link rel="stylesheet" type="text/css" href="/theme_epithelium/static/src/css/slick.css"/>
+            <link rel="stylesheet" type="text/css" href="/theme_epithelium/static/src/css/slicknav.css"/>
+            <link rel="stylesheet" type="text/css" href="/theme_epithelium/static/src/css/style.css"/>
+            <link rel="stylesheet" type="text/css" href="/theme_epithelium/static/src/css/epithelium_style.css"/>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+            <script src="/theme_epithelium/static/src/js/main.js"></script>
+        </xpath>
+    </template>
+    <!-- Customize header  -->
+    <template id="custom_layout" inherit_id="website.layout" name="Custom Layout">
+        <xpath expr="//div[@id='wrapwrap']/header" position="replace">
+            <div class="header-area ">
+                <div id="nav_info" class="header-top_area header-top_area_ep d-none d-lg-block">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12">
+                                <div class="short_contact_list short_contact_list_ep">
+                                    <ul>
+                                        <li style="border: solid 1px #ffffff00 !important">
+                                            <i class="fa-white fa-map-marker" style="color: #ffffff !important;"></i>
+                                            <span t-field="res_company.street" style="color: #ffffff !important;"/>
+                                        </li>
+                                        <li>
+                                            <a href="/contactus">
+                                                <i class="fa fa-envelope"></i>
+                                                <span t-field="res_company.email"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-phone" style="color: #ffffff !important;"></i>
+                                            <span class="o_force_ltr" style="color: #ffffff !important;" t-field="res_company.phone"/>
+
+                                        </li>
+                                        <li>
+                                            <a href="/purchases">
+                                                <i class="fa fa-shopping-cart shopping_icon"
+                                                   style="font-size: 24px!important"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sticky-header" class="main-header-area sticky">
+                    <div class="container">
+                        <nav class="navbar navbar-expand-lg header_bottom_border header_bottom_border_ep row align-items-center">
+                            <div class="">
+                                <a class="logo logo_ep" href="/">
+                                    <img t-att-src="'/logo.png?company=%s' % res_company.id"
+                                         t-att-alt="'Logo of %s' % res_company.name"
+                                         t-att-title="res_company.name"/>
+                                </a>
+                            </div>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <i id="fa-color" class="fa fa-white fa-align-justify"></i>
+                            </button>
+                            <div class="col-xl-11 col-lg-10 main-menu navbar-collapse collapse reverse"
+                                 id="navbarNav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/">Inicio</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/aboutus">Nosotros</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" id="navbarDropdown-submenu-r"
+                                           role="button" data-toggle="dropdown" aria-haspopup="true"
+                                           aria-expanded="false">
+                                            Categorias de productos
+                                            <i class="ti-angle-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu submenu" id="submenu"
+                                            aria-labelledby="navbarDropdown-submenu">
+                                            <!-- category list order start -->
+                                            <t t-set="list1" t-value="[]"/>
+                                            <t t-set="list2" t-value="[]"/>
+                                            <t t-set="categories"
+                                               t-value="request.env['product.category.website'].sudo().search([])"/>
+                                            <t t-foreach="categories"
+                                               t-as="category">
+                                                <t t-esc="list2.append(category)"></t>
+                                                <t t-if="len(list2) >= 2">
+                                                    <t t-esc="list1.append(list2)"></t>
+                                                    <t t-set="list2" t-value="[]"></t>
+                                                </t>
+                                                <!-- si el objeto iterado es el ultimo de la lista -->
+                                                <t t-if="category_last">
+                                                    <t t-esc="list1.append(list2)"></t>
+                                                </t>
+                                            </t>
+                                            <!-- category list order end -->
+                                            <t t-foreach="list1" t-as="list2">
+                                                <t t-if="len(list2) == 2">
+                                                    <li>
+                                                        <div class="row justify-align-center">
+                                                            <t t-foreach="list2" t-as="category">
+                                                                <div class="col-md-6 text-center">
+                                                                    <a t-attf-href="/category/id={{category['id']}}">
+                                                                        <img t-att-src="'data:image/png;base64,%s' % to_text(category['icon'])"
+                                                                             class="icon_menu_ep rounded"/>
+                                                                    </a>
+                                                                    <div class="text-center">
+                                                                        <div class="pl-1">
+                                                                            <t t-esc="category['name']"/>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </t>
+                                                        </div>
+                                                    </li>
+                                                </t>
+                                                <t t-if="len(list2) != 2">
+                                                    <li>
+                                                        <div class="row justify-align-center">
+                                                            <t t-foreach="list2" t-as="category">
+                                                                <div class="col-md-6 text-center">
+                                                                    <a t-attf-href="/category/id={{category['id']}}">
+                                                                        <img t-att-src="'data:image/png;base64,%s' % to_text(category['icon'])"
+                                                                             class="icon_menu_ep rounded"/>
+                                                                    </a>
+                                                                    <div class="text-center">
+                                                                        <div class="pl-1">
+                                                                            <t t-esc="category['name']"/>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </t>
+                                                        </div>
+                                                    </li>
+                                                </t>
+                                            </t>
+                                        </ul>
+
+                                    </li>
+                                    <li>
+                                        <a href="/master_forms">Fórmulas magistrales</a>
+                                    </li>
+                                    <li>
+                                        <a href="/contactus">Contáctenos</a>
+                                    </li>
+
+
+                                    <t t-if="user_id._is_public()">
+                                        <div class="login-m-logout">
+                                            <div class="Appointment">
+                                                <div class="book_btn d-none d-lg-block">
+                                                    <a class="popup-with-form" href="/web/login">Login</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </t>
+                                    <t t-if="not user_id._is_public()">
+                                        <div class="login-m">
+                                            <nav class="">
+                                                <button type="button" class="navbar-toggler" data-toggle="collapse"
+                                                        data-target="#top_menu_collapse">
+                                                    <span class="navbar-toggler-icon"/>
+                                                </button>
+                                                <div class="" id="top_menu_collapse">
+                                                    <!-- FIXME We want menu to open to the right by default (except cases handled in JS) -->
+                                                    <ul class="nav navbar-nav ml-auto" id="top_menu">
+                                                        <li class="nav-item divider" t-ignore="true"
+                                                            t-if="not user_id._is_public()"/>
+                                                        <li class="nav-item dropdown" t-ignore="true"
+                                                            t-if="not user_id._is_public()">
+                                                            <a href="#" class="nav-link dropdown-toggle"
+                                                               data-toggle="dropdown">
+                                                                <b>
+                                                                    <span t-esc="user_id.name[:23] + '...' if user_id.name and len(user_id.name) &gt; 25 else user_id.name"/>
+                                                                </b>
+                                                            </a>
+                                                            <div class="dropdown-menu js_usermenu" role="menu">
+                                                                <a id="o_logout" class="dropdown-item ml-3"
+                                                                   t-attf-href="/web/session/logout?redirect=/"
+                                                                   role="menuitem">Logout
+                                                                </a>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </nav>
+                                        </div>
+                                    </t>
+                                </ul>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//*[@id='bottom']" position="replace">
+            <footer class="footer">
+                <div class="footer_top">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="logo-epithelium">
+                                <!--<img t-att-src="'/logo.png?company=%s' % res_company.id" t-att-alt="'Logo of %s' % res_company.name" class="footer_logo" t-att-title="res_company.name"/>-->
+                                <img src="/theme_epithelium/static/src/img/logo.png" class="footer_logo"/>
+                            </div>
+                        </div>
+                        <div class="row align-items-center justify-content-center text-center">
+                            <div class="localizacion">
+                                <a href="#" class="py-1 d-block">
+                                    <i class="fa fa-map-marker"></i>
+                                    <span t-field="res_company.street"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row align-items-center justify-content-center">
+                            <div class="correo">
+                                <a href="#" class="py-1 d-block">
+                                    <i class="fa fa-envelope"></i>
+                                    <span t-field="res_company.email"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row align-items-center justify-content-center">
+                            <div class="contacto">
+                                <a href="#" class="py-1 d-block">
+                                    <i class="fa fa-phone"></i>
+                                    <span class="o_force_ltr" t-field="res_company.phone"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row align-baseline justify-content-center">
+                            <p>
+                                <a t-if="website.social_facebook" t-att-href="website.social_facebook"
+                                   class="btn btn-sm btn-link">
+                                    <i class="fa fa-2x fa-facebook-square"/>
+                                </a>
+                                <a t-if="website.social_twitter" t-att-href="website.social_twitter"
+                                   class="btn btn-sm btn-link">
+                                    <i class="fa fa-2x fa-twitter"/>
+                                </a>
+                                <a t-if="website.social_linkedin" t-att-href="website.social_linkedin"
+                                   class="btn btn-sm btn-link">
+                                    <i class="fa fa-2x fa-linkedin"/>
+                                </a>
+                                <a t-if="website.social_youtube" t-att-href="website.social_youtube"
+                                   class="btn btn-sm btn-link">
+                                    <i class="fa fa-2x fa-youtube-play"/>
+                                </a>
+                                <a t-if="website.social_github" t-att-href="website.social_github"
+                                   class="btn btn-sm btn-link">
+                                    <i class="fa fa-2x fa-github"/>
+                                </a>
+                                <a t-if="website.social_instagram" t-att-href="website.social_instagram"
+                                   class="btn btn-sm btn-link">
+                                    <i class="fa fa-2x fa-instagram"/>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="copy-right_text">
+                    <div class="container">
+                        <div class="footer_border"></div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="copy_right text-center">
+
+                                    <span>Copyright &amp;copy;
+                                        <script>document.write(new Date().getFullYear());</script>
+                                    </span>
+                                    <span t-field="res_company.name" itemprop="name">Company name</span>
+                                    - Powered <i
+                                        class="fa fa-bolt"></i> by <a target="_blank" href="https://intelloidea.com/">
+                                    Intello Idea
+                                </a> - Todos los Derechos Reservados -
+                                    <a href="#">Legal</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </xpath>
+    </template>
+
+</odoo>

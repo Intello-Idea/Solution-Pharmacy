@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Motivos ccambio -->
+        <record id="hr_motivos_ccambio_view_form" model="ir.ui.view">
+            <field name="name">_view_form</field>
+            <field name="model">hr.motivos.ccambios</field>
+            <field name="arch" type="xml">
+                <form string="motivos_ccambios_form">
+                    <sheet>
+                        <h1>
+                            <field name="name" required="1"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="reason_type" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_motivos_ccambios_view_tree" model="ir.ui.view">
+            <field name="name">hr_motivos_ccambios_view_tree</field>
+            <field name="model">hr.motivos.ccambios</field>
+            <field name="arch" type="xml">
+                <tree string="motivos_ccambios_tree">
+                    <field name="name" width="60%"/>
+                    <field name="reason_type" width="40%"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_motivos_ccambios_action" model="ir.actions.act_window">
+            <field name="name">Motives</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.motivos.ccambios</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- HR Salary Change -->
+        <record id="hr_change_control_view_form" model="ir.ui.view">
+            <field name="name">hr_change_control_view_form</field>
+            <field name="model">hr.change.control</field>
+            <field name="arch" type="xml">
+                <form string="hr_salary_change_form">
+                    <header>
+                        <button name="confirm" type="object" string="Confirm"
+                                attrs="{'invisible':[('state','!=','draft')]}"/>
+                        <button name="validate" type="object" string="Validate"
+                                attrs="{'invisible':[('state','!=','confirmed')]}"/>
+                        <button name="cancel" type="object" string="Cancel"
+                                attrs="{'invisible':[('state','not in',('draft','confirmed'))]}"/>
+                        <button name="go_to_draft" type="object" string="Go To Draft"
+                                attrs="{'invisible':[('state','!=','canceled')]}"/>
+                        <field name="state" widget="statusbar" statusbar_colors="{'draft':'red'}"/>
+                    </header>
+                    <sheet>
+                        <field name="is_change_administrator" invisible="1"/>
+                        <field name="is_massive" invisible="1"/>
+                        <field name="currency_id" invisible="1"/>
+
+                        <div>
+                            <h1>
+                                <field name="name" class="title" readonly="1" force_save="1"/>
+                            </h1>
+                        </div>
+
+                        <group name="general_information" attrs="{'readonly':[('state','!=','draft')]}">
+                            <group>
+
+                                <field name="type_change"
+                                       attrs="{'invisible':[('is_change_administrator','=',True)],'required':[('is_change_administrator','=',False)],'readonly':[('state','!=','draft')]}"/>
+                                <field name="type_change_administrator"
+                                       attrs="{'invisible':[('is_change_administrator','=',False)],'readonly':[('state','!=','draft')]}"/>
+
+                                <field name="motive_change_id" options="{'no_create':True,'no_edit':True}"
+                                       attrs="{'readonly':[('state','!=','draft')]}"/>
+
+                                <field name="employee_id" options="{'no_create':True,'no_edit':True}"
+                                       attrs="{'invisible':[('is_massive','=',True)],'readonly':[('state','!=','draft')]}"/>
+                                <field name="contract_id" attrs="{'invisible':[('is_massive','=',True)]}" force_save="1"
+                                       readonly="1"/>
+
+                                <field name="previous_administrator_id" options="{'no_create':True,'no_edit':True}"
+                                       readonly="1" force_save="1"
+                                       attrs="{'invisible':['|',('is_change_administrator','=',False),('is_massive','=',True)],'readonly':[('state','!=','draft')]}"/>
+
+                                <field name="new_administrator_id" options="{'no_create':True,'no_edit':True}"
+                                       attrs="{'invisible':[('is_change_administrator','=',False)],'readonly':[('state','!=','draft')]}"/>
+
+                                <field name="previous_salary" widget="monetary" readonly="1" force_save="1"
+                                       attrs="{'invisible':['|',('is_change_administrator','=',True),('is_massive','=',True)],'required':[('is_change_administrator','=',False)],'readonly':[('state','!=','draft')]}"/>
+
+                                <field name="is_change_percentage"
+                                       attrs="{'invisible':[('is_change_administrator','=',True)]}" widget="boolean_toggle"/>
+                                <field name="percentage" attrs="{'invisible':[('is_change_percentage','=',False)]}"/>
+                                <field name="new_salary" widget="monetary"
+                                       attrs="{'invisible':['|',('is_change_administrator','=',True),('is_change_percentage','=',True)],'required':[('is_change_administrator','=',False)],'readonly':[('state','!=','draft')]}"/>
+
+                                <button name="%(action_change_control_wizard)d" type="action" class="btn-primary"
+                                        string="Charge Employees"
+                                        attrs="{'invisible':[('is_massive','=',False)]}"/>
+
+                            </group>
+                            <group>
+                                <field name="creation_date" readonly="1"/>
+                                <field name="validation_date" readonly="1"/>
+                                <field name="rrhh_manager_id" required="1" options="{'no_create':True,'no_edit':True}"
+                                       attrs="{'readonly':[('state','!=','draft')]}"/>
+
+                            </group>
+                        </group>
+
+                        <notebook attrs="{'invisible':[('is_massive','=',False)]}">
+
+                            <page name='employees' string="Employees">
+                                <field name="lines_ids" attrs="{'readonly':[('state','!=','draft')]}"
+                                       context="{'default_new_salary': new_salary}">
+                                    <tree editable="top">
+
+                                        <field name="currency_id" invisible="1"/>
+
+                                        <field name="employee_id" options="{'no_create':True,'no_edit':True}"
+                                               width="20%"/>
+
+                                        <field name="identification_id" width="20%"/>
+
+                                        <field name="contract_id" options="{'no_create':True,'no_edit':True}"
+                                               width="20%"/>
+                                        <field name="previous_salary" readonly="1" widget="monetary" width="20%"
+                                               force_save="1"
+                                               attrs="{'column_invisible': [('parent.is_change_administrator', '=', True)]}"/>
+
+                                        <field name="new_salary" widget="monetary" width="20%"
+                                               attrs="{'column_invisible': [('parent.is_change_administrator', '=', True)]}"/>
+
+                                        <field name="previous_administrator_id" readonly="1" force_save="1"
+                                               width="20%"
+                                               attrs="{'column_invisible': [('parent.is_change_administrator', '=', False)]}"/>
+
+                                        <field name="new_administrator_id" width="20%"
+                                               attrs="{'column_invisible': [('parent.is_change_administrator', '=', False)]}"/>
+
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <separator name="description" string="Description"/>
+                        <field name="description" placeholder="Description..." widget="section_and_note_text"/>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_change_control_change_view_tree" model="ir.ui.view">
+            <field name="name">hr_change_control_change_view_tree</field>
+            <field name="model">hr.change.control</field>
+            <field name="arch" type="xml">
+
+                <tree string="hr_salary_change_tree">
+                    <field name="name"/>
+                    <field name="creation_date"/>
+                    <field name="rrhh_manager_id"/>
+                    <field name="type_change"/>
+                    <field name="state"/>
+                </tree>
+
+            </field>
+        </record>
+
+
+        <!--Massive Actions -->
+        <record id="hr_salary_change_action" model="ir.actions.act_window">
+            <field name="name">Salary Change</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.change.control</field>
+            <field name="context">{'default_is_massive': True}</field>
+            <field name="domain">[('is_change_administrator', '=', False), ('is_massive', '=', True)]</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="hr_change_administrator_action" model="ir.actions.act_window">
+            <field name="name">Change Administrator</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.change.control</field>
+            <field name="context">{'default_is_change_administrator': True, 'default_is_massive': True}</field>
+            <field name="domain">[('is_change_administrator', '=', True), ('is_massive', '=', True)]</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Single Actions -->
+        <record id="hr_change_salary_single_action" model="ir.actions.act_window">
+            <field name="name">Salary Change</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.change.control</field>
+            <field name="context">{'default_is_massive': False}</field>
+            <field name="domain">[('is_change_administrator', '=', False), ('is_massive', '=', False)]</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="hr_change_administrator_single_action" model="ir.actions.act_window">
+            <field name="name">Change Administrator</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.change.control</field>
+            <field name="context">{'default_is_change_administrator': True, 'default_is_massive': False}</field>
+            <field name="domain">[('is_change_administrator', '=', True), ('is_massive', '=', False)]</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

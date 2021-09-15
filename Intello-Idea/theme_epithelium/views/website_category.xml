@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- webpage record -->
+    <template id="web_category" name="Categoría">
+        <t t-call="website.layout">
+            <div class="category_area">
+                <t t-foreach="category" t-as="cat">
+                    <div class="container p-0" style="min-height: 650px;">
+                        <div class="row no-gutters justify-content-center mt-3">
+                            <div class="col-xl-4 col-lg-4">
+                                <div class="page_category_img">
+                                    <img t-if="cat['icon']"
+                                         t-att-src="'data:image/png;base64,%s' % to_text(cat['icon'])"
+                                    />
+                                </div>
+                                <div class="row align-items-center justify-content-center mt-3">
+                                    <div class="page_category_button">
+                                        <a t-attf-href="/master_forms" class="btn btn-success">Fórmulas Magistrales</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-7 col-lg-7">
+                                <div class="category_info text-justify">
+                                    <h3 class="text-center">
+                                        <t t-esc="cat['name']"/>
+                                    </h3>
+                                    <p class="vert-scroll">
+                                        <t t-raw="cat['description']"/>
+                                    </p>
+                                    <div class="row justify-content-center product">
+                                            <t t-foreach="products" t-as="product">
+                                                    <div class="box text-center product mt-3"
+                                                         t-attf-style="border:{{product['color']}};border-style: solid;background-color:{{product['color']}};">
+                                                        <a t-attf-href="/product/id={{product['id']}}">
+                                                            <div style="height: 194px;">
+                                                                <img t-if="product['image_256']"
+                                                                     t-att-src="'data:image/png;base64,%s' % to_text(product['image_256'])"
+                                                                     t-attf-style="border:{{product['color']}};border-style:solid; background-color: #FFF"
+                                                                     class="mx-auto d-block img-fluid"/>
+                                                                <img t-if="not product['image_256']"
+                                                                     src="/theme_epithelium/static/src/img/content/content-img-0.png"
+                                                                     t-attf-style="border:{{product['color']}};border-style:solid; background-color: #FFF"
+                                                                     class="mx-auto d-block img-fluid"/>
+                                                            </div>
+
+                                                            <h6 class="mt-2">
+                                                                <t t-esc="product['name']"></t>
+                                                            </h6>
+                                                        </a>
+                                                    </div>
+                                            </t>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!--
+                                                <div class="row no-gutters justify-content-center mt-3">
+                                                    <div class="container-carrusel">
+                                                        <div class="slider">
+                                                            <div class="slider-inner">
+                                                                <t t-foreach="products" t-as="product">
+                                                                    <div class="slider-item">
+                                                                        <div class="box text-center product"
+                                                                             t-attf-style="border:{{product['color']}};border-style: solid;background-color:{{product['color']}};">
+
+                                                                            <a t-attf-href="/product/id={{product['id']}}">
+                                                                                <div>
+                                                                                    <img t-if="product['image_256']"
+                                                                                         t-att-src="'data:image/png;base64,%s' % to_text(product['image_256'])"
+                                                                                         t-attf-style="border:{{product['color']}};border-style:solid; background-color: #FFF"
+                                                                                         class="mx-auto d-block img-fluid"/>
+                                                                                    <img t-if="not product['image_256']"
+                                                                                         src="/theme_epithelium/static/src/img/content/no_image.png"
+                                                                                         t-attf-style="border:{{product['color']}};border-style:solid; background-color: #FFF"
+                                                                                         class="mx-auto d-block img-fluid"/>
+                                                                                </div>
+
+                                                                                <h6 class="mt-2">
+                                                                                    <t t-esc="product['name']"></t>
+                                                                                </h6>
+                                                                            </a>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </t>
+                                                            </div>
+
+                                                            <t t-if="len(products) > 4">
+                                                                <div class="control">
+                                                                    <button id="prev">
+                                                                        <span>&amp;ltrif;</span>
+                                                                    </button>
+                                                                    <button id="next">
+                                                                        <span>&amp;rtrif;</span>
+                                                                    </button>
+                                                                </div>
+                                                            </t>
+
+                                                            <t t-if="not len(products) > 4">
+                                                                <div class="control d-none">
+                                                                    <button id="prev">
+                                                                        <span>&amp;ltrif;</span>
+                                                                    </button>
+                                                                    <button id="next">
+                                                                        <span>&amp;rtrif;</span>
+                                                                    </button>
+                                                                </div>
+                                                            </t>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                        -->
+                    </div>
+
+                    <div class="textura_page">
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Contracts Menu Item Root -->
+        <!-- Menu Item Category Contract -->
+        <menuitem id="contract_item_category"
+                  name="Contracts"
+                  parent="hr.menu_human_resources_configuration"
+                  sequence="10"/>
+
+        <!-- Cotizante Type -->
+        <!-- This Menu Item Action Cotizante Type -->
+        <menuitem id="hr_cotizante_type_menu_action"
+                  name="Cotizante Type"
+                  parent="contract_item_category"
+                  action="hr_cotizante_type_action" sequence="1"/>
+
+        <!-- This Menu Item Action Cotizante SubType -->
+        <menuitem id="hr_cotizante_subtype_menu_action"
+                  name="Cotizante Subtype"
+                  parent="contract_item_category"
+                  action="hr_cotizante_subtype_action"
+                  sequence="2"/>
+
+        <!-- Risk Work -->
+        <!-- Menu Item Action Risk Work-->
+        <menuitem id="risk_work_menu_item"
+                  name="Risk Work"
+                  parent="contract_item_category"
+                  action="risk_work_action"
+                  sequence="3"/>
+
+
+        <!-- Change Control Menu Item Root -->
+        <!-- Menu Item Category Change Control -->
+        <menuitem id="change_control_item_category"
+                  name="Change Control"
+                  parent="hr.menu_human_resources_configuration"
+                  sequence="11"/>
+
+        <!-- Motive  -->
+        <!-- Menu Item Action Motive-->
+        <menuitem id="motive_menu_item"
+                  name="Motives"
+                  parent="change_control_item_category"
+                  action="hr_motivos_ccambios_action"
+                  sequence="1"/>
+
+
+        <!-- Concept fixed-->
+        <menuitem id="concept_fixed_menuitem"
+                  name="Fixed Concepts"
+                  parent="hr_payroll.menu_hr_payroll_work_entries_root"
+                  action="hr_concept_fixed_action"
+                  sequence="75"/>
+
+        <!-- Novelties -->
+        <menuitem id="hr_novelty_menuitem"
+                  name="Novelties"
+                  parent="hr_payroll.menu_hr_payroll_work_entries_root"
+                  action="hr_novelty_action"
+                  sequence="76"/>
+
+
+        <!-- Change Control -->
+        <menuitem id="change_control_root"
+                  name="Change Control"
+                  parent="hr.menu_hr_root"
+                  sequence="6"/>
+
+        <menuitem id="salary_change_categ"
+                  name="Salary Change"
+                  parent="change_control_root"
+                  sequence="1"/>
+
+        <menuitem id="administrator_change_categ"
+                  name="Change Administrator"
+                  parent="change_control_root"
+                  sequence="2"/>
+
+
+        <!-- Massive Menu Items -->
+        <!-- Salary Change -->
+        <menuitem id="hr_salary_change_menu_item"
+                  name="Massive"
+                  parent="salary_change_categ"
+                  action="hr_salary_change_action"
+                  sequence="1"/>
+
+        <!-- Change Administrator -->
+        <menuitem id="hr_change_administrator_menu_item"
+                  name="Massive"
+                  parent="administrator_change_categ"
+                  action="hr_change_administrator_action"
+                  sequence="1"/>
+
+        <!-- Single Menu Item -->
+        <menuitem id="hr_salary_change_single_menu_item"
+                  name="Single"
+                  parent="salary_change_categ"
+                  action="hr_change_salary_single_action"
+                  sequence="2"/>
+
+        <menuitem id="hr_change_administrator_single_menu_item"
+                  name="Single"
+                  parent="administrator_change_categ"
+                  action="hr_change_administrator_single_action"
+                  sequence="2"/>
+
+        <!-- Payroll Menu Items -->
+        <!-- Payroll Category -->
+        <menuitem id="payroll_categ"
+                  name="Payroll"
+                  parent="hr_payroll.menu_hr_payroll_configuration"
+                  sequence="90"/>
+
+        <!-- Payroll Type Menu Item -->
+        <menuitem id="menu_action_hr_salary_rule_form"
+                action="hr_payroll_type_action"
+                name="Payroll Type"
+                parent="payroll_categ"
+                sequence="1"/>
+
+
+        <!-- Hr Employee Loan -->
+        <!-- Hr Employee Loan Root -->
+        <menuitem id="loan_root"
+                  name="Loans"
+                  parent="hr.menu_hr_root"
+                  sequence="5"/>
+        <!-- Request Loan -->
+        <menuitem id="menu_item_request_loan"
+                action="hr_employee_loan_action"
+                name="Request Loan"
+                parent="loan_root"
+                sequence="1"/>
+
+        <!-- Loan Configuration -->
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="menu_item_configuration_loan" name="Loans Employees" parent="hr.menu_human_resources_configuration_employee" action="hr_employee_loan_configuration_action" sequence="3"/>
+
+    </data>
+</odoo>

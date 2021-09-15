@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- webpage record -->
+        <template id="web_info_master_form" name="Como obtener la tuya!">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+                    <section class="info_master_forms category_area">
+                        <div class="container">
+                            <div class="row justify-content-center mt-5">
+                                <img src="/theme_epithelium/static/src/img/content/content-img-4.png"
+                                     class="img-fluid" style="max-height: 600px;" alt=""/>
+                            </div>
+                            <div class="row justify-content-center mt-5">
+                                <div class="col-lg-3">
+                                    <!--<a t-att-href="'data:application/pdf;%s' % '/theme_epithelium/static/src/img/dinamic/pdf_doctor/doctor_chart.pdf'"
+                                       t-attf-download="{doctor_chart}">-->
+                                    <a href="/theme_epithelium/static/src/img/dinamic/pdf_doctor/doctor_chart.pdf" target="_blank">
+                                        <img src="/theme_epithelium/static/src/img/botones/Botón-4.png CAMBIAR A DIRECTORIO DE MÉDICOS.png"
+                                             class="rounded mx-auto d-block img_btn" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="col-lg-5">
+                                    <a href="/home/id_filter_map=0/#section-map">
+                                        <img src="/theme_epithelium/static/src/img/botones/Botón-5.png"
+                                             class="rounded mx-auto d-block img_btn"
+                                             alt=""/>
+                                    </a>
+                                </div>
+                                <!-- <div class="col">
+                                     <a href="../index.html">
+                                         <img src="/theme_epithelium/static/src/img/botones/Botón-6.png" class="rounded mx-auto d-block img_btn"
+                                              alt=""/>
+                                     </a>
+                                 </div>-->
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- product content images -->
+                    <section class="content_images mt-5 mb-5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="/theme_epithelium/static/src/img/dinamic/page_decoration/decoration-1.JPG"
+                                         class="rounded mx-auto d-block"
+                                         alt=""/>
+                                </div>
+                                <div class="col">
+                                    <img src="/theme_epithelium/static/src/img/dinamic/page_decoration/decoration-2.jpg"
+                                         class="rounded mx-auto d-block"
+                                         alt=""/>
+                                </div>
+                                <div class="col">
+                                    <img src="/theme_epithelium/static/src/img/dinamic/page_decoration/decoration-3.jpg"
+                                         class="rounded mx-auto d-block" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

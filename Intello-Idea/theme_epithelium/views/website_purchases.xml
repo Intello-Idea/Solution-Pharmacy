@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- webpage record -->
+        <template id="web_purchases" name="Compras">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+                    <!-- carrito  -->
+                    <section class="carrito category_area">
+                        <div class="container" style="min-height: 500px;" >
+                            <div class="row p-5">
+                                <div class="col-lg-7">
+                                    <h1 class="text-subtitle-category title-global-green ">En construcción...</h1>
+                                    <h3 class="text-subtitle">MUY PRONTO</h3>
+                                </div>
+                                <div class="col-lg-5">
+                                    <img src="/theme_epithelium/static/src/img/content/content-img-5.png" class="img-fluid" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textura_page">
+
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

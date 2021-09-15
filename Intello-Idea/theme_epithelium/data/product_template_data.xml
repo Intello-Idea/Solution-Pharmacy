@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="True">
+
+        <!-- PRODUCT SUNSKIN EMULSION START-->
+        <record id="product_template_website_0" model="product.template">
+            <field name="website">1</field>
+            <field name="name">SUNSKIN EMULSION</field>
+            <field name="website_category" ref="theme_epithelium.product_category_website_4"></field>
+            <field name="form_magistral" ref=""></field>
+            <field name="product_composition" eval="[(4,ref('theme_epithelium.composition_2'))]"/>
+            <field name="color">#009960</field>
+            <field name="use">
+                Aplicar uniformemente sobre la piel mínimo 15 o 20 minutos antes de exponerse al sol. Repetir su
+                aplicación
+                después de sudoración excesiva, natación o las veces que sea necesario.
+            </field>
+            <field name="benefits">
+                Protector solar con filtros recomendados para pieles secas que necesitan hidratación. Certificado por
+                Laboratorios AMA.
+            </field>
+            <field name="tips">tips</field>
+            <field name="presentation">
+                Tubo colapsible de 80g
+            </field>
+            <field name="description">
+                Es un protector solar de amplio espectro que contiene un innovador sistema de filtros químicos y
+                pantallas
+                físicas que actúan por medio de la absorción, reflexión y dispersión de la radiación UV-A y UV-B. En su
+                formulación se encuentra la asociación de sustancias comoTinosorb M,Tinisorb S, Uvinul T-150 y Uvinul
+                APlus.
+                SUNSKIN EMULSIÓN ha sido clínicamente comprobado. Su nivel de protección solar en UVB-SPF 50+ indica que
+                una
+                vez aplicado sobre la piel, incrementa hasta 50 veces su protección natural frente a éste espectro de la
+                radiación.
+                SUNSKIN EMULSIÓN cumple con la legislación internacional de COLIPA, al determinarse clínicamente su
+                nivel de
+                protección frente a la radiación UVA. El resultado satisfactoriamente obtenido, muestra como el PFA
+                (Nivel
+                de protección UVA) es superior a la tercera parte del SPF, ajustándose adecuadamente a la normatividad
+                europea y a la FDA. Los niveles de protección solar para el espectro UV-A (PFA) y UV-B (SPF) se
+                determinaron
+                in vivo en AMA Laboratories NY-USA, institución supervisada por FDA y vinculada a la Academia Americana
+                de
+                Dermatología. SUNSKIN EMULSIÓN es un protector solar indicado para pieles secas
+            </field>
+        </record>
+        <!-- PRODUCT SUNSKIN EMULSION END-->
+
+        <!-- PRODUCT SUNSKIN GEL START-->
+        <record id="product_template_website_1" model="product.template">
+            <field name="website">1</field>
+            <field name="name">SUNSKIN GEL</field>
+            <field name="website_category" ref="theme_epithelium.product_category_website_4"></field>
+            <field name="form_magistral" ref=""></field>
+            <field name="product_composition" eval="[(4,ref('theme_epithelium.composition_0'))]"/>
+            <field name="color">#009960</field>
+            <field name="use">
+                Aplicar uniformemente sobre sobre la piel mínimo 15 o 20 minutos antes de exponerse al sol. Repetir su
+                aplicación después de sudoración excesiva, natación o las veces que sea necesario.
+            </field>
+            <field name="benefits">
+                Protector solar que contiene filtros y pantallas solares, recomendado para pieles mixtas o grasas.
+                Certificado por Laboratorios AMA.
+            </field>
+            <field name="tips">tips</field>
+            <field name="presentation">
+                Tubo colapsible de 80g
+            </field>
+            <field name="description">
+                Es un protector solar de amplio espectro que contiene un innovador sistema de filtros químicos y
+                pantallas físicas que actúan por medio de la absorción, reflexión y dispersión de la radiación UV-A y
+                UV-B. En su formulación se encuentra la asociación de sustancias como Tinosorb M,Tinisorb S, Uvinul
+                APlus.
+                SUNSKIN GEL ha sido clínicamente comprobado. Su nivel de protección solar en UVB-SPF 50+ indica que una
+                vez aplicado sobre la piel, incrementa hasta 50 veces su protección natural frente a éste espectro de la
+                radiación. SUNSKIN GEL cumple con la legislación internacional de COLIPA, al determinarse clínicamente
+                su nivel de protección frente a la radiación UVA. El resultado satisfactoriamente obtenido, muestra como
+                el PFA(Nivel de protección UVA) es superior a la tercera parte del SPF, ajustándose adecuadamente a la
+                normatividad europea y a la FDA. Los niveles de protección solar para el espectro UV-A (PFA) y UV-B
+                (SPF) se determinaron in vivo en AMA Laboratories NY-USA, institución supervisada por FDA y vinculada a
+                la Academia Americana de Dermatología. SUNSKIN GEL es un protector solar especialmente indicado para
+                pieles mixtas o con tendencia acnéica.
+            </field>
+        </record>
+        <!-- PRODUCT SUNSKIN GEL END-->
+
+        <!-- PRODUCT SUNSKIN OIL FREE START-->
+        <record id="product_template_website_2" model="product.template">
+            <field name="website">1</field>
+            <field name="name">SUNSKIN OIL FREE</field>
+            <field name="website_category" ref="theme_epithelium.product_category_website_4"></field>
+            <field name="form_magistral" ref=""></field>
+            <field name="product_composition" eval="[(4,ref('theme_epithelium.composition_0'))]"/>
+            <field name="color">#009960</field>
+            <field name="use">
+                Aplicar uniformemente sobre la piel mínimo 15 o 20 minutos antes de exponerse al sol. Repetir su
+                aplicación después de sudoración excesiva, natación o las veces que sea necesario.
+            </field>
+            <field name="benefits">
+                Es un protector solar libre de grasas con efecto relleno, mayor durabilidad y potencializa la piel.
+            </field>
+            <field name="tips">tips</field>
+            <field name="presentation">
+                Tubo colapsible de 80g
+            </field>
+            <field name="description">
+                Es un gel de siliconas, libre de grasas, que hidrata y protege la piel de los efectos nocivos
+                acumulativos de la radiación UVA y UVB, gracias a un sistema de filtros fotoestables, presentes en su
+                composición.
+                Sunskin Oil Free en un protector solar especialmente indicado para pieles grasas o con tendencia
+                acnéica.
+                Sunskin Oil Free cumple con la legislación internacional de COLIPA, al determinarse clínicamente su
+                nivel de protección frente a la radiación UVA. El resultado satisfactoriamente obtenido, muestra como el
+                PFA
+                (Nivel de Protección UVA), es superior a la tercera aparte del FSP, ajustándose adecuadamente a la
+                normatividad europea y a la FDA. Así mismo, su nivel de protección solar UVB-SPF 50+, fue determinado in
+                vivo en Ama Laboratories, NY-USA.
+            </field>
+        </record>
+        <!-- PRODUCT SUNSKIN OIL FREE END-->
+
+        <!-- PRODUCT DRAFT START-->
+        <record id="product_template_website_3" model="product.template">
+            <field name="website">1</field>
+            <field name="name">CAPILPLUS BIOTINA</field>
+            <field name="website_category" ref="theme_epithelium.product_category_website_0"></field>
+            <field name="form_magistral" ref=""></field>
+            <field name="product_composition" eval="[(4,ref('theme_epithelium.composition_4'))]"/>
+            <field name="color">#009960</field>
+            <field name="use">
+                Aplicar a necesidad una cantidad suficiente en el cabello, masajear suavemente sobre el cuero cabelludo
+                y posteriormente enjuagar con abundante agua.
+            </field>
+            <field name="benefits">
+                Shampoo anticaida, con Biotina y Procapil que mejora la irrigación sanguinea, fortalece el foliculo
+                piloso y da brillo.
+            </field>
+            <field name="tips">tips</field>
+            <field name="presentation">
+                Tubo colapsible por 220ml
+            </field>
+            <field name="description">
+                Es un shampoo especialmente formulado con agentes tensoactivos suaves y acondicionadores del cabello. Su
+                exclusiva formulación contiene sustancias emolientes y humectantes, que brinda al cabello un aspecto
+                brillante y sedoso.
+                Contiene exclusivo péptido que asocia Biotina, lo que promueve una adecuada nutrición para el cabello.
+                El efecto nutritivo de Capilplus Biotina se complementa con el aporte de Silicio orgánico, sustancia que
+                mejora la calidad del cabello
+            </field>
+        </record>
+        <!-- PRODUCT DRAFT END-->
+
+        <!-- PRODUCT CAPILPLUS DS START-->
+        <record id="product_template_website_4" model="product.template">
+            <field name="website">1</field>
+            <field name="name">CAPILPLUS DS</field>
+            <field name="website_category" ref="theme_epithelium.product_category_website_0"></field>
+            <field name="form_magistral" ref=""></field>
+            <field name="product_composition" eval="[(4,ref('theme_epithelium.composition_4'))]"/>
+            <field name="color">#009960</field>
+            <field name="use">
+                Aplicar sobre el cabello previamente humedecido, masajear y dejar actuar durante cinco (5) minutos.
+                Retirar con abundante agua y repetir el procedimiento. Utilizar dos (2) veces por semana de acuerdo a
+                recomendación médica.
+            </field>
+            <field name="benefits">
+                Shampoo anticaspa con triple poder; antimicotico, seborregulador y efecto antifrizz
+            </field>
+            <field name="tips">tips</field>
+            <field name="presentation">
+                Tubo colapsible por 220ml
+            </field>
+            <field name="description">
+                Es un shampoo anticaspa con Keratina, que reúne (4) principios activos: Piritonato de zinc, Octopirox,
+                Asebiol y Climbazole, para lograr un control eficaz de los estados descamativos del cuero cabelludo.
+                Capilplus DS no solamente elimina la caspa, sino que reestablece las condiciones fisiológicas del
+                cabello y cuero cabelludo, gracias a su composición como lo son la Keratina y el D-pantenol, los cuales
+                humectan, nutren y dan vida al cabello.
+            </field>
+        </record>
+        <!-- PRODUCT CAPILPLUS DS END-->
+
+        <!-- PRODUCT SENSIBATH START-->
+        <record id="product_template_website_5" model="product.template">
+            <field name="website">1</field>
+            <field name="name">SENSIBATH</field>
+            <field name="website_category" ref="theme_epithelium.product_category_website_2"></field>
+            <field name="form_magistral" ref=""></field>
+            <field name="product_composition" eval="[(4,ref('theme_epithelium.composition_5'))]"/>
+            <field name="color">#009960</field>
+            <field name="use">
+                Aplicar una cantidad suficiente sobre la piel previamente humedecida con agua, frotar y enjuagar.
+            </field>
+            <field name="benefits">
+                Limpiador facial, sustituto de jabon con tensoactivos, extractos naturales, pH balanceado y ademas
+                hidrata la piel.
+            </field>
+            <field name="tips">tips</field>
+            <field name="presentation">
+                Tubo colapsible por 240ml
+            </field>
+            <field name="description">
+                Es un syndet limpiador, libre de jabón, especialmente indicado para la higiene diaria de la piel.
+                Sensibath tiene un pH5 y por su vehículo elaborado con base en agentes de limpieza suaves, remueve de
+                forma segura las impurezas, excesos de grasa y células muertas, sin alterar el manto hidrolipídico.
+                Sensibath le aporta un efecto suave y calmante a la piel y las sustancias hidratantes contenidas en su
+                formulación, le brindan una adecuada humectación.
+            </field>
+        </record>
+        <!-- PRODUCT SENSIBATH END-->
+
+        <!-- PRODUCT REVIVAL START-->
+        <record id="product_template_website_6" model="product.template">
+            <field name="website">1</field>
+            <field name="name">REVIVAL</field>
+            <field name="website_category" ref="theme_epithelium.product_category_website_3"></field>
+            <field name="form_magistral" ref=""></field>
+            <field name="product_composition" eval="[(4,ref('theme_epithelium.composition_3'))]"/>
+            <field name="color">#009960</field>
+            <field name="use">
+                Con la piel perfectamente limpia, aplicar sobre rostro y cuello, con movimientos suaves. Utilizar dos
+                veces al día o de acuerdo a recomendación médica.
+            </field>
+            <field name="benefits">
+                Revival es la crema antienvejecimiento, mas completa del mercado, que le aporta los nutrientes que la
+                piel ha perdido con el paso de los años.
+            </field>
+            <field name="tips">tips</field>
+            <field name="presentation">
+                Pote cremero de 50g
+            </field>
+            <field name="description">
+                Es una crema antienvejecimiento, indicada para la prevención y corrección de los signos de
+                envejecimiento cutáneo como arrugas finas, pérdida de tonicidad y elasticidad.
+                Sus componentes, especialmente formulados para la piel de la cara y el cuello, reafirman, alisan y
+                nutren la piel, la cual recobra elasticidad y suavidad. Su composición forma un complejo de sustancias
+                antioxidantes y regeneradoras, que hidratan y corrigen la flacidez cutánea, devolviendo luminosidad y
+                vitalidad a la piel.
+            </field>
+        </record>
+        <!-- PRODUCT REVIVAL END-->
+
+        <!-- PRODUCT HYDRAFORT PH5 START-->
+        <record id="product_template_website_7" model="product.template">
+            <field name="website">1</field>
+            <field name="name">HYDRAFORT PH5</field>
+            <field name="website_category" ref="theme_epithelium.product_category_website_1"></field>
+            <field name="form_magistral" ref=""></field>
+            <field name="product_composition" eval="[(4,ref('theme_epithelium.composition_3'))]"/>
+            <field name="color">#009960</field>
+            <field name="use">
+                Aplicar una cantidad suficiente en las áreas del cuerpo requeridas, masajear suavemente sobre la piel
+                hasta lograr una completa absorción.
+            </field>
+            <field name="benefits">
+                Es una crema ultrahidratante, con pH balanceado y Mantequilla Karité que nutre y restaura la piel muy
+                seca.
+            </field>
+            <field name="tips">tips</field>
+            <field name="presentation">
+                Tubo colapsible de 250g
+            </field>
+            <field name="description">
+                Contiene emolientes y humectantes que evitan la pérdida transepidérmica de agua, contribuyendo así a
+                mantener el equilibrio hídrico de la piel. Incluye en su formulación emolientes naturales como la
+                mantequilla Karité y aceite de maracuyá que de forma complementaria ofrecen un efecto protector cutáneo.
+                Esta especialmente indicada para pieles extremadamente secas y delicadas; logrando en ellas un aspecto
+                suave y terso.
+            </field>
+        </record>
+        <!-- PRODUCT HYDRAFORT PH5 END-->
+
+        <!-- PRODUCT HYDRAFORT FACE START-->
+        <record id="product_template_website_8" model="product.template">
+            <field name="website">1</field>
+            <field name="name">HYDRAFORT FACE</field>
+            <field name="website_category" ref="theme_epithelium.product_category_website_1"></field>
+            <field name="form_magistral" ref=""></field>
+            <field name="product_composition" eval="[(4,ref('theme_epithelium.composition_2'))]"/>
+            <field name="color">#009960</field>
+            <field name="use">
+                Con la piel perfectamente limpia, aplicar sobre la cara con movimientos suaves. Utilizar 2 veces al día
+                o de acuerdo a recomendación médica
+            </field>
+            <field name="benefits">
+                Crema hidratante facial, hipoalergenica, baja en grasa y enriquecida con colageno, Acido Hialuronico,
+                que mejora la apariencia de la piel.
+            </field>
+            <field name="tips">tips</field>
+            <field name="presentation">
+                Frasco colapsible de 50g
+            </field>
+            <field name="description">
+                Es una emulsión hidratante, formulada para restablecer el manto hidrolipídico, dejando así la piel suave
+                fresca y elástica.
+                Sus componentes especialmente indicados para la piel de la cara, forman una película ligera, no grasosa
+                que penetra inmediatamente en la piel, dándole un efecto luminoso; y gracias a sus agentes hidratantes y
+                reparadores, protege la epidermis contra las agresiones diarias del medio ambiente.
+            </field>
+        </record>
+        <!-- PRODUCT HYDRAFORT FACE END-->
+
+        <!-- PRODUCT DRAFT START-->
+        <!--
+        <record id="product_template_website_" model="product.template">
+            <field name="website">1</field>
+            <field name="name"></field>
+            <field name="product_category" ref="theme_epithelium.product_category_website_"></field>
+            <field name="form_magistral" ref=""></field>
+            <field name="product_composition" eval="[(6,0,[ref('theme_epithelium.composition_')])]"/>
+            <field name="color">color</field>
+            <field name="use">
+
+            </field>
+            <field name="benefits">
+
+            </field>
+            <field name="tips">tips</field>
+            <field name="presentation">
+
+            </field>
+            <field name="description">
+
+            </field>
+        </record>
+        -->
+        <!-- PRODUCT DRAFT END-->
+    </data>
+</odoo>

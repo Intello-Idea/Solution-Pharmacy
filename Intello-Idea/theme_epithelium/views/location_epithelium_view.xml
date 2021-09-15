@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="location_epithelium_form" model="ir.ui.view">
+        <field name="name">location.epithelium</field>
+        <field name="model">location.epithelium</field>
+        <field name="arch" type="xml">
+            <form string="Location">
+                <header>
+                    <button name="compute_lat_lng" type="object" string="Compute Log and Lat"/>
+                </header>
+                <sheet>
+                    <group name="Location Epithelium" string="Location Epithelium">
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="google_map"/>
+                            <field name="lat"/>
+                            <field name="lng"/>
+                            <field name="phone"/>
+                            <label for="street" string="Address"/>
+                            <div class="o_address_format">
+                                <field name="street" placeholder="Street..." class="o_address_city"/>
+                                <field name="zone" style="width:200px"/>
+                                <field name="location" placeholder="Location..." class="o_address_street"/>
+                                <field name="city_store" placeholder="City" class="o_address_city"/>
+                                <field name="state_id" placeholder="State"
+                                       options="{&quot;no_open&quot;: True}" style="width:200px"/>
+                                <field name="country_id" placeholder="Country" class="o_address_country"
+                                       options="{&quot;no_open&quot;: True}"/>
+                            </div>
+                            <field name="schedule"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="location_epithelium_tree" model="ir.ui.view">
+        <field name="name">location.tree</field>
+        <field name="model">location.epithelium</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="street"/>
+                <field name="location"/>
+                <field name="city_store"/>
+                <field name="schedule"/>
+                <field name="lat" optional="hide"/>
+                <field name="lng" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="location_epithelium_action" model="ir.actions.act_window">
+        <field name="name">Location epithelium</field>
+        <field name="res_model">location.epithelium</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
