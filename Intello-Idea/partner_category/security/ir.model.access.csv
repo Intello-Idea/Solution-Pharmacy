@@ -1,7 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_partner_category,access_partner_category,model_partner_category,,1,1,1,1
-access_channel_category,access_channel_category,model_channel_category,,1,1,1,1
-access_provider_category,access_provider_category,model_provide_configuration,,1,1,1,1
-access_partner_channel,access_partner_channel,model_partner_channel,,1,1,1,1
-access_sub_channel,access_sub_channel,model_sub_channel_category,,1,1,1,1
-access_res_partner,access_res_partner,model_res_partner,,1,1,1,1
