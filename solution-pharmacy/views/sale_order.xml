@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <record id="solution_pharmacy_add_page_saleorder" model="ir.ui.view">
+            <field name="name">sale.order.raw.material</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page/field[@name='order_line']/.." position="after">
+                    <page string="Raw material">
+                        <field name="raw_material">
+                            <tree editable="bottom">
+                                <field name="product_id"/>
+                                <field name="product_qty"/>
+                                <field name="percentage"/>
+                                <field name="price_unit"/>
+                                <field name="price_total"/>
+                                <field name="appointment_id" invisible="1"/>
+                                <field name="final_product_id" invisible="1"/>
+                                <field name="category"/>
+                                <field name="sale_order" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

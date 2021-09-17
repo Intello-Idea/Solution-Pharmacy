@@ -31,6 +31,7 @@
         'views/res_partner.xml',
         'security/groups_security.xml',
         'data/ir_sequence_data.xml',
+        'views/sale_order.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
