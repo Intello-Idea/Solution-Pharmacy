@@ -73,8 +73,8 @@ class Productlines(models.Model):
     size_total = fields.Integer(string="Total size(gr)", compute="_compute_size_total", store=True)
     pharmaceutical_form = fields.Many2one('product.product', string="Pharmaceutical form", required=True)
     value_pharmaceutical_form = fields.Float(string="size(g) pharmaceutical form")
-    price_total = fields.Float(string="Price total", store=True)
-    price_unit_pharmaceutical = fields.Float(string="Price Unit", compute="_compute_price_pharmaceutical_form", store=True)
+    price_total = fields.Float(string="Total Price", store=True)
+    price_unit_pharmaceutical = fields.Float(string="Unit Price", compute="_compute_price_pharmaceutical_form", store=True)
     total_pharmaceutical_form = fields.Float(string="Total", compute="_compute_total_pharmaceutical", store=True)
 
     @api.depends('size_subtotal', 'qty')
