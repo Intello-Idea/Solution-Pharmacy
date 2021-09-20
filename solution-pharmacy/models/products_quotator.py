@@ -257,7 +257,7 @@ class Solution(models.Model):
             values_raw_material = []
             for record in self.final_product:
                 dic = {
-                    'product_id': 81,
+                    'product_id': self.env['product.template'].search([('name', '=', 'Generico cotizador')]).id,
                     'name': record.product_id,
                     'product_uom_qty': record.qty,
                     'price_unit': record.price_total/record.qty,
