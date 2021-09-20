@@ -3,11 +3,6 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError, UserError
 
-class SaleOrder(models.Model):
-    _inherit = 'sale.order'
-
-    raw_material = fields.One2many('solution.pharmacy.quotator.lines', 'sale_order', string="Material")
-
 class SolutionLines(models.Model):
     _name = "solution.pharmacy.quotator.lines"
     _description = "Solution Pharmacy Quotator Lines"

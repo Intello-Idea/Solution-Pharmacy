@@ -3,3 +3,4 @@ access_solution-pharmacy_solution-pharmacy,solution-pharmacy.solution-pharmacy,m
 access_solution_pharmacy_quotator_user,solution-pharmacy.solution.pharmacy.quotator,model_solution_pharmacy_quotator,base.solution-pharmacy_group_admin,1,1,1,1
 access_solution_pharmacy_quotator_lines_user,solution-pharmacy.solution.pharmacy.quotator.lines,model_solution_pharmacy_quotator_lines,base.solution-pharmacy_group_admin,1,1,1,1
 access_product_lines_user,solution-pharmacy.product.lines,model_product_lines,base.solution-pharmacy_group_admin,1,1,1,1
+access_raw_material_user,solution-pharmacy.raw.material,model_raw_material,base.group_user,1,1,1,1

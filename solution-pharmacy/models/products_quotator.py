@@ -254,15 +254,28 @@ class Solution(models.Model):
     def send_quotation(self):
         for line in self:
             values = []
-            for record in self.appointment_lines:
+            values_raw_material = []
+            for record in self.final_product:
                 dic = {
-                    'product_id': record.product_id.id,
-                    'name': record.final_product_id.product_id,
-                    'product_uom_qty': record.product_qty,
-                    'price_unit': record.price_unit,
+                    'product_id': 81,
+                    'name': record.product_id,
+                    'product_uom_qty': record.qty,
+                    'price_unit': record.price_total/record.qty,
                     'price_subtotal': record.price_total,
                 }
                 values.append((0,0,dic))
+            for record in self.appointment_lines:
+                raw = {
+                    'product_id': record.product_id.id,
+                    'product_qty': record.product_qty,
+                    'percentage': record.percentage,
+                    'price_unit': 0,
+                    'appointment_id': record.appointment_id.id,
+                    'final_product_id': record.final_product_id.id,
+                    'category': record.category,
+                    'sale_order': record.sale_order,
+                }
+                values_raw_material.append((0,0,raw))
             vals = {
                 'user_id' : line.user.id,
                 'partner_id': line.partner_id.id,
@@ -270,6 +283,7 @@ class Solution(models.Model):
                 'validity_date': line.expiration_date,
                 'pricelist_id': line.pricelist_id.id,
                 'order_line': values,
+                'raw_material': values_raw_material,
             }
         self.env['sale.order'].create(vals)
         self.state = 'posted'
