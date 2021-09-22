@@ -76,6 +76,7 @@ class Productlines(models.Model):
     price_total = fields.Float(string="Total Price", store=True)
     price_unit_pharmaceutical = fields.Float(string="Unit Price", compute="_compute_price_pharmaceutical_form", store=True)
     total_pharmaceutical_form = fields.Float(string="Total", compute="_compute_total_pharmaceutical", store=True)
+    unit_price_product = fields.Float(string="Unit price", compute="_compute_unit_price_product")
 
     @api.depends('size_subtotal', 'qty')
     def _compute_size_total(self):
@@ -92,4 +93,9 @@ class Productlines(models.Model):
     def _compute_total_pharmaceutical(self):
         for line in self:
             line.total_pharmaceutical_form = line.value_pharmaceutical_form * line.price_unit_pharmaceutical
+
+    @api.depends('price_total', 'qty')
+    def _compute_unit_price_product(self):
+        for line in self:
+            line.unit_price_product = line.price_total/line.qty
     

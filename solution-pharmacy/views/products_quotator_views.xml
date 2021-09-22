@@ -55,8 +55,9 @@
                     <field name="value_pharmaceutical_form"/>
                     <field name="size_total" invisible="1"/>
                     <field name="final_product_lines" invisible="1"/>
-                    <field name="price_unit_pharmaceutical"/>
-                    <field name="total_pharmaceutical_form"/>
+                    <field name="price_unit_pharmaceutical" invisible="1"/>
+                    <field name="total_pharmaceutical_form" invisible="1"/>
+                    <field name="unit_price_product"/>
                     <field name="price_total"/>
                   </tree>
                 </field>
@@ -74,10 +75,10 @@
                     <field name="product_id" domain="[('categ_id', 'in', ('Materias Primas / Activos', 'Embace Basico', 'Embase de Lujo', 'Acondicionamiento'))]"/>
                     <field name="category" invisible="1"/>
                     <field name="percentage" attrs="{'readonly': ['|', ('category', '!=', 'Materias Primas / Activos'), ('product_id', '=', False)]}"/>
-                    <field name="final_product_id"  attrs="{'readonly': [('appointment_id', '=', False)]}"/>
                     <field name="product_qty" attrs="{'readonly': ['|', ('category', '=', 'Materias Primas / Activos'), ('product_id', '=', False)]}"/>
-                    <field name="price_unit"/>
-                    <field name="price_total"/>
+                    <field name="final_product_id"  attrs="{'readonly': [('appointment_id', '=', False)]}"/>
+                    <field name="price_unit" invisible="1"/>
+                    <field name="price_total" invisible="1"/>
                   </tree>
                 </field>
               </page>
