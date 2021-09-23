@@ -52,13 +52,13 @@
                     <field name="qty"/>
                     <field name="size_subtotal"/>
                     <field name="pharmaceutical_form"/>
-                    <field name="value_pharmaceutical_form"/>
+                    <field name="value_pharmaceutical_form" readonly="1" force_save="1"/>
                     <field name="size_total" invisible="1"/>
                     <field name="final_product_lines" invisible="1"/>
                     <field name="price_unit_pharmaceutical" invisible="1"/>
                     <field name="total_pharmaceutical_form" invisible="1"/>
                     <field name="unit_price_product"/>
-                    <field name="price_total"/>
+                    <field name="price_total" readonly="1" force_save="1"/>
                   </tree>
                 </field>
                 <group class="oe_subtotal_footer oe_right" colspan="2" name="quotator_total">

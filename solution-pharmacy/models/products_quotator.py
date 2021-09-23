@@ -259,6 +259,7 @@ class Solution(models.Model):
                 dic = {
                     'product_id': self.env['product.template'].search([('name', '=', 'Generico cotizador')]).id,
                     'name': record.product_id,
+                    'pharmaceutical_form': record.pharmaceutical_form.id,
                     'product_uom_qty': record.qty,
                     'price_unit': record.price_total/record.qty,
                     'price_subtotal': record.price_total,

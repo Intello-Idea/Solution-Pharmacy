@@ -7,6 +7,11 @@ class SaleOrder(models.Model):
 
     raw_material = fields.One2many('raw.material', 'sale_order', string="Material")
 
+class SaleOrderLine(models.Model):
+    _inherit = 'sale.order.line'
+
+    pharmaceutical_form = fields.Many2one('product.product', string="Pharmaceutical form")
+
 class SaleOrderRaw(models.Model):
     _name = "raw.material"
     _description = "Lista de materiales"
