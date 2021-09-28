@@ -20,18 +20,20 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'contacts', 'product', 'sale', 'sale_management'],
+    'depends': ['base', 'contacts', 'product', 'sale', 'sale_management', 'stock'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-	'views/products_quotator_views.xml',
+	    'views/products_quotator_views.xml',
         'views/res_partner.xml',
         'security/groups_security.xml',
         'data/ir_sequence_data.xml',
         'views/sale_order.xml',
+        'views/stock_picking.xml',
+        'views/stock_picking.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
