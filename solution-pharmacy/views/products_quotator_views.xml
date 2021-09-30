@@ -1,0 +1,117 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="solution-pharmacy.list">
+      <field name="name">Solution-Pharmacy list quotator</field>
+      <field name="model">solution.pharmacy.quotator</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="partner_id"/>
+          <field name="user"/>
+          <field name="quotator_date"/>
+          <field name="expiration_date"/>
+          <field name="patient"/>
+          <field name="pricelist_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="solution-pharmacy.form">
+      <field name="name">Solution-Pharmacy form quotator</field>
+      <field name="model">solution.pharmacy.quotator</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <button name="send_quotation" string="Send quotator" type="object" states="draft" class="btn-primary"/>
+            <button name="action_cancel" type="object" string="Cancel" attrs="{'invisible': [('state', 'not in', 'draft')]}"/>
+            <field name="state" widget="statusbar" statusbar_visible="draft,posted,cancel"/>  
+          </header>
+          <sheet>
+          <h2>
+            <field name="name" readonly="1"/>
+          </h2>
+            <group>
+              <group>
+                <field name="user" options="{'no_open':True,'no_create': True}"/>
+                <field name="partner_id" attrs="{'readonly': [('state', '!=', 'draft')]}" options="{'no_open':True,'no_create': True}"/>
+                <field name="patient" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+              </group>
+              <group>
+                <field name="quotator_date"/>
+                <field name="expiration_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="pricelist_id" options="{'no_open':True,'no_create': True}"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="Final products">
+                <field name="final_product" widget="one2many_list" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                  <tree editable="bottom">
+                    <field name="product_id"/>
+                    <field name="qty"/>
+                    <field name="size_subtotal"/>
+                    <field name="pharmaceutical_form"/>
+                    <field name="value_pharmaceutical_form" readonly="1" force_save="1"/>
+                    <field name="size_total" invisible="1"/>
+                    <field name="final_product_lines" invisible="1"/>
+                    <field name="price_unit_pharmaceutical" invisible="1"/>
+                    <field name="total_pharmaceutical_form" invisible="1"/>
+                    <field name="unit_price_product"/>
+                    <field name="price_total" readonly="1" force_save="1"/>
+                  </tree>
+                </field>
+                <group class="oe_subtotal_footer oe_right" colspan="2" name="quotator_total">
+                  <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                    <label for="total" />
+                  </div>
+                  <field name="total" nolabel="1" class="oe_subtotal_footer_separator"/>
+                </group>
+              </page>
+              <page string="Raw material">
+                <field name="appointment_lines" widget="one2many_list" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                  <tree editable="bottom">
+                    <field name="appointment_id" invisible="1"/>
+                    <field name="product_id" domain="[('categ_id', 'in', ('Materias Primas / Activos', 'Embace Basico', 'Embase de Lujo', 'Acondicionamiento'))]"/>
+                    <field name="category" invisible="1"/>
+                    <field name="percentage" attrs="{'readonly': ['|', ('category', '!=', 'Materias Primas / Activos'), ('product_id', '=', False)]}"/>
+                    <field name="product_qty" attrs="{'readonly': ['|', ('category', '=', 'Materias Primas / Activos'), ('product_id', '=', False)]}"/>
+                    <field name="final_product_id"  attrs="{'readonly': [('appointment_id', '=', False)]}"/>
+                    <field name="price_unit" invisible="1"/>
+                    <field name="price_total" invisible="1"/>
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="message_follower_ids"/>
+            <field name="activity_ids"/>
+            <field name="message_ids"/>
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="solution-pharmacy.action_window">
+      <field name="name">Solution-Pharmacy window</field>
+      <field name="res_model">solution.pharmacy.quotator</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="Quotator" 
+              id="solution-pharmacy.menu_root"
+              sequence="3"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Quotator" 
+              id="solution-pharmacy.quotator" 
+              parent="solution-pharmacy.menu_root" 
+              action="solution-pharmacy.action_window"/>
+  </data>
+</odoo>
