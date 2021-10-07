@@ -292,6 +292,11 @@ class Solution(models.Model):
     def action_cancel(self):
         self.state = 'cancel'
 
+    @api.constrains('quotator_date', 'expiration_date')
+    def _validation_date(self):
+        if self.expiration_date < self.quotator_date:
+            raise ValidationError(_("La fecha de expiracion no puede ser menor que la fecha de creacion de la solicitud"))
+
 #    @api.onchange('appointment_lines')
 #    def _compute_default_percentage(self):
 #        for record in self.appointment_lines:

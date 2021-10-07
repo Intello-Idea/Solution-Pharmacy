@@ -48,13 +48,13 @@
               <page string="Final products">
                 <field name="final_product" widget="one2many_list" attrs="{'readonly': [('state', '!=', 'draft')]}">
                   <tree editable="bottom">
-                    <field name="product_id"/>
-                    <field name="qty"/>
-                    <field name="size_subtotal"/>
-                    <field name="pharmaceutical_form"/>
+                    <field name="final_product_lines" invisible="1"/>
+                    <field name="product_id" attrs="{'readonly': [('id', '!=', False)]}"/>
+                    <field name="qty" attrs="{'readonly': [('id', '!=', False)]}"/>
+                    <field name="size_subtotal" attrs="{'readonly': [('id', '!=', False)]}"/>
+                    <field name="pharmaceutical_form" attrs="{'readonly': [('id', '!=', False)]}" options="{'no_open':True,'no_create': True}"/>
                     <field name="value_pharmaceutical_form" readonly="1" force_save="1"/>
                     <field name="size_total" invisible="1"/>
-                    <field name="final_product_lines" invisible="1"/>
                     <field name="price_unit_pharmaceutical" invisible="1"/>
                     <field name="total_pharmaceutical_form" invisible="1"/>
                     <field name="unit_price_product"/>
@@ -72,7 +72,7 @@
                 <field name="appointment_lines" widget="one2many_list" attrs="{'readonly': [('state', '!=', 'draft')]}">
                   <tree editable="bottom">
                     <field name="appointment_id" invisible="1"/>
-                    <field name="product_id" domain="[('categ_id', 'in', ('Materias Primas / Activos', 'Embace Basico', 'Embase de Lujo', 'Acondicionamiento'))]"/>
+                    <field name="product_id" domain="[('categ_id', 'in', ('Materias Primas / Activos', 'Embace Basico', 'Embase de Lujo', 'Acondicionamiento'))]" attrs="{'readonly': [('id', '!=', False)]}"/>
                     <field name="category" invisible="1"/>
                     <field name="percentage" attrs="{'readonly': ['|', ('category', '!=', 'Materias Primas / Activos'), ('product_id', '=', False)]}"/>
                     <field name="product_qty" attrs="{'readonly': ['|', ('category', '=', 'Materias Primas / Activos'), ('product_id', '=', False)]}"/>
