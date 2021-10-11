@@ -55,8 +55,8 @@
                     <field name="pharmaceutical_form" attrs="{'readonly': [('id', '!=', False)]}" options="{'no_open':True,'no_create': True}"/>
                     <field name="value_pharmaceutical_form" readonly="1" force_save="1"/>
                     <field name="size_total" invisible="1"/>
-                    <field name="price_unit_pharmaceutical" invisible="0"/>
-                    <field name="total_pharmaceutical_form" invisible="0"/>
+                    <field name="price_unit_pharmaceutical" invisible="1"/>
+                    <field name="total_pharmaceutical_form" invisible="1"/>
                     <field name="unit_price_product"/>
                     <field name="price_total" readonly="1" force_save="1"/>
                   </tree>
@@ -78,7 +78,7 @@
                     <field name="product_qty" attrs="{'readonly': ['|', ('category', '=', 'Materias Primas / Activos'), ('product_id', '=', False)]}"/>
                     <field name="final_product_id"  attrs="{'readonly': [('appointment_id', '=', False)]}"/>
                     <field name="price_unit" invisible="1"/>
-                    <field name="price_total" invisible="0"/>
+                    <field name="price_total" invisible="1"/>
                   </tree>
                 </field>
               </page>
