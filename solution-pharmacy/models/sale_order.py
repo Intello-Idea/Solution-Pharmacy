@@ -10,7 +10,7 @@ class SaleOrder(models.Model):
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
-    pharmaceutical_form = fields.Many2one('product.product', string="Pharmaceutical form")
+    pharmaceutical_form = fields.Many2one('pharmaceutical.form', string="Pharmaceutical form")
     
 class SaleOrderRaw(models.Model):
     _name = "raw.material"
