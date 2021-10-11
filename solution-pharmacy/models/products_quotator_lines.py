@@ -71,7 +71,7 @@ class Productlines(models.Model):
     final_product_lines = fields.Many2one('solution.pharmacy.quotator', string="Final product")
     size_subtotal = fields.Integer(string="subtotal size(gr)", required=True, default=1.0)
     size_total = fields.Integer(string="Total size(gr)", compute="_compute_size_total", store=True)
-    pharmaceutical_form = fields.Many2one('product.product', string="Pharmaceutical form", required=True)
+    pharmaceutical_form = fields.Many2one('pharmaceutical.form', string="Pharmaceutical form", required=True)
     value_pharmaceutical_form = fields.Float(string="size(g) pharmaceutical form")
     price_total = fields.Float(string="Total Price", store=True)
     price_unit_pharmaceutical = fields.Float(string="Unit Price", compute="_compute_price_pharmaceutical_form", store=True)
@@ -87,8 +87,9 @@ class Productlines(models.Model):
     def _compute_price_pharmaceutical_form(self):
         for line in self:
             if line.pharmaceutical_form:
-                line.price_unit_pharmaceutical = line.final_product_lines.pricelist_id.get_product_price(line.pharmaceutical_form, 1.0 or line.value_pharmaceutical_form, line.final_product_lines.partner_id)
-        
+                line.price_unit_pharmaceutical = self.pharmaceutical_form.value    
+
+
     @api.depends('value_pharmaceutical_form', 'price_unit_pharmaceutical')
     def _compute_total_pharmaceutical(self):
         for line in self:
