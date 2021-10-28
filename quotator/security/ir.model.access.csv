@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_quotator_quotator,quotator.quotator,model_quotator_quotator,base.group_user,1,1,1,1
+access_quotator_own_user,quotator.quotator.own,model_quotator_own,base.group_user,1,1,1,1
