@@ -28,6 +28,8 @@
         'views/views.xml',
         'views/templates.xml',
         'views/pharmaceutical_form.xml',
+        'views/mrp_production.xml',
+        'views/mrp_bom.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

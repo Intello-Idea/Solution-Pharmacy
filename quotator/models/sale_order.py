@@ -1,33 +1,17 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields
+
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     raw_material = fields.One2many('raw.material', 'sale_order', string="Material")
-
-#    def action_confirm(self):
-#        res = super(SaleOrder, self).action_confirm()
-#        
-#        for line in self:
-#            values = []
-#            for record in self.raw_material:
-#                dic = {
-#                    'product_id': record.product_id.id,
-#                    'product_uom_qty': record.product_qty,
-#                    'product_uom': 1
-#                }
-#                values.append((0,0,dic))
-#            vals = {
-#                'move_raw_ids': values,
-#            }
-#        self.env['sale.order'].write(vals)
-#        return res
-
+    
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
     pharmaceutical_form = fields.Many2one('pharmaceutical.form', string="Pharmaceutical form")
+    grams_pharmaceutical = fields.Float(string="Grams pharmaceutical", digits='Product Unit of Measure')
     
 class SaleOrderRaw(models.Model):
     _name = "raw.material"

@@ -276,6 +276,7 @@ class Quotator(models.Model):
             'product_uom_qty': self.product_qty,
             'price_unit': self.total/self.product_qty,
             'price_subtotal': self.total,
+            'grams_pharmaceutical': self.value_pharmaceutical_form,
         }
         products.append((0,0,product))
         for line in self.quotator_lines:
