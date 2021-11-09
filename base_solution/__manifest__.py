@@ -30,6 +30,7 @@
         'views/pharmaceutical_form.xml',
         'views/mrp_production.xml',
         'views/mrp_bom.xml',
+        'views/sale_order.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

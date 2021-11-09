@@ -63,6 +63,18 @@ class Quotator(models.Model):
         else:
             self.value_pharmaceutical_form = (self.total_grams - suma)
     
+    @api.onchange('quotator_lines', 'subtotal_grams')
+    def _clean_raw_materia(self):
+        if self.pricelist_id in ('Tarifa Especialista', 'Tarifa Distribuidor', 'Tarifa Paciente'):
+            if self.subtotal_grams > 15 and self.subtotal_grams < 30 or self.subtotal_grams > 40 and self.subtotal_grams < 50 or self.subtotal_grams > 80 and self.subtotal_grams < 90 or self.subtotal_grams > 120 and self.subtotal_grams < 150 or self.subtotal_grams > 150 and self.subtotal_grams < 200 or self.subtotal_grams > 220 and self.subtotal_grams < 240 or self.subtotal_grams > 250 and self.subtotal_grams < 300 or self.subtotal_grams > 300 and self.subtotal_grams < 400 or self.subtotal_grams > 400 and self.subtotal_grams < 500 or self.subtotal_grams > 500 and self.subtotal_grams < 1000 or self.subtotal_grams > 1000:
+                self.quotator_lines = False
+                return {
+                    'warning':{
+                        'title': "Valores erroneos",
+                        'message': "La cantidad de gramos por producto, no es la correcta, por favor cambiarla",
+                    },
+                }
+
     # Tarifa de precios para calcular el valor total del producto final 
     def _compute_price_total_product_final(self, price_x_unit, total_price, category, qty, size_subtotal):
         price_total = 0
@@ -122,12 +134,10 @@ class Quotator(models.Model):
                     price_total = 45000*qty
                 else:
                     price_total = total_price
-            else:
-                raise UserError(_('La cantidad de gramos por producto, no es la correcta, por favor cambiarla'))
         if category == 'Tarifa Distribuidor':
             if size_subtotal <= 15:
                 if price_x_unit < 10000:
-                    price_total = 1000*qty
+                    price_total = 10000*qty
                 else:
                     price_total = total_price
             elif size_subtotal >= 30 and size_subtotal <= 40:
@@ -180,12 +190,10 @@ class Quotator(models.Model):
                     price_total = 34000*qty
                 else:
                     price_total = total_price
-            else:
-                raise UserError(_('La cantidad de gramos por producto, no es la correcta, por favor cambiarla'))
         if category == 'Tarifa Paciente':
             if size_subtotal <= 15:
                 if price_x_unit < 30000:
-                    price_total = 3000*qty
+                    price_total = 30000*qty
                 else:
                     price_total = total_price
             elif size_subtotal >= 30 and size_subtotal <= 40:
@@ -238,8 +246,6 @@ class Quotator(models.Model):
                     price_total = 115000*qty
                 else:
                     price_total = total_price
-            else:
-                raise UserError(_('La cantidad de gramos por producto, no es la correcta, por favor cambiarla'))
         if category == 'Tarifa Empleado':
             price_total = total_price
         return price_total

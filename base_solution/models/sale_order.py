@@ -10,9 +10,8 @@ class SaleOrder(models.Model):
     def action_confirm(self):
         raw = []
         values = []
-        validation = len(self.order_line)
-        
-        if validation == 1:
+
+        if self.order_line.product_id.name == 'Generico cotizador':
             for line in self.raw_material:
                 dic = {
                     'product_id': line.product_id.id,
@@ -25,13 +24,12 @@ class SaleOrder(models.Model):
             }
             record_ids = self.env['mrp.bom'].search([('product_tmpl_id', '=', self.order_line.product_id.product_tmpl_id.id)])
 
-            if self.order_line.product_id.name == 'Generico cotizador':
-                record = self.env['mrp.bom'].search([('product_tmpl_id', '=', self.order_line.product_id.product_tmpl_id.id)]).bom_line_ids.bom_id
-                delete = self.env['mrp.bom.line'].search([('bom_id', '=', record._origin.id)])
-                delete.unlink()
-                for record in record_ids:
-                    record.write(values)
-                res = super(SaleOrder, self).action_confirm()
+            record = self.env['mrp.bom'].search([('product_tmpl_id', '=', self.order_line.product_id.product_tmpl_id.id)]).bom_line_ids.bom_id
+            delete = self.env['mrp.bom.line'].search([('bom_id', '=', record._origin.id)])
+            delete.unlink()
+            for record in record_ids:
+                record.write(values)
+            res = super(SaleOrder, self).action_confirm()
         else:
             res = super(SaleOrder, self).action_confirm()
         return res
