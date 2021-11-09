@@ -90,7 +90,7 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="quotator.action_window">
-      <field name="name">quotator own window</field>
+      <field name="name">quotes</field>
       <field name="res_model">quotator.own</field>
       <field name="view_mode">tree,form</field>
     </record>

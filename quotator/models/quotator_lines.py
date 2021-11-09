@@ -11,7 +11,7 @@ class QuotatorLine(models.Model):
     product_id = fields.Many2one('product.product', string="Product", required=True)
     percentage = fields.Float(string="Percentage(%)", required=True, default=0)
     quotator_id = fields.Many2one('quotator.own', string="Quotator id", store=True)
-    category = fields.Char(string="Categoria", related="product_id.product_tmpl_id.categ_id.complete_name")
+    category = fields.Char(string="Category", related="product_id.product_tmpl_id.categ_id.complete_name")
     material_qty = fields.Float(string="Quantity", default=1.0, digits='Product Unit of Measure', compute="_compute_qty", store=True)
     price_unit = fields.Float('Unit Price', required=True, default=0.0, compute="_update_price", store=True)
     price_total = fields.Float('Subtotal price', compute="_compute_price_total", store=True)
@@ -27,7 +27,7 @@ class QuotatorLine(models.Model):
     def _update_price(self):
         for line in self:
             if not line.quotator_id.pricelist_id:
-                raise ValidationError(_('!! No tienes, seleccionado un cliente !!')) 
+                raise ValidationError(_('!! You do not have, selected a client !!')) 
             else:
                 if line.product_id:
                     price = line.quotator_id.pricelist_id.get_product_price(line.product_id, 1.0 or line.material_qty, line.quotator_id.partner_id)

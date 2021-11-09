@@ -16,13 +16,13 @@ class Quotator(models.Model):
     sequence = fields.Integer('Sequence')
     partner_id = fields.Many2one('res.partner', string='Client', required=True)
     user = fields.Many2one('res.users', string='Quotator', required=True, readonly=True, default=lambda self: self.env.user)
-    quotator_date = fields.Date(string="Quotator date", readonly=True, index=True, default=fields.Date.context_today)
-    expiration_date = fields.Date(string="Expiration", required=True)
+    quotator_date = fields.Date(string="Quotation date", readonly=True, index=True, default=fields.Date.context_today)
+    expiration_date = fields.Date(string="Expiration date", required=True)
     pricelist_id = fields.Many2one('product.pricelist', string="Pricelist", related="partner_id.property_product_pricelist", readonly=True)
     company_id = fields.Many2one('res.company', string='Company', required=True, index=True, default=lambda self: self.env.company)
     patient = fields.Char(string="Patient")
     pharmaceutical_form = fields.Many2one('pharmaceutical.form', string="Pharmaceutical form", required=True)
-    quotator_lines = fields.One2many('quotator.lines', 'quotator_id', string="Material")
+    quotator_lines = fields.One2many('quotator.lines', 'quotator_id', string="Materials")
     subtotal_grams = fields.Integer(string="subtotal size(gr)", required=True, default=1.0)
     total_grams = fields.Integer(string="Total size(gr)", compute="_compute_size_total", store=True)
     value_pharmaceutical_form = fields.Float(string="size(g) pharmaceutical form", compute="_compute_subtotal_pharmaceutical", store=True)
@@ -59,7 +59,7 @@ class Quotator(models.Model):
             else:
                 continue
         if suma > self.total_grams: 
-            raise ValidationError(_('Los porcentajes no son los correctos'))   
+            raise ValidationError(_('The percentages are not correct'))   
         else:
             self.value_pharmaceutical_form = (self.total_grams - suma)
     
@@ -70,8 +70,8 @@ class Quotator(models.Model):
                 self.quotator_lines = False
                 return {
                     'warning':{
-                        'title': "Valores erroneos",
-                        'message': "La cantidad de gramos por producto, no es la correcta, por favor cambiarla",
+                        'title': "Valores incorrectos",
+                        'message': "La cantidad de gramos por producto no es correcta, cámbiela",
                     },
                 }
 
@@ -265,12 +265,12 @@ class Quotator(models.Model):
     @api.constrains('quotator_date')
     def _validation_date(self):
         if self.expiration_date < self.quotator_date:
-            raise ValidationError(_("La fecha de expiracion no puede ser menor que la fecha de creacion de la solicitud"))
+            raise ValidationError(_("The expiration date cannot be less than the application creation date"))
     
     @api.constrains('quotator_lines')
     def _validar_raw_material(self):
         if not self.quotator_lines:
-            raise UserError(_("No hay materias primas seleccionadas"))
+            raise UserError(_("There are no selected raw materials"))
 
     def send_quotation(self):
         material = []

@@ -5,9 +5,9 @@ from odoo import models, fields, api
 class MrpProduction(models.Model):
     _inherit = "mrp.production"
 
-    grams_pharmaceutical = fields.Float(String="Grams Pharmaceutical", digits='Product Unit of Measure', compute="_grams_pharmaceutical")
+    grams_pharmaceutical = fields.Float(String="Grams", digits='Product Unit of Measure', compute="_grams_pharmaceutical")
     pharmaceutical_form = fields.Many2one('pharmaceutical.form', string="Pharmaceutical form", compute="_grams_pharmaceutical")
-    order_line = fields.Integer(string="provisional", store=True)
+    order_line = fields.Integer(string="Order", store=True)
 
     @api.depends("origin")
     def _grams_pharmaceutical(self):
