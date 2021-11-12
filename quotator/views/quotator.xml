@@ -39,7 +39,7 @@
             <group>
               <group>
                 <field name="user" options="{'no_open':True,'no_create': True}"/>
-                <field name="partner_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('id', '!=', False)]}" options="{'no_open':True,'no_create': True}"/>
+                <field name="partner_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('id', '!=', False)]}"/>
                 <field name="patient" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                 <field name="final_product"/>
                 <field name="product_qty"/>
@@ -50,6 +50,7 @@
                 <field name="pharmaceutical_form"/>
                 <field name="subtotal_grams"/>
                 <field name="pricelist_id" options="{'no_open':True,'no_create': True}"/>
+                <field name="medical_formula" widget="binary"/>
               </group>
             </group>
             <notebook>
@@ -61,7 +62,9 @@
                                                                           'Material Acondicionamiento / Envases / Basico', 
                                                                           'Material Acondicionamiento / Envases / Lujo', 
                                                                           'Material Acondicionamiento / Etiquetas', 
-                                                                          'Material Acondicionamiento / Plegables'))]" attrs="{'readonly': [('id', '!=', False)]}"/>
+                                                                          'Material Acondicionamiento / Plegables'))]" 
+                                             attrs="{'readonly': [('id', '!=', False)]}" 
+                                             options="{'no_create': True}"/>
                     <field name="category" invisible="1"/>
                     <field name="percentage" attrs="{'readonly': ['|', ('category', '!=', 'Materias Primas / Activos'), ('product_id', '=', False)]}"/>
                     <field name="material_qty" attrs="{'readonly': ['|', ('category', '=', 'Materias Primas / Activos'), ('product_id', '=', False)]}"/>

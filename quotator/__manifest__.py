@@ -32,6 +32,7 @@
         'views/res_partner.xml',
         'views/sale_order.xml',
         'data/ir_sequence_data.xml',
+        'reports/sale_report_templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -6,6 +6,8 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     raw_material = fields.One2many('raw.material', 'sale_order', string="Materials")
+    medical_formula = fields.Binary('Medical formula', required=True)
+    final_client = fields.Char(string="Final client")
     
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'

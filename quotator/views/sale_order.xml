@@ -27,6 +27,9 @@
                 <xpath expr="//page/field[@name='order_line']/tree/field[@name='pharmaceutical_form']" position="after">
                     <field name="grams_pharmaceutical" invisible="1"/>
                 </xpath>
+                <xpath expr="//form/sheet/group/group/field[@name='payment_term_id']" position="after">
+                    <field name="medical_formula" widget="binary" readonly="True"/>
+                </xpath>
             </field>
         </record>
     </data>
