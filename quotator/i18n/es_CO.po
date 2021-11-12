@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-09 16:45+0000\n"
-"PO-Revision-Date: 2021-11-09 16:45+0000\n"
+"POT-Creation-Date: 2021-11-12 15:01+0000\n"
+"PO-Revision-Date: 2021-11-12 15:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,6 +22,11 @@ msgid "!! You do not have, selected a client !!"
 msgstr "No tienes, seleccionado un cliente"
 
 #. module: quotator
+#: model_terms:ir.ui.view,arch_db:quotator.update_report_solucion_pharmacy
+msgid "<strong>Final client:</strong>"
+msgstr "<strong>Cliente final:</strong>"
+
+#. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__access_warning
 msgid "Access warning"
 msgstr "Advertencia de acceso"
@@ -34,7 +39,7 @@ msgstr ""
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Actividades"
 
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__activity_exception_decoration
@@ -135,6 +140,16 @@ msgstr "Borrador"
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__expiration_date
 msgid "Expiration date"
 msgstr "Fecha de expiracion"
+
+#. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_quotator_own__x_studio_binary_field_PaxT9_filename
+msgid "Filename for x_studio_binary_field_PaxT9"
+msgstr ""
+
+#. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_sale_order__final_client
+msgid "Final client"
+msgstr "Cliente final"
 
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__final_product
@@ -264,6 +279,12 @@ msgid "Materials"
 msgstr "Materiales"
 
 #. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_quotator_own__medical_formula
+#: model:ir.model.fields,field_description:quotator.field_sale_order__medical_formula
+msgid "Medical formula"
+msgstr "Formula medica"
+
+#. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__message_has_error
 msgid "Message Delivery error"
 msgstr ""
@@ -284,7 +305,7 @@ msgstr ""
 #: code:addons/quotator/models/quotator.py:0
 #, python-format
 msgid "New"
-msgstr "Nuevo"
+msgstr ""
 
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__activity_date_deadline
@@ -506,7 +527,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__total
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__total_pharmaceutical_form
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__total_grams
@@ -548,6 +569,11 @@ msgstr ""
 #. module: quotator
 #: model:ir.model.fields,help:quotator.field_quotator_own__website_message_ids
 msgid "Website communication history"
+msgstr ""
+
+#. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_quotator_own__x_studio_binary_field_PaxT9
+msgid "X Studio Binary Field Paxt9"
 msgstr ""
 
 #. module: quotator
