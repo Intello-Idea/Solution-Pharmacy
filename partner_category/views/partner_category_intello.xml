@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <data>
+
+        <!--Form Partner Category-->
+        <record id="partner_category_form" model="ir.ui.view">
+            <field name="name">provide.category.form</field>
+            <field name="model">partner.category</field>
+            <field name="arch" type="xml">
+                <form string="Category">
+                    <sheet>
+                        <group>
+                            <hearder>
+                                <group>
+                                    <separator string="Name and Classification"/>
+                                    <field name="name" placeholder="Name Category"/>
+                                    <field name="classification" placeholder="Classification" readonly="1"/>
+                                </group>
+                            </hearder>
+                        </group>
+                        <notebook>
+                            <page string="Category">
+                                <separator string="Category"/>
+                                <group>
+                                    <group>
+                                        <field name="channel" placeholder="Select Channel"/>
+                                        <field name="sub_channel" placeholder="Select Sub Channel"/>
+                                    </group>
+                                    <group>
+                                        <field name="payment_deadline" placeholder="Select Payment Deadline" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="by_product" string="By product">
+                                <separator string="By product"/>
+                                <group>
+                                    <group>
+                                        <field name="by_product"/>
+                                    </group>
+                                    <group>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree Partner Category -->
+        <record id="partner_category_tree" model="ir.ui.view">
+            <field name="name">provide.category.tree</field>
+            <field name="model">partner.category</field>
+            <field name="arch" type="xml">
+                <tree name="Configuration Partner Category">
+                    <field name="channel"/>
+                    <field name="sub_channel"/>
+                    <field name="classification"/>
+                    <field name="name"/>
+                    <field name="payment_deadline"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action Partner Category -->
+        <record id="action_partner_category" model="ir.actions.act_window">
+            <field name="name">Configuration Partner Category</field>
+            <field name="res_model">partner.category</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu Action Partner category -->
+        <menuitem action="action_partner_category" name="Configuration Partner Category"
+                  id="menu_partner_category"
+                  sequence="4" parent="contacts.res_partner_menu_config"/>
+
+        <!-- form channel-->
+        <record id="channel_sub_channel_form" model="ir.ui.view">
+            <field name="name">channel.sub.channel.form</field>
+            <field name="model">channel.category</field>
+            <field name="arch" type="xml">
+                <form string="Channel Category">
+                    <sheet>
+                        <group colspan="2">
+                            <group>
+                                <separator string="Channel"/>
+                                <field name="name" placeholder=" Name Channel"/>
+                            </group>
+                            <group col="2">
+                                <separator string="Discount and Code Channel"/>
+                                <field name="code" placeholder="Code Channel"/>
+                                <field name="discount" placeholder="Discount"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Sub Channel">
+                                <group>
+                                    <field name="sub_channel">
+                                        <tree editable="top">
+                                            <field name="name" placeholder="Name sub channel"/>
+                                            <field name="code" placeholder="Code sub channel"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- form sub channel -->
+        <record id="sub_channel_form" model="ir.ui.view">
+            <field name="name">sub.channel.category.form</field>
+            <field name="model">sub.channel.category</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <notebook>
+                            <page string="Sub Channel">
+                                <group colspan="2">
+                                    <group>
+                                        <separator string="Name and Code "/>
+                                        <field name="channel" invisible="1"/>
+                                        <field name="name" placeholder="Name Sub-Channel"/>
+                                        <field name="code" placeholder="Code Sub-Channel"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- form Provide category-->
+        <record id="provider_category_form" model="ir.ui.view">
+            <field name="name">provide.category.form</field>
+            <field name="model">provide.configuration</field>
+            <field name="arch" type="xml">
+                <form string="Provider category">
+                    <group colspan="1">
+                        <group colspan="1">
+                            <separator string="Provider Configuration"/>
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- form res_partner category -->
+        <record id="partner_category_form_view" model="ir.ui.view">
+            <field name="name">partner.category</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- Quota Provider -->
+                <field name="property_supplier_payment_term_id" position="after">
+                    <field name="supplier_category"/>
+                </field>
+
+                <!-- Xpath Quota Client -->
+                <xpath expr="//page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']"
+                       position="after">
+                    <field name="zones_channels"/>
+                    <field name="code_channel"/>
+                </xpath>
+                <xpath expr="//page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='property_payment_term_id']"
+                       position="after">
+                    <field name="payment_deadline" invisible="1"/>
+                </xpath>
+                <xpath expr="//page[@name='sales_purchases']/group[@name='container_row_2']" position="before">
+                    <group name="bools">
+                        <group>
+                            <field name="bool_customer"/>
+                        </group>
+                        <group>
+                            <field name="bool_vendor"/>
+                        </group>
+                    </group>
+                </xpath>
+                <xpath expr="//page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']" position="before">
+                    <field name="bool_bill"/>
+                </xpath>
+                <xpath expr="//group[@name='purchase']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('bool_customer','=',True),('bool_vendor','=',False)]}</attribute>
+                </xpath>
+                <xpath expr="//group[@name='sale']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('bool_vendor','=',True),('bool_customer','=',False)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_res_partner_search_form_inherit" model="ir.ui.view">       
+            <field name="name">res.partner.search.inherit</field>       
+                <field name="model">res.partner</field>       
+                <field name="inherit_id" ref="account.res_partner_view_search"/>       
+                <field name="arch" type="xml">           
+                <xpath expr="//filter[@name='customer']" position="replace">               
+                    <filter string="Customer" name="Customer" domain="[('bool_customer','=', True)]"/>           
+                </xpath>  
+                <xpath expr="//filter[@name='supplier']" position="replace">               
+                    <filter string="Vendor" name="supplier" domain="[('bool_vendor','=', True)]"/>           
+                </xpath>       
+            </field>
+        </record>
+        <record id="view_res_partner-view_team_form_inherit" model="ir.ui.view">       
+            <field name="name">res.partner.view.team.inherit</field>       
+                <field name="model">res.partner</field>       
+                <field name="inherit_id" ref="sales_team.res_partner_view_team"/>       
+                <field name="arch" type="xml">           
+                <xpath expr="//field[@name='team_id']" position="replace">               
+                    <field name="team_id"/>           
+                </xpath>       
+            </field>
+        </record>
+    </data>
+</odoo>
