@@ -35,8 +35,6 @@
                                 </group>
                             </page>
                         </notebook>
-                        <separator string="Classification"/>
-                        <field name="classification" readonly="1"/>
                         <separator string="Client and Products"/>
                         <notebook>
                             <page string="Client">
@@ -97,7 +95,6 @@
                 <tree>
                     <field name="name"/>
                     <field name="partner_categorys_ids"/>
-                    <field name="classification"/>
                     <field name="client"/>
                     <field name="star_date"/>
                     <field name="final_date"/>

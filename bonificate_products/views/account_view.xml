@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it account_tax_form-->
+        <record id="inherit_account_tax_form" model="ir.ui.view">
+            <field name="name">inherit.account.tax.form</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='active']" position="after">
+                    <!-- Add your fields or attributes here -->
+                    <field name="bonus_tax" domain="[('type_tax_use','=',type_tax_use)]"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it account_move_form-->
+        <record id="inherit_account_move_view_form_bonificate" model="ir.ui.view">
+            <field name="name">inherit.account.move.view.form.bonificate</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+
+            <!--    <xpath expr="//field[@name='name']" position="after">
+                    <field name="from_sale_order" invisible="1"/>
+
+                </xpath>   -->
+
+                <xpath expr="//button[@name='action_post']" position="after">
+                    <button name="bonification" type="object" string="Calculate bonifications"
+                            attrs="{'invisible':['|', ('move_type','not in',['in_refund','out_refund']), ('state','not in',['draft'])]}"/>
+                </xpath>
+
+
+                <xpath expr="//field[@name='invoice_line_ids']" position="attributes">
+                    <attribute name="attrs">{
+                        'readonly': [('state', 'not in', ('draft'))]}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="after">
+                    <field name="bonus" invisible="1"/>
+                </xpath>
+
+                <!-- Modify Attrs when bonus = True -->
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='product_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('bonus', '=', True)]}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='name']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('bonus', '=', True)]}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('bonus', '=', True)]}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('bonus', '=', True)]}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_unit']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('bonus', '=', True)]}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='tax_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('bonus', '=', True)]}</attribute>
+                </xpath>
+                <!--parte funcional def bonification
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="after">
+                    <field name="subtotal_before_bonificate" readonly="1" widget="monetary"/>
+                    <field name="total_bonificate" readonly="1" widget="monetary"/>
+                </xpath>-->
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
