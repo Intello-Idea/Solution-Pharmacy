@@ -107,7 +107,7 @@ class ResConfigSettingsMod(models.TransientModel):
         inventory_adjust_action = self.env.ref('stock.action_inventory_form')
         scrap_orders_action = self.env.ref('stock.action_stock_scrap')
         product_stock = self.env.ref('stock.product_template_action_product')
-        reordering_rules_action = self.env.ref('stock.action_orderpoint_form')
+#Carlos        reordering_rules_action = self.env.ref('stock.action_orderpoint_form')
         product_move_line_action = self.env.ref('stock.stock_move_line_action')
         stock_move_action = self.env.ref('stock.stock_move_action')
         operation_types_action = self.env.ref('stock.action_picking_type_list')
@@ -139,7 +139,7 @@ class ResConfigSettingsMod(models.TransientModel):
         stock_picking_type_action = self.env.ref('stock.stock_picking_type_action')
         stock_quant_dashboard = self.env.ref('stock.dashboard_open_quants')
         stock_quantity_report = self.env.ref('stock.report_stock_quantity_action')
-        stock_inventory_valuation = self.env.ref('stock_account.action_stock_inventory_valuation')
+#Carlos        stock_inventory_valuation = self.env.ref('stock_account.action_stock_inventory_valuation')
 
         # account accountant
 
@@ -183,7 +183,7 @@ class ResConfigSettingsMod(models.TransientModel):
             inventory_adjust_action.update({'domain': [('product_ids.check_status', '=', True)]})
             scrap_orders_action.update({'domain': [('product_id.check_status', '=', True)]})
             product_stock.update({'domain': [('check_status', '=', True)]})
-            reordering_rules_action.update({'domain': [('product_id.check_status', '=', True)]})
+#Carlos            reordering_rules_action.update({'domain': [('product_id.check_status', '=', True)]})
             product_move_line_action.update({'domain': [('product_id.check_status', '=', True)]})
             stock_move_action.update({'domain': [('product_id.check_status', '=', True)]})
             operation_types_action.update({'domain': [('check_status', '=', True)]})
@@ -212,9 +212,9 @@ class ResConfigSettingsMod(models.TransientModel):
 
             # Stock
             stock_picking_type_action.update({'domain': [('check_status', '=', True)]})
-            stock_inventory_valuation.update({'domain': [('product_id.type', '=', 'product'), '|',
-                                                         ('product_id.check_status', '=', True),
-                                                         ('product_tmpl_id.check_status', '=', True)]})
+#            stock_inventory_valuation.update({'domain': [('product_id.type', '=', 'product'), '|',
+#                                                         ('product_id.check_status', '=', True),
+#                                                         ('product_tmpl_id.check_status', '=', True)]})
             stock_quantity_report.update({'domain': [('warehouse_id', '!=', False), '|',
                                                      ('product_id.check_status', '=', True),
                                                      ('product_tmpl_id.check_status', '=', True)]})
