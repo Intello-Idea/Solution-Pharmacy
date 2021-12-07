@@ -2,48 +2,14 @@
 <odoo>
     <data>
         <!-- Pharmaceutical form-->
-        <record id="pharmaceutical_form_form" model="ir.ui.view">
-            <field name="name">pharmaceutical.form</field>
+        <record id="pharmaceutical_form_view" model="ir.ui.view">
+            <field name="name">pharmaceutical.form.view</field>
             <field name="model">pharmaceutical.form</field>
             <field name="arch" type="xml">
-                <form string="Pharmceutical form">
-                    <sheet>
-                        <group separator="Pharmceutical form">
-                            <group>
-                                <field name="name"/>
-                                <field name="value"/>
-                            </group>
-                            <group>
-                                <field name="code" readonly="1"/>
-                            </group>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-
-        <record id="pharmaceutical_form_tree" model="ir.ui.view">
-            <field name="name">pharmaceutical.form.tree</field>
-            <field name="model">pharmaceutical.form</field>
-            <field name="arch" type="xml">
-                <tree string="Pharmaceutical form Tree">
+                <xpath expr="//field[@name='name']" position="after">
                     <field name="name"/>
-                    <field name="value"/>
-                    <field name="code"/>
-                </tree>
+                </xpath>
             </field>
         </record>
-
-        <record id="pharmaceutical_form_action" model="ir.actions.act_window">
-            <field name="name">Pharmaceutical form</field>
-            <field name="res_model">pharmaceutical.form</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <menuitem action="pharmaceutical_form_action"
-                  name="Pharmaceutical form" id="pharmaceutical_form_menu"
-                  parent="stock.menu_stock_inventory_control"
-                  sequence="17"/>
-
     </data>
 </odoo>
