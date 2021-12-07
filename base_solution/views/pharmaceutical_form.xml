@@ -7,7 +7,7 @@
             <field name="model">pharmaceutical.form</field>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
-                    <field name="name"/>
+                    <field name="value"/>
                 </xpath>
             </field>
         </record>
