@@ -12,7 +12,7 @@ class Quotator(models.Model):
 
     name = fields.Char('Reference', copy=False, default=lambda self: _('New'), required=True)
     final_product = fields.Char(string="Final product", required=True)
-    product_qty = fields.Integer(string="Quantity", default=1.0)
+    product_qty = fields.Integer(string="Quantity", default=1.0, readonly="True")
     sequence = fields.Integer('Sequence')
     partner_id = fields.Many2one('res.partner', string='Client', required=True)
     user = fields.Many2one('res.users', string='Quotator', required=True, readonly=True, default=lambda self: self.env.user)
@@ -29,6 +29,7 @@ class Quotator(models.Model):
     total_pharmaceutical_form = fields.Float(string="Total", compute="_compute_total_pharmaceutical", store=True)
     total = fields.Float(string="Total", compute="_compute_total_quotator")
     medical_formula = fields.Binary('Medical formula', required=True)
+    presentation_id = fields.Many2one('pharmaceutical.presentation', string='Farmaceutical presentation')
     state = fields.Selection([
         ('draft', 'Draft'),
         ('posted', 'Open'),

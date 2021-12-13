@@ -33,12 +33,12 @@ class QuotatorLine(models.Model):
                     price = line.quotator_id.pricelist_id.get_product_price(line.product_id, 1.0 or line.material_qty, line.quotator_id.partner_id)
                     if line.product_id.product_tmpl_id.categ_id.complete_name == 'Materias Primas / Activos':
                         line.price_unit = 6 * price
-                    if line.product_id.product_tmpl_id.categ_id.complete_name == 'Material Acondicionamiento / Envases / Basico':
-                        line.price_unit = 3 * price
-                    if line.product_id.product_tmpl_id.categ_id.complete_name == 'Material Acondicionamiento / Envases / Lujo':
-                        line.price_unit = 2 * price
-                    if line.product_id.product_tmpl_id.categ_id.complete_name in ('Material Acondicionamiento / Etiquetas', 'Material Acondicionamiento / Plegables'):
-                        line.price_unit = 2.5 * price
+#                    if line.product_id.product_tmpl_id.categ_id.complete_name == 'Material Acondicionamiento / Envases / Basico':
+#                        line.price_unit = 3 * price
+#                    if line.product_id.product_tmpl_id.categ_id.complete_name == 'Material Acondicionamiento / Envases / Lujo':
+#                        line.price_unit = 2 * price
+#                    if line.product_id.product_tmpl_id.categ_id.complete_name in ('Material Acondicionamiento / Etiquetas', 'Material Acondicionamiento / Plegables'):
+#                        line.price_unit = 2.5 * price
     
     @api.depends('price_unit', 'material_qty')
     def _compute_price_total(self):
