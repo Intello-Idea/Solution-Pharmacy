@@ -67,8 +67,8 @@ class Quotator(models.Model):
     
     @api.onchange('quotator_lines', 'subtotal_grams')
     def _clean_raw_materia(self):
-        if self.pricelist_id.name in ('Tarifa Especialista', 'Tarifa Distribuidor', 'Tarifa Paciente'):
-            if self.subtotal_grams > 15 and self.subtotal_grams < 30 or self.subtotal_grams > 40 and self.subtotal_grams < 50 or self.subtotal_grams > 80 and self.subtotal_grams < 90 or self.subtotal_grams > 120 and self.subtotal_grams < 150 or self.subtotal_grams > 150 and self.subtotal_grams < 200 or self.subtotal_grams > 220 and self.subtotal_grams < 240 or self.subtotal_grams > 250 and self.subtotal_grams < 300 or self.subtotal_grams > 300 and self.subtotal_grams < 400 or self.subtotal_grams > 400 and self.subtotal_grams < 500 or self.subtotal_grams > 500 and self.subtotal_grams < 1000 or self.subtotal_grams > 1000:
+        if self.pricelist_id.name in ('Tarifa Especialista', 'Tarifa Distribuidor', 'Tarifa Paciente', 'Tarifa Empleado'):
+            if self.subtotal_grams <= 0 or self.subtotal_grams > 1000:
                 self.quotator_lines = False
                 return {
                     'warning':{
