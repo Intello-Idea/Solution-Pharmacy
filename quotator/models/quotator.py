@@ -30,6 +30,7 @@ class Quotator(models.Model):
     total = fields.Float(string="Total", compute="_compute_total_quotator")
     medical_formula = fields.Binary('Medical formula', required=True)
     presentation_id = fields.Many2one('pharmaceutical.presentation', string='Farmaceutical presentation')
+    line_production_id = fields.Many2one('production.lines', string="Production Lines")
     state = fields.Selection([
         ('draft', 'Draft'),
         ('posted', 'Open'),

@@ -51,6 +51,7 @@
                 <field name="pharmaceutical_form"/>
                 <field name="subtotal_grams"/>
                 <field name="pricelist_id" options="{'no_open':True,'no_create': True}"/>
+                <field name="line_production_id"/>
               </group>
             </group>
             <notebook>
