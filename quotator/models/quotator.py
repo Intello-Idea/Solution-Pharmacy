@@ -86,52 +86,57 @@ class Quotator(models.Model):
                     price_total = 12000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal >= 30 and size_subtotal <= 40:
+            elif size_subtotal >= 16 and size_subtotal <= 40:
                 if price_x_unit < 14000:
                     price_total = 14000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal >= 50 and size_subtotal <= 80:
+            elif size_subtotal >= 41 and size_subtotal <= 80:
                 if price_x_unit < 18000:
                     price_total = 18000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal >= 90 and size_subtotal <= 120:
+            elif size_subtotal >= 81 and size_subtotal <= 120:
                 if price_x_unit < 21000:
                     price_total = 21000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal == 150:
-                if price_x_unit < 22000:
-                    price_total = 22000*qty
-                else:
-                    price_total = total_price
-            elif size_subtotal >= 200 and size_subtotal <= 220:
+            elif size_subtotal >= 121 and size_subtotal <= 180:
                 if price_x_unit < 24000:
                     price_total = 24000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal >= 240 and size_subtotal <= 250:
-                if price_x_unit < 25000:
-                    price_total = 25000*qty
+            elif size_subtotal >= 181 and size_subtotal <= 220:
+                if price_x_unit < 27000:
+                    price_total = 27000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal == 300:
-                if price_x_unit < 28000:
-                    price_total = 28000*qty
+            elif size_subtotal >= 221 and size_subtotal <= 280:
+                if price_x_unit < 30000:
+                    price_total = 30000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal == 400:
-                if price_x_unit < 32000:
-                    price_total = 32000*qty
-                else:
-                    price_total = total_price
-            elif size_subtotal == 500:
+            elif size_subtotal >= 281 and size_subtotal <= 350:
                 if price_x_unit < 34000:
                     price_total = 34000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal == 1000:
+            elif size_subtotal >= 351 and size_subtotal <= 450:
+                if price_x_unit < 36000:
+                    price_total = 36000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 451 and size_subtotal <= 600:
+                if price_x_unit < 39000:
+                    price_total = 39000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 601 and size_subtotal <= 800:
+                if price_x_unit < 42000:
+                    price_total = 42000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 801 and size_subtotal <= 1000:
                 if price_x_unit < 45000:
                     price_total = 45000*qty
                 else:
@@ -142,54 +147,59 @@ class Quotator(models.Model):
                     price_total = 10000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal >= 30 and size_subtotal <= 40:
+            elif size_subtotal >= 16 and size_subtotal <= 40:
                 if price_x_unit < 12000:
                     price_total = 12000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal >= 50 and size_subtotal <= 80:
-                if price_x_unit < 14000:
-                    price_total = 14000*qty
+            elif size_subtotal >= 41 and size_subtotal <= 80:
+                if price_x_unit < 15000:
+                    price_total = 15000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal >= 90 and size_subtotal <= 120:
-                if price_x_unit < 16000:
-                    price_total = 16000*qty
-                else:
-                    price_total = total_price
-            elif size_subtotal == 150:
-                if price_x_unit < 17000:
-                    price_total = 17000*qty
-                else:
-                    price_total = total_price
-            elif size_subtotal >= 200 and size_subtotal <= 220:
+            elif size_subtotal >= 81 and size_subtotal <= 120:
                 if price_x_unit < 18000:
                     price_total = 18000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal >= 240 and size_subtotal <= 250:
-                if price_x_unit < 19000:
-                    price_total = 19000*qty
+            elif size_subtotal >= 121 and size_subtotal <= 180:
+                if price_x_unit < 20000:
+                    price_total = 20000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal == 300:
-                if price_x_unit < 21000:
-                    price_total = 21000*qty
+            elif size_subtotal >= 181 and size_subtotal <= 220:
+                if price_x_unit < 23000:
+                    price_total = 23000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal == 400:
-                if price_x_unit < 24000:
-                    price_total = 24000*qty
+            elif size_subtotal >= 221 and size_subtotal <= 280:
+                if price_x_unit < 25000:
+                    price_total = 25000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal == 500:
-                if price_x_unit < 26000:
-                    price_total = 26000*qty
+            elif size_subtotal >= 281 and size_subtotal <= 350:
+                if price_x_unit < 29000:
+                    price_total = 29000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal == 1000:
-                if price_x_unit < 34000:
-                    price_total = 34000*qty
+            elif size_subtotal >= 351 and size_subtotal <= 450:
+                if price_x_unit < 31000:
+                    price_total = 31000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 451 and size_subtotal <= 600:
+                if price_x_unit < 33000:
+                    price_total = 33000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 601 and size_subtotal <= 800:
+                if price_x_unit < 36000:
+                    price_total = 36000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 801 and size_subtotal <= 1000:
+                if price_x_unit < 38000:
+                    price_total = 38000*qty
                 else:
                     price_total = total_price
         if category == 'Tarifa Paciente':
@@ -198,58 +208,122 @@ class Quotator(models.Model):
                     price_total = 30000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal >= 30 and size_subtotal <= 40:
-                if price_x_unit < 37000:
-                    price_total = 37000*qty
+            elif size_subtotal >= 16 and size_subtotal <= 40:
+                if price_x_unit < 35000:
+                    price_total = 35000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal >= 50 and size_subtotal <= 80:
+            elif size_subtotal >= 41 and size_subtotal <= 80:
                 if price_x_unit < 45000:
                     price_total = 45000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal >= 90 and size_subtotal <= 120:
+            elif size_subtotal >= 81 and size_subtotal <= 120:
                 if price_x_unit < 52000:
                     price_total = 52000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal == 150:
-                if price_x_unit < 55000:
-                    price_total = 55000*qty
-                else:
-                    price_total = total_price
-            elif size_subtotal >= 200 and size_subtotal <= 220:
+            elif size_subtotal >= 121 and size_subtotal <= 180:
                 if price_x_unit < 60000:
                     price_total = 60000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal >= 240 and size_subtotal <= 250:
-                if price_x_unit < 63000:
-                    price_total = 63000*qty
+            elif size_subtotal >= 181 and size_subtotal <= 220:
+                if price_x_unit < 68000:
+                    price_total = 68000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal == 300:
-                if price_x_unit < 70000:
-                    price_total = 70000*qty
+            elif size_subtotal >= 221 and size_subtotal <= 280:
+                if price_x_unit < 75000:
+                    price_total = 75000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal == 400:
-                if price_x_unit < 80000:
-                    price_total = 80000*qty
-                else:
-                    price_total = total_price
-            elif size_subtotal == 500:
+            elif size_subtotal >= 281 and size_subtotal <= 350:
                 if price_x_unit < 85000:
                     price_total = 85000*qty
                 else:
                     price_total = total_price
-            elif size_subtotal == 1000:
+            elif size_subtotal >= 351 and size_subtotal <= 450:
+                if price_x_unit < 90000:
+                    price_total = 90000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 451 and size_subtotal <= 600:
+                if price_x_unit < 98000:
+                    price_total = 98000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 601 and size_subtotal <= 800:
+                if price_x_unit < 105000:
+                    price_total = 105000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 801 and size_subtotal <= 1000:
                 if price_x_unit < 115000:
                     price_total = 115000*qty
                 else:
                     price_total = total_price
         if category == 'Tarifa Empleado':
-            price_total = total_price
+            if size_subtotal <= 15:
+                if price_x_unit < 8000:
+                    price_total = 8000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 16 and size_subtotal <= 40:
+                if price_x_unit < 9000:
+                    price_total = 9000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 41 and size_subtotal <= 80:
+                if price_x_unit < 11000:
+                    price_total = 11000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 81 and size_subtotal <= 120:
+                if price_x_unit < 13000:
+                    price_total = 13000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 121 and size_subtotal <= 180:
+                if price_x_unit < 14000:
+                    price_total = 14000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 181 and size_subtotal <= 220:
+                if price_x_unit < 16000:
+                    price_total = 16000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 221 and size_subtotal <= 280:
+                if price_x_unit < 17000:
+                    price_total = 17000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 281 and size_subtotal <= 350:
+                if price_x_unit < 19000:
+                    price_total = 19000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 351 and size_subtotal <= 450:
+                if price_x_unit < 20000:
+                    price_total = 20000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 451 and size_subtotal <= 600:
+                if price_x_unit < 22000:
+                    price_total = 22000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 601 and size_subtotal <= 800:
+                if price_x_unit < 23000:
+                    price_total = 23000*qty
+                else:
+                    price_total = total_price
+            elif size_subtotal >= 801 and size_subtotal <= 1000:
+                if price_x_unit < 25000:
+                    price_total = 25000*qty
+                else:
+                    price_total = total_price
         return price_total
 
 ##Revisar##    
