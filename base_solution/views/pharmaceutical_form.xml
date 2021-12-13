@@ -22,5 +22,25 @@
                 </xpath>
             </field>
         </record>
+        <record id="presentation_form" model="ir.ui.view">
+            <field name="name">presentation.form</field>
+            <field name="model">pharmaceutical.presentation</field>
+            <field name="inherit_id" ref="base_epithelium.pharmaceutical_presentation_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="value"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="presentation_tree" model="ir.ui.view">
+            <field name="name">presentation.tree</field>
+            <field name="model">pharmaceutical.presentation</field>
+            <field name="inherit_id" ref="base_epithelium.pharmaceutical_presentation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="value"/>
+                </xpath>
+            </field>
+        </record>
     </data>
 </odoo>
