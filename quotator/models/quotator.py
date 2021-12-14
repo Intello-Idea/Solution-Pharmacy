@@ -79,252 +79,252 @@ class Quotator(models.Model):
                 }
 
     # Tarifa de precios para calcular el valor total del producto final 
-    def _compute_price_total_product_final(self, price_x_unit, total_price, category, qty, size_subtotal):
+    def _compute_price_total_product_final(self, price_x_unit, category, qty, size_subtotal):
         price_total = 0
         if category == 'Tarifa Especialista':
             if size_subtotal <= 15:
                 if price_x_unit < 12000:
                     price_total = 12000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 16 and size_subtotal <= 40:
                 if price_x_unit < 14000:
                     price_total = 14000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 41 and size_subtotal <= 80:
                 if price_x_unit < 18000:
                     price_total = 18000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 81 and size_subtotal <= 120:
                 if price_x_unit < 21000:
                     price_total = 21000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 121 and size_subtotal <= 180:
                 if price_x_unit < 24000:
                     price_total = 24000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 181 and size_subtotal <= 220:
                 if price_x_unit < 27000:
                     price_total = 27000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 221 and size_subtotal <= 280:
                 if price_x_unit < 30000:
                     price_total = 30000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 281 and size_subtotal <= 350:
                 if price_x_unit < 34000:
                     price_total = 34000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 351 and size_subtotal <= 450:
                 if price_x_unit < 36000:
                     price_total = 36000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 451 and size_subtotal <= 600:
                 if price_x_unit < 39000:
                     price_total = 39000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 601 and size_subtotal <= 800:
                 if price_x_unit < 42000:
                     price_total = 42000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 801 and size_subtotal <= 1000:
                 if price_x_unit < 45000:
                     price_total = 45000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
         if category == 'Tarifa Distribuidor':
             if size_subtotal <= 15:
                 if price_x_unit < 10000:
                     price_total = 10000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 16 and size_subtotal <= 40:
                 if price_x_unit < 12000:
                     price_total = 12000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 41 and size_subtotal <= 80:
                 if price_x_unit < 15000:
                     price_total = 15000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 81 and size_subtotal <= 120:
                 if price_x_unit < 18000:
                     price_total = 18000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 121 and size_subtotal <= 180:
                 if price_x_unit < 20000:
                     price_total = 20000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 181 and size_subtotal <= 220:
                 if price_x_unit < 23000:
                     price_total = 23000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 221 and size_subtotal <= 280:
                 if price_x_unit < 25000:
                     price_total = 25000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 281 and size_subtotal <= 350:
                 if price_x_unit < 29000:
                     price_total = 29000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 351 and size_subtotal <= 450:
                 if price_x_unit < 31000:
                     price_total = 31000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 451 and size_subtotal <= 600:
                 if price_x_unit < 33000:
                     price_total = 33000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 601 and size_subtotal <= 800:
                 if price_x_unit < 36000:
                     price_total = 36000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 801 and size_subtotal <= 1000:
                 if price_x_unit < 38000:
                     price_total = 38000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
         if category == 'Tarifa Paciente':
             if size_subtotal <= 15:
                 if price_x_unit < 30000:
                     price_total = 30000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 16 and size_subtotal <= 40:
                 if price_x_unit < 35000:
                     price_total = 35000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 41 and size_subtotal <= 80:
                 if price_x_unit < 45000:
                     price_total = 45000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 81 and size_subtotal <= 120:
                 if price_x_unit < 52000:
                     price_total = 52000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 121 and size_subtotal <= 180:
                 if price_x_unit < 60000:
                     price_total = 60000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 181 and size_subtotal <= 220:
                 if price_x_unit < 68000:
                     price_total = 68000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 221 and size_subtotal <= 280:
                 if price_x_unit < 75000:
                     price_total = 75000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 281 and size_subtotal <= 350:
                 if price_x_unit < 85000:
                     price_total = 85000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 351 and size_subtotal <= 450:
                 if price_x_unit < 90000:
                     price_total = 90000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 451 and size_subtotal <= 600:
                 if price_x_unit < 98000:
                     price_total = 98000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 601 and size_subtotal <= 800:
                 if price_x_unit < 105000:
                     price_total = 105000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 801 and size_subtotal <= 1000:
                 if price_x_unit < 115000:
                     price_total = 115000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
         if category == 'Tarifa Empleado':
             if size_subtotal <= 15:
                 if price_x_unit < 8000:
                     price_total = 8000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 16 and size_subtotal <= 40:
                 if price_x_unit < 9000:
                     price_total = 9000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 41 and size_subtotal <= 80:
                 if price_x_unit < 11000:
                     price_total = 11000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 81 and size_subtotal <= 120:
                 if price_x_unit < 13000:
                     price_total = 13000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 121 and size_subtotal <= 180:
                 if price_x_unit < 14000:
                     price_total = 14000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 181 and size_subtotal <= 220:
                 if price_x_unit < 16000:
                     price_total = 16000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 221 and size_subtotal <= 280:
                 if price_x_unit < 17000:
                     price_total = 17000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 281 and size_subtotal <= 350:
                 if price_x_unit < 19000:
                     price_total = 19000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 351 and size_subtotal <= 450:
                 if price_x_unit < 20000:
                     price_total = 20000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 451 and size_subtotal <= 600:
                 if price_x_unit < 22000:
                     price_total = 22000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 601 and size_subtotal <= 800:
                 if price_x_unit < 23000:
                     price_total = 23000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
             elif size_subtotal >= 801 and size_subtotal <= 1000:
                 if price_x_unit < 25000:
                     price_total = 25000*qty
                 else:
-                    price_total = total_price
+                    price_total = price_x_unit
         return price_total
 
 ##Revisar##    
@@ -334,10 +334,24 @@ class Quotator(models.Model):
         for record in self.quotator_lines:
             suma += record.price_total
 
-        price_x_unit = (suma+self.total_pharmaceutical_form)/self.product_qty
+        '''La funcionalidad es que me permite determinar el porcentaje de descuento/aumento por producto
+        de manera que la presentacion farmaceutica no esta ligada a una tarifa, se deja la siguiente funcionalidad:'''
+        
+        price_total = suma+self.total_pharmaceutical_form
+        price_x_unit = ''
+        if self.partner_id.property_product_pricelist.name == 'Tarifa Especialista':
+            price_x_unit = price_total+self.presentation_id.value
+        if self.partner_id.property_product_pricelist.name == 'Tarifa Empleado':
+            presentation = (self.presentation_id.value)/2
+            price_x_unit = price_total+presentation
+        if self.partner_id.property_product_pricelist.name == 'Tarifa Paciente':
+            presentation = self.presentation_id.value+(self.presentation_id.value*0.025)
+            price_x_unit = price_total+presentation
+        if self.partner_id.property_product_pricelist.name == 'Tarifa Distribuidor':
+            presentation = self.presentation_id.value-(self.presentation_id.value*0.015)
+            price_x_unit = price_total+presentation
         category = self.partner_id.property_product_pricelist.name
-        total_price = suma+self.total_pharmaceutical_form
-        self.total = self._compute_price_total_product_final(price_x_unit,total_price,category,self.product_qty,self.subtotal_grams)
+        self.total = self._compute_price_total_product_final(price_x_unit,category,self.product_qty,self.subtotal_grams)
 
     @api.constrains('quotator_date')
     def _validation_date(self):
