@@ -63,7 +63,7 @@
         </record>
 
         <!-- Menu Action Partner category -->
-        <menuitem action="action_partner_category" name="Configuration Partner Category"
+        <menuitem action="action_partner_category" name="Configuration bonus x customer"
                   id="menu_partner_category"
                   sequence="4" parent="contacts.res_partner_menu_config"/>
 

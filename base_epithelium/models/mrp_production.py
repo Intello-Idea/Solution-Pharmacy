@@ -119,7 +119,7 @@ class MrpProduction(models.Model):
                     'product_id': lot['product_id'],
                     'quantity': lot['product_uom_qty'],
                     'lot': lot_obj.name if lot_obj else " ",
-#                    'due_date': str(lot_obj.life_date) if lot_obj.life_date else " "
+#Carlos                    'due_date': str(lot_obj.life_date) if lot_obj.life_date else " "
                 }
                 self.env['mrp.production.simulation.lot'].create(cre)
 

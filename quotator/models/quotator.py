@@ -398,6 +398,7 @@ class Quotator(models.Model):
                 'order_line': products,
                 'raw_material': material,
                 'medical_formula': self.medical_formula,
+                'production_line_id': self.line_production_id.id,
                 'final_client': self.patient,
             }
         self.env['sale.order'].create(vals)
