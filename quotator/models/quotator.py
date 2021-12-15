@@ -337,19 +337,21 @@ class Quotator(models.Model):
         '''La funcionalidad es que me permite determinar el porcentaje de descuento/aumento por producto
         de manera que la presentacion farmaceutica no esta ligada a una tarifa, se deja la siguiente funcionalidad:'''
         
-        price_total = suma+self.total_pharmaceutical_form
         price_x_unit = ''
         if self.partner_id.property_product_pricelist.name == 'Tarifa Especialista':
-            price_x_unit = price_total+self.presentation_id.value
+            price_x_unit = suma+self.total_pharmaceutical_form+self.presentation_id.value
         if self.partner_id.property_product_pricelist.name == 'Tarifa Empleado':
             presentation = (self.presentation_id.value)/2
-            price_x_unit = price_total+presentation
+            form = (self.total_pharmaceutical_form)/2
+            price_x_unit = suma+presentation+form
         if self.partner_id.property_product_pricelist.name == 'Tarifa Paciente':
             presentation = self.presentation_id.value+(self.presentation_id.value*0.025)
-            price_x_unit = price_total+presentation
+            form = self.total_pharmaceutical_form+(self.total_pharmaceutical_form*0.025)
+            price_x_unit = suma+presentation+form
         if self.partner_id.property_product_pricelist.name == 'Tarifa Distribuidor':
-            presentation = self.presentation_id.value-(self.presentation_id.value*0.015)
-            price_x_unit = price_total+presentation
+            presentation = self.presentation_id.value-(self.presentation_id.value*0.15)
+            form = self.total_pharmaceutical_form-(self.total_pharmaceutical_form*0.15)
+            price_x_unit = suma+presentation+form
         category = self.partner_id.property_product_pricelist.name
         self.total = self._compute_price_total_product_final(price_x_unit,category,self.product_qty,self.subtotal_grams)
 
