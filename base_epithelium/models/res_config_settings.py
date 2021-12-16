@@ -26,7 +26,7 @@ class ResConfigSettingsMod(models.TransientModel):
 
         if self.check_status:
             variables = [
-                {'name': 'o-brand-odoo', 'value': "#009960"}]
+                {'name': 'o-brand-odoo', 'value': "#003699"}]
 
         else:
             variables = [
