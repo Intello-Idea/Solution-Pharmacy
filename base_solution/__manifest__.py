@@ -31,6 +31,7 @@
         'views/mrp_production.xml',
         'views/mrp_bom.xml',
         'views/sale_order.xml',
+        'views/res_partner.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

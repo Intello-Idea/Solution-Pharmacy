@@ -3,5 +3,5 @@
 from . import models
 from . import quotator
 from . import quotator_lines
-from . import res_partner
 from . import sale_order
+from . import discount_rates

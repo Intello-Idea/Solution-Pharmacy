@@ -29,10 +29,10 @@
         'views/templates.xml',
         'views/quotator.xml',
         'security/groups_security.xml',
-        'views/res_partner.xml',
         'views/sale_order.xml',
         'data/ir_sequence_data.xml',
         'reports/sale_report_templates.xml',
+        'views/discount_rates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
