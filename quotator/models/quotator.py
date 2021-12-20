@@ -18,7 +18,6 @@ class Quotator(models.Model):
     user = fields.Many2one('res.users', string='Quotator', required=True, readonly=True, default=lambda self: self.env.user)
     quotator_date = fields.Date(string="Quotation date", readonly=True, index=True, default=fields.Date.context_today)
     expiration_date = fields.Date(string="Expiration date", required=True)
-    pricelist_id = fields.Many2one('product.pricelist', string="Pricelist", related="partner_id.property_product_pricelist", readonly=True)
     company_id = fields.Many2one('res.company', string='Company', required=True, index=True, default=lambda self: self.env.company)
     patient = fields.Char(string="Patient")
     pharmaceutical_form = fields.Many2one('pharmaceutical.form', string="Pharmaceutical form", required=True)
@@ -46,21 +45,18 @@ class Quotator(models.Model):
     @api.depends('subtotal_grams', 'product_qty')
     def _compute_size_total(self):
         for line in self:
-            line.total_grams = line.product_qty * line.subtotal_grams
+            line['total_grams'] = line['product_qty'] * line['subtotal_grams']
 
     @api.depends('value_pharmaceutical_form', 'pharmaceutical_form')
     def _compute_total_pharmaceutical(self):
         for line in self:
-            line.total_pharmaceutical_form = line.value_pharmaceutical_form * line.pharmaceutical_form.value
+            line['total_pharmaceutical_form'] = line['value_pharmaceutical_form'] * line.pharmaceutical_form.value
 ##Revisar##
     @api.depends('quotator_lines')
     def _compute_subtotal_pharmaceutical(self):
         suma = 0.0
         for line in self.quotator_lines:
-            if line.product_id.categ_id.complete_name == 'Materias Primas / Activos':
-                suma += line.material_qty
-            else:
-                continue
+            suma += line['material_qty']
         if suma > self.total_grams: 
             raise ValidationError(_('The percentages are not correct'))   
         else:
@@ -68,7 +64,7 @@ class Quotator(models.Model):
     
     @api.onchange('quotator_lines', 'subtotal_grams')
     def _clean_raw_materia(self):
-        if self.pricelist_id.name in ('Tarifa Especialista', 'Tarifa Distribuidor', 'Tarifa Paciente', 'Tarifa Empleado'):
+        if self.partner_id.client_type.name in ('Especialista', 'Distribuidor', 'Paciente', 'Empleado'):
             if self.subtotal_grams <= 0 or self.subtotal_grams > 1000:
                 self.quotator_lines = False
                 return {
@@ -78,282 +74,23 @@ class Quotator(models.Model):
                     },
                 }
 
-    # Tarifa de precios para calcular el valor total del producto final 
-    def _compute_price_total_product_final(self, price_x_unit, category, qty, size_subtotal):
-        price_total = 0
-        if category == 'Tarifa Especialista':
-            if size_subtotal <= 15:
-                if price_x_unit < 12000:
-                    price_total = 12000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 16 and size_subtotal <= 40:
-                if price_x_unit < 14000:
-                    price_total = 14000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 41 and size_subtotal <= 80:
-                if price_x_unit < 18000:
-                    price_total = 18000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 81 and size_subtotal <= 120:
-                if price_x_unit < 21000:
-                    price_total = 21000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 121 and size_subtotal <= 180:
-                if price_x_unit < 24000:
-                    price_total = 24000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 181 and size_subtotal <= 220:
-                if price_x_unit < 27000:
-                    price_total = 27000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 221 and size_subtotal <= 280:
-                if price_x_unit < 30000:
-                    price_total = 30000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 281 and size_subtotal <= 350:
-                if price_x_unit < 34000:
-                    price_total = 34000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 351 and size_subtotal <= 450:
-                if price_x_unit < 36000:
-                    price_total = 36000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 451 and size_subtotal <= 600:
-                if price_x_unit < 39000:
-                    price_total = 39000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 601 and size_subtotal <= 800:
-                if price_x_unit < 42000:
-                    price_total = 42000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 801 and size_subtotal <= 1000:
-                if price_x_unit < 45000:
-                    price_total = 45000*qty
-                else:
-                    price_total = price_x_unit
-        if category == 'Tarifa Distribuidor':
-            if size_subtotal <= 15:
-                if price_x_unit < 10000:
-                    price_total = 10000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 16 and size_subtotal <= 40:
-                if price_x_unit < 12000:
-                    price_total = 12000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 41 and size_subtotal <= 80:
-                if price_x_unit < 15000:
-                    price_total = 15000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 81 and size_subtotal <= 120:
-                if price_x_unit < 18000:
-                    price_total = 18000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 121 and size_subtotal <= 180:
-                if price_x_unit < 20000:
-                    price_total = 20000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 181 and size_subtotal <= 220:
-                if price_x_unit < 23000:
-                    price_total = 23000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 221 and size_subtotal <= 280:
-                if price_x_unit < 25000:
-                    price_total = 25000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 281 and size_subtotal <= 350:
-                if price_x_unit < 29000:
-                    price_total = 29000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 351 and size_subtotal <= 450:
-                if price_x_unit < 31000:
-                    price_total = 31000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 451 and size_subtotal <= 600:
-                if price_x_unit < 33000:
-                    price_total = 33000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 601 and size_subtotal <= 800:
-                if price_x_unit < 36000:
-                    price_total = 36000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 801 and size_subtotal <= 1000:
-                if price_x_unit < 38000:
-                    price_total = 38000*qty
-                else:
-                    price_total = price_x_unit
-        if category == 'Tarifa Paciente':
-            if size_subtotal <= 15:
-                if price_x_unit < 30000:
-                    price_total = 30000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 16 and size_subtotal <= 40:
-                if price_x_unit < 35000:
-                    price_total = 35000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 41 and size_subtotal <= 80:
-                if price_x_unit < 45000:
-                    price_total = 45000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 81 and size_subtotal <= 120:
-                if price_x_unit < 52000:
-                    price_total = 52000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 121 and size_subtotal <= 180:
-                if price_x_unit < 60000:
-                    price_total = 60000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 181 and size_subtotal <= 220:
-                if price_x_unit < 68000:
-                    price_total = 68000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 221 and size_subtotal <= 280:
-                if price_x_unit < 75000:
-                    price_total = 75000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 281 and size_subtotal <= 350:
-                if price_x_unit < 85000:
-                    price_total = 85000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 351 and size_subtotal <= 450:
-                if price_x_unit < 90000:
-                    price_total = 90000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 451 and size_subtotal <= 600:
-                if price_x_unit < 98000:
-                    price_total = 98000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 601 and size_subtotal <= 800:
-                if price_x_unit < 105000:
-                    price_total = 105000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 801 and size_subtotal <= 1000:
-                if price_x_unit < 115000:
-                    price_total = 115000*qty
-                else:
-                    price_total = price_x_unit
-        if category == 'Tarifa Empleado':
-            if size_subtotal <= 15:
-                if price_x_unit < 8000:
-                    price_total = 8000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 16 and size_subtotal <= 40:
-                if price_x_unit < 9000:
-                    price_total = 9000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 41 and size_subtotal <= 80:
-                if price_x_unit < 11000:
-                    price_total = 11000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 81 and size_subtotal <= 120:
-                if price_x_unit < 13000:
-                    price_total = 13000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 121 and size_subtotal <= 180:
-                if price_x_unit < 14000:
-                    price_total = 14000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 181 and size_subtotal <= 220:
-                if price_x_unit < 16000:
-                    price_total = 16000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 221 and size_subtotal <= 280:
-                if price_x_unit < 17000:
-                    price_total = 17000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 281 and size_subtotal <= 350:
-                if price_x_unit < 19000:
-                    price_total = 19000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 351 and size_subtotal <= 450:
-                if price_x_unit < 20000:
-                    price_total = 20000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 451 and size_subtotal <= 600:
-                if price_x_unit < 22000:
-                    price_total = 22000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 601 and size_subtotal <= 800:
-                if price_x_unit < 23000:
-                    price_total = 23000*qty
-                else:
-                    price_total = price_x_unit
-            elif size_subtotal >= 801 and size_subtotal <= 1000:
-                if price_x_unit < 25000:
-                    price_total = 25000*qty
-                else:
-                    price_total = price_x_unit
-        return price_total
-
-##Revisar##    
     @api.depends('quotator_lines.price_total', 'total_pharmaceutical_form')
     def _compute_total_quotator(self):
         suma = 0.0
         for record in self.quotator_lines:
             suma += record.price_total
 
-        '''La funcionalidad es que me permite determinar el porcentaje de descuento/aumento por producto
-        de manera que la presentacion farmaceutica no esta ligada a una tarifa, se deja la siguiente funcionalidad:'''
-        
-        price_x_unit = ''
-        if self.partner_id.property_product_pricelist.name == 'Tarifa Especialista':
-            price_x_unit = suma+self.total_pharmaceutical_form+self.presentation_id.value
-        if self.partner_id.property_product_pricelist.name == 'Tarifa Empleado':
-            presentation = (self.presentation_id.value)/2
-            form = (self.total_pharmaceutical_form)/2
-            price_x_unit = suma+presentation+form
-        if self.partner_id.property_product_pricelist.name == 'Tarifa Paciente':
-            presentation = self.presentation_id.value+(self.presentation_id.value*0.025)
-            form = self.total_pharmaceutical_form+(self.total_pharmaceutical_form*0.025)
-            price_x_unit = suma+presentation+form
-        if self.partner_id.property_product_pricelist.name == 'Tarifa Distribuidor':
-            presentation = self.presentation_id.value-(self.presentation_id.value*0.15)
-            form = self.total_pharmaceutical_form-(self.total_pharmaceutical_form*0.15)
-            price_x_unit = suma+presentation+form
-        category = self.partner_id.property_product_pricelist.name
-        self.total = self._compute_price_total_product_final(price_x_unit,category,self.product_qty,self.subtotal_grams)
+        percentages = self.env['discount.rates'].search([('type_id.id', "=", self.partner_id.client_type.id)])
+        presentation = self.presentation_id.value+((self.presentation_id.value*percentages['percentage'])/100)
+        pharmaceutical = self.total_pharmaceutical_form+((self.total_pharmaceutical_form*percentages['percentage'])/100)
+        total = suma+presentation+pharmaceutical
+        for line in percentages.lines_price:
+            if self.subtotal_grams in range(line['start'], line['final']+1):
+                if total < line['base_price']:
+                    total = line['base_price']
+                else:
+                    total = total
+        self.total = total
 
     @api.constrains('quotator_date')
     def _validation_date(self):
@@ -394,7 +131,7 @@ class Quotator(models.Model):
                 'partner_id': self.partner_id.id,
                 'date_order': self.quotator_date,
                 'validity_date': self.expiration_date,
-                'pricelist_id': self.pricelist_id.id,
+                'pricelist_id': self.partner_id.property_product_pricelist,
                 'order_line': products,
                 'raw_material': material,
                 'medical_formula': self.medical_formula,

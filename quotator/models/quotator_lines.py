@@ -20,27 +20,21 @@ class QuotatorLine(models.Model):
     @api.depends('quotator_id.total_grams', 'percentage')
     def _compute_qty(self):
         for line in self:
-            if line.product_id.product_tmpl_id.categ_id.complete_name == 'Materias Primas / Activos':
-                line.material_qty = (line.quotator_id.total_grams*line.percentage)/100
+            line.material_qty = (line.quotator_id.total_grams*line.percentage)/100
     
-    @api.depends('quotator_id.pricelist_id', 'product_id')
+    @api.depends('quotator_id.partner_id.client_type', 'product_id')
     def _update_price(self):
+        percentages = self.env['discount.rates'].search([('type_id.id', "=", self.quotator_id.partner_id.client_type.id)])
         for line in self:
-            if not line.quotator_id.pricelist_id:
+            if not line.quotator_id.partner_id:
                 raise ValidationError(_('!! You do not have, selected a client !!')) 
             else:
                 if line.product_id:
-                    price = line.quotator_id.pricelist_id.get_product_price(line.product_id, 1.0 or line.material_qty, line.quotator_id.partner_id)
-                    if line.product_id.product_tmpl_id.categ_id.complete_name == 'Materias Primas / Activos':
-                        line.price_unit = 6 * price
-#                    if line.product_id.product_tmpl_id.categ_id.complete_name == 'Material Acondicionamiento / Envases / Basico':
-#                        line.price_unit = 3 * price
-#                    if line.product_id.product_tmpl_id.categ_id.complete_name == 'Material Acondicionamiento / Envases / Lujo':
-#                        line.price_unit = 2 * price
-#                    if line.product_id.product_tmpl_id.categ_id.complete_name in ('Material Acondicionamiento / Etiquetas', 'Material Acondicionamiento / Plegables'):
-#                        line.price_unit = 2.5 * price
+                    price = line.quotator_id.partner_id.property_product_pricelist.get_product_price(line.product_id, 1.0 or line.material_qty, line.quotator_id.partner_id)
+                    price = price+((price*percentages['percentage'])/100)
+                    line['price_unit'] = 6 * price
     
     @api.depends('price_unit', 'material_qty')
     def _compute_price_total(self):
         for line in self:
-            line.price_total = line.price_unit * line.material_qty
+            line['price_total'] = line['price_unit'] * line['material_qty']

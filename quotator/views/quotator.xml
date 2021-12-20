@@ -13,7 +13,6 @@
           <field name="quotator_date"/>
           <field name="expiration_date"/>
           <field name="patient"/>
-          <field name="pricelist_id"/>
           <field name="pharmaceutical_form"/>
           <field name="final_product"/>
           <field name="subtotal_grams"/>
@@ -50,7 +49,6 @@
                 <field name="expiration_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                 <field name="pharmaceutical_form"/>
                 <field name="subtotal_grams"/>
-                <field name="pricelist_id" options="{'no_open':True,'no_create': True}"/>
                 <field name="line_production_id"/>
               </group>
             </group>
