@@ -6,7 +6,7 @@ class RestPartnerType(models.Model):
     _inherit = "res.partner"
     _description = "Add customer type field"
 
-    client_type = fields.Float(string='type_client')
+    client_type = fields.Many2one('type.client', string="Type client")
 
 class TypeClient(models.Model):
     _name = 'type.client'
