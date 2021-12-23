@@ -82,11 +82,11 @@ class MrpProduction(models.Model):
             else:
                 raise exceptions.ValidationError(_('Please create a picking type first'))
 
-    def _get_move_raw_values(self, bom_line, line_data):
-        data = super(MrpProduction, self)._get_move_raw_values(bom_line, line_data)
-        data['percent'] = bom_line.percent
-        return data
-
+#Carlos    def _get_move_raw_values(self, bom_line, line_data):
+#Carlos        data = super(MrpProduction, self)._get_move_raw_values(bom_line, line_data)
+#Carlos        data['percent'] = bom_line.percent
+#Carlos        return data
+#Carlos
     @api.depends('move_raw_ids')
     def _compute_lots(self):
         for production in self:
