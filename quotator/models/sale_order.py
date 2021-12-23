@@ -15,7 +15,7 @@ class SaleOrderLine(models.Model):
     pharmaceutical_form = fields.Many2one('pharmaceutical.form', string="Pharmaceutical form")
     grams_pharmaceutical = fields.Float(string="Grams", digits='Product Unit of Measure')
     #Campo para obtener determinar el precio de los productos que llegan del cotizador con los descuentos aplicados
-    default_value = fields.Float(string="Default value quotator")
+    default_value = fields.Float(string="Default value quotator", readonly=True)
 
     @api.onchange('product_uom_qty')
     def validate_default_value(self):
