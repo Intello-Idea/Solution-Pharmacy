@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields
+from odoo import api, models, fields
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
@@ -14,7 +14,16 @@ class SaleOrderLine(models.Model):
 
     pharmaceutical_form = fields.Many2one('pharmaceutical.form', string="Pharmaceutical form")
     grams_pharmaceutical = fields.Float(string="Grams", digits='Product Unit of Measure')
-    
+    #Campo para obtener determinar el precio de los productos que llegan del cotizador con los descuentos aplicados
+    default_value = fields.Float(string="Default value quotator")
+
+    @api.onchange('product_uom_qty')
+    def validate_default_value(self):
+        for line in self:
+            if line.default_value:
+                line.price_unit = line.default_value
+
+
 class SaleOrderRaw(models.Model):
     _name = "raw.material"
     _description = "List of subjects"

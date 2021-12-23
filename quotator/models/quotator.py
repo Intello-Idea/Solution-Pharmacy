@@ -113,6 +113,7 @@ class Quotator(models.Model):
             'price_unit': self.total/self.product_qty,
             'price_subtotal': self.total,
             'grams_pharmaceutical': self.value_pharmaceutical_form,
+            'default_value': self.total,
         }
         products.append((0,0,product))
         for line in self.quotator_lines:
@@ -131,7 +132,7 @@ class Quotator(models.Model):
                 'partner_id': self.partner_id.id,
                 'date_order': self.quotator_date,
                 'validity_date': self.expiration_date,
-                'pricelist_id': self.partner_id.property_product_pricelist,
+                'pricelist_id': self.partner_id.property_product_pricelist.id,
                 'order_line': products,
                 'raw_material': material,
                 'medical_formula': self.medical_formula,
