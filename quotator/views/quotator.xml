@@ -43,6 +43,7 @@
                 <field name="product_qty" invisible="True"/>
                 <field name="medical_formula" widget="binary"/>
                 <field name="presentation_id"/>
+                <field name="check_status"/>
               </group>
               <group>
                 <field name="quotator_date"/>

@@ -38,3 +38,15 @@ class QuotatorLine(models.Model):
     def _compute_price_total(self):
         for line in self:
             line['price_total'] = line['price_unit'] * line['material_qty']
+    
+    @api.onchange('product_id')
+    def invima_product(self):
+        parameter = self.env['ir.config_parameter'].sudo()
+        check_status = parameter.get_param('res.config.settings.check_status')
+        
+        if check_status:
+            domain = {'product_id': [('check_status', '=', True)]}
+        else:
+            domain = {'product_id': []}
+
+        return {'domain': domain}
