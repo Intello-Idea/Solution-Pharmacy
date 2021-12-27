@@ -108,11 +108,9 @@ class Quotator(models.Model):
         product = {
             'product_id': self.env['product.template'].search([('name', '=', 'Generico cotizador')]).id,
             'name': self.final_product,
-            'pharmaceutical_form': self.pharmaceutical_form.id,
             'product_uom_qty': self.product_qty,
             'price_unit': self.total/self.product_qty,
             'price_subtotal': self.total,
-            'grams_pharmaceutical': self.value_pharmaceutical_form,
             'default_value': self.total,
         }
         products.append((0,0,product))
@@ -138,6 +136,9 @@ class Quotator(models.Model):
                 'medical_formula': self.medical_formula,
                 'production_line_id': self.line_production_id.id,
                 'final_client': self.patient,
+                'form_pharmaceutical': self.pharmaceutical_form.id,
+                'pharmaceutical_presentation': self.presentation_id.id,
+                'grams_pharmaceutical': self.value_pharmaceutical_form,
             }
         self.env['sale.order'].create(vals)
         self.state = 'posted'

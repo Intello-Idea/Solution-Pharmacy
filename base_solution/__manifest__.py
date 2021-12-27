@@ -28,7 +28,6 @@
         'views/views.xml',
         'views/templates.xml',
         'views/pharmaceutical_form.xml',
-        'views/mrp_production.xml',
         'views/sale_order.xml',
         'views/res_partner.xml',
     ],
