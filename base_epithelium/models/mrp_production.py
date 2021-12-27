@@ -123,7 +123,8 @@ class MrpProduction(models.Model):
                 }
                 self.env['mrp.production.simulation.lot'].create(cre)
 
-    @api.onchange('location_src_id', 'move_raw_ids', 'routing_id')
+#Carlos    @api.onchange('location_src_id', 'move_raw_ids', 'routing_id')
+    @api.onchange('location_src_id', 'move_raw_ids')
     def _onchange_location(self):
         super(MrpProduction, self)._onchange_location()
         self.action_emulate_move_lines()

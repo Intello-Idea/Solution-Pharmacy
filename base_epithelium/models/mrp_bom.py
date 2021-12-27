@@ -210,7 +210,7 @@ class MrpBom(models.Model):
 class MrpBomLine(models.Model):
     _inherit = 'mrp.bom.line'
 
-    percent = fields.Float(digits='Precision Mrp', string="Float")
+    percent = fields.Float(digits='Precision Mrp', string="Percentage")
     affect_bill_materials = fields.Boolean('Affects bill of materials', related='product_id.affect_bill_materials')
     check_change_terms = fields.Selection(
         selection=[('percent', 'percent'), ('product_qty', 'product qty'), ('none', 'none')], default='none')

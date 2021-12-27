@@ -13,7 +13,7 @@
                            options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
                     <field name="check_status" invisible="1"/>
                 </xpath>
-                <xpath expr="//group[1]//group[1]//field[@name='product_qty']" position="after">
+                <xpath expr="//div[@class='o_row']" position="after">
                     <field name="percent_total" readonly="1" force_save="1"/>
                     <field name="status_percent" style="color: red"
                            attrs="{'invisible': [('status_percent', '!=', '0'),('id', '!=', True)]}" readonly="1"/>
@@ -38,7 +38,7 @@
                                style="margin-left:5px; max-width:40%;"/>
                     </div>
                 </xpath>
-                <xpath expr="//field[@name='percent_total']" position="before">
+                <xpath expr="//div[@class='o_row']" position="after">
                     <label for="size_total" string="Size"/>
                     <div>
                         <field name="size_total" class="oe_inline"
