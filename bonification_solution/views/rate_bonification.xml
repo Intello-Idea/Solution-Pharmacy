@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="bonification_solution.rate_bonification_tree" model="ir.ui.view">
+            <field name="name">Rate bonification tree</field>
+            <field name="model">rate.bonification</field>
+            <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+            </field>
+        </record>
+
+        <record id="bonification_solution.rate_bonification_form" model="ir.ui.view">
+            <field name="name">Rate bonification form</field>
+            <field name="model">rate.bonification</field>
+            <field name="arch" type="xml">
+            <form string="Rates bonification">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code" readonly="True"/>
+                        </group>
+                    </group>
+                    <notebook string="Rate bonification">
+                        <page string="rates discount">
+                            <field name="lines_price">
+                                <tree editable="bottom">
+                                    <field name="start"/>
+                                    <field name="final"/>
+                                    <field name="base_price"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="bonification_solution.rate_bonification_action_window">
+            <field name="name">Rates bonification</field>
+            <field name="res_model">rate.bonification</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+         <menuitem name="Configuration rewarded by third parties"
+              id="bonification_solution.menu_rate_bonification" 
+              parent="contacts.res_partner_menu_config" 
+              action="bonification_solution.rate_bonification_action_window"/>
+    </data>
+</odoo>
