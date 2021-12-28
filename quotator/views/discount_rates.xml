@@ -21,7 +21,7 @@
                     <group>
                         <group>
                             <field name="type_id"/>
-                            <field name="check_validation" invisible="True"/>
+                <!--            <field name="check_validation" invisible="False"/>    -->
                         </group>
                         <group>
                             <field name="percentage"/>

@@ -47,10 +47,12 @@ class RateBonification(models.Model):
             for vals in values:
                 if record[0] in range(vals[0],vals[1]+1):
                     self.check_validation = False
+                    raise ValidationError("!ERROR, el valor ingresado en los limites no es coherente¡")
                 else:
                     self.check_validation = True
                 if record[1] in range(vals[0],vals[1]+1):
                     self.check_validation = False
+                    raise ValidationError("!ERROR, el valor ingresado en los limites no es coherente¡")
                 else:
                     self.check_validation = True
 
