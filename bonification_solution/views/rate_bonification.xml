@@ -30,7 +30,7 @@
                                 <tree editable="bottom">
                                     <field name="start"/>
                                     <field name="final"/>
-                                    <field name="base_price"/>
+                                    <field name="quantity_product"/>
                                 </tree>
                             </field>
                         </page>

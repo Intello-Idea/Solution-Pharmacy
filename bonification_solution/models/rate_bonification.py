@@ -62,5 +62,5 @@ class RateBonificationLine(models.Model):
 
     start = fields.Integer(string="Start")
     final = fields.Integer(string="Final")
-    base_price = fields.Float(string="Base")
+    quantity_product = fields.Float(string="Base")
     lines = fields.Many2one('rate.bonification', string="Base Price")
