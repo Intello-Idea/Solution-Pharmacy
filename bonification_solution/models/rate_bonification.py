@@ -13,6 +13,10 @@ class RateBonification(models.Model):
     lines_price = fields.One2many('rate.bonification.line', 'lines', string="lines price")
     check_validation = fields.Boolean(string="Validation values", default=True)
 
+    _sql_constraints = [
+        ('type_client_uniq_rate', 'UNIQUE(name)', '!No pueden existir dos tipos de clientes con las mismas tarifas¡')
+    ]
+
     @api.model
     def default_get(self, fields):
         res = super(RateBonification, self).default_get(fields)
