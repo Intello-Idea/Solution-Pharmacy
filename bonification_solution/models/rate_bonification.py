@@ -8,7 +8,7 @@ class RateBonification(models.Model):
     _description = "this module containt the rates for discount product"
     _rec_name = "name"
 
-    name = fields.Char(string='Name')
+    name = fields.Many2one('type.client', string="Name")
     code = fields.Integer()
     lines_price = fields.One2many('rate.bonification.line', 'lines', string="lines price")
     check_validation = fields.Boolean(string="Validation values", default=True)
