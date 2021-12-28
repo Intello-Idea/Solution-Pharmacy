@@ -7,22 +7,21 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     def bonification(self):
-        data = self.env['rate.bonification'].search([])
-        vals = []
-        for line in self.order_line:
-            for record in data.lines_price:
-                if line.product_uom_qty in range(record['start'], record['final']+1):
-                    print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA:", record.base_price)
-                    #values = {
-                    #    'product_id': line.product_id.id,
-                    #    'name': line.name,
-                    #    'product_counterpart': line.product_counterpart.id,
-                    #    'price_unit': 0,
-                    #    'product_uom_qty': record.base_price,
-                    #    'bonus': True,
-                    #}
-                    #vals.append((0,0,values))
-                    #self.env['sale.order.line'].update(values)
+        data = self.env['rate.bonification.line'].search([])
+        vls = []
+        '''Bucle para obtener los los valores de los rangos y el valor minimo de estos'''
+        for line in data:
+            values = ()
+            values = (line.start, line.final)
+            vls.append(values)
+        value_min = min(vls)
+        '''Bucle para descartar las lineas que no cumplan el valor minimo que contemplan productos bonificados'''
+        result = []
+        for record in self.order_line:
+            if record.product_uom_qty >= value_min[0]:
+                value = ()
+                value = (record.product_id.id, record.product_uom_qty)
+                result.append(value)
 
 
 class SaleOrderLine(models.Model):
