@@ -48,9 +48,7 @@ class SaleOrder(models.Model):
                 if line[3] in range(record[0], record[1]+1) and line[3] >= (value_min[0]+value_max[0]):
                     x_round = line[3]/value_max[0]
                     x_round = math.floor(x_round)
-                    print("SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS:", x_round)
                     x_residuo = line[3] % value_max[0]
-                    print("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:", x_residuo)
                     residuo = 0
                     for x in vls:
                         if x_residuo in range(x[0], x[1]+1):
