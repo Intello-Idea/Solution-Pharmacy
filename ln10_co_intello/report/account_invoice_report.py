@@ -10,17 +10,17 @@ class AccountInvoiceReport(models.Model):
     invoiced_target = fields.Float('Invoiced target',readonly=True)
     category_target_ids = fields.Many2one('product.category','Category',readonly=True)
     
-    def _select(self):
-        return super(AccountInvoiceReport, self)._select() + ''',(line.parent_category_id) as category_target_ids,
-        (avg(ctc.category_value)) as invoiced_target'''
-        
-    def _from(self):
-        return super(AccountInvoiceReport, self)._from() + "INNER JOIN crm_team_category ctc ON ctc.crm_id = line.team_id AND ctc.category_id = line.parent_category_id"
-
-    def _where(self):
-        return super(AccountInvoiceReport, self)._where() + '''
-           AND line.price_subtotal != 0
-        '''
-
-    def _group_by(self):
-        return super(AccountInvoiceReport, self)._group_by() + ",line.parent_category_id,ctc.category_value"
+#Carlos    def _select(self):
+#Carlos        return super(AccountInvoiceReport, self)._select() + ''',(line.parent_category_id) as category_target_ids,
+#Carlos        (avg(ctc.category_value)) as invoiced_target'''
+#Carlos        
+#Carlos    def _from(self):
+#Carlos        return super(AccountInvoiceReport, self)._from() + "INNER JOIN crm_team_category ctc ON ctc.crm_id = line.team_id AND ctc.category_id = line.parent_category_id"
+#Carlos
+#Carlos    def _where(self):
+#Carlos        return super(AccountInvoiceReport, self)._where() + '''
+#Carlos           AND line.price_subtotal != 0
+#Carlos        '''
+#Carlos
+#Carlos    def _group_by(self):
+#Carlos        return super(AccountInvoiceReport, self)._group_by() + ",line.parent_category_id,ctc.category_value"
