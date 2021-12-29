@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from typing_extensions import Required
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError, UserError
 
 class RateBonification(models.Model):
     _name = "rate.bonification"
     _description = "this module containt the rates for discount product"
 
-    client_type = fields.Many2one('type.client', string="Type client")
+    client_type = fields.Many2one('type.client', string="Type client", required=True)
     code = fields.Integer()
     lines_price = fields.One2many('rate.bonification.line', 'lines', string="lines price")
     check_validation = fields.Boolean(string="Validation values", default=True)
@@ -15,6 +16,11 @@ class RateBonification(models.Model):
     _sql_constraints = [
         ('type_client_uniq_rate', 'UNIQUE(client_type)', '!No pueden existir dos tipos de clientes con las mismas tarifas¡')
     ]
+
+    @api.constrains('lines_price')
+    def _validar_raw_material(self):
+        if not self.lines_price:
+            raise UserError(_("Por favor llenar el campo de rangos"))
 
     @api.model
     def default_get(self, fields):
