@@ -2,7 +2,6 @@
 
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError, UserError
-import math
 
 class SaleOrder(models.Model):
     _inherit = "sale.order"
@@ -76,8 +75,7 @@ class SaleOrder(models.Model):
                         si para proximas ocaciones se requiere solo dejar la funcionalidad de los rangos, solo es quitar
                         esta parte del codigo y el en if anterior remover and line[3] < (value_min[0]+value_max[0])'''
                         if line[3] in range(record[0], record[1]+1) and line[3] >= (value_min[0]+value_max[0]):
-                            x_round = line[3]/value_max[0]
-                            x_round = math.floor(x_round)
+                            x_round = line[3] // value_max[0]
                             x_residuo = line[3] % value_max[0]
                             residuo = 0
                             for x in vls:
