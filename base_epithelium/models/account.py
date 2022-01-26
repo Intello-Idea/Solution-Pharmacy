@@ -72,52 +72,52 @@ class AccountMove(models.Model):
     purchase_check_status = fields.Boolean('I.', default=default_purchase_check_status)
     check_status = fields.Boolean(compute='_check_status_related', store=True)
 
-    @api.onchange('production_line_id', 'purchase_check_status', 'sale_check_status')
-    def _journal_validate_invima(self):
-        """
-        Función que valida si movimiento contable es invima ya sea por una linea de producción o por una compra, de ser
-        verdadero agrega una tupla adicional al dominio del campo journal_id (diario) y pone por defecto el primer
-        diario en una busqueda del modelo account.journal .
-        @author: Julián Valdés - Intello Idea
-        @return: Diccionario con una llave nombrada como el campo al cual se le quiere dar un dominio, como valor una
-                 lista de tuplas
-        """
-        domain = {'journal_id': [('type', '=?', self.invoice_filter_type_domain)]}
-        if self.type in ['out_invoice', 'out_refund', 'out_receipt']:
-            if self.sale_check_status:
-                domain['journal_id'].append(('check_status', '=', True))
-                if not self.journal_id.check_status:
-                    option = self.env['account.journal'].search(domain['journal_id'])
-                    self.journal_id = None
-                    if option:
-                        self.journal_id = option[0].id
-                return {'domain': domain}
-            else:
-                domain['journal_id'].append(('check_status', '=', False))
-                if self.journal_id.check_status:
-                    option = self.env['account.journal'].search(domain['journal_id'])
-                    self.journal_id = None
-                    if option:
-                        self.journal_id = option[0].id
-                return {'domain': domain}
-
-        if self.type in ['in_invoice', 'in_refund', 'in_receipt']:
-            if self.purchase_check_status:
-                domain['journal_id'].append(('check_status', '=', True))
-                if not self.journal_id.check_status:
-                    option = self.env['account.journal'].search(domain['journal_id'])
-                    self.journal_id = None
-                    if option:
-                        self.journal_id = option[0].id
-                return {'domain': domain}
-            else:
-                domain['journal_id'].append(('check_status', '=', False))
-                if self.journal_id.check_status:
-                    option = self.env['account.journal'].search(domain['journal_id'])
-                    self.journal_id = None
-                    if option:
-                        self.journal_id = option[0].id
-                return {'domain': domain}
+#Carlos    @api.onchange('production_line_id', 'purchase_check_status', 'sale_check_status')
+#Carlos    def _journal_validate_invima(self):
+#Carlos        """
+#Carlos        Función que valida si movimiento contable es invima ya sea por una linea de producción o por una compra, de ser
+#Carlos        verdadero agrega una tupla adicional al dominio del campo journal_id (diario) y pone por defecto el primer
+#Carlos        diario en una busqueda del modelo account.journal .
+#Carlos        @author: Julián Valdés - Intello Idea
+#Carlos        @return: Diccionario con una llave nombrada como el campo al cual se le quiere dar un dominio, como valor una
+#Carlos                 lista de tuplas
+#Carlos        """
+#Carlos        domain = {'journal_id': [('type', '=?', self.invoice_filter_type_domain)]}
+#Carlos        if self.type in ['out_invoice', 'out_refund', 'out_receipt']:
+#Carlos            if self.sale_check_status:
+#Carlos                domain['journal_id'].append(('check_status', '=', True))
+#Carlos                if not self.journal_id.check_status:
+#Carlos                    option = self.env['account.journal'].search(domain['journal_id'])
+#Carlos                    self.journal_id = None
+#Carlos                    if option:
+#Carlos                        self.journal_id = option[0].id
+#Carlos                return {'domain': domain}
+#Carlos            else:
+#Carlos                domain['journal_id'].append(('check_status', '=', False))
+#Carlos                if self.journal_id.check_status:
+#Carlos                    option = self.env['account.journal'].search(domain['journal_id'])
+#Carlos                    self.journal_id = None
+#Carlos                    if option:
+#Carlos                        self.journal_id = option[0].id
+#Carlos                return {'domain': domain}
+#Carlos
+#Carlos        if self.type in ['in_invoice', 'in_refund', 'in_receipt']:
+#Carlos            if self.purchase_check_status:
+#Carlos                domain['journal_id'].append(('check_status', '=', True))
+#Carlos                if not self.journal_id.check_status:
+#Carlos                    option = self.env['account.journal'].search(domain['journal_id'])
+#Carlos                    self.journal_id = None
+#Carlos                    if option:
+#Carlos                        self.journal_id = option[0].id
+#Carlos                return {'domain': domain}
+#Carlos            else:
+#Carlos                domain['journal_id'].append(('check_status', '=', False))
+#Carlos                if self.journal_id.check_status:
+#Carlos                    option = self.env['account.journal'].search(domain['journal_id'])
+#Carlos                    self.journal_id = None
+#Carlos                    if option:
+#Carlos                        self.journal_id = option[0].id
+#Carlos                return {'domain': domain}
 
     @api.model
     def fields_view_get(self, view_id=None, view_type='form', toolbar=False, submenu=False):
