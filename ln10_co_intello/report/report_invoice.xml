@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="assets_common" name="ln10_co_intello assets" inherit_id="web.report_assets_common">
+
+        <xpath expr="." position="inside">
+
+            <link href="/ln10_co_intello/static/src/css/bootstrap.css" rel="stylesheet"/>
+
+        </xpath>
+
+    </template>
+
+    <template id="web_external_layout_inherit" inherit_id="web.external_layout_standard">
+        <xpath expr="//div[@name='company_address']" position="replace">
+            <div class="col-6 pb-2" name="company_address">
+                <div t-field="company.partner_id"/>
+                <span t-esc="company.partner_id._vat_with_code()"/>
+                <div t-field="company.partner_id.street"/>
+                <span t-field="company.partner_id.state_id"/><![CDATA[&nbsp;]]>
+                <span t-field="company.partner_id.city_id"/><![CDATA[&nbsp;]]>
+                <span t-field="company.partner_id.zip"/>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[@class='text-muted']" position="attributes">
+            <attribute name="style">font-size: 8pt !important;</attribute>
+        </xpath>
+
+    </template>
+
+    <template id="web_external_layout_background_inherit" inherit_id="web.external_layout_background">
+
+        <xpath expr="//div[@class='float-left company_address']" position="replace">
+            <div class="float-left company_address">
+                <div>
+                    <strong t-field="company.partner_id.name"/>
+                    <br/><span t-esc="company.partner_id._vat_with_code()"/>
+                </div>
+                <span t-field="company.partner_id"
+                      t-options='{"widget": "contact", "fields": ["address"], "no_marker": true}'/>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[@class='text-muted']" position="attributes">
+            <attribute name="style">font-size: 8pt !important;</attribute>
+        </xpath>
+
+    </template>
+
+    <template id="web_external_layout_boxed_inherit" inherit_id="web.external_layout_boxed">
+        <xpath expr="//div[@name='company_address']" position="replace">
+            <div name="company_address" class="mb4">
+                <span t-field="company.partner_id.name"/><br/>
+                <span class="company_address" t-esc="company.partner_id._vat_with_code()"/><br/>
+                <span class="company_address" t-field="company.partner_id"
+                      t-options='{"widget": "contact", "fields": ["address"], "no_marker": true}'/>
+            </div>
+
+        </xpath>
+
+        <xpath expr="//div[@class='text-center']/div[2]" position="attributes">
+            <attribute name="style">font-size: 8pt !important;</attribute>
+        </xpath>
+
+
+    </template>
+
+    <template id="web_external_layout_clean_inherit" inherit_id="web.external_layout_clean">
+        <xpath expr="//ul[@class='list-unstyled']" position="replace">
+            <strong><li t-if="company.name"><span t-field="company.name"/></li></strong>
+            <li t-if="company.vat">
+                <span t-esc="company.partner_id._vat_with_code()"/>
+            </li>
+            <li t-if="company.phone">
+                Tel: <span t-field="company.phone"/>
+            </li>
+            <li t-if="company.email">
+                <span t-field="company.email"/>
+            </li>
+            <li t-if="company.website">
+                <span t-field="company.website"/>
+            </li>
+
+        </xpath>
+
+        <xpath expr="//ul[@class='list-inline pagenumber float-right text-center']" position="attributes">
+            <attribute name="style">font-size: 7pt !important;</attribute>
+        </xpath>
+
+    </template>
+
+    <template id="report_invoices_ln10_intello" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@class='page']/h2" position="attributes">
+            <attribute name="style">font-size: 20pt !important;</attribute>
+        </xpath>
+
+        <xpath expr="//div[@class='page']" position="attributes">
+            <attribute name="style">font-size: 10pt !important;</attribute>
+        </xpath>
+
+        <xpath expr="//t[@t-set='address']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+
+        <xpath expr="//t[@t-set='address']" position="before">
+
+            <table style="width: 100%;">
+                <thead>
+                    <tr>
+                        <td style="width: 40%; padding: 10px; font-size: 8pt !important; text-align: center; vertical-align: middle !important;"
+                            t-if="o.type in ['out_invoice','out_refund'] and o.state == 'posted' and o.journal_id.invoice_resolution">
+                            <span t-esc="o.generate_resolution_text()"/>
+                        </td>
+
+                        <td style="width: 5%;"/>
+
+                        <td class="mt16"
+                            style="font-size: 13pt !important; padding: 10px; background: #e8e9eb; width: 55%;">
+                            <span t-field="o.partner_id"/><br/>
+
+                            <t t-if="o.partner_id.document_type.code_short and o.partner_id.document_type.with_digit"
+                               id="inv_tax_id_label">
+                                <span t-field="o.partner_id.document_type.code_short"/>: <span
+                                    t-esc="o.partner_id._vat_with_code()"/><br/>
+                            </t>
+                            <t t-if="o.partner_id.document_type.code_short and not o.partner_id.document_type.with_digit">
+                                <span t-field="o.partner_id.document_type.code_short"/>: <span
+                                    t-field="o.partner_id.vat"/><br/>
+                            </t>
+
+
+                            <span t-field="o.partner_id.street"/><br/>
+
+                            <span t-field="o.partner_id.state_id"/><![CDATA[&nbsp;]]>
+                            <span t-field="o.partner_id.city_id"/><![CDATA[&nbsp;]]>
+                            <span t-field="o.partner_id.zip"/><br/>
+
+                            <t t-if="o.partner_id.mobile">
+                                <span t-field="o.partner_id.mobile"/>
+                            </t>
+                            <t t-else="">
+                                <span t-field="o.partner_id.phone"/>
+                            </t>
+                        </td>
+
+                    </tr>
+                </thead>
+            </table>
+
+        </xpath>
+
+        <xpath expr="//p[@name='payment_term']" position="replace">
+
+        </xpath>
+
+        <xpath expr="//div[@name='due_date']" position="after">
+
+            <div class="col-auto mw-100 mb-2" name="payment_term">
+                <strong>Payment term:</strong>
+                <p class="m-0" t-if="o.invoice_payment_term_id">
+                    <span t-field="o.invoice_payment_term_id.name"/>
+                </p>
+            </div>
+
+        </xpath>
+
+        <xpath expr="//t[@t-foreach='o.amount_by_group']/tr/t[2]/td/span[2]" position="replace">
+
+        </xpath>
+
+        <xpath expr="//div[@class='clearfix']" position="after">
+            <b>SON:</b><![CDATA[&nbsp;]]><span t-esc="o.amount_to_text()"/>
+
+        </xpath>
+
+        <xpath expr="//p[@name='comment']" position="replace">
+            <p style="font-size: 7.5pt !important;" t-if="o.narration" name="comment">
+                <span t-field="o.narration"/>
+            </p>
+        </xpath>
+
+
+    </template>
+
+    <template id="external_layout_invoice_report">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-2"/>
+                <div class="col-7 text-center">
+                    <span><strong><t t-esc="company.name"/></strong></span><br/>
+                    <span><strong>N.I.T <t t-esc="company.vat"/>-<t
+                            t-esc="company.verification_code"/></strong></span><br/>
+                    <div style="font-size: 12px;">
+                        <span>- Actividad Económica 5820,6311</span><br/>
+                        <span>No somos Autoretenedores - No somos grandes contribuyentes</span><br/>
+                        <span>Resolución DIAN No <t t-esc="o.journal_id.invoice_resolution.resolution"/> del <t
+                                t-esc="o.journal_id.invoice_resolution.date"/> Autoriza del <t
+                                t-esc="o.journal_id.invoice_resolution.ini_number"/> al <t
+                                t-esc="o.journal_id.invoice_resolution.fin_number"/></span>
+                    </div>
+                </div>
+                <div class="col-3 text-center">
+                    <table style="border:2px solid black; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="background-color:black; color:white;"><strong>FACTURA DE
+                                    VENTA</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center">
+                                <td><t t-esc="o.name"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2"/>
+                <div class="col-7" style="border: 2px solid black;font-size: 15px;">
+                    <span><strong>Cliente:</strong> <t t-esc="o.partner_shipping_id.vat"/></span><br/>
+                    <span><strong>Nombre: </strong><t t-esc="o.partner_shipping_id.name"/></span><br/>
+                    <span><strong>Dirección: </strong> <t t-esc="o.partner_shipping_id.street"/></span><br/>
+                    <span><strong>Ciudad: </strong><t t-esc="o.partner_shipping_id.city"/><strong>
+                        Teléfono: </strong><t t-esc="o.partner_shipping_id.phone"/></span>
+                </div>
+                <div class="col-3 text-center">
+                    <table style="border:2px solid black; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="background-color:black; color:white;"><strong>FECHA
+                                    FACTURA</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center">
+                                <td><t t-esc="o.invoice_date"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="border:2px solid black; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="background-color:black; color:white;"><strong>
+                                    VENCIMIENTO</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center">
+                                <td><t t-esc="o.invoice_date"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+             t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-raw="0"/>
+        </div>
+
+    </template>
+
+    <template id="invoice_report_custom">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.html_container">
+                <t t-call="ln10_co_intello.external_layout_invoice_report">
+                    <div class="page pt-5">
+                        <div class="pt-3">
+                            <table class="table table-sm o_main_table text-center" style="border:2px solid white">
+                                <thead>
+                                    <tr style="background-color:black; color:white;">
+                                        <th style="background-color:black; color:white;">ID PROD</th>
+                                        <th style="background-color:black; color:white;">DESCRIPCIÓN DEL PRODUCTO</th>
+                                        <th style="background-color:black; color:white;">CANTIDAD</th>
+                                        <th style="background-color:black; color:white;">VALOR UNIDAD</th>
+                                        <th style="background-color:black; color:white;">DESC (%)</th>
+                                        <th style="background-color:black; color:white;">VALOR TOTAL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.invoice_line_ids" t-as="line">
+                                        <tr>
+                                            <td><t t-esc="line.product_id.default_code"/></td>
+                                            <t t-if="line.product_counterpart">
+                                                <td><t t-esc="line.product_counterpart.name"/></td>
+                                            </t>
+                                            <t t-else="line.product_counterpart">
+                                                <td><t t-esc="line.product_id.name"/></td>
+                                            </t>
+                                            <td><t t-esc="int(line.quantity)"/></td>
+                                            <td><t t-esc="'{0:,.2f}'.format(int(line.price_unit))"/></td>
+                                            <td><t t-esc="line.discount"/></td>
+                                            <td><t t-esc="'{0:,.2f}'.format(int(line.price_subtotal))"/></td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+
+                        <div class="clearfix">
+                            <div id="total" class="row">
+                                <div class="col-8">
+                                    <div>
+                                        <p>
+                                            <strong>SON: <![CDATA[&nbsp;]]> <span t-esc="o.amount_to_text()"/></strong>
+                                        </p>
+                                        <p style="font-size: 13px">
+                                            REPRESENTACIÓN GRÁFICA DE LA FACTURA DE VENTA <t t-esc="o.name"/> CUFE:
+                                        </p>
+                                    </div>
+                                </div>
+                                <div clas="col-4">
+                                    <table class="table table-sm" style="page-break-inside: avoid;">
+                                        <tr class="border-black o_subtotal" style="">
+                                            <td><strong>Subtotal</strong></td>
+                                            <td class="text-right">
+                                                <span t-field="o.amount_untaxed"/>
+                                            </td>
+                                        </tr>
+                                        <t t-foreach="o.amount_by_group" t-as="amount_by_group">
+                                            <tr style="">
+                                                <t t-if="len(o.invoice_line_ids.filtered(lambda line: line.tax_ids)) in [0, 1] and o.amount_untaxed == amount_by_group[2]">
+                                                    <td><span class="text-nowrap" t-esc="amount_by_group[0]"/></td>
+                                                    <td class="text-right o_price_total">
+                                                        <span class="text-nowrap" t-esc="amount_by_group[3]"/>
+                                                    </td>
+                                                </t>
+                                                <t t-else="">
+                                                    <td>
+                                                        <span t-esc="amount_by_group[0]"/>
+                                                    </td>
+                                                    <td class="text-right o_price_total">
+                                                        <span class="text-nowrap" t-esc="amount_by_group[3]"/>
+                                                    </td>
+                                                </t>
+                                            </tr>
+                                        </t>
+                                        <tr class="border-black o_total">
+                                            <td><strong>Total</strong></td>
+                                            <td class="text-right">
+                                                <span class="text-nowrap" t-field="o.amount_total"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div id="cufe_qr" class="row text-center" style="border: 2px solid black">
+                                <div class="col-3 align-center" style="border-right: 2px solid;">
+                                    <div class="pt-2" id="qrcode">
+                                        <!--<img class="border border-dark "
+                                             t-att-src="o.invoice_partner_bank_id.build_qr_code_base64(o.amount_residual, o.invoice_payment_ref or o.ref or o.name)"/>-->
+                                    </div>
+                                </div>
+                                <div class="col-4" style="border-right: 2px solid;">
+                                    <div class="pt-5">
+                                        <div class="pt-5">
+                                            _____________________________________
+                                        </div>
+                                        <div>
+                                            <span><b>EPITHELIUM SA</b></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <div class="pt-5">
+                                        <div class="pt-5">
+                                            __________________________________________
+                                        </div>
+                                        <div>
+                                            <span><b>RECIBIDA ACEPTADA, FIRMA Y SELLO</b></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center row pt-1">
+                                <div class="col-12">
+                                    <span><t t-esc="o.company_id.name"/><![CDATA[&nbsp;]]> N.I.T.<t
+                                            t-esc="o.company_id.vat"/>
+                                        -<t t-esc="o.company_id.verification_code"/></span><br/>
+                                    <span><t t-esc="o.company_id.street"/> <![CDATA[&nbsp;]]> TEL: <t
+                                            t-esc="o.company_id.phone"/></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+    <report id="invoice_custom_report" string="Sale invoice" model="account.move" report_type="qweb-pdf"
+            name="ln10_co_intello.invoice_report_custom" file="ln10_co_intello.invoice_report_custom"/>
+
+</odoo>

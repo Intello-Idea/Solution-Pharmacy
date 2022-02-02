@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Grams pharmaceutical form-->
+         <record id="base_solution_quotator_product" model="ir.ui.view">
+            <field name="name">mrp.production.quotator.product</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page/field[@name='order_line']/tree/field[@name='product_id']" position="attributes">
+                    <attribute name="domain">[('product_tmpl_id.name', '!=', 'Generico cotizador')]</attribute>
+                </xpath>
+                <!--Los dos campos siguientes se crean netamente para poder pasar la presentacion y la formula
+                farmaceutica a la lista de materias que se renueva cada vez que se oprime confirmar, esto es debido
+                a la funcionalidad del cotizador desarrollado-->
+                <xpath expr="//form/sheet/group/group/field[@name='payment_term_id']" position="after">
+                    <field name="form_pharmaceutical" invisible="True"/>
+                    <field name="grams_pharmaceutical" invisible="True"/>
+                    <field name="pharmaceutical_presentation" invisible="True"/>
+                </xpath>   
+            </field>
+        </record>
+    </data>
+</odoo>

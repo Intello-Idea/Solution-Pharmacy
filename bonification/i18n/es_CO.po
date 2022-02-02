@@ -1,0 +1,167 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bonification
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-29 14:36+0000\n"
+"PO-Revision-Date: 2021-12-29 14:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bonification
+#: model:ir.model.constraint,message:bonification.constraint_rate_bonification_type_client_uniq_rate
+msgid "!No pueden existir dos tipos de clientes con las mismas tarifas¡"
+msgstr ""
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification_line__quantity_product
+msgid "Base"
+msgstr ""
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification_line__lines
+msgid "Base Price"
+msgstr ""
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_sale_order_line__bonus
+msgid "Bonus"
+msgstr ""
+
+#. module: bonification
+#: model_terms:ir.ui.view,arch_db:bonification.button_bonification
+msgid "Calculate bonifications"
+msgstr "Calcular bonificaciones"
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification__code
+msgid "Code"
+msgstr "Codigo"
+
+#. module: bonification
+#: model:ir.ui.menu,name:bonification.menu_rate_bonification
+msgid "Configuration rewarded by third parties"
+msgstr "Configuracion bonificaciones terceros"
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification__create_uid
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification_line__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification__create_date
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification_line__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification__display_name
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification_line__display_name
+#: model:ir.model.fields,field_description:bonification.field_sale_order__display_name
+#: model:ir.model.fields,field_description:bonification.field_sale_order_line__display_name
+msgid "Display Name"
+msgstr "Nombre Público"
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification_line__final
+msgid "Final"
+msgstr ""
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification__id
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification_line__id
+#: model:ir.model.fields,field_description:bonification.field_sale_order__id
+#: model:ir.model.fields,field_description:bonification.field_sale_order_line__id
+msgid "ID"
+msgstr ""
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification____last_update
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification_line____last_update
+#: model:ir.model.fields,field_description:bonification.field_sale_order____last_update
+#: model:ir.model.fields,field_description:bonification.field_sale_order_line____last_update
+msgid "Last Modified on"
+msgstr "Última Modificación el"
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification__write_uid
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification_line__write_uid
+msgid "Last Updated by"
+msgstr "Ultima modificacion por"
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification__write_date
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification_line__write_date
+msgid "Last Updated on"
+msgstr "Ultima modificacion en"
+
+#. module: bonification
+#: code:addons/QAsolution/Solution-Pharmacy/bonification/models/rate.py:0
+#: code:addons/bonification/models/rate.py:0
+#, python-format
+msgid "Por favor llenar el campo de rangos"
+msgstr ""
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification__lines_price
+msgid "Ranks"
+msgstr "Rangos"
+
+#. module: bonification
+#: model_terms:ir.ui.view,arch_db:bonification.rate_bonification_form
+msgid "Rate bonification"
+msgstr "Tarifas bonificaciones"
+
+#. module: bonification
+#: model:ir.actions.act_window,name:bonification.rate_bonification_action_window
+#: model_terms:ir.ui.view,arch_db:bonification.rate_bonification_form
+msgid "Rates bonification"
+msgstr "Tarifas bonificaciones"
+
+#. module: bonification
+#: model:ir.model,name:bonification.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de Venta"
+
+#. module: bonification
+#: model:ir.model,name:bonification.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea Orden de Venta"
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification_line__start
+msgid "Start"
+msgstr "Inicio"
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification__client_type
+msgid "Type client"
+msgstr "Tipo de cliente"
+
+#. module: bonification
+#: model:ir.model.fields,field_description:bonification.field_rate_bonification__check_validation
+msgid "Validation values"
+msgstr "Valores de validacion"
+
+#. module: bonification
+#: model_terms:ir.ui.view,arch_db:bonification.rate_bonification_form
+msgid "rates discount"
+msgstr "Tarifa de descuentos"
+
+#. module: bonification
+#: model:ir.model,name:bonification.model_rate_bonification_line
+msgid "this module containt the lines rates for discount product"
+msgstr "Este modulo contiene las lineas de tarifas para los decuentos por producto"
+
+#. module: bonification
+#: model:ir.model,name:bonification.model_rate_bonification
+msgid "this module containt the rates for discount product"
+msgstr "Este modulo contiene las tarifas para productos con descuento"

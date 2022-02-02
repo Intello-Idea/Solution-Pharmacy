@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Form Partner_detail -->
+        <record id="partner_detail_form" model="ir.ui.view">
+            <field name="name">partner.detail.form</field>
+            <field name="model">partner.detail</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <sheet>
+                            <group colspan="2" col="1">
+                                <separator string="Name"/>
+                                <field name="name"/>
+                                <group col="2">
+                                    <separator string="Date and Bonus"/>
+                                    <field name="star_date"/>
+                                    <field name="final_date"/>
+                                    <field name="unit_purchased"/>
+                                    <field name="unit_bonus"/>
+                                </group>
+                            </group>
+                        </sheet>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- inherit button sale.order -->
+        <record id="view_inherit_view_sale_order_form" model="ir.ui.view">
+            <field name="name">view.inherit.sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <!-- position: after|before|replace|attributes|inside -->
+                <xpath expr="//button[@name='action_confirm']" position="after">
+                    <button name="bonification" type="object" string="Calculate bonifications"
+                            attrs="{'invisible': [('state', 'not in', ['draft'])]}" class="btn btn-warning"/>
+                </xpath>
+
+                <!-- position values: after|before|replace|attributes|inside -->
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom_qty']" position="after">
+                    <field name="bonus" invisible="1"/>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': ['|', ('product_updatable', '=', False), ('bonus', '=', True)],
+                                             'required': [('display_type', '=', False)]}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom_qty']" position="attributes">
+                    <attribute name="attrs">{'required': True, 'readonly': [('bonus', '=', True)]}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="attributes">
+                    <attribute name="attrs">{'required': True, 'readonly': [('bonus', '=', True)]}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="attributes">
+                    <attribute name="attrs">{'required': True, 'readonly': ['|',('qty_invoiced', '&gt;', 0),('bonus', '=', True)]}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='tax_id']" position="attributes">
+                    <attribute name="attrs">{
+                        'readonly': ['|', ('qty_invoiced', '&gt;', 0), ('bonus', '=', True)]}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='discount']" position="attributes">
+                    <attribute name="attrs">{'readonly': True}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='discount']" position="after">
+                    <field name="subtotal_before_bonificate" readonly="1" widget="monetary" invisible="1"/>
+                    <field name="total_bonificate" readonly="1" widget="monetary" invisible="1"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- inherit form partner.category detail  -->
+        <record id="view_inherit_partner_category_form" model="ir.ui.view">
+            <field name="name">view.inherit.partner.category.form</field>
+            <field name="model">partner.category</field>
+            <field name="inherit_id" ref="partner_category.partner_category_form"/>
+            <field name="arch" type="xml">
+
+                <!-- position: after|before|replace|attributes|inside -->
+                <xpath expr="//notebook" position="inside">
+                    <page string="Details and bonus">
+                        <field name="detail">
+                            <tree editable="bot">
+                                <field name="star_date" placeholder="Start Date"/>
+                                <field name="final_date" placeholder="Final Date"/>
+                                <field name="unit_purchased"/>
+                                <field name="unit_bonus"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>
