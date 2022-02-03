@@ -26,11 +26,11 @@ class ResConfigSettingsMod(models.TransientModel):
 
         if self.check_status:
             variables = [
-                {'name': 'o-brand-odoo', 'value': "#003699"}]
+                {'name': 'o-brand-odoo', 'value': "#4C7EBF"}]
 
         else:
             variables = [
-                {'name': 'o-brand-odoo', 'value': "#7C7BAD"}]
+                {'name': 'o-brand-odoo', 'value': "#7267AC"}]
 
         self.env['scss.editor.epithelium'].replace_values(
             SCSS_URL, XML_ID, variables
@@ -97,7 +97,7 @@ class ResConfigSettingsMod(models.TransientModel):
         journal_action = self.env.ref('account.action_account_journal_form')
 
         # Actions for Module Purchase
-        request_quotation_action = self.env.ref('purchase.purchase_rfq')
+    #Modifico carlos    request_quotation_action = self.env.ref('purchase.purchase_rfq')
         purchase_order_action = self.env.ref('purchase.purchase_form_action')
         purchase_product = self.env.ref('purchase.product_normal_action_puchased')
         purchase_report = self.env.ref('purchase.action_purchase_order_report_all')
@@ -178,7 +178,7 @@ class ResConfigSettingsMod(models.TransientModel):
             journal_action.update({'domain': [('check_status', '=', True)]})
 
             # Action Module Purchase
-            request_quotation_action.update({'domain': [('check_status', '=', True)]})
+#Modifico carlos            request_quotation_action.update({'domain': [('check_status', '=', True)]})
             purchase_order_action.update(
                 {'domain': [('state', 'in', ('purchase', 'done')), ('check_status', '=', True)]})
             purchase_product.update({'domain': [('check_status', '=', True)]})
@@ -197,12 +197,17 @@ class ResConfigSettingsMod(models.TransientModel):
             product_code.update({'domain': [('check_status', '=', True)]})
 
             # Action Module Manufacturing
+        #    manufacturing_order_action.update(
+        #        {'domain': [('picking_type_id.active', '=', True), ('check_status', '=', True)]})
+#Modifico carlos
             manufacturing_order_action.update(
-                {'domain': [('picking_type_id.active', '=', True), ('check_status', '=', True)]})
+                {'domain': [('picking_type_id.active', '=', True), ('production_line_id.check_status', '=', True)]})
             unbuild_order_action.update({'domain': [('product_id.check_status', '=', True)]})
             manufacturing_product_action.update({'domain': [('check_status', '=', True)]})
             production_lines_action.update({'domain': [('check_status', '=', True)]})
-            bills_materials_action.update({'domain': [('check_status', '=', True)]})
+        #    bills_materials_action.update({'domain': [('check_status', '=', True)]})
+#Modifico carlos
+            bills_materials_action.update({'domain': [('production_line_id.check_status', '=', True)]})
             production_order.update({'domain': [('check_status', '=', True)]})
             work_order_report.update({'domain': [('product_id.check_status', '=', True)]})
             work_order_todo.update({'domain': [('product_id.check_status', '=', True)]})
@@ -259,7 +264,7 @@ class ResConfigSettingsMod(models.TransientModel):
             journal_action.update({'domain': []})
 
             # Action Module Purchase
-            request_quotation_action.update({'domain': []})
+#Modifico carlos            request_quotation_action.update({'domain': []})
             purchase_order_action.update({'domain': [('state', 'in', ('purchase', 'done'))]})
             purchase_product.update({'domain': []})
             purchase_report.update({'domain': []})
