@@ -25,6 +25,7 @@
 
     # always loaded
     'data': [
+        'data/decimal_precision_data.xml',
         'security/ir.model.access.csv',
         'report/mrp_production_templates.xml',
         'report/quality_label_report.xml',
