@@ -11,8 +11,8 @@ class ProductTemplate(models.Model):
     check_status_categ = fields.Boolean('Check product categ', related="categ_id.check_status")
     pharmaceutical_form = fields.Many2one('pharmaceutical.form', string="Pharmaceutical form")
     pharmaceutical_presentation = fields.Many2one('pharmaceutical.presentation', string="Pharmaceutical presentation")
-    dough = fields.Many2one("uom.uom", domain=['|', ("category_id.measure_type", "=", "weight"),
-                                               ("category_id.measure_type", "=", "volume")])
+    dough = fields.Many2one("uom.uom", domain=['|', ("category_id.name", "=", "Volumen"),
+                                               ("category_id.name", "=", "Peso")])
     size = fields.Float(string="Size")
 
     """Boolean Fields"""
