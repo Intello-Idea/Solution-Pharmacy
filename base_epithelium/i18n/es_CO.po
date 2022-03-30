@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0+e-20211014\n"
+"Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-28 14:14+0000\n"
-"PO-Revision-Date: 2022-03-28 14:14+0000\n"
+"POT-Creation-Date: 2022-03-30 15:22+0000\n"
+"PO-Revision-Date: 2022-03-30 15:22+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -27,19 +27,10 @@ msgstr "'Rotulo de calidad - %s' % object.name"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
-msgid "<b>PURCHASE ORDER</b>"
-msgstr "<b>ORDEN DE COMPRA</b>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
-msgid ""
-"<b>PURCHASE</b>\n"
-"                                                   <br/>\n"
-"                                                  <b>FORM</b>"
+msgid "<b>PURCHASE ORDER FORM</b>"
 msgstr ""
-"<b>COMPRAS</b>\n"
-"                                                   <br/>\n"
-"                                                  <b>FORMATO</b>"
+"<b>FORMATO ORDEN DE COMPRA</b>\n"
+"                        <br/>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium_solicitud
@@ -126,6 +117,14 @@ msgid ""
 msgstr ""
 
 #. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
+msgid ""
+"<span class=\"list-inline-item\"><span class=\"page\"/></span>\n"
+"                                    <span class=\"list-inline-item\">de</span>\n"
+"                                    <span class=\"list-inline-item\"><span class=\"topage\"/></span>"
+msgstr ""
+
+#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
 msgid "<span style=\"color: green;\">APPROVED</span>"
 msgstr "<span style=\"color: green;\">APROBADO</span>"
@@ -160,6 +159,16 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
 msgid "<span>20.01.20</span>"
 msgstr ""
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
+msgid "<span>27.09.16</span>"
+msgstr ""
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
+msgid "<span>Approved</span>"
+msgstr "<span>Aprobado</span>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_ephi
@@ -238,48 +247,6 @@ msgstr "<strong style=\"font-size: 9pt;\">Cliente:</strong>"
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
 msgid "<strong style=\"font-size: 9pt;\">Production Order:</strong>"
 msgstr "<strong style=\"font-size: 9pt;\">Orden de Producción:</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
-msgid ""
-"<strong style=\"font-weight:700; padding-left:5px;\">Code: FTO-"
-"COM-002-3</strong>"
-msgstr "<strong style=\"font-weight:700; padding-left:5px;\">Código: FTO-"
-"COM-002-3</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
-msgid "<strong style=\"font-weight:700; padding-left:5px;\">ID: 68</strong>"
-msgstr ""
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
-msgid ""
-"<strong style=\"font-weight:700; padding-left:5px;\">Page:</strong>\n"
-"                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\"><span class=\"page\"/></strong>\n"
-"                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\">of</strong>\n"
-"                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\"><span class=\"topage\"/></strong>"
-msgstr ""
-"<strong style=\"font-weight:700; padding-left:5px;\">Página:</strong>\n"
-"                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\"><span class=\"page\"/></strong>\n"
-"                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\">de</strong>\n"
-"                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\"><span class=\"topage\"/></strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
-msgid ""
-"<strong style=\"font-weight:700; padding-"
-"left:5px;\">Validity:</strong><br/><strong style=\"font-weight:700; padding-"
-"left:5px;\">From Oct-21 to Oct-23</strong>"
-msgstr ""
-"<strong style=\"font-weight:700; padding-"
-"left:5px;\">Vigencia:</strong><br/><strong style=\"font-weight:700; padding-"
-"left:5px;\">Desde Oct-21 hasta Oct-23</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
-msgid "<strong style=\"font-weight:700; padding-left:5px;\">Version: 01</strong>"
-msgstr "<strong style=\"font-weight:700; padding-left:5px;\">Versión: 01</strong>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
@@ -372,6 +339,11 @@ msgid "<strong>Date:</strong>"
 msgstr "<strong>Fecha:</strong>"
 
 #. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
+msgid "<strong>Date</strong>"
+msgstr "<strong>Fecha:</strong>"
+
+#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchasequotation_document
 msgid "<strong>Deliver to:</strong>"
@@ -407,6 +379,11 @@ msgstr ""
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
 msgid "<strong>FTO-COC-010-2</strong>"
+msgstr ""
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
+msgid "<strong>FTO-COM-002-3</strong>"
 msgstr ""
 
 #. module: base_epithelium
@@ -452,6 +429,11 @@ msgid "<strong>Packing</strong>"
 msgstr "<strong>Envasado</strong>"
 
 #. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
+msgid "<strong>Page</strong>"
+msgstr "<strong>Página</strong>"
+
+#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchasequotation_document
 msgid ""
@@ -481,6 +463,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchasequotation_document
 msgid "<strong>Qty</strong>"
 msgstr "<strong>Cantidad</strong>"
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
+msgid "<strong>State</strong>"
+msgstr "<strong>Estado</strong>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
@@ -1042,7 +1029,7 @@ msgstr "Forma farmacéutica"
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_stock_picking_type
 msgid "Picking Type"
-msgstr "Tipo de albarán"
+msgstr "Tipo de Nota de Entrega"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.mrp_production_form_view_base_epithelium
@@ -1215,7 +1202,11 @@ msgstr "Factura de Ventas de Pago Anticipado"
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_sale_order
 msgid "Sales Order"
-msgstr "Orden de Venta"
+msgstr ""
+"#-#-#-#-#  es_CO.po (Odoo 9.0)  #-#-#-#-#\n"
+"Orden de Venta\n"
+"#-#-#-#-#  es_CO.po (Odoo 9.0)  #-#-#-#-#\n"
+"Pedido de Venta"
 
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_sale_order_line
@@ -1274,7 +1265,7 @@ msgstr "Estado del porcentaje"
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_stock_move
 msgid "Stock Move"
-msgstr "Movimiento de existencias"
+msgstr "Movimiento de Existencias"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
@@ -1333,7 +1324,7 @@ msgstr "Total"
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_stock_picking
 msgid "Transfer"
-msgstr "Albarán"
+msgstr "Transferir"
 
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_mrp_unbuild
