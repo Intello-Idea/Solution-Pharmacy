@@ -28,7 +28,7 @@ msgstr "'Rotulo de calidad - %s' % object.name"
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
 msgid "<b>PURCHASE ORDER</b>"
-msgstr ""
+msgstr "<b>ORDEN DE COMPRA</b>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
