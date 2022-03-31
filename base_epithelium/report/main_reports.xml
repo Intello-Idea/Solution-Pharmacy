@@ -7,7 +7,7 @@
             <field name="name">Quality Laber</field>
             <field name="default" eval="True"/>
             <field name="format">custom</field>
-            <field name="page_height">96</field>
+            <field name="page_height">106</field>
             <field name="page_width">90</field>
             <field name="orientation">Portrait</field>
             <field name="margin_top">0</field>
