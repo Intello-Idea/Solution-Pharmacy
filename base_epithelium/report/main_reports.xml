@@ -3,12 +3,12 @@
     <data>
 
         <!-- Paper format  quality label-->
-        <record id="paperformat_quality_label" model="report.paperformat">
-            <field name="name">Quality Laber</field>
+        <record id="paperformat_identification_label" model="report.paperformat">
+            <field name="name">Identification Label</field>
             <field name="default" eval="True"/>
             <field name="format">custom</field>
-            <field name="page_height">90</field>
-            <field name="page_width">110</field>
+            <field name="page_height">110</field>
+            <field name="page_width">90</field>
             <field name="orientation">Portrait</field>
             <field name="margin_top">0</field>
             <field name="margin_bottom">0</field>
@@ -51,14 +51,14 @@
 
         <!-- Production order report -->
         <report
-                id="action_report_quality_label"
+                id="action_report_identification_label"
                 model="stock.picking"
-                string="Quality Label"
+                string="Identification Label"
                 report_type="qweb-pdf"
                 name="base_epithelium.quality_label"
                 file="base_epithelium.report.quality_label_report"
-                print_report_name="'Quality Label - %s' % object.name"
-                paperformat="paperformat_quality_label"
+                print_report_name="'Identification Label - %s' % object.name"
+                paperformat="paperformat_identification_label"
                 menu="True"
         />
 
