@@ -40,7 +40,7 @@
                             </tr>
                             <tr style="border-top:1px solid #000;">
                                 <td>
-                                    <h5 style="padding:0px 2px 0px 5px; font-size: 10px; font-weight:bold; padding-top:20px;">
+                                    <h5 style="padding:0px 2px 0px 5px; font-size: 10px; font-weight:bold; padding-top:15px;">
                                         IDENTIFICATION LABEL
                                     </h5>
                                 </td>
@@ -196,10 +196,10 @@
                                     </tr>
                                     -->
                                     <tr style="height: 30px">
-                                        <td style="width: 30%; border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                        <td style="width: 50%; border: 1px solid black; padding-right:5px; padding-left:5px;">
                                             <span>Entry <br/> date: </span> <span t-field="o.picking_id.date_done" t-options='{"widget": "date"}'/>
                                         </td>
-                                        <td style="width: 45%; border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                        <td style="width: 25%; border: 1px solid black; padding-right:5px; padding-left:5px;">
                                             <span>N° Pucharse order: </span> <br/>
                                             <span t-field="o.picking_id.origin"/>
                                         </td>
