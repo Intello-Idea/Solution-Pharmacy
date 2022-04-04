@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0+e-20211014\n"
+"Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-04 14:02+0000\n"
-"PO-Revision-Date: 2022-04-04 14:02+0000\n"
+"POT-Creation-Date: 2022-04-04 16:34+0000\n"
+"PO-Revision-Date: 2022-04-04 16:34+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,14 +16,14 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: base_epithelium
+#: model:ir.actions.report,print_report_name:base_epithelium.action_report_identification_label
+msgid "'Identification Label - %s' % object.name"
+msgstr "'Rótulo de identificación - %s' % object.name"
+
+#. module: base_epithelium
 #: model:ir.actions.report,print_report_name:base_epithelium.action_report_production_order
 msgid "'Production Order - %s' % object.name"
 msgstr "'Orden de Producción - %s' % object.name"
-
-#. module: base_epithelium
-#: model:ir.actions.report,print_report_name:base_epithelium.action_report_quality_label
-msgid "'Quality Label - %s' % object.name"
-msgstr "'Rotulo de calidad - %s' % object.name"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
@@ -856,7 +856,12 @@ msgstr ""
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
 msgid "IDENTIFICATION LABEL"
-msgstr "ROTULO DE IDENTIFICACIÓN"
+msgstr "RÓTULO DE IDENTIFICACIÓN"
+
+#. module: base_epithelium
+#: model:ir.actions.report,name:base_epithelium.action_report_identification_label
+msgid "Identification Label"
+msgstr "Rótulo de identificación"
 
 #. module: base_epithelium
 #: model:ir.model.fields,field_description:base_epithelium.field_stock_move__product_uom_qty
@@ -1118,7 +1123,7 @@ msgstr "Forma farmacéutica"
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_stock_picking_type
 msgid "Picking Type"
-msgstr "Tipo de albarán"
+msgstr "Tipo de Nota de Entrega"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.mrp_production_form_view_base_epithelium
@@ -1235,11 +1240,6 @@ msgid "Quality Control Point"
 msgstr "Punto de Control de Calidad"
 
 #. module: base_epithelium
-#: model:ir.actions.report,name:base_epithelium.action_report_quality_label
-msgid "Quality Label"
-msgstr "Rótulo de calidad"
-
-#. module: base_epithelium
 #: model:ir.model.fields,field_description:base_epithelium.field_mrp_bom_line__product_qty
 #: model:ir.model.fields,field_description:base_epithelium.field_mrp_production_simulation_lot__quantity
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
@@ -1296,7 +1296,11 @@ msgstr "Factura de Ventas de Pago Anticipado"
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_sale_order
 msgid "Sales Order"
-msgstr "Orden de Venta"
+msgstr ""
+"#-#-#-#-#  es_CO.po (Odoo 9.0)  #-#-#-#-#\n"
+"Orden de Venta\n"
+"#-#-#-#-#  es_CO.po (Odoo 9.0)  #-#-#-#-#\n"
+"Pedido de Venta"
 
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_sale_order_line
@@ -1355,7 +1359,7 @@ msgstr "Estado del porcentaje"
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_stock_move
 msgid "Stock Move"
-msgstr "Movimiento de existencias"
+msgstr "Movimiento de Existencias"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
@@ -1414,7 +1418,7 @@ msgstr "Total"
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_stock_picking
 msgid "Transfer"
-msgstr "Albarán"
+msgstr "Transferir"
 
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_mrp_unbuild
