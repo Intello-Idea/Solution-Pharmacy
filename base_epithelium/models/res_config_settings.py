@@ -181,7 +181,7 @@ class ResConfigSettingsMod(models.TransientModel):
             request_quotation_action.update({'domain': [('check_status', '=', True)]})
             purchase_order_action.update(
                 {'domain': [('state', 'in', ('purchase', 'done')), ('check_status', '=', True)]})
-            purchase_product.update({'domain': [('check_status', '=', True)]})
+            purchase_product.update({'domain': []}) #quite ('check_status', '=', True) requerimiento REQ-SP-000001
             purchase_report.update({'domain': [('order_id.check_status', '=', True)]})
 
             # Action Module Inventory
