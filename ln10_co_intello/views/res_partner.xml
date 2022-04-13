@@ -201,13 +201,13 @@
                     <field name="term_extra_client" attrs="{'readonly': [('gen_quota_client', '=', True)]}" force_save="1"/>
                 </xpath>
 
-                <!-- Fabian Hernando Vera Carrillo
-                    2022-04-13
-                    Se agrego el elemento client_code en la vista
-                 -->
-                <field name="property_product_pricelist" position="after">
-                    <field name="client_code"/>
-                </field>
+<!--                 Fabian Hernando Vera Carrillo-->
+<!--                    2022-04-13-->
+<!--                    Se agrego el elemento client_code en la vista-->
+<!--                 -->
+<!--                <field name="property_product_pricelist" position="after">-->
+<!--                    <field name="client_code"/>-->
+<!--                </field>-->
 
                 <field name="property_payment_term_id" position="replace">
                     <!--<field string="Payment Terms" name="property_payment_term_id" widget="selection" groups="account.group_account_invoice" attrs="{'required' : [('customer', '=', True)]}"/>-->
