@@ -78,6 +78,11 @@ class Partner(models.Model):
 
     payment_type = fields.Selection(string='Payment Type', selection=[('1', 'Cash'), ('2', 'Credit')], default='1')
 
+    # Fabian Hernando Vera Carrillo
+    # 2022-04-13
+    # Se agrego el campo codigo del cliente
+    client_code = fields.Char(string='Client code')
+
     # person_type = fields.Many2one('ln10_co_intello.persontype', ondelete='set null', string='Person Type')
     person_type = fields.Many2one('ln10_co_intello.diancodes', ondelete='cascade', string='Person Type',
                                   domain=[('type', '=', 'persontype')])
@@ -236,8 +241,25 @@ class Partner(models.Model):
     def _check_valid_mail(self):
         self._validate_mail()
 
+    # Fabian Hernando Vera Carrillo
+    # 2022-04-13
+    # Se agrego la validacion de que el campo codigo cliente sea numerico
+    @api.constrains('client_code')
+    def _check_client_code(self):
+        for rec in self:
+            if rec.client_code != '':
+                try:
+                    int(rec.client_code)
+                except:
+                    raise exceptions.Warning(
+                        _('Client code must be number'))
+
+    # Fabian Hernando Vera Carrillo
+    # 2022-04-13
+    # Se agrego la validacion de que el codigo del cliente sea unico
     _sql_constraints = [
-        ('document_type_number_uniq', 'UNIQUE(document_type,vat)', 'Duplicate Document Type and VAT is not allowed!')]
+        ('document_type_number_uniq', 'UNIQUE(document_type,vat)', 'Duplicate Document Type and VAT is not allowed!'),
+        ('client_code_uniq','UNIQUE(client_code)',_('Duplicate Client code is not allowed!'))]
 
     # ,'name_document_number_uniq', 'UNIQUE(name,vat)', 'Duplicate Name and VAT is not allowed!']
 
