@@ -46,7 +46,7 @@ class AccountMove(models.Model):
                                       string='Salesperson', default=lambda self: self.env.user)
 
     # Fabian Hernando Vera Carrillo
-    # 2022-04-13
+    # 2022-04-131
     # Se agrego los registros del campo type necesario para
     # corregir el error al seleccionar los metodos de pago
     type = fields.Selection([("entry", "Asiento contable"),
