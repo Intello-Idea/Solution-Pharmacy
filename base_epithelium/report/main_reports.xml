@@ -36,6 +36,29 @@
             <field name="dpi">90</field>
         </record>
 
+        <!-- Start
+            Programmer: Routh Milano
+            Date: 14-04-2022
+            Requirement: REQ-SP-000008 
+            Functionality: Paper Format for Dispensed Materials Identification Label
+         -->
+        <record id="paperformat_mrp_dispensed_materials_identification_label" model="report.paperformat">
+            <field name="name">Mpr Dispensed Materials Identification Label solution pharmacy</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">70</field>
+            <field name="page_width">100</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+        <!--End Programmer: Routh Milano-->
+
         <!-- Production order report -->
         <report
                 id="action_report_production_order"
@@ -62,6 +85,23 @@
                 menu="True"
         />
 
-
+        <!-- Start
+            Programmer: Routh Milano
+            Date: 14-04-2022
+            Requirement: REQ-SP-000008 
+            Functionality: Report for Dispensed Materials Identification Label
+         -->
+        <report
+                id="action_report_mrp_dispensed_materials_identification_label"
+                model="mrp.production"
+                string="Dispensed Materials Identification Label"
+                report_type="qweb-pdf"
+                name="base_epithelium.dispensed_materials_identification_label"
+                file="base_epithelium.report.dispensed_materials_identification_label"
+                print_report_name="'Dispensed Materials Identification Label - %s' % object.name"
+                paperformat="paperformat_mrp_dispensed_materials_identification_label"
+                menu="True"
+        />
+        <!--End programmer Routh Milano-->
     </data>
 </odoo>

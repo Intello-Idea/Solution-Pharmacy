@@ -27,6 +27,7 @@
     'data': [
         'data/decimal_precision_data.xml',
         'security/ir.model.access.csv',
+        'report/dispensed_materials_identification_label.xml',
         'report/mrp_production_templates.xml',
         'report/quality_label_report.xml',
         'report/main_reports.xml',
