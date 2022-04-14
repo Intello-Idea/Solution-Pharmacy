@@ -195,7 +195,12 @@ class MrpProduction(models.Model):
             if check_status:
                 node.set('domain', "[('check_status', '=', True)]")
             else:
-                node.set('domain', "[]")
+                ''' 
+                    Programmer: Routh Milano
+                    Date: 14-04-2022
+                    Requirement: Add filter in of field product_id
+                '''
+                node.set('domain', "[('bom_ids','!=', False),('bom_ids.active','=', True),('bom_ids.type','=', 'normal'),('type','in',['product','consu']),'|',('company_id','=',False),('company_id','=',company_id)]")
 
         res['arch'] = etree.tostring(doc)
 
