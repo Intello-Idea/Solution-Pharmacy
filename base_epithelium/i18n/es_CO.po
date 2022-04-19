@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e-20211014\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-14 19:46+0000\n"
-"PO-Revision-Date: 2022-04-14 19:46+0000\n"
+"POT-Creation-Date: 2022-04-19 21:20+0000\n"
+"PO-Revision-Date: 2022-04-19 21:20+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,11 @@ msgstr "'Rótulo Identificación Materiales Dispensados - %s' % object.name"
 #: model:ir.actions.report,print_report_name:base_epithelium.action_report_identification_label
 msgid "'Identification Label - %s' % object.name"
 msgstr "'Rótulo de identificación - %s' % object.name"
+
+#. module: base_epithelium
+#: model:ir.actions.report,print_report_name:base_epithelium.action_report_mrp_material_dispensing_label
+msgid "'Material Dispensing Label - %s' % object.name"
+msgstr ""
 
 #. module: base_epithelium
 #: model:ir.actions.report,print_report_name:base_epithelium.action_report_production_order
@@ -123,6 +128,16 @@ msgid ""
 msgstr ""
 
 #. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.material_dispensing_label
+msgid "<span style=\"font-weight:700;\">MATERIAL NAME:</span>"
+msgstr "<span style=\"font-weight:700;\">Material:</span>"
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.material_dispensing_label
+msgid "<span style=\"font-weight:700;\">PRODUCT: </span>"
+msgstr "<span style=\"font-weight:700;\">Producto: </span>"
+
+#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
 msgid "<span> Quality State: </span>"
 msgstr "<span> Estado de calidad: </span>"
@@ -133,9 +148,74 @@ msgid "<span> Storage Conditions: </span>"
 msgstr "<span> Condiciones Almacenamiento: </span>"
 
 #. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
+msgid "<span>-Abril-</span>"
+msgstr ""
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
+msgid "<span>-Agosto-</span>"
+msgstr ""
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
+msgid "<span>-Diciembre-</span>"
+msgstr ""
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
+msgid "<span>-Enero-</span>"
+msgstr ""
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
+msgid "<span>-Febrero-</span>"
+msgstr ""
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
+msgid "<span>-Julio-</span>"
+msgstr ""
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
+msgid "<span>-Junio-</span>"
+msgstr ""
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
+msgid "<span>-Marzo-</span>"
+msgstr ""
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
+msgid "<span>-Mayo-</span>"
+msgstr ""
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
+msgid "<span>-Noviembre-</span>"
+msgstr ""
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
+msgid "<span>-Octubre-</span>"
+msgstr ""
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
+msgid "<span>-Septiembre-</span>"
+msgstr ""
+
+#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_ephi
 msgid "<span>20.01.20</span>"
 msgstr ""
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.material_dispensing_label
+msgid "<span>ACTUAL AMOUNT DISPENSED: </span>"
+msgstr "<span>Cant. Real Disp.:</span>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
@@ -173,6 +253,11 @@ msgid "<span>DISPENSED BY / DATE:</span> <br/>"
 msgstr "<span>DISPENSADO POR / FECHA:</span> <br/>"
 
 #. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.material_dispensing_label
+msgid "<span>DISPENSED BY/DATE:</span> <br/>"
+msgstr "<span>Disp. por/fecha:</span> <br/>"
+
+#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
 msgid ""
 "<span>Due date: </span>\n"
@@ -190,6 +275,11 @@ msgstr "<span>Fecha <br/> Entrada: </span>"
 #: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
 msgid "<span>Gross weight: </span>"
 msgstr "<span>Peso bruto: </span>"
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.material_dispensing_label
+msgid "<span>Lot: </span>"
+msgstr "<span>Lote: </span>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
@@ -224,6 +314,11 @@ msgstr "<span>N° Entrada Almacén: </span><br/>"
 #: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
 msgid "<span>ORDER ISSUE DATE:</span>"
 msgstr "<span>FECHA EMISIÓN ORDEN:</span>"
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.material_dispensing_label
+msgid "<span>ORDER PRODUCTION: </span>"
+msgstr "<span>OP: </span>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
@@ -270,6 +365,11 @@ msgstr ""
 "                                            <br/>"
 
 #. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.material_dispensing_label
+msgid "<span>QUANTITY TO DISPENSE:</span>"
+msgstr "<span>Cant. A Disp.:</span>"
+
+#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
 msgid "<span>Reanalysis date: </span>"
 msgstr "<span>Fecha de re análisis: </span>"
@@ -283,6 +383,11 @@ msgstr "<span>Tara: </span>"
 #: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
 msgid "<span>VERIFIED BY / DATE: </span>"
 msgstr "<span>VERIFICADO POR / FECHA: </span>"
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.material_dispensing_label
+msgid "<span>VERIFIED BY/DATE: </span>"
+msgstr "<span>Verificado por/fecha: </span>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
@@ -357,6 +462,15 @@ msgstr ""
 "PRO-011-1</strong>"
 
 #. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
+msgid ""
+"<strong style=\"font-weight:700; padding-left:5px;\">Code: FPRC-"
+"PRO-002-2</strong>"
+msgstr ""
+"<strong style=\"font-weight:700; padding-left:5px;\">Código: FPRC-"
+"PRO-002-2</strong>"
+
+#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
 msgid ""
 "<strong style=\"font-weight:700; padding-left:5px;\">Code: FPRC-"
@@ -368,15 +482,17 @@ msgstr ""
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
 msgid "<strong style=\"font-weight:700; padding-left:5px;\">ID: 107</strong>"
-msgstr "<strong style=\"font-weight:700; padding-left:5px;\">ID: 107</strong>"
+msgstr ""
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
+#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
 msgid "<strong style=\"font-weight:700; padding-left:5px;\">ID: 72</strong>"
-msgstr "<strong style=\"font-weight:700; padding-left:5px;\">ID: 72</strong>"
+msgstr ""
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
+#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
 msgid ""
 "<strong style=\"font-weight:700; padding-left:5px;\">Page:</strong>\n"
@@ -391,6 +507,7 @@ msgstr ""
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
+#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
 msgid ""
 "<strong style=\"font-weight:700; padding-"
@@ -403,6 +520,7 @@ msgstr ""
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
+#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
 msgid "<strong style=\"font-weight:700; padding-left:5px;\">Version: 01</strong>"
 msgstr "<strong style=\"font-weight:700; padding-left:5px;\">Versión: 01</strong>"
@@ -1049,6 +1167,7 @@ msgstr "Localización"
 #: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium_solicitud
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_ephi
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
+#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
 msgid "Logo"
 msgstr ""
@@ -1073,6 +1192,16 @@ msgstr "Lineas lotes"
 #: model_terms:ir.ui.view,arch_db:base_epithelium.mrp_production_form_view_base_epithelium
 msgid "Lots"
 msgstr "Lotes"
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
+msgid "MATERIALS DISPENSING"
+msgstr "DISPENSACIÓN DE MATERIALES"
+
+#. module: base_epithelium
+#: model:ir.actions.report,name:base_epithelium.action_report_mrp_material_dispensing_label
+msgid "Material Dispensing Label"
+msgstr "Rótulo Dispensación de Materiales"
 
 #. module: base_epithelium
 #: model:ir.model.fields,field_description:base_epithelium.field_wizard_mrp_production__message
@@ -1143,6 +1272,7 @@ msgstr "Orden"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
+#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
 msgid "PRODUCTION FORMAT"
 msgstr "PRODUCCIÓN FORMATO"
 
