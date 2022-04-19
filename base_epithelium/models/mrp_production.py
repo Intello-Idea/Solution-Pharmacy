@@ -95,6 +95,10 @@ class MrpProduction(models.Model):
                 for move in production.move_raw_ids:
                     move_line = production.env['stock.move.line'].search([('move_id', '=', move.id)])
                     production.lot_stock_move_line_ids += move_line
+            else:
+                # Fabian Hernando Vera Carrillo
+                # Solucion error cuando la orden de produccion no tiene productos asociados
+                production.lot_stock_move_line_ids
 
     def write(self, vals):
         return super(MrpProduction, self).write(vals)

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--   Fabian Hernando Vera Carrillo-->
+    <!--   2022-04-18-->
+    <!--   Se agrego el elemento client_code en la vista-->
+    <data>
+        <record model="ir.ui.view" id="partner_custom_contact_form_view">
+            <field name="name">partner.custom_contact</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <field name="property_product_pricelist" position="after">
+                    <field name="client_code" />
+                </field>
+            </field>
+        </record>
+    </data>
+    <!-- End programer Fabian Hernando Vera Carrillo-->
+</odoo>
