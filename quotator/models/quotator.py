@@ -106,7 +106,7 @@ class Quotator(models.Model):
         material = []
         products = []
         product = {
-            'product_id': self.env['product.template'].search([('name', '=', 'Generico cotizador')]).id,
+            'product_id': self.env['product.product'].search([('name', '=', 'Generico cotizador')]).id,
             'name': self.final_product,
             'product_uom_qty': self.product_qty,
             'price_unit': self.total/self.product_qty,
