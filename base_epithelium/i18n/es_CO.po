@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e-20211014\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-19 21:20+0000\n"
-"PO-Revision-Date: 2022-04-19 21:20+0000\n"
+"POT-Creation-Date: 2022-04-21 16:37+0000\n"
+"PO-Revision-Date: 2022-04-21 16:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -244,8 +244,12 @@ msgstr "<span>Código: </span>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
-msgid "<span>Container: __of__</span>"
-msgstr "<span>Recipiente: __de__</span>"
+msgid ""
+"<span>Container:</span><br/>\n"
+"                                            <span style=\"text-align:center;\">__of__</span>"
+msgstr ""
+"<span>Recipiente:</span><br/>\n"
+"                                            <span style=\"text-align:center;\">__of__</span>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
@@ -254,7 +258,7 @@ msgstr "<span>DISPENSADO POR / FECHA:</span> <br/>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.material_dispensing_label
-msgid "<span>DISPENSED BY/DATE:</span> <br/>"
+msgid "<span>DISPENSED:</span> <br/>"
 msgstr "<span>Disp. por/fecha:</span> <br/>"
 
 #. module: base_epithelium
@@ -268,8 +272,8 @@ msgstr ""
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
-msgid "<span>Entry <br/> date: </span>"
-msgstr "<span>Fecha <br/> Entrada: </span>"
+msgid "<span>Entry date: </span>"
+msgstr "<span>Fecha Entrada: </span>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
@@ -280,6 +284,15 @@ msgstr "<span>Peso bruto: </span>"
 #: model_terms:ir.ui.view,arch_db:base_epithelium.material_dispensing_label
 msgid "<span>Lot: </span>"
 msgstr "<span>Lote: </span>"
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
+msgid ""
+"<span>Lot: </span>\n"
+"                                                <br/>"
+msgstr ""
+"<span>Lote: </span>\n"
+"                                                <br/>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
@@ -302,13 +315,8 @@ msgstr "N° análisis:"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
-msgid "<span>N° Pucharse order: </span> <br/>"
-msgstr "<span>N° Orden Compra: </span> <br/>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
-msgid "<span>N° Warehouse entrance: </span><br/>"
-msgstr "<span>N° Entrada Almacén: </span><br/>"
+msgid "<span>N° Entrance: </span><br/>"
+msgstr "<span>N° Entrada: </span><br/>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
@@ -347,32 +355,9 @@ msgid "<span>PRODUCTION ORDER: </span>"
 msgstr "<span>ORDEN DE PRODUCCIÓN: </span>"
 
 #. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
-msgid ""
-"<span>Provider batch: </span>\n"
-"                                                <br/>"
-msgstr ""
-"<span>Lote proveedor: </span>\n"
-"                                                <br/>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
-msgid ""
-"<span>Provider: </span> \n"
-"                                            <br/>"
-msgstr ""
-"<span>Proveedor: </span> \n"
-"                                            <br/>"
-
-#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.material_dispensing_label
 msgid "<span>QUANTITY TO DISPENSE:</span>"
 msgstr "<span>Cant. A Disp.:</span>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
-msgid "<span>Reanalysis date: </span>"
-msgstr "<span>Fecha de re análisis: </span>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
@@ -386,8 +371,8 @@ msgstr "<span>VERIFICADO POR / FECHA: </span>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.material_dispensing_label
-msgid "<span>VERIFIED BY/DATE: </span>"
-msgstr "<span>Verificado por/fecha: </span>"
+msgid "<span>VERIFIED: </span>"
+msgstr "<span>Verif por/fecha: </span>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
