@@ -249,7 +249,7 @@ msgid ""
 "                                            <span style=\"text-align:center;\">__of__</span>"
 msgstr ""
 "<span>Recipiente:</span><br/>\n"
-"                                            <span style=\"text-align:center;\">__of__</span>"
+"                                            <span style=\"text-align:center;\">__de__</span>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
