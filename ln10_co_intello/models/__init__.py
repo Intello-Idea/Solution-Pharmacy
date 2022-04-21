@@ -1,6 +1,5 @@
 from . import ln10_co_intello
 from . import res_partner
-from . import book_accounting
 from . import account
 from . import uom_uom
 from . import res_company
@@ -11,17 +10,10 @@ from . import res_currency
 from . import tax_mapping_modification
 from . import product_template
 from . import res_lang
-from . import account_filter_option_wizard
-from . import book_report_wizard
 from . import account_financial_report_save
-from . import account_print_journal
-from . import account_auxiliary_report
-from . import account_report
-from . import account_financial_report
-from . import certification_report
 from . import res_config_settings
 from . import product_pricelist
 from . import sale_order
-from . import purchase_order
+# from . import purchase_order
 from . import crm_team_category
 from . import crm_team

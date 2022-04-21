@@ -26,7 +26,6 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        # 'data/accounting.book.csv',
         'data/ln10_co_intello.diancodes.csv',
         'data/ln10_co_intello.ciiucodes.csv',
         'data/ln10_co_intello.nomenclaturedian.csv',
@@ -42,21 +41,16 @@
         'views/res_company.xml',
         'views/res_country_views.xml',
         'views/res_city_view.xml',
-        'views/accounting_book_views.xml',
-        'data/accounting_book.xml',
         'views/product_template_view.xml',
         'views/res_lang_views.xml',
         'views/res_currency_views.xml',
         'views/product_pricelist_view.xml',
-        'wizard/account_filter_option_wizard_views.xml',
-        'wizard/account_print_journal_wizard.xml',
-        'wizard/book_report_wizard.xml',
         'views/res_config_settings.xml',
-        'wizard/account_move_reversal_view.xml',
-        'report/report_invoice.xml',
-        'report/sale_report_template.xml',
-        'views/purchase_order_view.xml',
+        # 'views/purchase_order_view.xml',
         'views/crm_team_inherit_view.xml',
+        'report/sale_report_template.xml',
+        'report/report_invoice.xml',
+        'wizard/account_move_reversal_view.xml',
     ],
 
     # only loaded in demonstration mode

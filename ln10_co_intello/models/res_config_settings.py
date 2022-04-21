@@ -8,36 +8,10 @@ import xml.etree.ElementTree as ET
 class ResConfigSettingsMod(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    multi_book = fields.Boolean(string="Multi Book", default=False)
-
-    def set_values(self):
-        super(ResConfigSettingsMod, self).set_values()
-        parameter = self.env['ir.config_parameter'].sudo()
-        parameter.set_param('res.config.settings.multi_book', self.multi_book)
-
-    @api.model
-    def get_values(self):
-        res = super(ResConfigSettingsMod, self).get_values()
-        parameter = self.env['ir.config_parameter'].sudo()
-        multibook = parameter.get_param('res.config.settings.multi_book')
-        res.update({'multi_book': multibook})
-        return res
-
     def execute(self):
         super(ResConfigSettingsMod, self).execute()
-        if self.multi_book:
-
-            self.enable_disable_features_book(True)
-#Carlos            self.enable_disable_wizard_reports(True)
-            self.disable_enable_account_account(True)
-#Carlos            self.enable_disable_account_menu(True)
-#Carlos            self.enable_disable_account_menu(True)
-        else:
-            self.enable_disable_features_book(False)
-            self.enable_disable_wizard_reports(False)
-            self.disable_enable_account_account(False)
-            self.enable_disable_account_menu(False)
-
+        # self.enable_disable_wizard_reports(False)
+        # self.enable_disable_account_menu(False)
         # Reiniciar pagina:
         return {
             'type': 'ir.actions.client',
@@ -46,82 +20,13 @@ class ResConfigSettingsMod(models.TransientModel):
 
     @api.model
     def _method(self):
-        parameter = self.env['ir.config_parameter'].sudo()
-        multibook = parameter.get_param('res.config.settings.multi_book')
-        if multibook:
-            self.enable_disable_features_book(True)
-#Carlos            self.enable_disable_wizard_reports(True)
-            self.disable_enable_account_account(True)
-#Carlos            self.enable_disable_account_menu(True)
-        else:
-            self.enable_disable_features_book(False)
-            self.enable_disable_wizard_reports(False)
-            self.disable_enable_account_account(False)
-            self.enable_disable_account_menu(False)
+        # parameter = self.env['ir.config_parameter'].sudo()
+        # self.enable_disable_wizard_reports(False)
+        # self.enable_disable_account_menu(False)
         return {
             'type': 'ir.actions.client',
             'tag': 'reload',
         }
-
-    def enable_disable_features_book(self, state):
-
-        if state:
-
-            # Multi book enable
-            self.enable_disable_book_menus(True)
-
-            action_account_multibook = self.env.ref("ln10_co_intello.action_accounting_book")
-            action_multibook_accounting = self.env.ref("ln10_co_intello.action_multi_book_accounting")
-            action_own_accounts = self.env.ref("ln10_co_intello.action_Own_Accounts")
-
-            menu_account_multibook = self.env.ref("ln10_co_intello.menu_account_multibook")
-            menu_multibook_accounting = self.env.ref("ln10_co_intello.menu_multi_book_accounting")
-            menu_own_accounts = self.env.ref("ln10_co_intello.menu_action_Own_accounts")
-
-            menu_account_multibook.update({
-                "action": action_account_multibook
-            })
-            menu_multibook_accounting.update({
-                "action": action_multibook_accounting
-            })
-            menu_own_accounts.update({
-                "action": action_own_accounts
-            })
-
-            # Disable Journal
-            journal_item = self.env.ref("account.menu_action_account_moves_all")
-            journal_item.action = False
-
-            journal_entries = self.env.ref("account.menu_action_move_journal_line_form")
-            journal_entries.action = False
-
-        else:
-            # Multi book disable
-            self.enable_disable_book_menus(False)
-
-            menu_account_multibook = self.env.ref("ln10_co_intello.menu_account_multibook")
-            menu_account_multibook.action = False
-
-            menu_multibook_accounting = self.env.ref("ln10_co_intello.menu_multi_book_accounting")
-            menu_multibook_accounting.action = False
-
-            menu_own_accounts = self.env.ref("ln10_co_intello.menu_action_Own_accounts")
-            menu_own_accounts.action = False
-
-            # Enable journal
-            action_journal_item = self.env.ref("account.action_account_moves_all")
-            action_journal_entries = self.env.ref("account.action_move_journal_line")
-
-            menu_journal_item = self.env.ref("account.menu_action_account_moves_all")
-            menu_journal_entries = self.env.ref("account.menu_action_move_journal_line_form")
-
-            menu_journal_item.update({
-                "action": action_journal_item
-            })
-
-            menu_journal_entries.update({
-                "action": action_journal_entries
-            })
 
     def enable_disable_book_menus(self, state):
 
