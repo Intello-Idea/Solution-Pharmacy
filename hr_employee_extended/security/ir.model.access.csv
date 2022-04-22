@@ -1,0 +1,9 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_hr_employee_family_employee","hr.employee.family_employee","model_hr_employee_family","base.group_user",1,0,0,0
+"access_hr_employee_family_manager","hr.employee.family_manager","model_hr_employee_family","hr.group_hr_manager",1,1,1,1
+"access_hr_employee_family_user","hr.employee.family_user","model_hr_employee_family","hr.group_hr_user",1,1,1,1
+access_hr_employee_relation,access_access_hr_employee_relation,model_hr_employee_relation,base.group_user,1,1,1,1
+access_hr_employee_endowment,access_hr_employee_endowment,model_hr_employee_endowment,base.group_user,1,1,1,1
+hr_employee_extended.access_hr_endowment,access_hr_endowment,hr_employee_extended.model_hr_endowment,base.group_user,1,1,1,1
+hr_employee_extended.access_hr_endowment_size,access_hr_endowment_size,hr_employee_extended.model_hr_endowment_size,base.group_user,1,1,1,1
+hr_employee_extended.access_hr_endowment_color,access_hr_endowment_color,hr_employee_extended.model_hr_endowment_color,base.group_user,1,1,1,1
