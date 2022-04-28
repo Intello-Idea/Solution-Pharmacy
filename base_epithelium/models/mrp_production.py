@@ -17,8 +17,8 @@ class MrpProduction(models.Model):
                                                   related='bom_id.pharmaceutical_presentation',
                                                   string="Pharmaceutical presentation")
     size = fields.Float(related='product_id.size', string="Size")
-    partner_id = fields.Many2one('res.partner', string='Partner', )
-    patient = fields.Char()
+    #partner_id = fields.Many2one('res.partner', string='Partner', )
+    #patient = fields.Char()
     due_date = fields.Date('Due date')
 
     lot_stock_move_line_ids = fields.One2many('stock.move.line', compute='_compute_lots', readonly=True, default=[],
