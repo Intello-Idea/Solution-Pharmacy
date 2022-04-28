@@ -13,7 +13,6 @@
     'category': 'Manufacturing/Manufacturing',
     'version': '0.1',
     'depends': ['base', 'base_epithelium', 'custom_contact','mrp'],
-    'application': False,
     'data': [
         #agregar data antes del security si edxiste
         'security/ir.model.access.csv',
