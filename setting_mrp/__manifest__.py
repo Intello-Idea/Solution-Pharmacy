@@ -10,7 +10,7 @@
                 """,
     'author': "Intello Idea - Developer-Routh Milano 28-04-2022",
     'website': "http://www.intelloidea.com",
-    'category': 'Manufacturing/Manufacturing',
+    'category': 'Uncategorized',
     'version': '0.1',
     'depends': ['base', 'base_epithelium', 'custom_contact','mrp'],
     'data': [
