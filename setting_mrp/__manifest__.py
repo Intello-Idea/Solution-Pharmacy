@@ -10,9 +10,10 @@
                 """,
     'author': "Intello Idea - Developer-Routh Milano 28-04-2022",
     'website': "http://www.intelloidea.com",
-    'category': 'Uncategorized',
+    'category': 'Manufacturing/Manufacturing',
     'version': '0.1',
     'depends': ['base', 'base_epithelium', 'custom_contact','mrp'],
+    'application': False,
     'data': [
         #agregar data antes del security si edxiste
         'security/ir.model.access.csv',
