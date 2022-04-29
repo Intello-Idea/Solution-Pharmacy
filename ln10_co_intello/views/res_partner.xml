@@ -164,21 +164,26 @@
                     <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}'
                            attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
                            context="{'country_id': country_id, 'zip': zip}"/>
+
                 </field>
 
-<!--                <field name="l10n_co_document_type" position="replace">
-                    <field name="document_type" attrs="{'required' : [True]}"/>
-                </field>       -->
-
-<!--                <field name="vat" position="replace">
+                <!--                <label name="l10n_latam_identification_type_id" position="attributes">-->
+                <!--                    <attribute name="invisible">1</attribute>-->
+                <!--                </label>-->
+                <field name="vat" position="replace">
                     <label for="vat" string="NIF"/>
-                    <div class="o_row">
-                        <field name="vat" placeholder="e.g. EJ000000000"
-                               attrs="{'required' : [True], 'readonly': [('parent_id','!=',False)]}"/>
-                        <label for="verification_code" string=" - "/>
-                        <field name="verification_code" readonly="1"/>
+                    <div>
+                        <field name="document_type" attrs="{'required' : [True]}"/>
+                        <div class="o_row">
+                            <field name="vat" placeholder="e.g. EJ000000000"
+                                   attrs="{'required' : [True], 'readonly': [('parent_id','!=',False)]}"/>
+                            <label for="verification_code" position="replace">
+                                <label for="verification_code"> - </label>
+                            </label>
+                            <field name="verification_code" readonly="1"/>
+                        </div>
                     </div>
-                </field>    -->
+                </field>
 
                 <field name="website" position="after">
                     <field name="lang"/>
@@ -193,21 +198,17 @@
                            options="{'no_create_edit': True, 'no_create': True, 'no_open': True}"
                            widget="many2many_tags"/>
                     <field name="gen_quota_client"/>
-                    <field name="payment_type" widget="radio" options="{'horizontal': true}" attrs="{'readonly': [('gen_quota_client', '=', True)]}" force_save="1"/>
-                    <field name="quota_client" widget="monetary" attrs="{'readonly': [('gen_quota_client', '=', True)]}" force_save="1"/>
-                    <field name="extra_quota_client" widget="monetary" attrs="{'readonly': [('gen_quota_client', '=', True)]}" force_save="1"/>
+                    <field name="payment_type" widget="radio" options="{'horizontal': true}"
+                           attrs="{'readonly': [('gen_quota_client', '=', True)]}" force_save="1"/>
+                    <field name="quota_client" widget="monetary" attrs="{'readonly': [('gen_quota_client', '=', True)]}"
+                           force_save="1"/>
+                    <field name="extra_quota_client" widget="monetary"
+                           attrs="{'readonly': [('gen_quota_client', '=', True)]}" force_save="1"/>
                     <field name="quota_total_remaining" widget="monetary"/>
                     <field name="quota_total" widget="monetary" invisible="1"/>
-                    <field name="term_extra_client" attrs="{'readonly': [('gen_quota_client', '=', True)]}" force_save="1"/>
+                    <field name="term_extra_client" attrs="{'readonly': [('gen_quota_client', '=', True)]}"
+                           force_save="1"/>
                 </xpath>
-
-<!--                 Fabian Hernando Vera Carrillo-->
-<!--                    2022-04-13-->
-<!--                    Se agrego el elemento client_code en la vista-->
-<!--                 -->
-<!--                <field name="property_product_pricelist" position="after">-->
-<!--                    <field name="client_code"/>-->
-<!--                </field>-->
 
                 <field name="property_payment_term_id" position="replace">
                     <!--<field string="Payment Terms" name="property_payment_term_id" widget="selection" groups="account.group_account_invoice" attrs="{'required' : [('customer', '=', True)]}"/>-->
@@ -253,7 +254,28 @@
                 </group>
             </field>
         </record>
-
+        <record model="ir.ui.view" id="partner_dian_form_latam">
+            <field name="name">partner.l10_latam_inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="l10n_latam_base.view_partner_latam_form"/>
+            <field name="arch" type="xml">
+                <field name="l10n_latam_identification_type_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <label for="l10n_latam_identification_type_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </label>
+                <label for="verification_code" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </label>
+                <field name="vat" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <span class="oe_read_only" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </span>
+            </field>
+        </record>
         <!-- Fabian Hernando Vera Carrillo-->
 
     </data>
