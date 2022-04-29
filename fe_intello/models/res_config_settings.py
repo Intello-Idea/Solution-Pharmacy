@@ -11,6 +11,21 @@ class ResConfigSettingsMod(models.TransientModel):
                                help='If this field is active, the graphic representation that will be used is its own')
     fe_send_mail = fields.Boolean('Send Mail',
                                   help="If this field is active, the invoice will be sent to the customer's email")
+    firebase_enable_push_notifications = fields.Boolean('Enable Web Push Notifications', readonly=False)
+    notification_request_title = fields.Char('Notification Request Title')
+    notification_request_body = fields.Text('Notification Request Text')
+    notification_request_delay = fields.Integer('Notification Request Delay (seconds)', default=3)
+    notification_request_icon = fields.Binary("Notification Request Icon")
+    firebase_use_own_account = fields.Boolean('Use your own Firebase account', readonly=False,
+                                              )
+    firebase_project_id = fields.Char('Firebase Project ID', readonly=False, )
+    firebase_web_api_key = fields.Char('Firebase Web API Key', readonly=False,
+                                       )
+    firebase_push_certificate_key = fields.Char('Firebase Push Certificate Key', readonly=False,
+                                                )
+    firebase_sender_id = fields.Char('Firebase Sender ID', readonly=False, )
+    firebase_admin_key_file = fields.Binary('Firebase Admin Key File', readonly=False,
+                                            )
 
     def set_values(self):
         super(ResConfigSettingsMod, self).set_values()
