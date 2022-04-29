@@ -237,8 +237,9 @@ class AccountMove(models.Model):
 
         return account_move
 
+    # @api.model
     def write(self, vals):
-
+        # raise exceptions.Warning("Error validadcion")
         for rec in self:
 
             if rec.move_type == 'out_invoice':
@@ -252,11 +253,14 @@ class AccountMove(models.Model):
             if rec.move_type == 'out_refund':
                 if rec.journal_id.note_resolution:
                     vals['resolution_id'] = rec.journal_id.note_resolution
-
             if rec.move_type != 'entry':
-                if 'name' in vals and vals.get('name') != '/':
-                    if rec.prefix:
-                        vals['number'] = vals['name'].split(rec.prefix, 1)[1]
+                # raise exceptions.UserError("Error entro al if "+str(rec.journal_id.sequence)+" name: "+rec.name)
+                if rec.name != '/':
+                    # raise exceptions.UserError(
+                    #     "Error entro al if " + str(rec.journal_id.sequence) + " name: " + rec.name)
+                    if rec.resolution_id.prefix:
+                        vals['number'] = rec.name.split(rec.resolution_id.prefix, 1)[1]
+                        # rec.number = vals['name'].split(rec.resolution_id.prefix, 1)[1]
                     else:
                         words = str(vals.get('name')).replace('[', '').replace(']', '')
                         number = [int(word) for word in words if word.isdigit()]
@@ -292,9 +296,9 @@ class AccountMove(models.Model):
                         raise exceptions.ValidationError(
                             _("The Invoice date is not in the range of the Invoice Resolution"))
 
-                if not self.journal_id.sequence_id.prefix == self.journal_id.invoice_resolution.prefix:
-                    raise exceptions.ValidationError(_(
-                        "The sequence prefix and the Invoice Resolution prefix have to match"))
+                # if not self.journal_id.sequence_id.prefix == self.journal_id.invoice_resolution.prefix:
+                #     raise exceptions.ValidationError(_(
+                #         "The sequence prefix and the Invoice Resolution prefix have to match"))
 
             if self.type == 'out_refund':
 
@@ -310,9 +314,9 @@ class AccountMove(models.Model):
                             raise exceptions.ValidationError(_(
                                 "The Invoice date is not in the range of the Invoice Resolution"))
 
-                        if not self.journal_id.refund_sequence_id.prefix == self.journal_id.note_resolution.prefix:
-                            raise exceptions.ValidationError(_(
-                                "The sequence prefix and the Invoice Resolution prefix have to match"))
+                        # if not self.journal_id.refund_sequence_id.prefix == self.journal_id.note_resolution.prefix:
+                        #     raise exceptions.ValidationError(_(
+                        #         "The sequence prefix and the Invoice Resolution prefix have to match"))
 
     def post(self):
         post = super(AccountMove, self).post()
