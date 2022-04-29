@@ -132,6 +132,11 @@ class Partner(models.Model):
 
         # self.name = ' '.join(names).strip().replace('  ', ' ')
 
+    @api.onchange('city_id')
+    def onchange_city_id(self):
+        for rec in self:
+            self.zip = rec.city_id.zipcode
+
     @api.onchange('gen_quota_client')
     def onchange_gen_quota_client(self):
         if self.gen_quota_client:
@@ -409,10 +414,20 @@ class Partner(models.Model):
         print(action.partner_id)
 
     def validate_fields_invoice(self):
-        if self.property_account_position_id and self.person_type and self.fiscal_regime and self.fiscal_responsibility and self.commercial_registration and self.industry_id and self.code_ciiu_primary:
-            pass
-        else:
-            raise exceptions.Warning("Compruebe los siguientes campos")
+        if not self.property_account_position_id:
+            raise exceptions.Warning(_("The fiscal position field is required"))
+        if not self.person_type:
+            raise exceptions.Warning(_("The type of person field is required"))
+        if not self.fiscal_regime:
+            raise exceptions.Warning(_("The fiscal regime field is required"))
+        if not self.fiscal_responsibility:
+            raise exceptions.Warning(_("The fiscal responsibility field is required"))
+        if not self.commercial_registration:
+            raise exceptions.Warning(_("The business registration field is required"))
+        if not self.industry_id:
+            raise exceptions.Warning(_("The sector field is required"))
+        if not self.code_ciiu_primary:
+            raise exceptions.Warning(_("The CIIU primary code field is required"))
 
     @api.constrains('fiscal_responsibility')
     @api.onchange('fiscal_responsibility')
