@@ -28,23 +28,6 @@ class ResConfigSettingsMod(models.TransientModel):
             'tag': 'reload',
         }
 
-    def enable_disable_book_menus(self, state):
-
-        account_book_menus = self.env["account.book.menu"].search([])
-
-        for book_menu_action in account_book_menus:
-            menu_item = self.env['ir.ui.menu'].browse(book_menu_action.menu_item_id.id)
-            action = self.env['ir.actions.act_window'].browse(book_menu_action.action_id.id)
-            if menu_item and action:
-                if state:
-                    menu_item.update({
-                        "action": action
-                    })
-                else:
-                    menu_item.action = False
-            else:
-                pass
-
     def enable_disable_wizard_reports(self, state):
 
         menus_reports = self.all_reports()
@@ -110,64 +93,6 @@ class ResConfigSettingsMod(models.TransientModel):
                         "action": action_client
                     })
 
-    def enable_disable_account_menu(self, state):
-        account_menus = self.account_menu()
-        if state:
-            for menu in account_menus:
-                menu_item = self.env['account.book.menu.save'].search([('menu_id', '=', menu.id)])
-
-                if not menu_item:
-                    menu_save = self.env['account.book.menu.save'].create({
-                        'menu_id': menu.id,
-                        'action_window_old': menu.action.id,
-                    })
-
-                    ir_ui_view = {'name': menu.name, 'model': "book.account.wizard"}
-                    if menu.name == 'Sale' or menu.name == 'Ventas':
-                        ir_ui_view.update({'arch': self.action_render_account('sale', menu.name)})
-
-                    elif menu.name == 'Purchases' or menu.name == 'Compras':
-                        ir_ui_view.update({'arch': self.action_render_account('purchase', menu.name)})
-
-                    elif menu.name == 'Bank and Cash' or menu.name == 'Banco y caja':
-                        ir_ui_view.update({'arch': self.action_render_account('bank', menu.name)})
-
-                    elif menu.name == 'Miscellaneous' or menu.name == 'Varios':
-                        ir_ui_view.update({'arch': self.action_render_account('misc', menu.name)})
-
-                    elif menu.name == 'General Ledger' or menu.name == 'Libro mayor':
-                        ir_ui_view.update({'arch': self.action_render_account('general', menu.name)})
-
-                    elif menu.name == 'Partner Ledger' or menu.name == 'Libro mayor de empresa':
-                        ir_ui_view.update({'arch': self.action_render_account('partner', menu.name)})
-
-                    view_new = self.env["ir.ui.view"].create(ir_ui_view)
-
-                    vals = {
-                        'name': menu.name,
-                        'res_model': "book.account.wizard",
-                        'type': "ir.actions.act_window",
-                        'view_mode': "form",
-                        'target': "new",
-                        'view_id': view_new.id
-                    }
-                    new_action_window = self.env['ir.actions.act_window'].create(vals)
-                    menu.write({
-                        "action": new_action_window
-                    })
-                    menu_save.write({'action_window': new_action_window, })
-                else:
-                    menu.write({
-                        'action': menu_item.action_window
-                    })
-
-        else:
-            menu_item = self.env['account.book.menu.save'].search([])
-            for menu in menu_item:
-                menu.menu_id.write({
-                    'action': menu.action_window_old,
-                })
-
     def account_menu(self):
         account_menus = []
         account_menus.append(self.env.ref('account.menu_action_account_moves_journal_sales'))
@@ -227,11 +152,8 @@ class ResConfigSettingsMod(models.TransientModel):
         all_menus.append(menu_aged_receivable)
         all_menus.append(menu_aged_payable)
         for menu in menus_reports:
-            # print(menu.name)
             menus_item = self.env["ir.ui.menu"].sudo().search([("parent_id.id", "=", menu.id)])
-            # print("Menus Hijos")
             for me_i in menus_item:
-                # print(me_i.name)
                 if me_i.id != menu_except_auxiliary_acco.id and me_i.id != menu_except_journals_audit.id:
                     all_menus.append(me_i)
         return all_menus
@@ -239,50 +161,9 @@ class ResConfigSettingsMod(models.TransientModel):
     def action_client(self, action_window):
         pp = pprint.PrettyPrinter(indent=4)
         view = self.env["ir.ui.view"].browse(action_window.view_id.id)
-        # view = self.env["ir.ui.view"].search([("id","=",action_window.view_id.id)])
-        # action_client = self.env.ref("account_reports.action_account_report_pnl")
-        # Print structure of dictionary
-        # diction = pp.pprint(json.dumps(xmltodict.parse(view.arch)))
-        # print(diction)
-
-        # Dictionary string json
         dictionS = json.dumps(xmltodict.parse(view.arch))
-        # Dictionary string to dictionary
         diction = json.loads(dictionS)
-        # print(diction["form"]["footer"]["button"][1]["@name"])
-        # mod dictionary
         return diction["form"]["footer"]["button"][1]["@name"]
-
-    def report_is_multibook(self, menu_id):
-        report_mul_book = []
-        report_mul_book.append(self.env["account.financial.html.report"].sudo().search([]).generated_menu_id)
-
-        report_mul_book.append(self.env.ref("account_reports.menu_action_account_report_partner_ledger"))
-        report_mul_book.append(self.env.ref("account_reports.menu_action_account_report_general_ledger"))
-        report_mul_book.append(self.env.ref("account_reports.menu_action_account_report_aged_receivable"))
-        report_mul_book.append(self.env.ref("account_reports.menu_action_account_report_aged_payable"))
-        report_mul_book.append(self.env.ref("account_reports.menu_action_account_report_coa"))
-        report_mul_book.append(self.env.ref("account_reports.menu_action_account_report_cj"))
-        report_mul_book.append(self.env.ref("l10n_co_reports.menu_action_account_report_ica"))
-        report_mul_book.append(self.env.ref("l10n_co_reports.menu_action_account_report_iva"))
-        report_mul_book.append(self.env.ref("l10n_co_reports.menu_action_account_report_fuente"))
-        report_mul_book.append(self.env.ref("ln10_co_intello.menu_action_quarterly_sales_report_all"))
-        report_mul_book.append(self.env.ref("ln10_co_intello.menu_action_result_sales_report_sales"))
-        report_mul_book.append(self.env.ref("ln10_co_intello.menu_action_result_sales_report_sales"))
-        report_mul_book.append(self.env.ref("account_reports.menu_action_account_report_cash_flow"))
-        report_mul_book.append(self.env.ref("account.menu_configure_tax_report"))
-        report_mul_book.append(self.env.ref("account_reports.menu_action_report_account_analytic"))
-        report_mul_book.append(self.env.ref("account.action_account_invoice_report_all"))
-
-        for repo in report_mul_book:
-            if (len(repo) > 1):
-                for r in repo:
-                    if r.id == menu_id:
-                        return True
-            else:
-                if repo.id == menu_id:
-                    return True
-        return False
 
     def disable_enable_account_account(self, state):
         if state:
