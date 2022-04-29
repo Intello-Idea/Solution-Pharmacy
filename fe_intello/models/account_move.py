@@ -183,56 +183,54 @@ class AccountMove(models.Model):
         message = "The field needs to be filled or parameterized (according to DIAN): <br/> <ul>"
         status = False
         if not self.partner_id.document_type.key_dian:
-            message += "<li>" + self._fields['partner_id.document_type'].string + "</li>"
-            status = True
+            raise exceptions.Warning(_("The document type field is required"))
+            # message += "<li>" + self._fields['partner_id.document_type'].string + "</li>"
+        try:
+            int(self.partner_id.vat)
+        except:
+            raise exceptions.Warning(_("The identification field must be integer"))
         if not self.partner_id.vat:
-            message += "<li>" + self._fields['partner_id.vat'].string + "</li>"
-            status = True
+            raise exceptions.Warning(_("The identification number field is required"))
+            # message += "<li>" + self._fields['partner_id.vat'].string + "</li>"
         if not self.partner_id.verification_code:
-            message += "<li>" + self._fields['partner_id.verification_code'].string + "</li>"
-            status = True
+            raise exceptions.Warning(_("The verification code field is required"))
+            # message += "<li>" + self._fields['partner_id.verification_code'].string + "</li>"
         if not self.partner_id.display_name:
-            message += "<li>" + self._fields['partner_id.display_name'].string + "</li>"
-            status = True
+            raise exceptions.Warning(_("The display name field is required"))
+            # message += "<li>" + self._fields['partner_id.display_name'].string + "</li>"
         if not self.partner_id.country_id.code and not self.partner_id.country_id.name:
-            message += "<li>" + self._fields['partner_id.country_id'].string + "</li>"
-            status = True
+            raise exceptions.Warning(_("The country field is required"))
+            # message += "<li>" + self._fields['partner_id.country_id'].string + "</li>"
         if not self.partner_id.state_id.key_dian and not self.partner_id.state_id.key_dian:
-            message += "<li>" + self._fields['partner_id.state_id'].string + "</li>"
-            status = True
+            raise exceptions.Warning(_("The state field is required"))
+            # message += "<li>" + self._fields['partner_id.state_id'].string + "</li>"
         if not self.partner_id.city_id.key_dian and not self.partner_id.city_id.name:
-            message += "<li>" + self._fields['partner_id.city_id'].string + "</li>"
-            status = True
-        if not self.partner_id.city_id.key_dian and not self.partner_id.city_id.name:
-            message += "<li>" + self._fields['partner_id.city_id'].string + "</li>"
-            status = True
+            raise exceptions.Warning(_("The city field is required"))
+            # message += "<li>" + self._fields['partner_id.city_id'].string + "</li>"
         if not self.partner_id.street:
-            message += "<li>" + self._fields['partner_id.stree'].string + "</li>"
-            status = True
+            raise exceptions.Warning(_("The street field is required"))
+            # message += "<li>" + self._fields['partner_id.stree'].string + "</li>"
         if not self.partner_id.phone:
-            message += "<li>" + self._fields['partner_id.phone'].string + "</li>"
-            status = True
+            raise exceptions.Warning(_("The phone field is required"))
+            # message += "<li>" + self._fields['partner_id.phone'].string + "</li>"
         if not self.partner_id.email:
-            message += "<li>" + self._fields['partner_id.email'].string + "</li>"
-            status = True
+            raise exceptions.Warning(_("The email field is required"))
+            # message += "<li>" + self._fields['partner_id.email'].string + "</li>"
         if not self.partner_id.id:
-            message += "<li>" + self._fields['partner_id.id'].string + "</li>"
-            status = True
+            raise exceptions.Warning(_("The id field is required"))
+            # message += "<li>" + self._fields['partner_id.id'].string + "</li>"
         if not self.partner_id.person_type.key_dian:
-            message += "<li>" + self._fields['partner_id.person_type'].string + "</li>"
-            status = True
+            raise exceptions.Warning(_("The person type field is required"))
+            # message += "<li>" + self._fields['partner_id.person_type'].string + "</li>"
         if not self.partner_id.property_account_position_id.key_dian.key_dian:
-            message += "<li>" + self._fields['partner_id.property_account_position_id'].string + "</li>"
-            status = True
+            raise exceptions.Warning(_("The fiscal position field is required"))
+            # message += "<li>" + self._fields['partner_id.property_account_position_id'].string + "</li>"
         if not self.partner_id.zip:
-            message += "<li>" + self._fields['partner_id.zip'].string + "</li>"
-            status = True
-        if not self.partner_id.property_account_position_id.key_dian.key_dian:
-            message += "<li>" + self._fields['partner_id.property_account_position_id'].string + "</li>"
-            status = True
+            raise exceptions.Warning(_("The zip field is required"))
+            # message += "<li>" + self._fields['partner_id.zip'].string + "</li>"
         if not self.partner_id.fiscal_responsibility:
-            message += "<li>" + self._fields['partner_id.fiscal_responsibility'].string + "</li>"
-            status = True
+            raise exceptions.Warning(_("The fiscal responsability field is required"))
+
         message += "</ul>"
         return [message, status]
 
@@ -343,7 +341,7 @@ class AccountMove(models.Model):
         """Procesa el documento y hace el envio a la DIAN"""
         parameter = self.env['ir.config_parameter'].sudo()
         fe_email = parameter.get_param('res.config.settings.fe_send_mail')
-
+        message = None
         for posted_document in self:
             message = posted_document.send_document()
             posted_document.create_qr_code()
@@ -473,7 +471,7 @@ class AccountMove(models.Model):
         pass
 
     def attach_pdf_invoice(self):
-        pdf = self.env.ref('account.account_invoices').render_qweb_pdf(self.ids)
+        pdf = self.env.ref('account.account_invoices')._render_qweb_pdf(self.ids)
         b64_pdf = base64.b64encode(pdf[0])
         parameter = self.env['ir.config_parameter'].sudo()
         fe_own_gr = parameter.get_param('res.config.settings.fe_own_gr')
