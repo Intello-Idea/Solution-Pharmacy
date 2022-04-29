@@ -187,7 +187,7 @@ class FeMfMethods(models.AbstractModel):
                         "MeasureUnitCode": line.product_id.uom_id.dian_code.key_dian,
                         "FreeOFChargeIndicator": "false",
                         "AdditionalReference": [],
-                        "Nota": "",
+                        "Note": "",
                         "AdditionalProperty": [],
                         "TaxesInformation": taxes,
                         "AllowanceCharge": []
@@ -229,7 +229,7 @@ class FeMfMethods(models.AbstractModel):
                         "MeasureUnitCode": line.product_id.uom_id.dian_code.key_dian,
                         "FreeOFChargeIndicator": "false",
                         "AdditionalReference": [],
-                        "Nota": "",
+                        "Note": "",
                         "AdditionalProperty": [],
                         "TaxesInformation": taxes,
                         "AllowanceCharge": []
@@ -459,9 +459,12 @@ class FeMfMethods(models.AbstractModel):
         """
         schema_id = posted_document.company_id.partner_id.document_type.key_dian
         id_number = posted_document.company_id.partner_id.vat
+        print("document id", posted_document.company_id.partner_id.vat)
         template_id = 73
+        # print(id_number[:-1])
+        # raise exceptions.Warning("Mal")
         url_service = url + "InsertInvoice?SchemaID=" + str(schema_id) + "&IDnumber=" + str(
-            id_number) + "&TemplateID=" + str(template_id)
+            id_number[:-1]) + "&TemplateID=" + str(template_id)
         payload = self.load_ed_data_to_json(template_id, posted_document, gr, documents)
         headers = {
             'Authorization': token,
@@ -490,8 +493,9 @@ class FeMfMethods(models.AbstractModel):
             time.sleep(2)
             electronic_document = self.get_electronic_document(url, token, posted_document,
                                                                response.json()['DocumentId'], document_type=1)
+            print(electronic_document)
             json_electronic = electronic_document.json()
-            print(json_electronic)
+            print("This is json document",json_electronic)
             detail_invoice = {
                 'cufe': json_electronic['CUFE'],
                 'document_key': response.json()['DocumentId'],
@@ -518,7 +522,7 @@ class FeMfMethods(models.AbstractModel):
         id_number = posted_document.company_id.partner_id.vat
         note_type = 91
         url_service = url + "insertnote?SchemaID=" + str(schema_id) + "&IDnumber=" + str(
-            id_number) + "&NoteType=" + str(note_type)
+            id_number[:-1]) + "&NoteType=" + str(note_type)
         payload = self.load_ed_data_to_json(note_type, posted_document, gr, [])
         json_doc = json.dumps(payload, indent=4)
         print(str(json_doc))
@@ -578,7 +582,7 @@ class FeMfMethods(models.AbstractModel):
         schema_id = posted_document.company_id.partner_id.document_type.key_dian
         id_number = posted_document.company_id.partner_id.vat
         url_service = url + "GetDocumentStatus?SchemaID=" + str(schema_id) + "&IDNumber=" + str(
-            id_number) + "&DocumentId=" + str(document_id) + "&DocumentType=" + str(document_type)
+            id_number[:-1]) + "&DocumentId=" + str(document_id) + "&DocumentType=" + str(document_type)
         payload = {}
         headers = {
             'Authorization': token,
@@ -594,7 +598,7 @@ class FeMfMethods(models.AbstractModel):
         document_type = 1 if posted_document.type == "out_invoice" else 2
         print("document_type: ", document_type)
         url_service = url + "AttachRG?SchemaID=" + str(schema_id) + "&IDNumber=" + str(
-            id_number) + "&DocumentId=" + str(document_id) + "&DocumentType=" + str(document_type)
+            id_number[:-1]) + "&DocumentId=" + str(document_id) + "&DocumentType=" + str(document_type)
         payload = {}
         files = [
             ('File', base64.decodebytes(b64))
@@ -621,7 +625,7 @@ class FeMfMethods(models.AbstractModel):
     def insert_attachment(self, url, token, posted_document, file):
         schema_id = posted_document.company_id.partner_id.document_type.key_dian
         id_number = posted_document.company_id.partner_id.vat
-        url_service = url + "InsertAttachment?SchemaID=" + str(schema_id) + "&IDNumber=" + str(id_number)
+        url_service = url + "InsertAttachment?SchemaID=" + str(schema_id) + "&IDNumber=" + str(id_number[:-1])
         payload = {}
         print("----- ", str(file))
         files = file
