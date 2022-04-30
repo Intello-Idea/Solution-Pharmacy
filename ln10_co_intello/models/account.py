@@ -254,10 +254,7 @@ class AccountMove(models.Model):
                 if rec.journal_id.note_resolution:
                     vals['resolution_id'] = rec.journal_id.note_resolution
             if rec.move_type != 'entry':
-                # raise exceptions.UserError("Error entro al if "+str(rec.journal_id.sequence)+" name: "+rec.name)
-                if rec.name != '/':
-                    # raise exceptions.UserError(
-                    #     "Error entro al if " + str(rec.journal_id.sequence) + " name: " + rec.name)
+                if rec.name and rec.name != '/':
                     if rec.resolution_id.prefix:
                         vals['number'] = rec.name.split(rec.resolution_id.prefix, 1)[1]
                         # rec.number = vals['name'].split(rec.resolution_id.prefix, 1)[1]
@@ -268,8 +265,8 @@ class AccountMove(models.Model):
                         for item in number:
                             num += str(item)
                         vals['number'] = num
-
-                    rec._validate_resolution_data(next_number=int(vals['number']))
+                    if vals['number']:
+                        rec._validate_resolution_data(next_number=int(vals['number']))
 
         return super(AccountMove, self).write(vals)
 
