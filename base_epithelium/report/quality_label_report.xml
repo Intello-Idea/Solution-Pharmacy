@@ -189,15 +189,15 @@
                                     </tr>
 
                                     <tr>
-                                        <td style="border: 1px solid black; padding-right:5px; padding-left:5px;" colspan="2">
+                                        <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
                                             <span>Material name:</span> <br/>
-                                            <span t-field="o.picking_id.product_id.name"/>
-                                        </td>
-                                        <td style="width: 25%; border: 1px solid black; padding-right:5px; padding-left:5px;">
-                                            <span>Code: </span>
                                             <span t-field="o.picking_id.product_id.default_code"/>
                                         </td>
-                                        
+                                        <td style="border: 1px solid black; padding-right:5px; padding-left:5px;" colspan="2">
+                                                <span>Lot: </span>
+                                                <br/>
+                                                <span t-field="o.lot_id.name"/>
+                                        </td>
                                     </tr>
 
                                     <tr>
@@ -206,12 +206,7 @@
                                                 <br/>
                                                 <span t-field="o.expiration_date" t-options='{"widget": "date"}'/>
                                         </td>
-                                        <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
-                                                <span>Lot: </span>
-                                                <br/>
-                                                <span t-field="o.lot_id.name"/>
-                                        </td>
-                                        <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                        <td style="border: 1px solid black; padding-right:5px; padding-left:5px;" colspan="2">
                                                 <span>N° Analysis: </span>
                                         </td>
                                     </tr>
