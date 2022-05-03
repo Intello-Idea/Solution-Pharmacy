@@ -19,23 +19,6 @@
             <field name="dpi">90</field>
         </record>
 
-        <!-- Paper format production order -->
-        <record id="paperformat_mrporder" model="report.paperformat">
-            <field name="name">Mrp order epithelium</field>
-            <field name="default" eval="True"/>
-            <field name="format">Letter</field>
-            <field name="page_height">0</field>
-            <field name="page_width">0</field>
-            <field name="orientation">Landscape</field>
-            <field name="margin_top">7</field>
-            <field name="margin_bottom">7</field>
-            <field name="margin_left">10</field>
-            <field name="margin_right">10</field>
-            <field name="header_line" eval="False"/>
-            <field name="header_spacing">3</field>
-            <field name="dpi">90</field>
-        </record>
-
         <!-- Start
             Programmer: Routh Milano
             Date: 14-04-2022
@@ -82,18 +65,6 @@
         </record>
         <!--End Programmer: Routh Milano-->
 
-        <!-- Production order report -->
-        <report
-                id="action_report_production_order"
-                model="mrp.production"
-                string="Production Order Ep"
-                report_type="qweb-pdf"
-                name="base_epithelium.report_mrporder_ep"
-                file="base_epithelium.report.mrp_production_templates"
-                print_report_name="'Production Order - %s' % object.name"
-                paperformat="paperformat_mrporder"
-                menu="True"
-        />
 
         <!-- Production order report -->
         <report
