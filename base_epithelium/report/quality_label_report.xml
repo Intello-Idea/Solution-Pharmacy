@@ -20,7 +20,7 @@
 
             <div t-attf-class="header o_company_#{company.id}_layout">
                
-                <div class="row" style="border: 1px solid black; font-family: serif; margin:0px 8px 0px 8px;">
+                <div class="row" style="border: 1px solid black; font-family: Calibri, sans-serif; margin:0px 8px 0px 8px;">
                     <div class="col-3" style="padding-top:20px; border-right: 1px solid black;">
                     
                         <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
@@ -33,14 +33,14 @@
                         <table class="w-100 p-3" style="text-align: center;">
                             <tr>
                                 <td >
-                                    <h5 style="padding:0px 2px 0px 5px; font-size: 10px; font-weight:bold; padding-top:10px;">
+                                    <h5 style="padding:0px 2px 0px 5px; font-size: 9px; font-weight:bold; padding-top:10px;">
                                         QUALITY CONTROL FORMAT
                                     </h5>
                                 </td>
                             </tr>
                             <tr style="border-top:1px solid #000;">
                                 <td>
-                                    <h5 style="padding:0px 2px 0px 5px; font-size: 10px; font-weight:bold; padding-top:15px;">
+                                    <h5 style="padding:0px 2px 0px 5px; font-size: 9px; font-weight:bold; padding-top:15px;">
                                         IDENTIFICATION LABEL
                                     </h5>
                                 </td>
@@ -48,7 +48,7 @@
                         </table>
                     </div>
                     <div class="col-5" style="padding: 0;">
-                        <table class="w-100 p-3" style="text-align: left; border-left: 1px solid black; font-size: 10px;">
+                        <table class="w-100 p-3" style="text-align: left; border-left: 1px solid black; font-size: 9px;">
                             <tr>
                                 <td><strong style="font-weight:700; padding-left:5px;">Code: FCOC-PRO-011-1</strong></td>
                             </tr>
@@ -86,32 +86,10 @@
                 <t t-foreach="docs.move_line_nosuggest_ids" t-as="o">
                     <t t-call="base_epithelium.internal_layout_quality_label">
                         <div class="page pt-5" style="margin:0px 8px 0px 8px;">
-                            <br/>
-                            <div class="pt-3">
-                                <table class="w-100" style="font-size: 12px; padding:5px 0px 5px 0px; margin-top:10px; font-family: serif;">
-                                    <tr style="padding:5px 0px 5px 0px;">
-                                        <td class="w-50" style="text-align: right;">
-                                            <div style="margin-right: 7px;">
-                                                <span>ORIGINAL </span><input
-                                                    style="width: 12px; height: 12px; border: 1px solid black; margin-right: 2px;"/>
-                                            </div>
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td class="w-50" style="text-align: left;">
-                                            <div style="margin-left: 7px;">
-                                                <span>RE-PACKAGING </span><input
-                                                    style="width: 12px; height: 12px; border: 1px solid black;"/>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-
 
                             <div>
-                                <table class="w-100 text-left" style="font-size: 12px; border: 1px solid black; font-family: serif;">
+                                <table class="w-100 text-left" style="font-size: 10px; border: 1px solid black; font-family: Calibri, sans-serif; margin-top:10px;">
+                                <br/>
                                     <!--
                                     <tr style="height: 30px">
                                         <td style="width: 30%; border: 1px solid black;">
@@ -195,62 +173,45 @@
                                         </td>
                                     </tr>
                                     -->
-                                    <tr style="height: 30px">
+                                    <tr>
                                         <td style="width: 50%; border: 1px solid black; padding-right:5px; padding-left:5px;">
-                                            <span>Entry <br/> date: </span> <span t-field="o.picking_id.date_done" t-options='{"widget": "date"}'/>
+                                            <span>Entry date: </span> <span t-field="o.picking_id.date_done" t-options='{"widget": "date"}'/>
                                         </td>
-                                        <td style="width: 25%; border: 1px solid black; padding-right:5px; padding-left:5px;">
-                                            <span>N° Pucharse order: </span> <br/>
-                                            <span t-field="o.picking_id.origin"/>
+                                        
+                                        <td style="border:1px solid black; padding-right:5px; padding-left:5px;">
+                                                <span>N° Entrance: </span><br/><span t-field="o.picking_id.name"/>
                                         </td>
-                                        <td style="width: 25%; border: 1px solid black; padding-right:5px; padding-left:5px;">
-                                            <span>Code: </span>
-                                            <span t-field="o.picking_id.product_id.default_code"/>
+                                        
+                                        <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                            <span>Container:</span><br/>
+                                            <span style="text-align:center;">__of__</span>
                                         </td>
                                     </tr>
 
-                                    <tr style="height: 30px">
+                                    <tr>
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
                                             <span>Material name:</span> <br/>
-                                            <span t-field="o.picking_id.product_id.name"/>
+                                            <span t-field="o.picking_id.product_id.default_code"/>
                                         </td>
-                                        <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
-                                            <span>Container: __of__</span>
-                                        </td>
-                                        <td style="border:1px solid black; padding-right:5px; padding-left:5px;">
-                                                <span>N° Warehouse entrance: </span><br/><span t-field="o.picking_id.name"/>
+                                        <td style="border: 1px solid black; padding-right:5px; padding-left:5px;" colspan="2">
+                                                <span>Lot: </span>
+                                                <br/>
+                                                <span t-field="o.lot_id.name"/>
                                         </td>
                                     </tr>
 
-                                    <tr style="height: 30px">
-                                        
+                                    <tr>
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
                                                 <span>Due date: </span>
                                                 <br/>
                                                 <span t-field="o.expiration_date" t-options='{"widget": "date"}'/>
                                         </td>
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;" colspan="2">
-                                                <span>Reanalysis date: </span>
-                                        </td>
-                                    </tr>
-
-                                    <tr style="height: 30px">
-                                        <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
-                                            <span>Provider: </span> 
-                                            <br/>
-                                            <span t-field="o.picking_id.partner_id.name"/>
-                                        </td>
-                                        <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
-                                                <span>Provider batch: </span>
-                                                <br/>
-                                                <span t-field="o.lot_id.name"/>
-                                        </td>
-                                        <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
                                                 <span>N° Analysis: </span>
                                         </td>
                                     </tr>
 
-                                    <tr style="height: 30px">
+                                    <tr>
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
                                             <span>Gross weight: </span>
                                         </td>
@@ -264,7 +225,7 @@
                                         </td>
                                     </tr>
 
-                                    <tr style="height: 30px">
+                                    <tr>
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;" colspan="2">
                                             <span> Storage Conditions: </span> <span t-field="o.picking_id.note"/>
                                         </td>
@@ -273,7 +234,7 @@
                                         </td>
                                     </tr>
 
-                                    <tr style="height: 30px">
+                                    <tr style="height: 50px">
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;" colspan="2">
                                             <span> Quality State: </span>
                                         </td>

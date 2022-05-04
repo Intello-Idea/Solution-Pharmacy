@@ -1,0 +1,317 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setting_mrp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20211014\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-03 16:40+0000\n"
+"PO-Revision-Date: 2022-05-03 16:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setting_mrp
+#: model:ir.actions.report,print_report_name:setting_mrp.action_production_order_report_sp
+msgid "'Production Order - %s' % object.name"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
+msgid "<b class=\"w-15\">PRODUCTION ORDER</b>"
+msgstr "<b class=\"w-15\">ORDEN DE PRODUCCIÓN</b>"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
+msgid ""
+"<b>PRODUCTION</b>\n"
+"                                                   <br/>\n"
+"                                                  <b>FORM</b>"
+msgstr ""
+"<b>PRODUCCIÓN</b>\n"
+"                                                   <br/>\n"
+"                                                  <b>FORMATO</b>"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "<span>According to Elaboration Procedure</span>"
+msgstr "<span>Según Procedimiento de Elaboración</span>"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
+msgid ""
+"<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Code: "
+"FPRC-PRO-002-1</strong>"
+msgstr ""
+"<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Código: "
+"FPRC-PRO-002-1</strong>"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
+msgid ""
+"<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">ID: "
+"72</strong>"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
+msgid ""
+"<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Page:</strong>\n"
+"                                        <strong class=\"list-inline-item w-15\" style=\"font-weight:700;\"><span class=\"page\"/></strong>\n"
+"                                        <strong class=\"list-inline-item w-15\" style=\"font-weight:700;\">of</strong>\n"
+"                                        <strong class=\"list-inline-item w-15\" style=\"font-weight:700;\"><span class=\"topage\"/></strong>"
+msgstr ""
+"<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Página:</strong>\n"
+"                                        <strong class=\"list-inline-item w-15\" style=\"font-weight:700;\"><span class=\"page\"/></strong>\n"
+"                                        <strong class=\"list-inline-item w-15\" style=\"font-weight:700;\">de</strong>\n"
+"                                        <strong class=\"list-inline-item w-15\" style=\"font-weight:700;\"><span class=\"topage\"/></strong>"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
+msgid ""
+"<strong style=\"font-weight:700; padding-left:5px;\" "
+"class=\"w-15\">Validity:</strong><br/><strong style=\"font-weight:700; "
+"padding-left:5px;\">From Ene-21 to Ene-23</strong>"
+msgstr ""
+"<strong style=\"font-weight:700; padding-left:5px;\" "
+"class=\"w-15\">Vigencia:</strong><br/><strong style=\"font-weight:700; "
+"padding-left:5px;\">Desde Ene-21 hasta Ene-23</strong>"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
+msgid ""
+"<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Version:"
+" 01</strong>"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Appearance:"
+msgstr "Aspecto:"
+
+#. module: setting_mrp
+#: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__bulk_size
+msgid "Bulk Size"
+msgstr "Tamaño a Granel"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Bulk size:"
+msgstr "Tamaño a Granel:"
+
+#. module: setting_mrp
+#: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__partner_sale_id
+msgid "Client"
+msgstr "Cliente"
+
+#. module: setting_mrp
+#: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__client_code
+#: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__client_code_sale
+msgid "Client Code"
+msgstr "Código Cliente"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Client:"
+msgstr "Cliente:"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Components"
+msgstr "Componentes"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Conditioning"
+msgstr "ACONDICIONAMIENTO"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Date of issue:"
+msgstr "Fecha de Emisión:"
+
+#. module: setting_mrp
+#: model:ir.model.fields,help:setting_mrp.field_mrp_production__dough
+msgid "Default unit of measure used for all stock operations."
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Dispensing"
+msgstr "DISPENSACIÓN"
+
+#. module: setting_mrp
+#: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__display_name
+msgid "Display Name"
+msgstr "Nombre Público"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Due date:"
+msgstr "Fecha de Vencimiento:"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Elaboration"
+msgstr "ELABORACIÓN"
+
+#. module: setting_mrp
+#: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__expiration_date_sp
+msgid "Expiration Date"
+msgstr "Fecha de Vencimiento"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Heavy quantity"
+msgstr "Cantidad Pesada"
+
+#. module: setting_mrp
+#: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__id
+msgid "ID"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "IN-PROCESS CONTROL"
+msgstr "CONTROL EN PROCESO"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Issued by:"
+msgstr "Emitido Por:"
+
+#. module: setting_mrp
+#: model:ir.model.fields,field_description:setting_mrp.field_mrp_production____last_update
+msgid "Last Modified on"
+msgstr "Última Modificación el"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
+msgid "Logo"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Lot"
+msgstr "Lote"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "MATERIALS PREPARATION"
+msgstr "ALISTAMIENTO DE MATERIALES"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Number of units obtained:"
+msgstr "Número de Unidades Obtenidas:"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Observations:"
+msgstr "Observaciones:"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Op number:"
+msgstr "Número de OP:"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "PH:"
+msgstr "PH:"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "PRODUCTION COORDINATOR VERIFICATION"
+msgstr "VERIFICACIÓN COORDINADOR DE PRODUCCIÓN"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Packing"
+msgstr "ENVASADO"
+
+#. module: setting_mrp
+#: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__partner_id
+msgid "Partner"
+msgstr "Cliente"
+
+#. module: setting_mrp
+#: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__patient
+#: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__patient_sale
+msgid "Patient"
+msgstr "Paciente"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Patient:"
+msgstr "Paciente:"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Performance:"
+msgstr "Rendimiento:"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Pharmaceutical form:"
+msgstr "Forma Farmacéutica:"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Pharmaceutical presentation:"
+msgstr "Presentación Farmacéutica:"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Procedure:"
+msgstr "Procedimiento:"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Product to produce:"
+msgstr "Producto a Producir:"
+
+#. module: setting_mrp
+#: model:ir.actions.report,name:setting_mrp.action_production_order_report_sp
+#: model:ir.model,name:setting_mrp.model_mrp_production
+msgid "Production Order"
+msgstr "Orden de producción"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Quantity to produce:"
+msgstr "Cantidad a Producir:"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.mrp_production_base_epithelium_form_view_setting_mrp
+msgid "Size"
+msgstr "Tamaño"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Size:"
+msgstr "Tamaño:"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Theoretical Quantity(g)"
+msgstr "Cantidad Teórica(g)"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Totals"
+msgstr "TOTALES"
+
+#. module: setting_mrp
+#: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__dough
+msgid "Unit of Measure"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Vo. Bo. TECHNICAL DIRECTOR"
+msgstr "Vo. Bo. DIRECTOR TÉCNICO"

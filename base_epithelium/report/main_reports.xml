@@ -7,10 +7,10 @@
             <field name="name">Identification Label</field>
             <field name="default" eval="True"/>
             <field name="format">custom</field>
-            <field name="page_height">110</field>
-            <field name="page_width">90</field>
+            <field name="page_height">76</field>
+            <field name="page_width">94</field>
             <field name="orientation">Portrait</field>
-            <field name="margin_top">0</field>
+            <field name="margin_top">2</field>
             <field name="margin_bottom">0</field>
             <field name="margin_left">0</field>
             <field name="margin_right">0</field>
@@ -19,35 +19,52 @@
             <field name="dpi">90</field>
         </record>
 
-        <!-- Paper format production order -->
-        <record id="paperformat_mrporder" model="report.paperformat">
-            <field name="name">Mrp order epithelium</field>
+        <!-- Start
+            Programmer: Routh Milano
+            Date: 14-04-2022
+            Requirement: REQ-SP-000008 
+            Functionality: Paper Format for Dispensed Materials Identification Label
+         -->
+        <record id="paperformat_mrp_dispensed_materials_identification_label" model="report.paperformat">
+            <field name="name">Mpr Dispensed Materials Identification Label solution pharmacy</field>
             <field name="default" eval="True"/>
-            <field name="format">Letter</field>
-            <field name="page_height">0</field>
-            <field name="page_width">0</field>
-            <field name="orientation">Landscape</field>
-            <field name="margin_top">7</field>
-            <field name="margin_bottom">7</field>
-            <field name="margin_left">10</field>
-            <field name="margin_right">10</field>
+            <field name="format">custom</field>
+            <field name="page_height">70</field>
+            <field name="page_width">100</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">2</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
             <field name="header_line" eval="False"/>
-            <field name="header_spacing">3</field>
+            <field name="header_spacing">0</field>
             <field name="dpi">90</field>
         </record>
+        <!--End Programmer: Routh Milano-->
 
-        <!-- Production order report -->
-        <report
-                id="action_report_production_order"
-                model="mrp.production"
-                string="Production Order Ep"
-                report_type="qweb-pdf"
-                name="base_epithelium.report_mrporder_ep"
-                file="base_epithelium.report.mrp_production_templates"
-                print_report_name="'Production Order - %s' % object.name"
-                paperformat="paperformat_mrporder"
-                menu="True"
-        />
+        <!-- Start
+            Programmer: Routh Milano
+            Date: 14-04-2022
+            Requirement: REQ-SP-000009 
+            Functionality: Paper Format for Material Dispensing Label
+         -->
+        <record id="paperformat_mrp_material_dispensing_label" model="report.paperformat">
+            <field name="name">Mpr Material Dispensing Label</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">50</field>
+            <field name="page_width">70</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">2</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+        <!--End Programmer: Routh Milano-->
+
 
         <!-- Production order report -->
         <report
@@ -62,6 +79,42 @@
                 menu="True"
         />
 
-
+        <!-- Start
+            Programmer: Routh Milano
+            Date: 14-04-2022
+            Requirement: REQ-SP-000008 
+            Functionality: Report for Dispensed Materials Identification Label
+         -->
+        <report
+                id="action_report_mrp_dispensed_materials_identification_label"
+                model="mrp.production"
+                string="Dispensed Materials Identification Label"
+                report_type="qweb-pdf"
+                name="base_epithelium.dispensed_materials_identification_label"
+                file="base_epithelium.report.dispensed_materials_identification_label"
+                print_report_name="'Dispensed Materials Identification Label - %s' % object.name"
+                paperformat="paperformat_mrp_dispensed_materials_identification_label"
+                menu="True"
+        />
+        <!--End programmer Routh Milano-->
+        
+        <!-- Start
+            Programmer: Routh Milano
+            Date: 14-04-2022
+            Requirement: REQ-SP-000009
+            Functionality: Report for Material Dispensing Label
+         -->
+        <report
+                id="action_report_mrp_material_dispensing_label"
+                model="mrp.production"
+                string="Material Dispensing Label"
+                report_type="qweb-pdf"
+                name="base_epithelium.material_dispensing_label"
+                file="base_epithelium.report.material_dispensing_label"
+                print_report_name="'Material Dispensing Label - %s' % object.name"
+                paperformat="paperformat_mrp_material_dispensing_label"
+                menu="True"
+        />
+        <!--End programmer Routh Milano-->
     </data>
 </odoo>

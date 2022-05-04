@@ -9,6 +9,14 @@
                 <xpath expr="//page/field[@name='move_raw_ids']/tree/field[@name='product_uom']" position="after">
                     <field name="percent" string="%"/>
                 </xpath>
+                <!--
+                    Programmer: Routh Milano
+                    Date: 14-04-2022
+                    Requirement: Replace field product_id for delete the attribute default
+                -->
+                <xpath expr="//sheet/group/group/field[@name='product_id']" position="replace">
+                    <field name="product_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                </xpath>
             </field>
         </record>
 

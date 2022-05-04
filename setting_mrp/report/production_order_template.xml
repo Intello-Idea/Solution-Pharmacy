@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Production order report -->
+        <!--
+            start
+            Programmer: Routh Milano
+            Date: 02-05-2022 - 03-05-2022
+            Requirement: Incluír reporte QWEB Orden de Producción
+        -->
+        <report
+                id="action_production_order_report_sp"
+                model="mrp.production"
+                string="Production Order"
+                report_type="qweb-pdf"
+                name="setting_mrp.report_production_order_sp"
+                file="setting_mrp.production_order_template"
+                print_report_name="'Production Order - %s' % object.name"
+                menu="True"/> 
+
+        <template id="internal_layout_sp">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header mb-2" style="margin-left:14px; margin-right:14px;">
+                    <div class="row" style="border: 1px solid #000; font-family: serif; font-size:11px; ">
+                        <div class="col-3 align-items-center" style="border-right: 1px solid black;">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                                style="max-height: 110px; margin-left: auto; margin-right: auto; display: block;"
+                                alt="Logo"/>
+                        </div>
+                        <div class="col-5 h-100 text-center" style="padding: 0; border-right: 1px solid #000;">
+                            <table class="w-100" style="text-align: center;">
+                                <tr>
+                                    <td>
+                                        <h5 style="padding-top:10px;" class="w-15"><b>PRODUCTION</b>
+                                                   <br></br>
+                                                  <b>FORM</b>
+                                        </h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top:1px solid #000;">
+                                        <h5 style="padding-top:13px;"><b class="w-15">PRODUCTION ORDER</b></h5>
+                                    </td>
+                                </tr>
+                            </table>
+                    
+                        </div>
+                        <div class="col-4" style="padding: 0;">
+                            <table class="w-100" style="text-align: left; padding-right:0px; margin-right:0px;">
+                                <tr>
+                                    <td style="" colspan="2"><strong style="font-weight:700; padding-left:5px;" class="w-15">Code: FPRC-PRO-002-1</strong></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top:1px solid #000;"><strong style="font-weight:700; padding-left:5px;" class="w-15">Version: 01</strong></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top:1px solid #000;">
+                                        <strong style="font-weight:700; padding-left:5px;" class="w-15">Page:</strong>
+                                        <strong class="list-inline-item w-15" style="font-weight:700;"><span class="page"/></strong>
+                                        <strong class="list-inline-item w-15" style="font-weight:700;">of</strong>
+                                        <strong class="list-inline-item w-15" style="font-weight:700;"><span class="topage"/></strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top:1px solid #000;"><strong style="font-weight:700; padding-left:5px;" class="w-15">Validity:</strong><br></br><strong style="font-weight:700; padding-left:5px;">From Ene-21 to Ene-23</strong></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top:1px solid #000;"><strong style="font-weight:700; padding-left:5px;" class="w-15">ID: 72</strong></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+
+        <template id="report_production_order_sp" >
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="setting_mrp.internal_layout_sp">
+                        <div class="page mb-2">
+                            <table class="w-100" style="border:1px solid #000;">
+                                <tr style="border:1px solid #000;">
+                                    <td style="border:1px solid #000;">Product to produce:</td>
+                                    <td colspan="2" style="border:1px solid #000;"><span t-field="o.product_id.name"/></td>
+                                    <td style="border:1px solid #000; width:20%;">Op number:</td>
+                                    <td style="border:1px solid #000; width:20%;"><span t-field="o.name"/></td>
+                                </tr>
+                                <tr style="border:1px solid #000;">
+                                    <td style="border:1px solid #000;">Client:</td>
+                                    <t t-if="o.client_code">
+                                        <td colspan="2" style="border:1px solid #000;"><span t-field="o.client_code"/></td>
+                                    </t>
+                                    <t t-elif="o.client_code_sale">
+                                        <td colspan="2" style="border:1px solid #000;"><span t-field="o.client_code_sale"/></td>
+                                    </t>
+                                    <t t-else="else">
+                                        <td colspan="2" style="border:1px solid #000;"></td>
+                                    </t>
+                                    <td style="border:1px solid #000;">Date of issue:</td>
+                                    <td style="border:1px solid #000;"><span t-field="o.date_planned_start" t-options='{"widget": "date"}'/></td>
+                                </tr>
+                                <tr style="border:1px solid #000;">
+                                    <td style="border:1px solid #000;">Patient:</td>
+                                    <t t-if="o.patient">
+                                        <td colspan="2" style="border:1px solid #000;"><span t-field="o.patient"/></td>
+                                    </t>
+                                    <t t-elif="o.patient_sale">
+                                        <td colspan="2" style="border:1px solid #000;"><span t-field="o.patient_sale"/></td>
+                                    </t>
+                                    <t t-else="else">
+                                        <td colspan="2" style="border:1px solid #000;"></td>
+                                    </t>
+                                    <td style="border:1px solid #000;">Due date:</td>
+                                    <td style="border:1px solid #000;"><span t-field="o.expiration_date_sp" t-options='{"widget": "date"}'/></td>
+                                </tr>
+                                <tr style="border:1px solid #000;">
+                                    <td style="border:1px solid #000;">Pharmaceutical form:</td>
+                                    <td style="border:1px solid #000;" colspan="2"><span t-field="o.pharmaceutical_form"/></td>
+                                    <td style="border:1px solid #000;">Pharmaceutical presentation:</td>
+                                    <td style="border:1px solid #000;"><span t-field="o.pharmaceutical_presentation"/></td>
+                                </tr>
+                                <tr style="border:1px solid #000;">
+                                    <td style="border:1px solid #000;">Quantity to produce:</td>
+                                    <td style="border:1px solid #000;" colspan="2"><span t-field="o.product_qty"/><span>/</span><span t-field="o.dough"/></td>
+                                    <td style="border:1px solid #000;">Bulk size:</td>
+                                    <td style="border:1px solid #000;"><span t-field="o.bulk_size"/></td>
+                                </tr>
+                                <tr style="border:1px solid #000;">
+                                    <td style="border:1px solid #000; width:20%;">Size:</td>
+                                    <td style="border:1px solid #000; width:20%;"><span t-field="o.size"/><span>/</span><span t-field="o.dough"/></td>
+                                    <td style="border:1px solid #000;">Issued by:</td>
+                                    <td style="border:1px solid #000;" colspan="2"><span t-field="o.user_id"/></td>
+                                </tr>
+                                <tr style="border:1px solid #000;">
+                                    <th style="border:1px solid #000; text-align: center;" colspan="5">MATERIALS PREPARATION</th>
+                                </tr>
+                                <tr style="border:1px solid #000;">
+                                    <th style="text-align: center; border:1px solid #000;" scope="col">Components</th>
+                                    <th style="text-align: center; border:1px solid #000;" scope="col">%</th>
+                                    <th style="text-align: center; border:1px solid #000;" scope="col">Theoretical Quantity(g)</th>
+                                    <th style="text-align: center; border:1px solid #000;" scope="col">Heavy quantity</th>
+                                    <th style="text-align: center; border:1px solid #000;">Lot</th>
+                                </tr>
+                                <t t-foreach="o.get_composition_table()[0]" t-as="line">
+                                    <t t-if="line['head']">
+                                        <tr style="">
+                                            <td style="border:1px solid #000; text-align: left;"><t t-esc="line['code_product']"/></td>
+                                            <td style="border:1px solid #000; text-align: center;"><t
+                                                            t-esc="line['percent']"/></td>
+                                            <td style="border:1px solid #000; text-align: center;"><t
+                                                            t-esc="line['quantity']"/> <t t-esc="line['dough']"/></td>
+                                            <td style="border:1px solid #000; text-align: center;"></td>
+                                            <td style="border:1px solid #000; text-align: center;"><t
+                                                            t-esc="line['quantity_lot']"/></td>
+                                        </tr>
+                                    </t>
+                                    <t t-if="not line['head']">
+                                        <tr style="">
+                                            <td style="border:1px solid #000; text-align: left;"><t t-esc="line['product']"/></td>
+                                            <td style="border:1px solid #000; text-align: center;"><t t-esc="line['percent']"/></td>
+                                            <td style="border:1px solid #000; text-align: center;"><t t-esc="line['quantity']"/></td>
+                                            <td style="border:1px solid #000; text-align: center;"></td>
+                                            <td style="border:1px solid #000; text-align: center;"><t
+                                                            t-esc="line['quantity_lot']"/></td>
+                                        </tr>
+                                    </t>          
+                                </t>
+                                <tr style="">
+                                 
+                                    <td style="border:1px solid #000; text-align: center;">Totals</td>
+                                    <td style="border:1px solid #000; text-align: center;"><t
+                                                t-esc="o.get_composition_table()[1]['total_percent']"/></td>
+                                    <td style="border:1px solid #000; text-align: center;"><t
+                                                t-esc="o.get_composition_table()[1]['total_quantity']"/><span> g</span></td>
+                                    <td style="border:1px solid #000; text-align: center;"></td>
+                                    <td style="border:1px solid #000; text-align: center;"></td>
+                                </tr>
+                                <tr style="border:1px solid #000;">
+                                    <td style="border:1px solid #000;">Number of units obtained:</td>
+                                    <td style="border:1px solid #000;"></td>
+                                    <td style="border:1px solid #000;">Performance:</td>
+                                    <td style="border:1px solid #000;" colspan="2"></td>
+                                </tr>
+                                <tr style="border:1px solid #000;">
+                                    <td style="border:1px solid #000;">Procedure:</td>
+                                    <td style="border:1px solid #000; text-align: center;" colspan="4"><span>According to Elaboration Procedure</span></td>
+                                </tr>
+                                <tr style="border:1px solid #000; height: 100px;">
+                                    <td style="border:1px solid #000;">Observations:</td>
+                                    <td style="border:1px solid #000;" colspan="4"></td>
+                                </tr>
+                                <tr style="border:1px solid #000;">
+                                    <th style="border:1px solid #000; text-align: center;" colspan="5">IN-PROCESS CONTROL</th>
+                                </tr>
+                                <tr style="border:1px solid #000;">
+                                    <td style="border:1px solid #000;">Appearance:</td>
+                                    <td style="border:1px solid #000;" colspan="4"></td>
+                                </tr>
+                                <tr style="border:1px solid #000;">
+                                    <td style="border:1px solid #000;">PH:</td>
+                                    <td style="border:1px solid #000;" colspan="4"></td>
+                                </tr>
+                                <tr style="border:1px solid #000; height: 50px;">
+                                    <td style="border:1px solid #000;"><span/></td>
+                                    <td style="border:1px solid #000;"><span/></td>
+                                    <td style="border:1px solid #000;"><span/></td>
+                                    <td style="border:1px solid #000;" colspan="2"><span/></td>
+                                </tr>
+                                <tr style="border:1px solid #000;">
+                                    <th style="text-align: center; border:1px solid #000;" scope="col">Dispensing</th>
+                                    <th style="text-align: center; border:1px solid #000;" scope="col">Elaboration</th>
+                                    <th style="text-align: center; border:1px solid #000;" scope="col">Packing</th>
+                                    <th style="text-align: center; border:1px solid #000;" scope="col" colspan="2">Conditioning</th>
+                                </tr>
+                                <tr style="border:1px solid #000; height: 50px;">
+                                    <td style="border:1px solid #000;" colspan="2"><span/></td>
+                                    <td style="border:1px solid #000;" colspan="3"><span/></td>
+                                </tr>
+                                <tr style="border:1px solid #000;">
+                                    <th style="text-align: center; border:1px solid #000;" scope="col" colspan="3">PRODUCTION COORDINATOR VERIFICATION</th>
+                                    <th style="text-align: center; border:1px solid #000;" scope="col" colspan="2">Vo. Bo. TECHNICAL DIRECTOR</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+        <!--
+            End Programmer: Routh Milano Date: 02-05-2022 - 03-05-2022
+        -->
+    </data>
+</odoo>

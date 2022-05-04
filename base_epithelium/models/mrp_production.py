@@ -16,9 +16,9 @@ class MrpProduction(models.Model):
     pharmaceutical_presentation = fields.Many2one('pharmaceutical.presentation',
                                                   related='bom_id.pharmaceutical_presentation',
                                                   string="Pharmaceutical presentation")
-    size = fields.Float(related='product_id.size', string="Size")
-    partner_id = fields.Many2one('res.partner', string='Partner', )
-    patient = fields.Char()
+    size = fields.Float(related='bom_id.size', string="Size")
+    #partner_id = fields.Many2one('res.partner', string='Partner', )
+    #patient = fields.Char()
     due_date = fields.Date('Due date')
 
     lot_stock_move_line_ids = fields.One2many('stock.move.line', compute='_compute_lots', readonly=True, default=[],
@@ -95,6 +95,10 @@ class MrpProduction(models.Model):
                 for move in production.move_raw_ids:
                     move_line = production.env['stock.move.line'].search([('move_id', '=', move.id)])
                     production.lot_stock_move_line_ids += move_line
+            else:
+                # Fabian Hernando Vera Carrillo
+                # Solucion error cuando la orden de produccion no tiene productos asociados
+                production.lot_stock_move_line_ids
 
     def write(self, vals):
         return super(MrpProduction, self).write(vals)
@@ -103,6 +107,10 @@ class MrpProduction(models.Model):
     def action_emulate_move_lines(self):
         self.mrp_production_simulation_lot_ids = False
         for move in self.move_raw_ids:
+            #Start Guardar los porcentajes dentro den campo percent 03-05-2022 developer: Routh Milano
+            mrp_bom_line = self.env['mrp.bom.line'].search([('id','=',move.bom_line_id.id)])
+            move.percent = mrp_bom_line.percent
+            #End Guardar los porcentajes dentro den campo percent 03-05-2022 developer: Routh Milano
             lots = []
             need_quantity = move.product_uom._compute_quantity(move.product_uom_qty,
                                                                move.product_id.uom_id,
@@ -146,8 +154,10 @@ class MrpProduction(models.Model):
             line = {
                 'number': str(num),
                 'product': str(move.product_id.name),
+                'code_product': str(move.product_id.default_code), #Agregar elemento al diccionario developer Routh Milano 03-05-2022
                 'percent': str(move.percent),
                 'quantity': str(move.product_uom_qty),
+                'dough': str(move.product_uom.name), #Agregar elemento al diccionario developer Routh Milano 03-05-2022
                 'quantity_lot': "",
                 'lot': "",
                 'due_date': "",
@@ -163,8 +173,10 @@ class MrpProduction(models.Model):
                 line = {
                     'number': "",
                     'product': "",
+                    'code_product': "", #Agregar elemento al diccionario developer Routh Milano 03-05-2022
                     'percent': "",
                     'quantity': "",
+                    'dough': "", #Agregar elemento al diccionario developer Routh Milano 03-05-2022
                     'quantity_lot': str(lot_move.product_uom_qty) if self.state in ('confirmed') else lot_move.qty_done,
                     'lot': str(lot_move.lot_id.name),
                     'due_date': str(lot_move.due_date.strftime('%Y-%m-%d')) if lot_move.due_date else "",
@@ -195,7 +207,12 @@ class MrpProduction(models.Model):
             if check_status:
                 node.set('domain', "[('check_status', '=', True)]")
             else:
-                node.set('domain', "[]")
+                ''' 
+                    Programmer: Routh Milano
+                    Date: 14-04-2022
+                    Requirement: Add filter in of field product_id
+                '''
+                node.set('domain', "[('bom_ids','!=', False),('bom_ids.active','=', True),('bom_ids.type','=', 'normal'),('type','in',['product','consu']),'|',('company_id','=',False),('company_id','=',company_id)]")
 
         res['arch'] = etree.tostring(doc)
 

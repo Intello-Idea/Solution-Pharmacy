@@ -68,10 +68,12 @@
                     <field name="pharmaceutical_presentation"/>
                     <field name="size"/>
                 </xpath>
+                <!--
                 <xpath expr="//field[@name='company_id']" position="after">
                     <field name="partner_id"/>
                     <field name="patient"/>
                 </xpath>
+                -->
                 <xpath expr="//field[@name='date_planned_start']" position="before">
                     <field name="check_standard_manufacturing" invisible="1"/>
                     <field name="due_date" attrs="{'readonly':[('check_standard_manufacturing','=',False)]}"
