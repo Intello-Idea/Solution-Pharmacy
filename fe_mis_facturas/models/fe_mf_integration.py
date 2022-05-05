@@ -173,12 +173,20 @@ class FeMfMethods(models.AbstractModel):
                             if tax_information['TaxEvidenceIndicator']:
                                 line_total_taxes += tax.amount
                             taxes.append(tax_information)
-
+                    price_product = 0
+                    if line.sale_line_ids.bonus:
+                        for product in posted_document.invoice_line_ids:
+                            if line.product_id.name == product.product_id.name and \
+                                    not product.sale_line_ids.bonus:
+                                price_product = product.price_unit
+                                break
+                    else:
+                        price_product = line.price_unit
                     product = {
                         "ItemReference": line.product_id.default_code,
                         "Name": line.product_id.name,
                         "Quatity": line.quantity,
-                        "Price": line.price_unit,
+                        "Price": price_product,
                         "LineAllowanceTotal": 0,
                         "LineChargeTotal": 0.0,
                         "LineTotalTaxes": line_total_taxes,
@@ -193,6 +201,8 @@ class FeMfMethods(models.AbstractModel):
                         "AllowanceCharge": []
                     }
                     lines.append(product)
+
+            # raise exceptions.Warning("Procesando")
 
         if template_id == 91:
             for line in posted_document.invoice_line_ids:
@@ -215,12 +225,20 @@ class FeMfMethods(models.AbstractModel):
                             if tax_information['TaxEvidenceIndicator']:
                                 line_total_taxes += tax.amount
                             taxes.append(tax_information)
-
+                    price_product = 0
+                    if line.sale_line_ids.bonus:
+                        for product in posted_document.invoice_line_ids:
+                            if line.product_id.name == product.product_id.name and \
+                                    not product.sale_line_ids.bonus:
+                                price_product = product.price_unit
+                                break
+                    else:
+                        price_product = line.price_unit
                     product = {
                         "ItemReference": line.product_id.default_code,
                         "Name": line.product_id.name,
                         "Quatity": line.quantity,
-                        "Price": line.price_unit,
+                        "Price": price_product,
                         "LineAllowanceTotal": 0,
                         "LineChargeTotal": 0.0,
                         "LineTotalTaxes": line_total_taxes,
@@ -495,7 +513,7 @@ class FeMfMethods(models.AbstractModel):
                                                                response.json()['DocumentId'], document_type=1)
             print(electronic_document)
             json_electronic = electronic_document.json()
-            print("This is json document",json_electronic)
+            print("This is json document", json_electronic)
             detail_invoice = {
                 'cufe': json_electronic['CUFE'],
                 'document_key': response.json()['DocumentId'],
