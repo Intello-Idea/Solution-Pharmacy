@@ -63,9 +63,6 @@ class AccountTax(models.Model):
 class AccountJournal(models.Model):
     _inherit = "account.journal"
 
-    handle_book = fields.Boolean(string='Handle Book')
-    selection_book = fields.One2many('selection.book', 'name')
-
     invoice_resolution = fields.Many2one('account.dian.resolution', 'Resolution Invoice')
     note_resolution = fields.Many2one('account.dian.resolution', 'Credit Note Resolution')
 
@@ -79,33 +76,11 @@ class AccountJournal(models.Model):
                     raise exceptions.ValidationError(_("Invoice resolution and resolution note cant equals"))
 
 
-class AccountJournalBook(models.Model):
-    _name = 'selection.book'
-    _description = "Selection book for journal"
-
-    name = fields.Char()
-    book = fields.Many2one('accounting.book', string='Book')
-    sequence = fields.Many2one('ir.sequence', string='Sequence')
-    next_number = fields.Integer(string='Next Number')
-
-
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-    @api.model
-    def book_principal(self):
-
-        book_default = self._context.get('book_default', '')
-        if book_default:
-            return self.env['accounting.book'].browse(book_default)
-        else:
-            return self.env['accounting.book'].search([('book_principal', '=', True)])
-
-    book = fields.Many2one('accounting.book', default=book_principal, string='Book')
     is_replicated = fields.Boolean(default=False)
-
     from_sale_order = fields.Boolean(default=False, copy=False)
-
     prefix = fields.Char('Prefix', copy=False)
     number = fields.Char('Number', copy=False)
     reverse_concept = fields.Many2one('ln10_co_intello.diancodes', string='Concept dian',
@@ -181,31 +156,6 @@ class AccountMove(models.Model):
                         'resolution_id': credit_note.journal_id.note_resolution,
                     })
 
-    @api.model
-    def update_book_id(self):
-        invoices = self.env['account.move'].search([('book', '=', False)])
-        book = self.env['accounting.book'].search([('name', '=', 'NIIF')])
-        if invoices:
-            for invoice in invoices:
-                if invoice:
-                    invoice.update({
-                        'book': book.id
-                    })
-
-    @api.onchange('line_ids')
-    def verification_own_account(self):
-        account_line = self.line_ids.account_id
-        for account in account_line:
-            own_accounts = self.env['own.accounts'].search(
-                [('book.id', '!=', self.book.id), ('accounting_account.id', '=', account.id)])
-            if own_accounts:
-                raise exceptions.ValidationError('Esta cuenta es propia de el libro ' + own_accounts.book.name)
-            else:
-                for line in self.line_ids:
-                    line.book = self.book.id
-                    line.update({
-                        'book': self.book.id
-                    })
 
     @api.onchange('narration')
     def fix_narration_note(self):
@@ -250,12 +200,6 @@ class AccountMove(models.Model):
         text = self.currency_id.amount_to_text(self.amount_total).upper()
         return text
 
-    @api.model
-    def check_multibook(self):
-        parameter = self.env['ir.config_parameter'].sudo()
-        multibook = parameter.get_param('res.config.settings.multi_book')
-        return multibook
-
     @api.constrains('name', 'journal_id', 'state')
     def _check_unique_sequence_number(self):
         moves = self.filtered(lambda move: move.state == 'posted')
@@ -272,59 +216,12 @@ class AccountMove(models.Model):
                     move2.name = move.name
                     AND move2.journal_id = move.journal_id
                     AND move2.type = move.type
-                    AND move2.book = move.book
                     AND move2.id != move.id
                 WHERE move.id IN %s AND move2.state = 'posted'
             ''', [tuple(moves.ids)])
         res = self._cr.fetchone()
         if res:
             raise ValidationError(_('Posted journal entry must have an unique sequence number per company.'))
-
-    def replication_account_book(self):
-
-        books = self.env['accounting.book'].search([('id', '!=', self.book.id)])
-        for book in books:
-            for move in self:
-                self.ensure_one()
-                new_move = self.copy_data()[0]
-                new_move.update({
-                    "ref": move.ref,
-                    "name": move.name,
-                    "book": book.id,
-                    "prefix": move.prefix,
-                    "number": move.number,
-                    "type": "entry",
-                    "is_replicated": True,
-                    'invoice_line_ids': None,
-                })
-                # To avoid to create a translation in the lang of the user, copy_translation will do it
-                move_book = self.with_context(lang=None).create(new_move)
-                self.change_account(book, move_book)
-
-                move_book.post()
-
-                self.env["relation.account.move"].create({
-                    'src_book': self.book.id,
-                    'src_move_id': self.id,
-                    # generate move
-                    'dst_book': book.id,
-                    'dst_move_id': move_book.id,
-                })
-
-    def _get_sequence(self):
-        ''' Return the sequence to be used during the post of the current move.
-        :return: An ir.sequence record or False.
-        '''
-        sequence = super(AccountMove, self)._get_sequence()
-        if self.journal_id.handle_book:
-            sequence = self.env['selection.book'].search([('book', '=', self.book.id)]).sequence
-
-        """interpolated_prefix, interpolated_suffix = sequence._get_prefix_suffix()
-        self.write({
-            'prefix': interpolated_prefix
-        })"""
-
-        return sequence
 
     @api.model
     def default_get(self, vals):
@@ -340,8 +237,9 @@ class AccountMove(models.Model):
 
         return account_move
 
+    # @api.model
     def write(self, vals):
-
+        # raise exceptions.Warning("Error validadcion")
         for rec in self:
 
             if rec.move_type == 'out_invoice':
@@ -355,11 +253,11 @@ class AccountMove(models.Model):
             if rec.move_type == 'out_refund':
                 if rec.journal_id.note_resolution:
                     vals['resolution_id'] = rec.journal_id.note_resolution
-
             if rec.move_type != 'entry':
-                if 'name' in vals and vals.get('name') != '/':
-                    if rec.prefix:
-                        vals['number'] = vals['name'].split(rec.prefix, 1)[1]
+                if rec.name and rec.name != '/':
+                    if rec.resolution_id.prefix:
+                        vals['number'] = rec.name.split(rec.resolution_id.prefix, 1)[1]
+                        # rec.number = vals['name'].split(rec.resolution_id.prefix, 1)[1]
                     else:
                         words = str(vals.get('name')).replace('[', '').replace(']', '')
                         number = [int(word) for word in words if word.isdigit()]
@@ -367,8 +265,8 @@ class AccountMove(models.Model):
                         for item in number:
                             num += str(item)
                         vals['number'] = num
-
-                    rec._validate_resolution_data(next_number=int(vals['number']))
+                    if vals['number']:
+                        rec._validate_resolution_data(next_number=int(vals['number']))
 
         return super(AccountMove, self).write(vals)
 
@@ -395,9 +293,9 @@ class AccountMove(models.Model):
                         raise exceptions.ValidationError(
                             _("The Invoice date is not in the range of the Invoice Resolution"))
 
-                if not self.journal_id.sequence_id.prefix == self.journal_id.invoice_resolution.prefix:
-                    raise exceptions.ValidationError(_(
-                        "The sequence prefix and the Invoice Resolution prefix have to match"))
+                # if not self.journal_id.sequence_id.prefix == self.journal_id.invoice_resolution.prefix:
+                #     raise exceptions.ValidationError(_(
+                #         "The sequence prefix and the Invoice Resolution prefix have to match"))
 
             if self.type == 'out_refund':
 
@@ -413,50 +311,17 @@ class AccountMove(models.Model):
                             raise exceptions.ValidationError(_(
                                 "The Invoice date is not in the range of the Invoice Resolution"))
 
-                        if not self.journal_id.refund_sequence_id.prefix == self.journal_id.note_resolution.prefix:
-                            raise exceptions.ValidationError(_(
-                                "The sequence prefix and the Invoice Resolution prefix have to match"))
-
-    def change_account(self, book, new_move):
-
-        year = int(new_move.date.strftime("%Y"))
-        approved_accounts = book.detail.search([('year', '=', year)])
-        if approved_accounts:
-            for line in new_move.line_ids:
-                for approved_account in approved_accounts:
-                    if line.account_id == approved_account.count_account_base:
-                        line.update({
-                            "account_id": approved_account.count_approved_account
-                        })
+                        # if not self.journal_id.refund_sequence_id.prefix == self.journal_id.note_resolution.prefix:
+                        #     raise exceptions.ValidationError(_(
+                        #         "The sequence prefix and the Invoice Resolution prefix have to match"))
 
     def post(self):
         post = super(AccountMove, self).post()
-        for record in self:
-            if record.check_multibook() and not record.journal_id.handle_book and not record.is_replicated:
-                record.replication_account_book()
-
         return post
 
-    def month_block(self):
 
-        today = date.today()
-        date_month = (today.strftime("%m"))
-        date_year = int(today.strftime("%Y"))
-        month_block = self.book.month_block.search(
-            [('book.id', '=', self.book.id), ('year', '=', date_year), ('month', '=', date_month)])
-
-        if month_block:
-            if month_block.is_closed:
-                raise exceptions.ValidationError("El libro y el mes en que se hace la publicación ya esta cerrado")
-        else:
-            raise exceptions.ValidationError(
-                "Bloqueo de mes no definido para el libro " + str(self.book.name) + ". En el año " + str(
-                    date_year) + " y mes " + str(date_month))
-
-            # -------- Herencia a acciones en botones ---
-
+    # -------- Herencia a acciones en botones ---
     def action_post(self):
-        self.month_block()
         action_post = super(AccountMove, self).action_post()
         return action_post
 
@@ -464,11 +329,10 @@ class AccountMove(models.Model):
         if self.is_replicated:
             raise exceptions.ValidationError("Operación no permitida, Movimiento generado desde otro libro")
         else:
-            self.month_block()
             draft_move = super(AccountMove, self).button_draft()
 
         relation_account_move = self.env['relation.account.move'].search(
-            [('src_move_id.id', '=', self.id), ('src_book.id', '=', self.book.id)])
+            [('src_move_id.id', '=', self.id)])
         for relation_move in relation_account_move:
             account_move = self.env['account.move'].browse(relation_move.dst_move_id.id)
             account_move.update({
@@ -499,18 +363,15 @@ class RelationAccountMove(models.Model):
     _name = "relation.account.move"
     _description = "relation of account move in books"
 
-    src_book = fields.Many2one('accounting.book')
     src_move_id = fields.Many2one('account.move')
-
     # Generate move
-    dst_book = fields.Many2one('accounting.book')
     dst_move_id = fields.Many2one('account.move')
 
 
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
-    book = fields.Many2one('accounting.book', string="Book")
+    # book = fields.Many2one('accounting.book', string="Book")
     team_id = fields.Many2one('crm.team', related='move_id.team_id', store=True)
     parent_category_id = fields.Many2one('product.category', compute='_compute_parent_category_id', store=True)
 
@@ -538,16 +399,6 @@ class AccountMoveLine(models.Model):
             domain = domain
         else:
             domain = []
-        parameter = self.env['ir.config_parameter'].sudo()
-        multibook = parameter.get_param('res.config.settings.multi_book')
-        if multibook:
-            book_w = self.env['book.report.wizard'].search([])[-1]
-            domain += [("move_id.book.id", "=", book_w.book_id.id)]
-
-        else:
-            book_w = self.env['accounting.book'].search([("book_principal", "=", True)])
-            domain += [("move_id.book.id", "=", book_w.id)]
-
         return super(AccountMoveLine, self)._query_get(domain)
 
     def action_sale(self, name, book_id):
@@ -579,19 +430,17 @@ class AccountMoveLine(models.Model):
             "res_model": 'account.move.line',
             "context": context,
 
-            "domain": [('display_type', 'not in', ('line_section', 'line_note')),
-                       ('move_id.book', '=', book_id)],
+            "domain": [('display_type', 'not in', ('line_section', 'line_note'))],
         }
         return action
 
 
 class AccountMonthBlock(models.Model):
     _name = "account.month.block"
-    _order = "book, year desc, month desc"
+    _order = "year desc, month desc"
     _description = "month block for account in account move"
 
     name = fields.Char(compute="compute_name", store=True)
-    book = fields.Many2one('accounting.book', string='Book')
     year = fields.Integer(string='Year')
     month = fields.Selection(
         [('01', 'January'), ('02', 'February'), ('03', 'March'), ('04', 'April'), ('05', 'May'), ('06', 'June'),
@@ -601,29 +450,11 @@ class AccountMonthBlock(models.Model):
     is_closed = fields.Boolean(string="Closed", default=False)
 
     _sql_constraints = [
-        ('month_unique', 'UNIQUE(book,year,month)', "you can't have a repeated month and year for book!")]
+        ('month_unique', 'UNIQUE(year,month)', "you can't have a repeated month and year for book!")]
 
     @api.depends('year', 'month')
     def compute_name(self):
         self.name = str(self.month) + "/" + str(self.year) + "/ " + "Bloqueado: " + str(self.is_closed)
-
-
-class AccountAccount(models.Model):
-    _inherit = 'account.account'
-
-    book_account_name = fields.One2many('book.account.name', 'account_id')
-
-
-class BookAccountName(models.Model):
-    _name = 'book.account.name'
-    _description = 'detail account for book'
-
-    account_id = fields.Many2one('account.account')
-    book = fields.Many2one('accounting.book', string="Book")
-    name = fields.Char('Name', required=True)
-
-    _sql_constraints = [
-        ('Unique_book', 'UNIQUE (account_id,book)', '!you can not have more than one name for a book¡'), ]
 
 
 class account_payment(models.Model):
@@ -639,5 +470,5 @@ class account_payment(models.Model):
             'view_id': False,
             'views': views,
             'type': 'ir.actions.act_window',
-            'domain': [('payment_id', 'in', self.ids), ('move_id.book.name', '=', 'NIIF')],
+            'domain': [('payment_id', 'in', self.ids)],
         }

@@ -4,7 +4,7 @@ from odoo import models, fields, api, exceptions, _
 class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
     
-    count_invoice = fields.Integer(compute='_compute_count_invoice',copy=False, default=0, store=True)
+    count_invoice = fields.Integer(compute='_compute_count_invoice', copy=False, default=0, store=True)
 
 
     @api.depends('order_line.invoice_lines.move_id')
