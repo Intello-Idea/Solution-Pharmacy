@@ -16,7 +16,6 @@ class MrpProduction(models.Model):
 
     partner_sale_id = fields.Many2one('res.partner', string='Client', related="procurement_group_id.partner_id", store=True)
     partner_id = fields.Many2one('res.partner', string='Partner')
-    patient_sale = fields.Many2one('res.partner', string='Patient', related="partner_sale_id", store=True)
     patient = fields.Char(string='Patient')
     dough = fields.Many2one("uom.uom", related='bom_id.dough_of_size')
     bulk_size = fields.Float(string="Bulk Size", compute='_compute_bulk_size', readonly=True, default=[],
