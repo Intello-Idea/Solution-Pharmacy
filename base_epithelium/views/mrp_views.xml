@@ -34,7 +34,7 @@
                         <field name="size" class="oe_inline"
                                attrs="{'readonly': [('standard_manufacturing', '=', True)]}"
                                force_save="1"/>
-                        <field name="dough" nolabel="1" class="oe_inline"
+                        <field name="dough_of_size" class="oe_inline"
                                style="margin-left:5px; max-width:40%;"/>
                     </div>
                 </xpath>

@@ -54,8 +54,7 @@
                     <field name="partner_id" attrs="{'invisible': [('partner_sale_id', '!=', False)]}"/>
                     <field name="client_code" attrs="{'invisible': [('partner_sale_id', '!=', False)]}"/>
                     <field name="client_code_sale" attrs="{'invisible': [('partner_sale_id', '=', False)]}"/>
-                    <field name="patient" attrs="{'invisible': [('partner_sale_id', '!=', False)]}"/>
-                    <field name="patient_sale" attrs="{'invisible': [('partner_sale_id', '=', False)]}"/>
+                    <field name="patient"/>
                     
                     <!--
                         Programmer: Routh Milano Date: 26-04-2022

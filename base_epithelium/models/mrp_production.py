@@ -145,12 +145,18 @@ class MrpProduction(models.Model):
         total_quantity_lot = 0
         lines = []
         num = 0
+        count = 0
 
         for move in move_ids:
             num += 1
             total_percent += move.percent
             total_quantity += move.product_uom_qty
-
+            matches_lots = [lot for lot in lot_ids if lot['product_id'] == move.product_id]
+            lot = ''
+            lot_qty_done = ''
+            if len(matches_lots):
+                lot = matches_lots[0].product_uom_qty
+                lot_qty_done = matches_lots[0].qty_done
             line = {
                 'number': str(num),
                 'product': str(move.product_id.name),
@@ -158,31 +164,12 @@ class MrpProduction(models.Model):
                 'percent': str(move.percent),
                 'quantity': str(move.product_uom_qty),
                 'dough': str(move.product_uom.name), #Agregar elemento al diccionario developer Routh Milano 03-05-2022
-                'quantity_lot': "",
+                'quantity_lot': str(lot) if self.state in ('confirmed') else lot_qty_done,
                 'lot': "",
                 'due_date': "",
                 'head': True
             }
             lines.append(line)
-
-            matches_lots = [lot for lot in lot_ids if lot['product_id'] == move.product_id]
-
-            for lot_move in matches_lots:
-                total_quantity_lot += lot_move.product_uom_qty if self.state in (
-                    'confirmed') else lot_move.qty_done
-                line = {
-                    'number': "",
-                    'product': "",
-                    'code_product': "", #Agregar elemento al diccionario developer Routh Milano 03-05-2022
-                    'percent': "",
-                    'quantity': "",
-                    'dough': "", #Agregar elemento al diccionario developer Routh Milano 03-05-2022
-                    'quantity_lot': str(lot_move.product_uom_qty) if self.state in ('confirmed') else lot_move.qty_done,
-                    'lot': str(lot_move.lot_id.name),
-                    'due_date': str(lot_move.due_date.strftime('%Y-%m-%d')) if lot_move.due_date else "",
-                    'head': ""
-                }
-                lines.append(line)
 
             totals = {
                 'total_percent': str(round(total_percent, 0)),

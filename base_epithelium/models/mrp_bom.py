@@ -19,6 +19,8 @@ class MrpBom(models.Model):
     check_status = fields.Boolean('I.', store=True) #,compute='_check_status'
     dough = fields.Many2one("uom.uom", readonly=True)
     size = fields.Float(string="Size")
+    dough_of_size = fields.Many2one("uom.uom", domain=['|', ("category_id.name", "=", "Volumen"),
+                                               ("category_id.name", "=", "Peso")])
     size_total = fields.Float(string="Size total", compute="_size_total")
     percent_total = fields.Float(compute="_percent_total", store=True, digits=(12, 4))
     status_percent = fields.Selection([("0", "Total percentage is below 100"),

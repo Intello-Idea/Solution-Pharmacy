@@ -6,6 +6,7 @@
                 Módulo Setting Mrp modifica: 
                     1. Orden de Producción agregando campos nuevos en la ficha de Orden de Producción
                     2. Creación reporte QWEB-PDF llamado Orden de Producción dentro de Orden de Producción
+                    3. Agregar el campo de unidad de medida dentro de lista de materiales y de la orden de producción
     """,
     #Si colocan nueva funcionalidad dentro de esté modulo por favor agregarlo al resumén
     #para tener la documentación al día, además de comentar las modificaciones realizadas
