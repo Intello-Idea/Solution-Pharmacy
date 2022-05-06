@@ -264,7 +264,8 @@ class Partner(models.Model):
     # Se agrego la validacion de que el codigo del cliente sea unico
     _sql_constraints = [
         ('document_type_number_uniq', 'UNIQUE(document_type,vat)', 'Duplicate Document Type and VAT is not allowed!')]
-        # ('client_code_uniq','UNIQUE(client_code)',_('Duplicate Client code is not allowed!'))]
+
+    # ('client_code_uniq','UNIQUE(client_code)',_('Duplicate Client code is not allowed!'))]
 
     # ,'name_document_number_uniq', 'UNIQUE(name,vat)', 'Duplicate Name and VAT is not allowed!']
 
@@ -443,6 +444,9 @@ class Partner(models.Model):
                     raise exceptions.ValidationError(_(
                         'The company has the fiscal responsibility "Not responsible for IVA", therefore it cannot have more.'))
 
+_region_specific_vat_codes = {
+    'xi',
+}
 
 class PartnerQuota(models.Model):
     _inherit = 'res.partner'
@@ -452,6 +456,33 @@ class PartnerQuota(models.Model):
     quota_client_spent = fields.Float(string='Quota client spent', readonly="1", compute='_compute_quota_client_spent')
     quota_total = fields.Float(string='Quota total', compute="_validation")
     quota_total_remaining = fields.Float(string="Quota total remaining", compute='_compute_remaining')
+
+    @api.constrains('vat', 'country_id')
+    def check_vat(self):
+        if self.env.context.get('company_id'):
+            company = self.env['res.company'].browse(self.env.context['company_id'])
+        else:
+            company = self.env.company
+        eu_countries = self.env.ref('base.europe').country_ids
+        for partner in self:
+            if not partner.vat:
+                continue
+            if company.vat_check_vies and partner.commercial_partner_id.country_id in eu_countries:
+                check_func = self.vies_vat_check
+            else:
+                check_func = self.simple_vat_check
+
+            failed_check = False
+            vat_country_code, vat_number = self._split_vat(partner.vat)
+            vat_has_legit_country_code = self.env['res.country'].search([('code', '=', vat_country_code.upper())])
+            if not vat_has_legit_country_code:
+                vat_has_legit_country_code = vat_country_code.lower() in _region_specific_vat_codes
+            if vat_has_legit_country_code:
+                failed_check = not check_func(vat_country_code, vat_number)
+            partner_country_code = partner.commercial_partner_id.country_id.code
+            if (not vat_has_legit_country_code or failed_check) and partner_country_code:
+                failed_check = not check_func(partner_country_code.lower(), partner.vat)
+        return True
 
     @api.depends('quota_client', "extra_quota_client")
     def _validation(self):
