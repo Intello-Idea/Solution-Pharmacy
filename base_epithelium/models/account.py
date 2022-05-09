@@ -51,7 +51,7 @@ class AccountMove(models.Model):
                              ("in_invoice", "Factura de proveedor"),
                              ("in_refund", "Nota crédito de proveedor"),
                              ("out_receipt", "Recibo de ventas"),
-                             ("in_receipt", "Recibo de compra")], string="Tipo de comprobante")
+                             ("in_receipt", "Recibo de compra")], string="Tipo de documento")
 
 
     @api.onchange('partner_id')
