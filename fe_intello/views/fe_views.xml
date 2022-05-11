@@ -24,7 +24,7 @@
                     <field name="payment_type_1" placeholder="Payment Type"
                            attrs="{'invisible': [('type', '!=', 'out_invoice')]}"/>
                     <field name="payment_method" placeholder="Payment Method"
-                           attrs="{'invisible': [('type', '!=', 'out_invoice')], 'required': [('type', '=', 'out_invoice')
+                           attrs="{'invisible': [('type', '!=', 'out_invoice')], 'required': [('type', '=', 'out_invoice'), '|',
                            ('type', '=', 'out_refund')]}"
                            options="{'no_create': True, 'no_create_edit':True, 'no_open':True}"/>
                     <field name="export_bill"
