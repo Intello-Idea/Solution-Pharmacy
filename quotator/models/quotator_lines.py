@@ -8,7 +8,7 @@ class QuotatorLine(models.Model):
     _description = "Solution Pharmacy Quotator Lines"
     _rec_name = "product_id"
 
-    product_id = fields.Many2one('product.product', string="Product", required=True)
+    product_id = fields.Many2one('product.product', string="Product", required=True, domain=[('product_group.name','=','Activos')])
     percentage = fields.Float(string="Percentage(%)", required=True, default=0)
     quotator_id = fields.Many2one('quotator.own', string="Quotator id", store=True)
     category = fields.Char(string="Category", related="product_id.product_tmpl_id.categ_id.complete_name")
@@ -45,8 +45,8 @@ class QuotatorLine(models.Model):
         check_status = parameter.get_param('res.config.settings.check_status')
         
         if check_status:
-            domain = {'product_id': [('check_status', '=', True)]}
+            domain = {'product_id': [('check_status', '=', True), ('product_group', 'in', ('Activos'))]}
         else:
-            domain = {'product_id': []}
+            domain = {'product_id': [('product_group', 'in', ('Activos'))]}
 
         return {'domain': domain}
