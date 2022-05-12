@@ -30,7 +30,8 @@ class QuotatorLine(models.Model):
                 raise ValidationError(_('!! You do not have, selected a client !!')) 
             else:
                 if line.product_id:
-                    price = line.quotator_id.partner_id.property_product_pricelist.get_product_price(line.product_id, 1.0 or line.material_qty, line.quotator_id.partner_id)
+                    # price = line.quotator_id.partner_id.property_product_pricelist.get_product_price(line.product_id, 1.0 or line.material_qty, line.quotator_id.partner_id)
+                    price = line.product_id.standard_price
                     price = price+((price*percentages['percentage'])/100)
                     line['price_unit'] = 6 * price
     
