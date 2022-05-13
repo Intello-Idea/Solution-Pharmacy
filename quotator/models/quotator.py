@@ -27,7 +27,7 @@ class Quotator(models.Model):
     value_pharmaceutical_form = fields.Float(string="size(g) pharmaceutical form", compute="_compute_subtotal_pharmaceutical", store=True)
     total_pharmaceutical_form = fields.Float(string="Total", compute="_compute_total_pharmaceutical", store=True)
     total = fields.Float(string="Total", compute="_compute_total_quotator")
-    medical_formula = fields.Binary('Medical formula', required=True)
+    medical_formula = fields.Binary('Medical formula')
     presentation_id = fields.Many2one('pharmaceutical.presentation', string='Farmaceutical presentation')
     line_production_id = fields.Many2one('production.lines', string="Production Lines")
     state = fields.Selection([

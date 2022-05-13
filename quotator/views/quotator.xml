@@ -41,7 +41,7 @@
                 <field name="patient" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                 <field name="final_product"/>
                 <field name="product_qty" invisible="True"/>
-                <field name="medical_formula" widget="binary"/>
+                <field name="medical_formula" attrs="{'required': [False]}" widget="binary"/>
                 <field name="presentation_id"/>
               </group>
               <group>
@@ -63,8 +63,8 @@
                     <field name="category" invisible="1"/>
                     <field name="percentage"/>
                     <field name="material_qty" readonly="True"/>
-                    <field name="price_unit" invisible="0"/>
-                    <field name="price_total" invisible="0"/>
+                    <field name="price_unit" invisible="1"/>
+                    <field name="price_total" invisible="1"/>
                   </tree>
                 </field>
                 <group class="oe_subtotal_footer oe_right" colspan="2" name="quotator_total">
