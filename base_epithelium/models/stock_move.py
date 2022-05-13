@@ -22,6 +22,7 @@ class StockMove(models.Model):
                                                               digits='Precision Mrp',
                                                               readonly=True, help='Quantity that has already been reserved for this move')
     quantity_done = fields.Float('Quantity Done', compute='_quantity_done_compute', digits='Precision Mrp Five', inverse='_quantity_done_set')
+    forecast_availability = fields.Float('Forecast Availability', compute='_compute_forecast_information', digits=[12,5], compute_sudo=True)
 
     def _search_available_quantity(self, need, available_quantity, location_id, lot_id=None, package_id=None,
                                    owner_id=None, strict=True):
