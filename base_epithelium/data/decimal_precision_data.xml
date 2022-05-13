@@ -5,5 +5,9 @@
             <field name="name">Precision Mrp</field>
             <field name="digits">5</field>
         </record>
+        <record forcecreate="True" id="decimal_mrp_2" model="decimal.precision">
+            <field name="name">Precision Mrp Five</field>
+            <field name="digits">5</field>
+        </record>
     </data>
 </odoo>

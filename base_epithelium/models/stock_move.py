@@ -6,10 +6,10 @@ from collections import defaultdict
 class StockMove(models.Model):
     _inherit = "stock.move"
 
-    percent = fields.Float('Percent', digits='Precision Mrp')
+    percent = fields.Float('Percent', digits='Precision Mrp Five')
     due_date = fields.Date('Due date')
     total = fields.Float('Total')
-    product_uom_qty = fields.Float('Initial Demand', digits='Precision Mrp',
+    product_uom_qty = fields.Float('Initial Demand', digits='Precision Mrp Five',
                                                      default=0.0, required=True, states={'done': [('readonly', True)]},
                                                      help="This is the quantity of products from an inventory "
                                                           "point of view. For moves in the state 'done', this is the "
@@ -21,7 +21,7 @@ class StockMove(models.Model):
     reserved_availability = fields.Float('Quantity Reserved', compute='_compute_reserved_availability',
                                                               digits='Precision Mrp',
                                                               readonly=True, help='Quantity that has already been reserved for this move')
-    quantity_done = fields.Float('Quantity Done', compute='_quantity_done_compute', digits='Precision Mrp', inverse='_quantity_done_set')
+    quantity_done = fields.Float('Quantity Done', compute='_quantity_done_compute', digits='Precision Mrp Five', inverse='_quantity_done_set')
 
     def _search_available_quantity(self, need, available_quantity, location_id, lot_id=None, package_id=None,
                                    owner_id=None, strict=True):
