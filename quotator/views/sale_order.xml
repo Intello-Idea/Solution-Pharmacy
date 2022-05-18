@@ -21,6 +21,9 @@
                         </field>
                     </page>
                 </xpath>
+                <xpath expr="//page[@name='other_information']/group[2]/group[@name='sale_reporting']/group[@name='utm_link']/field[@name='source_id']" position="after">
+                    <field name="quotator_reference"/>
+                </xpath>
                 <xpath expr="//page/field[@name='order_line']/tree/field[@name='name']" position="before">
                     <field name="pharmaceutical_form" invisible="1"/>
                 </xpath>

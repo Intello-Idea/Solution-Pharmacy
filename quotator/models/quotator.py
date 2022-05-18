@@ -133,7 +133,8 @@ class Quotator(models.Model):
             }
             material.append((0,0,raw))
         vals = {
-                'user_id' : self.user.id,
+                'quotator_reference': self.name,
+                'user_id': self.user.id,
                 'partner_id': self.partner_id.id,
                 'date_order': self.quotator_date,
                 'validity_date': self.expiration_date,
