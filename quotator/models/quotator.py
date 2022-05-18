@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api, _
+from odoo import models, fields, api, _, exceptions
 from odoo.exceptions import ValidationError, UserError
 
 class Quotator(models.Model):
@@ -41,6 +41,13 @@ class Quotator(models.Model):
         if 'name' not in vals or vals['name'] == _('New'):
             vals['name'] = self.env['ir.sequence'].next_by_code('quotator.own') or _('New')
         return super(Quotator, self).create(vals)
+
+    @api.constrains('subtotal_grams')
+    def _check_subtotal_grams(self):
+        for val in self:
+            if val.subtotal_grams < 1:
+                raise exceptions.UserError("Campo tamaño subtotal(gr) debe ser mayor a 1")
+
     
     @api.depends('subtotal_grams', 'product_qty')
     def _compute_size_total(self):
