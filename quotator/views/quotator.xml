@@ -42,12 +42,12 @@
                 <field name="final_product"/>
                 <field name="product_qty" invisible="True"/>
                 <field name="medical_formula" attrs="{'required': [False]}" widget="binary"/>
-                <field name="presentation_id"/>
+                <field name="presentation_id" options="{'no_create_edit': True, 'no_create': True}"/>
               </group>
               <group>
                 <field name="quotator_date"/>
                 <field name="expiration_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-                <field name="pharmaceutical_form"/>
+                <field name="pharmaceutical_form" options="{'no_create_edit': True, 'no_create': True}"/>
                 <field name="subtotal_grams"/>
                 <field name="line_production_id" invisible="1"/>
               </group>
