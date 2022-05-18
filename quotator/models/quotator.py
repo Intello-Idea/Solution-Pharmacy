@@ -97,7 +97,7 @@ class Quotator(models.Model):
                     total = line['base_price']
                 else:
                     total = total
-        self.total = total
+        self.total = round(total)
 
     @api.constrains('quotator_date')
     def _validation_date(self):
