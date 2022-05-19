@@ -22,7 +22,7 @@ class Quotator(models.Model):
     patient = fields.Char(string="Patient")
     pharmaceutical_form = fields.Many2one('pharmaceutical.form', string="Pharmaceutical form", required=True)
     quotator_lines = fields.One2many('quotator.lines', 'quotator_id', string="Materials")
-    subtotal_grams = fields.Integer(string="subtotal size(gr)", required=True, default=1.0)
+    subtotal_grams = fields.Integer(string="subtotal size(gr)", required=True)
     total_grams = fields.Integer(string="Total size(gr)", compute="_compute_size_total", store=True)
     value_pharmaceutical_form = fields.Float(string="size(g) pharmaceutical form", compute="_compute_subtotal_pharmaceutical", store=True)
     total_pharmaceutical_form = fields.Float(string="Total", compute="_compute_total_pharmaceutical", store=True)
