@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0+e\n"
+"Project-Id-Version: Odoo Server 14.0+e-20211014\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-12 15:01+0000\n"
-"PO-Revision-Date: 2021-11-12 15:01+0000\n"
+"POT-Creation-Date: 2022-05-18 15:38+0000\n"
+"PO-Revision-Date: 2022-05-18 15:38+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,11 @@ msgstr ""
 #, python-format
 msgid "!! You do not have, selected a client !!"
 msgstr "No tienes, seleccionado un cliente"
+
+#. module: quotator
+#: model:ir.model.constraint,message:quotator.constraint_discount_rates_type_client_uniq
+msgid "!No pueden existir dos tipos de clientes con las mismas tarifas¡"
+msgstr ""
 
 #. module: quotator
 #: model_terms:ir.ui.view,arch_db:quotator.update_report_solucion_pharmacy
@@ -57,11 +62,6 @@ msgid "Activity Type Icon"
 msgstr ""
 
 #. module: quotator
-#: model:ir.model,name:quotator.model_res_partner
-msgid "Add customer type field"
-msgstr "Agregar campo de tipo de cliente"
-
-#. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_raw_material__appointment_id
 msgid "Appointment id"
 msgstr ""
@@ -69,6 +69,16 @@ msgstr ""
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__message_attachment_count
 msgid "Attachment Count"
+msgstr ""
+
+#. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_discount_rates_line__base_price
+msgid "Base"
+msgstr ""
+
+#. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_discount_rates_line__lines_id
+msgid "Base Price"
 msgstr ""
 
 #. module: quotator
@@ -98,6 +108,8 @@ msgid "Company"
 msgstr "Compañia"
 
 #. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_discount_rates__create_uid
+#: model:ir.model.fields,field_description:quotator.field_discount_rates_line__create_uid
 #: model:ir.model.fields,field_description:quotator.field_quotator_lines__create_uid
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__create_uid
 #: model:ir.model.fields,field_description:quotator.field_raw_material__create_uid
@@ -105,6 +117,8 @@ msgid "Created by"
 msgstr "Creado por"
 
 #. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_discount_rates__create_date
+#: model:ir.model.fields,field_description:quotator.field_discount_rates_line__create_date
 #: model:ir.model.fields,field_description:quotator.field_quotator_lines__create_date
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__create_date
 #: model:ir.model.fields,field_description:quotator.field_raw_material__create_date
@@ -117,19 +131,30 @@ msgid "Customer Portal URL"
 msgstr ""
 
 #. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_sale_order_line__default_value
+msgid "Default value quotator"
+msgstr ""
+
+#. module: quotator
+#: model:ir.actions.act_window,name:quotator.discount_action_window
+msgid "Discount Rates"
+msgstr ""
+
+#. module: quotator
+#: model_terms:ir.ui.view,arch_db:quotator.discount_form
+msgid "Discount rates"
+msgstr ""
+
+#. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_discount_rates__display_name
+#: model:ir.model.fields,field_description:quotator.field_discount_rates_line__display_name
 #: model:ir.model.fields,field_description:quotator.field_quotator_lines__display_name
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__display_name
 #: model:ir.model.fields,field_description:quotator.field_raw_material__display_name
-#: model:ir.model.fields,field_description:quotator.field_res_partner__display_name
 #: model:ir.model.fields,field_description:quotator.field_sale_order__display_name
 #: model:ir.model.fields,field_description:quotator.field_sale_order_line__display_name
 msgid "Display Name"
 msgstr "Nombre Público"
-
-#. module: quotator
-#: model:ir.model.fields.selection,name:quotator.selection__res_partner__type_client__distributor
-msgid "Distributor"
-msgstr "Distribuidor"
 
 #. module: quotator
 #: model:ir.model.fields.selection,name:quotator.selection__quotator_own__state__draft
@@ -142,8 +167,13 @@ msgid "Expiration date"
 msgstr "Fecha de expiracion"
 
 #. module: quotator
-#: model:ir.model.fields,field_description:quotator.field_quotator_own__x_studio_binary_field_PaxT9_filename
-msgid "Filename for x_studio_binary_field_PaxT9"
+#: model:ir.model.fields,field_description:quotator.field_quotator_own__presentation_id
+msgid "Farmaceutical presentation"
+msgstr "Presentación Farmacéutica"
+
+#. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_discount_rates_line__final
+msgid "Final"
 msgstr ""
 
 #. module: quotator
@@ -197,10 +227,11 @@ msgid "Group specialist"
 msgstr "Grupo especialista"
 
 #. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_discount_rates__id
+#: model:ir.model.fields,field_description:quotator.field_discount_rates_line__id
 #: model:ir.model.fields,field_description:quotator.field_quotator_lines__id
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__id
 #: model:ir.model.fields,field_description:quotator.field_raw_material__id
-#: model:ir.model.fields,field_description:quotator.field_res_partner__id
 #: model:ir.model.fields,field_description:quotator.field_sale_order__id
 #: model:ir.model.fields,field_description:quotator.field_sale_order_line__id
 msgid "ID"
@@ -234,16 +265,19 @@ msgid "Is Follower"
 msgstr ""
 
 #. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_discount_rates____last_update
+#: model:ir.model.fields,field_description:quotator.field_discount_rates_line____last_update
 #: model:ir.model.fields,field_description:quotator.field_quotator_lines____last_update
 #: model:ir.model.fields,field_description:quotator.field_quotator_own____last_update
 #: model:ir.model.fields,field_description:quotator.field_raw_material____last_update
-#: model:ir.model.fields,field_description:quotator.field_res_partner____last_update
 #: model:ir.model.fields,field_description:quotator.field_sale_order____last_update
 #: model:ir.model.fields,field_description:quotator.field_sale_order_line____last_update
 msgid "Last Modified on"
 msgstr "Última Modificación el"
 
 #. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_discount_rates__write_uid
+#: model:ir.model.fields,field_description:quotator.field_discount_rates_line__write_uid
 #: model:ir.model.fields,field_description:quotator.field_quotator_lines__write_uid
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__write_uid
 #: model:ir.model.fields,field_description:quotator.field_raw_material__write_uid
@@ -251,11 +285,23 @@ msgid "Last Updated by"
 msgstr "Última actualización por"
 
 #. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_discount_rates__write_date
+#: model:ir.model.fields,field_description:quotator.field_discount_rates_line__write_date
 #: model:ir.model.fields,field_description:quotator.field_quotator_lines__write_date
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__write_date
 #: model:ir.model.fields,field_description:quotator.field_raw_material__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
+
+#. module: quotator
+#: model_terms:ir.ui.view,arch_db:quotator.discount_form
+msgid "Line discount"
+msgstr ""
+
+#. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_discount_rates__lines_price
+msgid "Linea de precios"
+msgstr ""
 
 #. module: quotator
 #: model:ir.model,name:quotator.model_raw_material
@@ -297,6 +343,11 @@ msgstr ""
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__my_activity_date_deadline
 msgid "My Activity Deadline"
+msgstr ""
+
+#. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_discount_rates__type_id
+msgid "Name"
 msgstr ""
 
 #. module: quotator
@@ -353,8 +404,12 @@ msgid "Open"
 msgstr "Abierta"
 
 #. module: quotator
+#: model_terms:ir.ui.view,arch_db:quotator.solution_pharmacy_add_page_saleorder
+msgid "Other Info"
+msgstr ""
+
+#. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__patient
-#: model:ir.model.fields.selection,name:quotator.selection__res_partner__type_client__patient
 msgid "Patient"
 msgstr "Paciente"
 
@@ -376,15 +431,15 @@ msgid "Portal Access URL"
 msgstr ""
 
 #. module: quotator
-#: model:ir.model.fields,field_description:quotator.field_quotator_own__pricelist_id
-msgid "Pricelist"
-msgstr "Lista de precios"
-
-#. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_lines__product_id
 #: model:ir.model.fields,field_description:quotator.field_raw_material__product_id
 msgid "Product"
 msgstr "Producto"
+
+#. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_quotator_own__line_production_id
+msgid "Production Lines"
+msgstr ""
 
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_lines__material_qty
@@ -408,6 +463,11 @@ msgstr "Cotizador"
 #: model:ir.model.fields,field_description:quotator.field_quotator_lines__quotator_id
 msgid "Quotator id"
 msgstr "Id cotizacion"
+
+#. module: quotator
+#: model:ir.ui.menu,name:quotator.menu_discount_rates
+msgid "Rates"
+msgstr ""
 
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_lines__sale_order
@@ -435,16 +495,12 @@ msgstr ""
 #. module: quotator
 #: model:ir.model,name:quotator.model_sale_order
 msgid "Sales Order"
-msgstr ""
-"#-#-#-#-#  es_CO.po (Odoo 9.0)  #-#-#-#-#\n"
-"Orden de Venta\n"
-"#-#-#-#-#  es_CO.po (Odoo 9.0)  #-#-#-#-#\n"
-"Pedido de Venta"
+msgstr "Orden de Venta"
 
 #. module: quotator
 #: model:ir.model,name:quotator.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Línea de la Orden de Venta"
+msgstr "Línea Orden de Venta"
 
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__access_token
@@ -472,9 +528,9 @@ msgid "Solution Pharmacy Quotator Lines"
 msgstr "Linea de cotizacion de Solution Pharmacy"
 
 #. module: quotator
-#: model:ir.model.fields.selection,name:quotator.selection__res_partner__type_client__specialist
-msgid "Specialist"
-msgstr "Especialista"
+#: model:ir.model.fields,field_description:quotator.field_discount_rates_line__start
+msgid "Start"
+msgstr ""
 
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__state
@@ -517,28 +573,26 @@ msgid "There are no selected raw materials"
 msgstr "No hay materias primas seleccionadas"
 
 #. module: quotator
-#: model:ir.model.fields,help:quotator.field_quotator_own__pricelist_id
+#: model:ir.model,name:quotator.model_discount_rates_line
+msgid "This module contains the discount line"
+msgstr ""
+
+#. module: quotator
+#: model:ir.model,name:quotator.model_discount_rates
 msgid ""
-"This pricelist will be used, instead of the default one, for sales to the "
-"current partner"
+"This module, allows you to set the discount rates according to the client"
 msgstr ""
 
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__total
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__total_pharmaceutical_form
 msgid "Total"
-msgstr "Total"
+msgstr ""
 
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__total_grams
 msgid "Total size(gr)"
 msgstr "Tamaño total(gr)"
-
-#. module: quotator
-#: model:ir.model.fields,field_description:quotator.field_res_partner__type_client
-#: model:ir.model.fields,field_description:quotator.field_res_users__type_client
-msgid "Type Client"
-msgstr "Tipo de cliente"
 
 #. module: quotator
 #: model:ir.model.fields,help:quotator.field_quotator_own__activity_exception_decoration
@@ -562,6 +616,11 @@ msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_discount_rates__check_validation
+msgid "Validation values"
+msgstr ""
+
+#. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__website_message_ids
 msgid "Website Messages"
 msgstr ""
@@ -569,11 +628,6 @@ msgstr ""
 #. module: quotator
 #: model:ir.model.fields,help:quotator.field_quotator_own__website_message_ids
 msgid "Website communication history"
-msgstr ""
-
-#. module: quotator
-#: model:ir.model.fields,field_description:quotator.field_quotator_own__x_studio_binary_field_PaxT9
-msgid "X Studio Binary Field Paxt9"
 msgstr ""
 
 #. module: quotator

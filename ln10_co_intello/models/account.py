@@ -232,9 +232,9 @@ class AccountMove(models.Model):
     @api.model
     def create(self, vals):
         account_move = super(AccountMove, self).create(vals)
+        # account_move.update({'invoice_line_ids': vals['invoice_line_ids']})
         if self.move_type == 'out_invoice':
             self._validate_quota_client(account_move.amount_residual, account_move.partner_id)
-
         return account_move
 
     # @api.model

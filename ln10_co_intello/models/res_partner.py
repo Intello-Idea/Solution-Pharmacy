@@ -96,7 +96,7 @@ class Partner(models.Model):
                                              domain=[('type', '=', 'fiscalresponsibility')])
     payment_method = fields.Many2many('ln10_co_intello.diancodes', relation='model_payment', column1='partner_id',
                                       column2='id', ondelete='cascade', string='Payment Method',
-                                      domain=[('type', '=', 'paymentmethod')])
+                                      domain=[('type', '=', 'paymentmethod')], required=True)
 
     commercial_registration = fields.Char(string="Commercial Registration")
     code_ciiu_primary = fields.Many2one('ln10_co_intello.ciiucodes', ondelete='cascade', string='Primary CIIU Code',

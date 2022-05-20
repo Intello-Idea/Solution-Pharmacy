@@ -20,7 +20,7 @@ class MrpBom(models.Model):
     dough = fields.Many2one("uom.uom", readonly=True)
     size = fields.Float(string="Size")
     size_total = fields.Float(string="Size total", compute="_size_total")
-    percent_total = fields.Float(compute="_percent_total", store=True, digits=(12, 4))
+    percent_total = fields.Float(compute="_percent_total", store=True, digits=(12, 5))
     status_percent = fields.Selection([("0", "Total percentage is below 100"),
                                        ("1", "The total percentage is the ideal")], store=True)
     standard_manufacturing = fields.Boolean(related="product_tmpl_id.standard_manufacturing", store=True)
@@ -210,11 +210,11 @@ class MrpBom(models.Model):
 class MrpBomLine(models.Model):
     _inherit = 'mrp.bom.line'
 
-    percent = fields.Float(digits='Precision Mrp', string="Percentage")
+    percent = fields.Float(digits='Precision Mrp Five', string="Percentage")
     affect_bill_materials = fields.Boolean('Affects bill of materials', related='product_id.affect_bill_materials')
     check_change_terms = fields.Selection(
         selection=[('percent', 'percent'), ('product_qty', 'product qty'), ('none', 'none')], default='none')
-    product_qty = fields.Float('Quantity', default=1.0, digits='Precision Mrp', required=True)
+    product_qty = fields.Float('Quantity', default=1.0, digits='Precision Mrp Five', required=True)
 
     @api.depends('product_qty')
     @api.onchange('product_id', 'percent')

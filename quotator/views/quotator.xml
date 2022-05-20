@@ -41,15 +41,15 @@
                 <field name="patient" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                 <field name="final_product"/>
                 <field name="product_qty" invisible="True"/>
-                <field name="medical_formula" widget="binary"/>
-                <field name="presentation_id"/>
+                <field name="medical_formula" attrs="{'required': [False]}" widget="binary"/>
+                <field name="presentation_id" options="{'no_create_edit': True, 'no_create': True}"/>
               </group>
               <group>
                 <field name="quotator_date"/>
                 <field name="expiration_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-                <field name="pharmaceutical_form"/>
+                <field name="pharmaceutical_form" options="{'no_create_edit': True, 'no_create': True}"/>
                 <field name="subtotal_grams"/>
-                <field name="line_production_id"/>
+                <field name="line_production_id" invisible="1"/>
               </group>
             </group>
             <notebook>
@@ -57,14 +57,14 @@
                 <field name="quotator_lines" widget="one2many_list" attrs="{'readonly': [('state', '!=', 'draft')]}">
                   <tree editable="bottom">
                     <field name="quotator_id" invisible="1"/>
-                    <field name="product_id" domain="[('categ_id', 'in', ('Materias Primas / Activos'))]" 
+                    <field name="product_id" domain="[('product_group', 'in', ('Activos'))]"
                                              attrs="{'readonly': [('id', '!=', False)]}" 
                                              options="{'no_create': True}"/>
                     <field name="category" invisible="1"/>
                     <field name="percentage"/>
                     <field name="material_qty" readonly="True"/>
-                    <field name="price_unit" invisible="0"/>
-                    <field name="price_total" invisible="0"/>
+                    <field name="price_unit" invisible="1"/>
+                    <field name="price_total" invisible="1"/>
                   </tree>
                 </field>
                 <group class="oe_subtotal_footer oe_right" colspan="2" name="quotator_total">

@@ -16,16 +16,16 @@
             </field>
         </record>
 
-        <record id="res_partner_view_search2" model="ir.ui.view">
-            <field name="name">res.partner.search.inherit</field>
-            <field name="model">res.partner</field>
-            <field name="inherit_id" ref="account.res_partner_view_search"/>
-            <field name="arch" type="xml">
-                <xpath expr="//filter[@name='supplier']" position="before">
-                    <filter string="Customers" name="customer" domain="[('parent_id', '=', False)]"/>
-                </xpath>
-            </field>
-        </record>
+<!--        <record id="res_partner_view_search2" model="ir.ui.view">-->
+<!--            <field name="name">res.partner.search.inherit</field>-->
+<!--            <field name="model">res.partner</field>-->
+<!--            <field name="inherit_id" ref="account.res_partner_view_search"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//filter[@name='supplier']" position="before">-->
+<!--                    <filter string="Customers" name="customer" domain="[('parent_id', '=', False)]"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
 
         <function model="crm.lead" name="filter"/>
 

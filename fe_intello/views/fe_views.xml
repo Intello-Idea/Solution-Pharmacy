@@ -8,12 +8,12 @@
             <field name="arch" type="xml">
 
                 <!-- xpath buttons -->
-<!--                <xpath expr="//button[@name='action_invoice_register_payment']" position="after">-->
-<!--                    <button name="process_document" type="object" class="btn btn-primary"-->
-<!--                            string="Send to DIAN"-->
-<!--                            attrs="{'invisible': ['|','|','|','|',('check_is_active','=',False),('check_is_online','=',True),-->
-<!--                            ('type','not in',('out_invoice','out_refund')),('state','!=','posted'),('send_status','=',True)]}"/>-->
-<!--                </xpath>-->
+                <!--                <xpath expr="//button[@name='action_invoice_register_payment']" position="after">-->
+                <!--                    <button name="process_document" type="object" class="btn btn-primary"-->
+                <!--                            string="Send to DIAN"-->
+                <!--                            attrs="{'invisible': ['|','|','|','|',('check_is_active','=',False),('check_is_online','=',True),-->
+                <!--                            ('type','not in',('out_invoice','out_refund')),('state','!=','posted'),('send_status','=',True)]}"/>-->
+                <!--                </xpath>-->
 
                 <xpath expr="//field[@name='ref']" position="after">
                     <!-- Fields invisible -->
@@ -24,7 +24,8 @@
                     <field name="payment_type_1" placeholder="Payment Type"
                            attrs="{'invisible': [('type', '!=', 'out_invoice')]}"/>
                     <field name="payment_method" placeholder="Payment Method"
-                           attrs="{'invisible': [('type', '!=', 'out_invoice')]}"
+                           attrs="{'invisible': [('type', '!=', 'out_invoice')], 'required': [('type', '=', 'out_invoice'), '|',
+                           ('type', '=', 'out_refund')]}"
                            options="{'no_create': True, 'no_create_edit':True, 'no_open':True}"/>
                     <field name="export_bill"
                            attrs="{'invisible': [('type', '!=', 'out_invoice')]}"/>
@@ -65,8 +66,8 @@
                 <xpath expr="//field[@name='partner_id']" position="attributes">
                     <attribute name="attrs">{'invisible': [('type', 'not in', (
                         'out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))],
-                        'required': ['|', ('type', '=', 'out_invoice'),
-                        ('type', '=', 'out_refund')]}
+                                             'required': ['|', ('type', '=', 'out_invoice'),
+                                                          ('type', '=', 'out_refund')]}
                     </attribute>
                 </xpath>
 
@@ -127,8 +128,8 @@
             <field name="view_id" ref="electronic_invoice_view_tree"/>
             <field name="search_view_id" ref="search_electronic_invoice"/>
             <field name="domain">['&amp;', ('state', '=', 'posted'), ('check_is_active', '=', True), '|',
-                ('type', '=', 'out_invoice'),
-                ('type', '=', 'out_refund')]
+                                  ('type', '=', 'out_invoice'),
+                                  ('type', '=', 'out_refund')]
             </field>
         </record>
 

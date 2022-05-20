@@ -8,7 +8,8 @@ class SaleOrder(models.Model):
     raw_material = fields.One2many('raw.material', 'sale_order', string="Materials")
     medical_formula = fields.Binary('Medical formula', required=True)
     final_client = fields.Char(string="Final client")
-    
+    quotator_reference = fields.Char(string="Referencia de la cotización")
+
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 

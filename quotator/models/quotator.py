@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api, _
+from odoo import models, fields, api, _, exceptions
 from odoo.exceptions import ValidationError, UserError
 
 class Quotator(models.Model):
@@ -22,13 +22,13 @@ class Quotator(models.Model):
     patient = fields.Char(string="Patient")
     pharmaceutical_form = fields.Many2one('pharmaceutical.form', string="Pharmaceutical form", required=True)
     quotator_lines = fields.One2many('quotator.lines', 'quotator_id', string="Materials")
-    subtotal_grams = fields.Integer(string="subtotal size(gr)", required=True, default=1.0)
+    subtotal_grams = fields.Integer(string="subtotal size(gr)", required=True)
     total_grams = fields.Integer(string="Total size(gr)", compute="_compute_size_total", store=True)
     value_pharmaceutical_form = fields.Float(string="size(g) pharmaceutical form", compute="_compute_subtotal_pharmaceutical", store=True)
     total_pharmaceutical_form = fields.Float(string="Total", compute="_compute_total_pharmaceutical", store=True)
     total = fields.Float(string="Total", compute="_compute_total_quotator")
-    medical_formula = fields.Binary('Medical formula', required=True)
-    presentation_id = fields.Many2one('pharmaceutical.presentation', string='Farmaceutical presentation')
+    medical_formula = fields.Binary('Medical formula')
+    presentation_id = fields.Many2one('pharmaceutical.presentation', string='Farmaceutical presentation', required=True)
     line_production_id = fields.Many2one('production.lines', string="Production Lines")
     state = fields.Selection([
         ('draft', 'Draft'),
@@ -41,7 +41,14 @@ class Quotator(models.Model):
         if 'name' not in vals or vals['name'] == _('New'):
             vals['name'] = self.env['ir.sequence'].next_by_code('quotator.own') or _('New')
         return super(Quotator, self).create(vals)
-    
+
+    @api.constrains('subtotal_grams')
+    def _check_subtotal_grams(self):
+        for val in self:
+            if val.subtotal_grams < 1:
+                raise exceptions.UserError("Campo tamaño subtotal(gr) debe ser mayor a 1")
+
+
     @api.depends('subtotal_grams', 'product_qty')
     def _compute_size_total(self):
         for line in self:
@@ -90,7 +97,7 @@ class Quotator(models.Model):
                     total = line['base_price']
                 else:
                     total = total
-        self.total = total
+        self.total = round(total/100)*100
 
     @api.constrains('quotator_date')
     def _validation_date(self):
@@ -126,7 +133,8 @@ class Quotator(models.Model):
             }
             material.append((0,0,raw))
         vals = {
-                'user_id' : self.user.id,
+                'quotator_reference': self.name,
+                'user_id': self.user.id,
                 'partner_id': self.partner_id.id,
                 'date_order': self.quotator_date,
                 'validity_date': self.expiration_date,
