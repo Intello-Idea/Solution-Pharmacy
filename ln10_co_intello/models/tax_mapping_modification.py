@@ -64,6 +64,7 @@ class AccountFiscalPosition(models.Model):
         """
         Se válida la Posición Fiscal de la compañía a traves del partner asociado a la misma. 
         """
+        # print(self.company_id)
         fpos_company = self.company_id.partner_id.property_account_position_id
         if not fpos_company:
             raise exceptions.ValidationError("Por favor verificar\nPosición Fiscal de la Compañia no ha sido asignada")
@@ -71,22 +72,23 @@ class AccountFiscalPosition(models.Model):
         """
         Se válida la Posición Fiscal del Tercero (Cliente/Proveedor)
         """
-        fpos_partner = partner.property_account_position_id
-        if not fpos_partner:
-            raise exceptions.ValidationError("Por favor verificar\nPosición Fiscal del Tercero no ha sido asignada")
+        if partner:
+            fpos_partner = partner.property_account_position_id
+            if not fpos_partner:
+                raise exceptions.ValidationError("Por favor verificar\nPosición Fiscal del Tercero no ha sido asignada")
 
-        """
-        Se consulta y almacena la realción entre posiciones fiscales para determinar los impuestos por su
-        Tipo de Impuesto asociado. En caso de no encontrar, generará un error.
-        """
-        relation_fpos = self.env['ln10_co_intello.relationfiscalpositions']
-        relation_fpos_id = relation_fpos.findRelation(type, fpos_partner, fpos_company)
+            """
+            Se consulta y almacena la realción entre posiciones fiscales para determinar los impuestos por su
+            Tipo de Impuesto asociado. En caso de no encontrar, generará un error.
+            """
+            relation_fpos = self.env['ln10_co_intello.relationfiscalpositions']
+            relation_fpos_id = relation_fpos.findRelation(type, fpos_partner, fpos_company)
 
-        if not relation_fpos_id:
-            raise exceptions.ValidationError(
-                "Por favor verificar\nLa definición de Impuestos entre la Compañia y el Tercero no está definida")
+            if not relation_fpos_id:
+                raise exceptions.ValidationError(
+                    "Por favor verificar\nLa definición de Impuestos entre la Compañia y el Tercero no está definida")
 
-        return relation_fpos_id.map_tax(taxes)
+            return relation_fpos_id.map_tax(taxes)
 
 
 class TaxesType(models.Model):
