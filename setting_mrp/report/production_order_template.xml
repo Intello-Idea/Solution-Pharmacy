@@ -164,7 +164,7 @@
                                 <t t-foreach="o.get_composition_table()[0]" t-as="line">
                                     <t t-if="line['head']">
                                         <tr style="">
-                                            <td style="border:1px solid #000; text-align: left;"><t t-esc="line['code_product']"/></td>
+                                            <td style="border:1px solid #000; text-align: center;"><t t-esc="line['code_product']"/></td>
                                             <td style="border:1px solid #000; text-align: center;"><t
                                                             t-esc="line['percent']"/></td>
                                             <td style="border:1px solid #000; text-align: center;"><t
