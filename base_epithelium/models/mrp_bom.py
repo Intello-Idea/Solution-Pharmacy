@@ -20,7 +20,7 @@ class MrpBom(models.Model):
     dough = fields.Many2one("uom.uom", readonly=True)
     size = fields.Float(string="Size")
     size_total = fields.Float(string="Size total", compute="_size_total")
-    percent_total = fields.Float(compute="_percent_total", store=True, digits=(12, 5))
+    percent_total = fields.Float(compute="_percent_total", store=True, digits='Precision Mrp Five')
     status_percent = fields.Selection([("0", "Total percentage is below 100"),
                                        ("1", "The total percentage is the ideal")], store=True)
     standard_manufacturing = fields.Boolean(related="product_tmpl_id.standard_manufacturing", store=True)
