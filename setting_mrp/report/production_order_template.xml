@@ -164,26 +164,16 @@
                                 <t t-foreach="o.get_composition_table()[0]" t-as="line">
                                     <t t-if="line['head']">
                                         <tr style="">
-                                            <td style="border:1px solid #000; text-align: left;"><t t-esc="line['code_product']"/></td>
+                                            <td style="border:1px solid #000; text-align: center;"><t t-esc="line['code_product']"/></td>
                                             <td style="border:1px solid #000; text-align: center;"><t
                                                             t-esc="line['percent']"/></td>
                                             <td style="border:1px solid #000; text-align: center;"><t
                                                             t-esc="line['quantity']"/> <t t-esc="line['dough']"/></td>
                                             <td style="border:1px solid #000; text-align: center;"></td>
                                             <td style="border:1px solid #000; text-align: center;"><t
-                                                            t-esc="line['quantity_lot']"/></td>
+                                                            t-esc="line['lot']"/></td>
                                         </tr>
-                                    </t>
-                                    <t t-if="not line['head']">
-                                        <tr style="">
-                                            <td style="border:1px solid #000; text-align: left;"><t t-esc="line['product']"/></td>
-                                            <td style="border:1px solid #000; text-align: center;"><t t-esc="line['percent']"/></td>
-                                            <td style="border:1px solid #000; text-align: center;"><t t-esc="line['quantity']"/></td>
-                                            <td style="border:1px solid #000; text-align: center;"></td>
-                                            <td style="border:1px solid #000; text-align: center;"><t
-                                                            t-esc="line['quantity_lot']"/></td>
-                                        </tr>
-                                    </t>          
+                                    </t>       
                                 </t>
                                 <tr style="">
                                  
@@ -233,12 +223,12 @@
                                     <th style="text-align: center; border:1px solid #000;" scope="col" colspan="2">Conditioning</th>
                                 </tr>
                                 <tr style="border:1px solid #000; height: 50px;">
-                                    <td style="border:1px solid #000;" colspan="2"><span/></td>
                                     <td style="border:1px solid #000;" colspan="3"><span/></td>
+                                    <td style="border:1px solid #000;" colspan="2"><span/></td>
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <th style="text-align: center; border:1px solid #000;" scope="col" colspan="3">PRODUCTION COORDINATOR VERIFICATION</th>
-                                    <th style="text-align: center; border:1px solid #000;" scope="col" colspan="2">Vo. Bo. TECHNICAL DIRECTOR</th>
+                                    <th style="text-align: center; border:1px solid #000;" scope="col" colspan="3">Vo. Bo. TECHNICAL DIRECTOR</th>
                                 </tr>
                             </table>
                         </div>

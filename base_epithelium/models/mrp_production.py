@@ -159,7 +159,7 @@ class MrpProduction(models.Model):
                 'quantity': str(move.product_uom_qty),
                 'dough': str(move.product_uom.name), #Agregar elemento al diccionario developer Routh Milano 03-05-2022
                 'quantity_lot': "",
-                'lot': "",
+                'lot': str(move.move_line_ids.lot_id.name) if str(move.move_line_ids.lot_id.name)!='False' else "" ,
                 'due_date': "",
                 'head': True
             }
