@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e-20211014\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-21 16:37+0000\n"
-"PO-Revision-Date: 2022-04-21 16:37+0000\n"
+"POT-Creation-Date: 2022-05-26 17:13+0000\n"
+"PO-Revision-Date: 2022-05-26 17:13+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,11 +31,6 @@ msgid "'Material Dispensing Label - %s' % object.name"
 msgstr ""
 
 #. module: base_epithelium
-#: model:ir.actions.report,print_report_name:base_epithelium.action_report_production_order
-msgid "'Production Order - %s' % object.name"
-msgstr "'Orden de Producción - %s' % object.name"
-
-#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
 msgid "<b class=\"w-15\">PURCHASE ORDER</b>"
 msgstr "<b class=\"w-15\">ORDEN DE COMPRA</b>"
@@ -55,77 +50,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium_solicitud
 msgid "<b>REQUEST FOR QUOTATION FORM</b>"
 msgstr "<b>FORMULARIO DE SOLICITUD DE COTIZACION</b>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid ""
-"<br/>\n"
-"                                <strong>Due Date:</strong>"
-msgstr ""
-"<br/>\n"
-"                                <strong>Fecha de Vencimiento:</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid ""
-"<br/>\n"
-"                                <strong>Finished Product:</strong>"
-msgstr ""
-"<br/>\n"
-"                                <strong>Producto:</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid ""
-"<br/>\n"
-"                                <strong>Issued:</strong>"
-msgstr ""
-"<br/>\n"
-"                                <strong>Emitido:</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid ""
-"<br/>\n"
-"                                <strong>Patient:</strong>"
-msgstr ""
-"<br/>\n"
-"                                <strong>Paciente:</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid ""
-"<br/>\n"
-"                                <strong>Pharmaceutical Form:</strong>"
-msgstr ""
-"<br/>\n"
-"                                <strong>Forma Farmacéutica:</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid ""
-"<br/>\n"
-"                                <strong>Presentation:</strong>"
-msgstr ""
-"<br/>\n"
-"                                <strong>Presentación:</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid ""
-"<br/>\n"
-"                                <strong>Size:</strong>"
-msgstr ""
-"<br/>\n"
-"                                <strong>Tamaño:</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_ephi
-msgid ""
-"<span class=\"list-inline-item\"><span class=\"page\"/></span>\n"
-"                                        <span class=\"list-inline-item\">de</span>\n"
-"                                        <span class=\"list-inline-item\"><span class=\"topage\"/></span>"
-msgstr ""
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.material_dispensing_label
@@ -208,11 +132,6 @@ msgid "<span>-Septiembre-</span>"
 msgstr ""
 
 #. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_ephi
-msgid "<span>20.01.20</span>"
-msgstr ""
-
-#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.material_dispensing_label
 msgid "<span>ACTUAL AMOUNT DISPENSED: </span>"
 msgstr "<span>Cant. Real Disp.:</span>"
@@ -228,19 +147,9 @@ msgid "<span>Approved: </span>"
 msgstr "<span>Aprobó: </span>"
 
 #. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_ephi
-msgid "<span>Aprobado</span>"
-msgstr ""
-
-#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.dispensed_materials_identification_label
 msgid "<span>CLIENT:</span>"
 msgstr "<span>CLIENTE:</span>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
-msgid "<span>Code: </span>"
-msgstr "<span>Código: </span>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.quality_label
@@ -381,16 +290,6 @@ msgid "<strong class=\"mr16\">Subtotal</strong>"
 msgstr ""
 
 #. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong style=\"font-size: 9pt;\">Client:</strong>"
-msgstr "<strong style=\"font-size: 9pt;\">Cliente:</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong style=\"font-size: 9pt;\">Production Order:</strong>"
-msgstr "<strong style=\"font-size: 9pt;\">Orden de Producción:</strong>"
-
-#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
 msgid ""
 "<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Code: "
@@ -511,34 +410,6 @@ msgid "<strong style=\"font-weight:700; padding-left:5px;\">Version: 01</strong>
 msgstr "<strong style=\"font-weight:700; padding-left:5px;\">Versión: 01</strong>"
 
 #. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid ""
-"<strong style=\"padding-left: 10pt;\">\n"
-"                                                _______________________________</strong>"
-msgstr ""
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid ""
-"<strong>\n"
-"                                                _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</strong>"
-msgstr ""
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid ""
-"<strong>\n"
-"                                            _________________________________________</strong>"
-msgstr ""
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid ""
-"<strong>\n"
-"                                            _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</strong>"
-msgstr ""
-
-#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchasequotation_document
 msgid ""
@@ -585,16 +456,6 @@ msgid "<strong>Amount</strong>"
 msgstr "<strong>Monto</strong>"
 
 #. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong>Aspectos</strong>"
-msgstr ""
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong>Conditioning</strong>"
-msgstr "<strong>Acondicionamiento</strong>"
-
-#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchasequotation_document
 msgid "<strong>Date:</strong>"
@@ -613,65 +474,10 @@ msgid "<strong>Description</strong>"
 msgstr "<strong>Descripción</strong>"
 
 #. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong>Dispensing</strong>"
-msgstr "<strong>Dispensación</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong>Elaborated</strong>"
-msgstr "<strong>Elaboro</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong>Elaboration</strong>"
-msgstr "<strong>Elaboración</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_ephi
-msgid "<strong>Estado</strong>"
-msgstr ""
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_ephi
-msgid "<strong>FTO-PRO-011-2</strong>"
-msgstr ""
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_ephi
-msgid "<strong>Fecha</strong>"
-msgstr ""
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong>Number of units obtained</strong>"
-msgstr "<strong>Numero de unidades obtenidas</strong>"
-
-#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchasequotation_document
 msgid "<strong>Order Date:</strong>"
 msgstr "<strong>Fecha de la Orden:</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong>PROCESS CONTROL</strong>"
-msgstr "<strong>CONTROL DE PROCESOS</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong>PROCESS: According to production procedure</strong>"
-msgstr "<strong>PROCEDIMIENTO: Según procedimiento de elaboración</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong>Package</strong>"
-msgstr "<strong>Envaso</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong>Packing</strong>"
-msgstr "<strong>Envasado</strong>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
@@ -682,20 +488,10 @@ msgid ""
 msgstr "<strong>Telefono:</strong>"
 
 #. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong>Planned Date:</strong>"
-msgstr "<strong>Fecha Fabricación:</strong>"
-
-#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchasequotation_document
 msgid "<strong>Provider name:</strong>"
 msgstr "<strong>Nombre Proveedor:</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_ephi
-msgid "<strong>Página</strong>"
-msgstr ""
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
@@ -734,16 +530,6 @@ msgid "<strong>VAT:</strong>"
 msgstr "<strong>NIT:</strong>"
 
 #. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong>Verify Production Manager</strong>"
-msgstr "<strong>Verificó Jefe de Producción</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong>Vo Bo Technical Director</strong>"
-msgstr "<strong>Vo Bo Director Técnico</strong>"
-
-#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchasequotation_document
 msgid ""
@@ -761,20 +547,10 @@ msgid ""
 msgstr "<strong>Forma de Pago:</strong>"
 
 #. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong>Yield</strong>"
-msgstr "<strong>Rendimiento</strong>"
-
-#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchasequotation_document
 msgid "<strong>Your Order Reference:</strong>"
 msgstr "<strong>Orden de Referencia:</strong>"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "<strong>pH</strong>"
-msgstr ""
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.view_mrp_production_plan
@@ -859,11 +635,6 @@ msgstr "Código"
 #: model_terms:ir.ui.view,arch_db:base_epithelium.res_config_settings_base_epithelium_view_form
 msgid "Company localization control"
 msgstr "Control de localización de empresas"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "Composition"
-msgstr "Composición"
 
 #. module: base_epithelium
 #: model:ir.model.fields,field_description:base_epithelium.field_pharmaceutical_form__name
@@ -967,7 +738,6 @@ msgstr "Unidad de medida"
 #. module: base_epithelium
 #: model:ir.model.fields,field_description:base_epithelium.field_mrp_production_simulation_lot__due_date
 #: model:ir.model.fields,field_description:base_epithelium.field_stock_move_line__due_date
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
 msgid "Due Date"
 msgstr "Fecha de vencimiento"
 
@@ -1033,7 +803,7 @@ msgstr "IDENTIFICACIÓN MATERIALES DISPENSADOS"
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
 msgid "IDENTIFICATION LABEL"
-msgstr "ROTULO DE IDENTIFICACIÓN"
+msgstr "RÓTULO DE IDENTIFICACIÓN"
 
 #. module: base_epithelium
 #: model:ir.actions.report,name:base_epithelium.action_report_identification_label
@@ -1150,7 +920,6 @@ msgstr "Localización"
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.external_layout_epithelium_solicitud
-#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_ephi
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
@@ -1159,14 +928,8 @@ msgstr ""
 
 #. module: base_epithelium
 #: model:ir.model.fields,field_description:base_epithelium.field_mrp_production_simulation_lot__lot
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
 msgid "Lot"
 msgstr "Lote"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "Lot Quantity"
-msgstr "Cantidad del Lote"
 
 #. module: base_epithelium
 #: model:ir.model.fields,field_description:base_epithelium.field_mrp_production__lot_stock_move_line_ids
@@ -1262,18 +1025,7 @@ msgid "PRODUCTION FORMAT"
 msgstr "PRODUCCIÓN FORMATO"
 
 #. module: base_epithelium
-#: model:ir.model.fields,field_description:base_epithelium.field_mrp_production__partner_id
-msgid "Partner"
-msgstr "Cliente"
-
-#. module: base_epithelium
-#: model:ir.model.fields,field_description:base_epithelium.field_mrp_production__patient
-msgid "Patient"
-msgstr "Paciente"
-
-#. module: base_epithelium
 #: model:ir.model.fields,field_description:base_epithelium.field_stock_move__percent
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
 msgid "Percent"
 msgstr "Porcentaje"
 
@@ -1395,11 +1147,6 @@ msgid "Production Order"
 msgstr "Orden de producción"
 
 #. module: base_epithelium
-#: model:ir.actions.report,name:base_epithelium.action_report_production_order
-msgid "Production Order Ep"
-msgstr "Orden de Producción Ep"
-
-#. module: base_epithelium
 #: model:ir.model.fields,field_description:base_epithelium.field_account_bank_statement_line__production_line_id
 #: model:ir.model.fields,field_description:base_epithelium.field_account_move__production_line_id
 #: model:ir.model.fields,field_description:base_epithelium.field_account_payment__production_line_id
@@ -1457,7 +1204,6 @@ msgstr "Punto de Control de Calidad"
 #. module: base_epithelium
 #: model:ir.model.fields,field_description:base_epithelium.field_mrp_bom_line__product_qty
 #: model:ir.model.fields,field_description:base_epithelium.field_mrp_production_simulation_lot__quantity
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
 msgid "Quantity"
 msgstr "Cantidad"
 
@@ -1522,20 +1268,12 @@ msgstr "Factura de Ventas de Pago Anticipado"
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_sale_order
 msgid "Sales Order"
-msgstr ""
-"#-#-#-#-#  es_CO.po (Odoo 9.0)  #-#-#-#-#\n"
-"Orden de Venta\n"
-"#-#-#-#-#  es_CO.po (Odoo 9.0)  #-#-#-#-#\n"
-"Pedido de Venta"
+msgstr "Orden de Venta"
 
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_sale_order_line
 msgid "Sales Order Line"
-msgstr ""
-"#-#-#-#-#  es_CO.po (Odoo 9.0)  #-#-#-#-#\n"
-"Línea Orden de Venta\n"
-"#-#-#-#-#  es_CO.po (Odoo 9.0)  #-#-#-#-#\n"
-"Línea de Pedido de Venta"
+msgstr "Línea Orden de Venta"
 
 #. module: base_epithelium
 #: model:ir.model.fields,field_description:base_epithelium.field_account_bank_statement_line__invoice_user_id
@@ -1594,11 +1332,23 @@ msgid "Taxes"
 msgstr "Impuestos"
 
 #. module: base_epithelium
+#: model:ir.model.fields.selection,name:base_epithelium.selection__mrp_bom__status_percent__2
+msgid "The percentage is greater than 100"
+msgstr "El porcentaje es mayor a 100"
+
+#. module: base_epithelium
 #: code:addons/Solution-Pharmacy/base_epithelium/models/purchase.py:0
 #: code:addons/base_epithelium/models/purchase.py:0
 #, python-format
 msgid "The sequence not exist"
 msgstr "La secuencia no existe"
+
+#. module: base_epithelium
+#: code:addons/Solution-Pharmacy/base_epithelium/models/mrp_bom.py:0
+#: code:addons/base_epithelium/models/mrp_bom.py:0
+#, python-format
+msgid "The total percentage exceeds 100%"
+msgstr "El porcentaje total excede el 100%"
 
 #. module: base_epithelium
 #: model:ir.model.fields.selection,name:base_epithelium.selection__mrp_bom__status_percent__1
@@ -1623,6 +1373,13 @@ msgstr ""
 "afecta a la reserva de producto, y debe ser realizado con cuidado."
 
 #. module: base_epithelium
+#: model:ir.model.fields,field_description:base_epithelium.field_account_bank_statement_line__type
+#: model:ir.model.fields,field_description:base_epithelium.field_account_move__type
+#: model:ir.model.fields,field_description:base_epithelium.field_account_payment__type
+msgid "Tipo de documento"
+msgstr ""
+
+#. module: base_epithelium
 #: model:ir.model.fields,field_description:base_epithelium.field_stock_move__total
 msgid "Total"
 msgstr ""
@@ -1633,26 +1390,9 @@ msgid "Total percentage is below 100"
 msgstr "El porcentaje total es inferior a 100"
 
 #. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "Total units"
-msgstr "Total de Unidades"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "Totals"
-msgstr "Total"
-
-#. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_stock_picking
 msgid "Transfer"
 msgstr "Transferir"
-
-#. module: base_epithelium
-#: model:ir.model.fields,field_description:base_epithelium.field_account_bank_statement_line__type
-#: model:ir.model.fields,field_description:base_epithelium.field_account_move__type
-#: model:ir.model.fields,field_description:base_epithelium.field_account_payment__type
-msgid "Type"
-msgstr ""
 
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_mrp_unbuild
@@ -1663,11 +1403,6 @@ msgstr "örden de desconstrucción"
 #: model:ir.model.fields,field_description:base_epithelium.field_wizard_mrp_production__users_ids
 msgid "Users"
 msgstr "Usuarios"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_mrporder_ep
-msgid "Weigh Quantity"
-msgstr "Cantidad Pesada"
 
 #. module: base_epithelium
 #: model:ir.model.fields.selection,name:base_epithelium.selection__mrp_bom_line__check_change_terms__none
