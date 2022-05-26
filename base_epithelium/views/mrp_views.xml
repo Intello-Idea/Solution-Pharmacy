@@ -20,6 +20,9 @@
                     <field name="status_percent" style="color: green"
                            attrs="{'invisible': [('status_percent', '!=', '1'),('id', '!=', True)]}"
                            readonly="1"/>
+                    <field name="status_percent" style="color: orange"
+                           attrs="{'invisible': [('status_percent', '!=', '2'),('id', '!=', True)]}"
+                           readonly="1"/>
                 </xpath>
                 <xpath expr="//field[@name='bom_line_ids']//tree//field[@name='product_qty']" position="before">
                     <field name="affect_bill_materials" invisible="1"/>
