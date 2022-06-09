@@ -17,6 +17,7 @@ class MrpProduction(models.Model):
                                                   related='bom_id.pharmaceutical_presentation',
                                                   string="Pharmaceutical presentation")
     size = fields.Float(related='bom_id.size', string="Size")
+    dough = fields.Many2one(related='bom_id.dough')
     #partner_id = fields.Many2one('res.partner', string='Partner', )
     #patient = fields.Char()
     due_date = fields.Date('Due date')

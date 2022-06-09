@@ -32,14 +32,14 @@
                 <xpath expr="//field[@name='product_tmpl_id']" position="after">
                     <field name="pharmaceutical_form"/>
                     <field name="pharmaceutical_presentation"/>
-                    <label for="size" string="Size"/>
-                    <div>
-                        <field name="size" class="oe_inline"
-                               attrs="{'readonly': [('standard_manufacturing', '=', True)]}"
-                               force_save="1"/>
-                        <field name="dough" nolabel="1" class="oe_inline"
-                               style="margin-left:5px; max-width:40%;"/>
-                    </div>
+<!--                    <label for="size" string="Size"/>-->
+<!--                    <div>-->
+<!--                        <field name="size" class="oe_inline"-->
+<!--                               attrs="{'readonly': [('standard_manufacturing', '=', True)]}"-->
+<!--                               force_save="1"/>-->
+<!--                        <field name="dough" nolabel="1" class="oe_inline"-->
+<!--                               style="margin-left:5px; max-width:40%;"/>-->
+<!--                    </div>-->
                 </xpath>
                 <xpath expr="//div[@class='o_row']" position="after">
                     <label for="size_total" string="Size"/>
