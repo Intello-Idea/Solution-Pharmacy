@@ -218,32 +218,32 @@ class MrpProduction(models.Model):
 
         return res
 
-    def plan_without_stock(self):
-        bool = True
-        for bom_obj in self.move_raw_ids:
-            z = round(bom_obj.reserved_availability, 4)
-            x = round(bom_obj.product_uom_qty, 4)
-            if z == x:
-                bool = False
-            else:
-                view = self.env.ref('base_epithelium.view_mrp_production_plan').id
-                return {
-                    'name': _('Activity to Manufacturing'),
-                    'view_mode': 'form',
-                    'view_id': view,
-                    'res_model': 'wizard.mrp.production',
-                    'type': 'ir.actions.act_window',
-                    'target': 'new',
-                }
-        if not bool:
-            self.button_plan()
-        else:
-            view = self.env.ref('base_epithelium.view_mrp_production_plan').id
-            return {
-                'name': _('Activity to Manufacturing'),
-                'view_mode': 'form',
-                'view_id': view,
-                'res_model': 'wizard.mrp.production',
-                'type': 'ir.actions.act_window',
-                'target': 'new',
-            }
+    # def plan_without_stock(self):
+    #     bool = True
+    #     for bom_obj in self.move_raw_ids:
+    #         z = round(bom_obj.reserved_availability, 4)
+    #         x = round(bom_obj.product_uom_qty, 4)
+    #         if z == x:
+    #             bool = False
+    #         else:
+    #             view = self.env.ref('base_epithelium.view_mrp_production_plan').id
+    #             return {
+    #                 'name': _('Activity to Manufacturing'),
+    #                 'view_mode': 'form',
+    #                 'view_id': view,
+    #                 'res_model': 'wizard.mrp.production',
+    #                 'type': 'ir.actions.act_window',
+    #                 'target': 'new',
+    #             }
+    #     if not bool:
+    #         self.button_plan()
+    #     else:
+    #         view = self.env.ref('base_epithelium.view_mrp_production_plan').id
+    #         return {
+    #             'name': _('Activity to Manufacturing'),
+    #             'view_mode': 'form',
+    #             'view_id': view,
+    #             'res_model': 'wizard.mrp.production',
+    #             'type': 'ir.actions.act_window',
+    #             'target': 'new',
+    #         }
