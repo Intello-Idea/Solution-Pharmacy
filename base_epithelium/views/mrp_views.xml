@@ -122,8 +122,8 @@
 <!--                    <button name="plan_without_stock"
                             attrs="{'invisible': ['|', ('state', '!=', 'confirmed'), ('routing_id', '=', False)]}"
                             type="object" string="Plan" class="oe_highlight"/>    -->
-                        <button name="plan_without_stock"
-                            attrs="{'invisible': [('state', '!=', 'confirmed')]}" type="object" string="Plan" class="oe_highlight"/> 
+<!--                        <button name="plan_without_stock"-->
+<!--                            attrs="{'invisible': [('state', '!=', 'confirmed')]}" type="object" string="Plan" class="oe_highlight"/> -->
                 </xpath>
             </field>
         </record>
