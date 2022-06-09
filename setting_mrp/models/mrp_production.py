@@ -19,7 +19,6 @@ class MrpProduction(models.Model):
     #patient_sale = fields.Many2one('res.partner', string='Patient', related="partner_sale_id", store=True)
     patient = fields.Many2one('res.partner', string='Patient', store=True)
     patient_sale = fields.Many2one('res.partner', string='Patient', related="partner_sale_id", store=True)
-    dough = fields.Many2one("uom.uom", related='product_id.uom_id')
     bulk_size = fields.Float(string="Bulk Size", compute='_compute_bulk_size', readonly=True, default=[],
                                               copy=False, store=True)
     expiration_date_sp = fields.Date(string="Expiration Date")

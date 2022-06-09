@@ -17,7 +17,7 @@ class MrpBom(models.Model):
 
     production_line_id = fields.Many2one('production.lines', string='Production line', default=_default_production_line)
     check_status = fields.Boolean('I.', store=True) #,compute='_check_status'
-    dough = fields.Many2one("uom.uom", readonly=True)
+    dough = fields.Many2one("uom.uom", readonly=False)
     size = fields.Float(string="Size")
     size_total = fields.Float(string="Size total", compute="_size_total")
     percent_total = fields.Float(compute="_percent_total", store=True, digits=(12,5))
