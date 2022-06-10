@@ -16,7 +16,16 @@
                 name="setting_mrp.report_production_order_sp"
                 file="setting_mrp.production_order_template"
                 print_report_name="'Production Order - %s' % object.name"
-                menu="True"/> 
+                menu="True"/>
+<!--        <record id="action_production_order_report_sp" model="ir.actions.report">-->
+<!--            <field name="name">Production Order</field>-->
+<!--            <field name="model">mrp.production</field>-->
+<!--            <field name="report_type">qweb-pdf</field>-->
+<!--            <field name="report_file">setting_mrp.production_order_template</field>-->
+<!--            <field name="report_name">setting_mrp.report_production_order_sp</field>-->
+<!--            <field name="print_report_name">'Production Card - %s' % (object.name)</field>-->
+<!--             <field name="binding_model_id" ref="model_mrp_production"/>-->
+<!--        </record>-->
 
         <template id="internal_layout_sp">
             <t t-if="not o" t-set="o" t-value="doc"/>
@@ -150,6 +159,10 @@
                                     <td style="border:1px solid #000; width:20%;"><span t-field="o.size"/><span>/</span><span t-field="o.dough"/></td>
                                     <td style="border:1px solid #000;">Issued by:</td>
                                     <td style="border:1px solid #000;" colspan="2"><span t-field="o.user_id"/></td>
+                                </tr>
+                                <tr style="border:1px solid #000;">
+                                    <td style="border:1px solid #000;">Origin document:</td>
+                                    <td colspan="4" style="border:1px solid #000;"><span t-field="o.origin"/></td>
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <th style="border:1px solid #000; text-align: center;" colspan="5">MATERIALS PREPARATION</th>
