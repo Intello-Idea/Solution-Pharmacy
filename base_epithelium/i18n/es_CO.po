@@ -1004,8 +1004,8 @@ msgstr "Orden"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
-msgid "Origin document:"
-msgstr "Documento origen"
+msgid "Issued by:"
+msgstr "Emitido por:"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
