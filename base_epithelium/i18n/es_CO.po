@@ -1019,6 +1019,11 @@ msgid "Order"
 msgstr "Orden"
 
 #. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
+msgid "Issued by:"
+msgstr "Emitido por:"
+
+#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
 msgid "PRODUCTION <br/> FORMAT"
 msgstr "PRODUCCIÓN <br/> FORMATO"

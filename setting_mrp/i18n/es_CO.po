@@ -221,6 +221,11 @@ msgstr "Número de OP:"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Origin document:"
+msgstr "Documento origen"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
 msgid "PH:"
 msgstr "PH:"
 

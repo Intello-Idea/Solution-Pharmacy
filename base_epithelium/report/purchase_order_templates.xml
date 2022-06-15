@@ -336,6 +336,10 @@
                                     <span t-field="o.picking_type_id.name"/>
                                 </td>
                             </tr>
+                            <tr style="border:1px solid #000;">
+                                <td style="border:1px solid #000;">Issued by:</td>
+                                <td colspan="4" style="border:1px solid #000;"><span t-field="o.user_id"/></td>
+                            </tr>
                         </tbody>
                     </table>
                     <br/>
