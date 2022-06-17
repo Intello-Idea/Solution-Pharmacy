@@ -109,7 +109,7 @@
             <div class="row" style="border: 1px solid #000;">
                 <div class="col-3 align-items-center" style="padding-top:20px; border-right: 1px solid black;">
                     <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
-                         style="max-height: 40px; margin: auto;"
+                         style="max-height: 90px; margin-left: auto; margin-right: auto; display: block;"
                          alt="Logo"/>
                 </div>
                 <div class="col-9 h-100 text-center"
@@ -337,7 +337,7 @@
                                 </td>
                             </tr>
                             <tr style="border:1px solid #000;">
-                                <td style="border:1px solid #000;"><strong>Issued by: </strong></td>
+                                <td style="border:1px solid #000;"><strong>Issued by:</strong></td>
                                 <td colspan="4" style="border:1px solid #000;"><span t-field="o.user_id"/></td>
                             </tr>
                         </tbody>
