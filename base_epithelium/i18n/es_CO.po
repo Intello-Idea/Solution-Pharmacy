@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e-20220311\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-10 23:33+0000\n"
-"PO-Revision-Date: 2022-06-10 23:33+0000\n"
+"POT-Creation-Date: 2022-06-24 15:52+0000\n"
+"PO-Revision-Date: 2022-06-24 15:52+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -472,6 +472,11 @@ msgstr "<strong>Entregar a:</strong>"
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchasequotation_document
 msgid "<strong>Description</strong>"
 msgstr "<strong>Descripción</strong>"
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
+msgid "<strong>Issued by:</strong>"
+msgstr "<strong>Emitido por:</strong>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
@@ -1001,11 +1006,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_epithelium.field_mrp_production_simulation_lot__order_id
 msgid "Order"
 msgstr "Orden"
-
-#. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.report_purchaseorder_document
-msgid "Issued by:"
-msgstr "Emitido por:"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label

@@ -17,11 +17,11 @@
         <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
         <div t-attf-class="header o_company_#{company.id}_layout">
             <div class="row" style="border: 1px solid #000; font-family: serif; font-size:12px; margin-left:0.5px; margin-right:0.5px;">
-                <div class="col-3 align-items-center" style="border-right: 1px solid black;">
-                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
-                         style="max-height: 110px; margin-left: auto; margin-right: auto; display: block;"
-                         alt="Logo"/>
-                </div>
+                <div class="col-3 align-items-center" style="padding-top:20px; border-right: 1px solid black;">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                                style="max-height: 90px; margin-left: auto; margin-right: auto; display: block;"
+                                alt="Logo"/>
+                        </div>
                 <div class="col-5 h-100 text-center" style="padding: 0;">
                     <table class="w-100" style="text-align: center;">
                         <tr>
