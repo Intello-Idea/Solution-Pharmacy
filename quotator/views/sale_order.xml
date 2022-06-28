@@ -5,6 +5,9 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
+                <field name="partner_id" position="attributes">
+                    <attributes name="domain">[('is_client', '=', True)]</attributes>
+                </field>
                 <xpath expr="//page/field[@name='order_line']/.." position="after">
                     <page string="Raw material">
                         <field name="raw_material" readonly="1">
