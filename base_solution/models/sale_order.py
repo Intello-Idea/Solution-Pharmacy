@@ -39,8 +39,10 @@ class SaleOrder(models.Model):
                 delete.unlink()
                 for record in record_ids:
                     record.write(values)
-                res = super(SaleOrder, self).action_confirm()
+                # res = super(SaleOrder, self).action_confirm()
             else:
-                res = super(SaleOrder, self).action_confirm()
+                pass
+                # res = super(SaleOrder, self).action_confirm()
             index += 1
+        res = super(SaleOrder, self).action_confirm()
         return res
