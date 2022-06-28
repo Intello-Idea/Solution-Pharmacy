@@ -13,7 +13,7 @@ class CustomPartner(models.Model):
     _inherit = 'res.partner'
 
     client_code = fields.Char(string='Client Code', size=64)
-    is_provider = fields.Boolean(string='Is provider', default=False)
+    # is_provider = fields.Boolean(string='Is provider', default=False)
     # is_client = fields.Boolean(string='Is client', default=False)
     @api.constrains('client_code')
     def _check_client_code(self):
