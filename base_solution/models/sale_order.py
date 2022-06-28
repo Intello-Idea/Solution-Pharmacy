@@ -14,6 +14,7 @@ class SaleOrder(models.Model):
         raw = []
         values = []
         index = 0
+        res = False
         for prod in self.order_line.product_id:
             if prod.name == 'Generico cotizador':
                 for line in self.raw_material:
