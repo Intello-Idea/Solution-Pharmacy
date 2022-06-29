@@ -32,6 +32,7 @@ class MrpProduction(models.Model):
 
     @api.onchange('product_id')
     def calculate_date_fin(self):
+        print(self.user_id.name)
         if not self.product_id.standard_manufacturing:
             parameter = self.env['ir.config_parameter'].sudo()
             days_to_expiration = parameter.get_param('res.config.settings.days_to_expiration')

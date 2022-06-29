@@ -116,8 +116,8 @@
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <td style="border:1px solid #000;">Client:</td>
-                                    <t t-if="o.client_code">
-                                        <td colspan="2" style="border:1px solid #000;"><span t-field="o.client_code"/></td>
+                                    <t t-if="o.partner_id.name">
+                                        <td colspan="2" style="border:1px solid #000;"><span t-field="o.partner_id.name"/></td>
                                     </t>
                                     <t t-elif="o.client_code_sale">
                                         <td colspan="2" style="border:1px solid #000;"><span t-field="o.client_code_sale"/></td>
