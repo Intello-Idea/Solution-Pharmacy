@@ -16,7 +16,7 @@ class MrpProduction(models.Model):
     pharmaceutical_presentation = fields.Many2one('pharmaceutical.presentation',
                                                   related='bom_id.pharmaceutical_presentation',
                                                   string="Pharmaceutical presentation")
-    size = fields.Float(related='bom_id.size', string="Size")
+    size = fields.Float(related='bom_id.size_total', string="Size")
     dough = fields.Many2one(related='bom_id.dough')
     #partner_id = fields.Many2one('res.partner', string='Partner', )
     #patient = fields.Char()
