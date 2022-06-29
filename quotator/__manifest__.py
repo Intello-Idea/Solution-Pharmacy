@@ -28,6 +28,7 @@
         'views/views.xml',
         'views/templates.xml',
         'views/quotator.xml',
+        'views/purchase_order.xml',
         'security/groups_security.xml',
         'views/sale_order.xml',
         'data/ir_sequence_data.xml',
