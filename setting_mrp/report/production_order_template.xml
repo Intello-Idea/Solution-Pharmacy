@@ -139,7 +139,7 @@
                                     </t>
                                     <td style="border:1px solid #000;">Date of issue:</td>
                                     <td style="border:1px solid #000;"><span t-field="o.date_planned_start"
-                                                                             t-options='{"widget": "date"}'/></td>
+                                                                             t-options='{"widget": "date", "format": "dd MMM Y"}'/></td>
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <td style="border:1px solid #000;">Patient:</td>
@@ -155,7 +155,7 @@
                                     </t>
                                     <td style="border:1px solid #000;">Due date:</td>
                                     <td style="border:1px solid #000;"><span t-field="o.expiration_date_sp"
-                                                                             t-options='{"widget": "date"}'/></td>
+                                                                             t-options='{"widget": "date", "format": "dd MMM Y"}'/></td>
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <td style="border:1px solid #000;">Pharmaceutical form:</td>
