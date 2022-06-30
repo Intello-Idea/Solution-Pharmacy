@@ -5,6 +5,13 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
+<!--                <field name="partner_id" position="attributes">-->
+<!--                    <attribute name="domain">[('partner_id.is_client', '=', True)]</attribute>-->
+<!--                </field>-->
+<!--                <field name="partner_id" position="replace" domain="[('is_client', '=', True)]"/>-->
+                <field name="partner_id" position="replace">
+                    <field name="partner_id" domain="['&amp;', ('is_client', '=', True), '|', ('company_id', '=', False), ('company_id', '=', company_id)]" />
+                </field>
                 <xpath expr="//page/field[@name='order_line']/.." position="after">
                     <page string="Raw material">
                         <field name="raw_material" readonly="1">

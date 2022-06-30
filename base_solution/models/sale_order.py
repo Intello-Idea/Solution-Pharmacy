@@ -14,6 +14,7 @@ class SaleOrder(models.Model):
         raw = []
         values = []
         index = 0
+        res = False
         for prod in self.order_line.product_id:
             if prod.name == 'Generico cotizador':
                 for line in self.raw_material:
@@ -38,8 +39,10 @@ class SaleOrder(models.Model):
                 delete.unlink()
                 for record in record_ids:
                     record.write(values)
-                res = super(SaleOrder, self).action_confirm()
+                # res = super(SaleOrder, self).action_confirm()
             else:
-                res = super(SaleOrder, self).action_confirm()
+                pass
+                # res = super(SaleOrder, self).action_confirm()
             index += 1
+        res = super(SaleOrder, self).action_confirm()
         return res

@@ -29,8 +29,8 @@ msgstr "<b class=\"w-15\">ORDEN DE PRODUCCIÓN</b>"
 #: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
 msgid ""
 "<b>PRODUCTION</b>\n"
-"                                                   <br/>\n"
-"                                                  <b>FORM</b>"
+"                                        <br/>\n"
+"                                        <b>FORM</b>"
 msgstr ""
 "<b>PRODUCCIÓN</b>\n"
 "                                                   <br/>\n"
@@ -38,8 +38,21 @@ msgstr ""
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
-msgid "<span>According to Elaboration Procedure</span>"
-msgstr "<span>Según Procedimiento de Elaboración</span>"
+msgid ""
+"<span>According\n"
+"                                        to Elaboration Procedure</span>"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
+msgid ""
+"<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">\n"
+"                                    Validity:</strong><br/><strong style=\"font-weight:700; padding-left:5px;\">From\n"
+"                                    Ene-22 to Ene-24</strong>"
+msgstr ""
+"<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">\n"
+"                                    Vigencia:</strong><br/><strong style=\"font-weight:700; padding-left:5px;\">Desde\n"
+"                                    Ene-22 to Ene-24</strong>"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
@@ -61,9 +74,9 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
 msgid ""
 "<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Page:</strong>\n"
-"                                        <strong class=\"list-inline-item w-15\" style=\"font-weight:700;\"><span class=\"page\"/></strong>\n"
-"                                        <strong class=\"list-inline-item w-15\" style=\"font-weight:700;\">of</strong>\n"
-"                                        <strong class=\"list-inline-item w-15\" style=\"font-weight:700;\"><span class=\"topage\"/></strong>"
+"                                    <strong class=\"list-inline-item w-15\" style=\"font-weight:700;\"><span class=\"page\"/></strong>\n"
+"                                    <strong class=\"list-inline-item w-15\" style=\"font-weight:700;\">of</strong>\n"
+"                                    <strong class=\"list-inline-item w-15\" style=\"font-weight:700;\"><span class=\"topage\"/></strong>"
 msgstr ""
 "<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Página:</strong>\n"
 "                                        <strong class=\"list-inline-item w-15\" style=\"font-weight:700;\"><span class=\"page\"/></strong>\n"
@@ -73,19 +86,8 @@ msgstr ""
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
 msgid ""
-"<strong style=\"font-weight:700; padding-left:5px;\" "
-"class=\"w-15\">Validity:</strong><br/><strong style=\"font-weight:700; "
-"padding-left:5px;\">From Ene-21 to Ene-23</strong>"
-msgstr ""
-"<strong style=\"font-weight:700; padding-left:5px;\" "
-"class=\"w-15\">Vigencia:</strong><br/><strong style=\"font-weight:700; "
-"padding-left:5px;\">Desde Ene-21 hasta Ene-23</strong>"
-
-#. module: setting_mrp
-#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
-msgid ""
-"<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Version:"
-" 01</strong>"
+"<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Version:\n"
+"                                    01</strong>"
 msgstr ""
 
 #. module: setting_mrp
@@ -135,11 +137,6 @@ msgid "Date of issue:"
 msgstr "Fecha de Emisión:"
 
 #. module: setting_mrp
-#: model:ir.model.fields,help:setting_mrp.field_mrp_production__dough
-msgid "Default unit of measure used for all stock operations."
-msgstr ""
-
-#. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
 msgid "Dispensing"
 msgstr "DISPENSACIÓN"
@@ -166,8 +163,10 @@ msgstr "Fecha de Vencimiento"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
-msgid "Heavy quantity"
-msgstr "Cantidad Pesada"
+msgid ""
+"Heavy\n"
+"                                        quantity"
+msgstr ""
 
 #. module: setting_mrp
 #: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__id
@@ -176,8 +175,10 @@ msgstr ""
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
-msgid "IN-PROCESS CONTROL"
-msgstr "CONTROL EN PROCESO"
+msgid ""
+"IN-PROCESS\n"
+"                                        CONTROL"
+msgstr ""
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
@@ -201,8 +202,10 @@ msgstr "Lote"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
-msgid "MATERIALS PREPARATION"
-msgstr "ALISTAMIENTO DE MATERIALES"
+msgid ""
+"MATERIALS\n"
+"                                        PREPARATION"
+msgstr ""
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
@@ -227,7 +230,7 @@ msgstr "Documento origen"
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
 msgid "PH:"
-msgstr "PH:"
+msgstr ""
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
@@ -303,8 +306,10 @@ msgstr "Tamaño:"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
-msgid "Theoretical Quantity(g)"
-msgstr "Cantidad Teórica(g)"
+msgid ""
+"Theoretical\n"
+"                                        Quantity(g)"
+msgstr ""
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
@@ -312,11 +317,8 @@ msgid "Totals"
 msgstr "TOTALES"
 
 #. module: setting_mrp
-#: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__dough
-msgid "Unit of Measure"
-msgstr ""
-
-#. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
-msgid "Vo. Bo. TECHNICAL DIRECTOR"
-msgstr "Vo. Bo. DIRECTOR TÉCNICO"
+msgid ""
+"Vo.\n"
+"                                        Bo. TECHNICAL DIRECTOR"
+msgstr ""

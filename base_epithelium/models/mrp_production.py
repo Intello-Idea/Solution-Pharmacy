@@ -16,7 +16,7 @@ class MrpProduction(models.Model):
     pharmaceutical_presentation = fields.Many2one('pharmaceutical.presentation',
                                                   related='bom_id.pharmaceutical_presentation',
                                                   string="Pharmaceutical presentation")
-    size = fields.Float(related='bom_id.size', string="Size")
+    size = fields.Float(related='bom_id.size_total', string="Size")
     dough = fields.Many2one(related='bom_id.dough')
     #partner_id = fields.Many2one('res.partner', string='Partner', )
     #patient = fields.Char()
@@ -32,6 +32,7 @@ class MrpProduction(models.Model):
 
     @api.onchange('product_id')
     def calculate_date_fin(self):
+        print(self.user_id.name)
         if not self.product_id.standard_manufacturing:
             parameter = self.env['ir.config_parameter'].sudo()
             days_to_expiration = parameter.get_param('res.config.settings.days_to_expiration')

@@ -45,7 +45,7 @@
                     <label for="size_total" string="Size"/>
                     <div>
                         <field name="size_total" class="oe_inline"
-                               force_save="1"/>
+                               force_save="1" readonly="False"/>
                         <field name="dough" nolabel="1" class="oe_inline"
                                style="margin-left:5px; max-width:40%;"/>
                     </div>

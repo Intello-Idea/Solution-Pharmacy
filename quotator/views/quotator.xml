@@ -37,7 +37,8 @@
             <group>
               <group>
                 <field name="user" options="{'no_open':True,'no_create': True}"/>
-                <field name="partner_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="partner_id" domain="[('is_client', '=', True)]"
+                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                 <field name="patient" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                 <field name="final_product"/>
                 <field name="product_qty" invisible="True"/>
