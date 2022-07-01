@@ -167,6 +167,8 @@ msgid ""
 "Heavy\n"
 "                                        quantity"
 msgstr ""
+"GRAN\n"
+"                                        CANTIDAD"
 
 #. module: setting_mrp
 #: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__id
@@ -179,6 +181,8 @@ msgid ""
 "IN-PROCESS\n"
 "                                        CONTROL"
 msgstr ""
+"EN CONTROL\n"
+"                                        DE PROCESOS"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
@@ -206,6 +210,8 @@ msgid ""
 "MATERIALS\n"
 "                                        PREPARATION"
 msgstr ""
+"PREPARACIÓN DE\n"
+"                                        MATERIALES"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
@@ -310,6 +316,8 @@ msgid ""
 "Theoretical\n"
 "                                        Quantity(g)"
 msgstr ""
+"CANTIDAD\n"
+"                                        TEÓRICA(g)"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
@@ -322,3 +330,5 @@ msgid ""
 "Vo.\n"
 "                                        Bo. TECHNICAL DIRECTOR"
 msgstr ""
+"Vo.\n"
+"                                        Bo. DIRECTOR TÉCNICO"
