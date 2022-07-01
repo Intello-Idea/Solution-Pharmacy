@@ -12,12 +12,6 @@
                 <field name="property_product_pricelist" position="after">
                     <field name="client_code" />
                 </field>
-<!--                <field name="extra_quota_provider" position="after">-->
-<!--                    <field name="is_provider" string="Es proveedor"/>-->
-<!--                </field>-->
-<!--                <field name="quota_total_remaining" position="after">-->
-<!--                    <field name="is_client" string="Es cliente"/>-->
-<!--                </field>-->
             </field>
         </record>
     </data>

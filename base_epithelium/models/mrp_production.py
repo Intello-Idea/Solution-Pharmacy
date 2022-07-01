@@ -28,14 +28,16 @@ class MrpProduction(models.Model):
                                                         inverse_name='order_id',
                                                         default=[], copy=False)
 
-    check_standard_manufacturing = fields.Boolean(related='product_id.standard_manufacturing')
+    check_standard_manufacturing = fields.Boolean(
+        related='product_id.standard_manufacturing')
 
     @api.onchange('product_id')
     def calculate_date_fin(self):
         print(self.user_id.name)
         if not self.product_id.standard_manufacturing:
             parameter = self.env['ir.config_parameter'].sudo()
-            days_to_expiration = parameter.get_param('res.config.settings.days_to_expiration')
+            days_to_expiration = parameter.get_param(
+                'res.config.settings.days_to_expiration')
 
             expiration_date = date.today() + relativedelta(days=int(days_to_expiration))
             self.due_date = expiration_date
@@ -43,8 +45,10 @@ class MrpProduction(models.Model):
     @api.model
     def create(self, values):
         if not values.get('name', False) or values['name'] == _('New'):
-            picking_type_id = values.get('picking_type_id') or self._get_default_picking_type()
-            picking_type_id = self.env['stock.picking.type'].browse(picking_type_id)
+            picking_type_id = values.get(
+                'picking_type_id') or self._get_default_picking_type()
+            picking_type_id = self.env['stock.picking.type'].browse(
+                picking_type_id)
 
             seq_code = 'mrp.production'
             if self.env['mrp.bom'].search([('id', '=', int(values['bom_id']))]).check_status:
@@ -53,21 +57,24 @@ class MrpProduction(models.Model):
             if picking_type_id:
                 values['name'] = picking_type_id.sequence_id.next_by_id()
             else:
-                values['name'] = self.env['ir.sequence'].next_by_code(seq_code) or _('New')
+                values['name'] = self.env['ir.sequence'].next_by_code(
+                    seq_code) or _('New')
 
             if values.get('origin') and not values.get('patient', False) and not values.get('partner_id', False):
-                sale_order = self.env['sale.order'].search([('name', '=', values.get('origin'))])
+                sale_order = self.env['sale.order'].search(
+                    [('name', '=', values.get('origin'))])
                 if sale_order:
                     sale_order_line = self.env['sale.order.line'].search(
                         [('order_id', '=', sale_order.id), ('product_id', '=', values.get('product_id'))], limit=1)
                     values['partner_id'] = sale_order.partner_id.id
-                    if sale_order_line:
-                        sale_order_patient_line = self.env['sale.order.line'].search(
-                            [('order_id', '=', sale_order.id), ('display_type', '=', "line_note"),
-                             ('sequence', '>=', sale_order_line.sequence)],
-                            limit=1)
-                        if sale_order_patient_line:
-                            values['patient'] = sale_order_patient_line.name
+                    values['patient'] = sale_order.patient
+                    # if sale_order_line:
+                    #     sale_order_patient_line = self.env['sale.order.line'].search(
+                    #         [('order_id', '=', sale_order.id), ('display_type', '=', "line_note"),
+                    #          ('sequence', '>=', sale_order_line.sequence)],
+                    #         limit=1)
+                    #     if sale_order_patient_line:
+                    #         values['patient'] = sale_order_patient_line.name
 
         production = super(MrpProduction, self).create(values)
         return production
@@ -75,27 +82,30 @@ class MrpProduction(models.Model):
     @api.onchange('bom_id')
     def _get_picking_type(self):
         if self.bom_id:
-            company_id = self.env.context.get('default_company_id', self.env.company.id)
+            company_id = self.env.context.get(
+                'default_company_id', self.env.company.id)
             picking_type = self.env['stock.picking.type'].search(
                 [('code', '=', 'mrp_operation'), ('warehouse_id.company_id', '=', company_id),
                  ('check_status', '=', self.check_status)], limit=1)
             if picking_type:
                 self.picking_type_id = picking_type.id
             else:
-                raise exceptions.ValidationError(_('Please create a picking type first'))
+                raise exceptions.ValidationError(
+                    _('Please create a picking type first'))
 
-#Carlos    def _get_move_raw_values(self, bom_line, line_data):
-#Carlos        data = super(MrpProduction, self)._get_move_raw_values(bom_line, line_data)
-#Carlos        data['percent'] = bom_line.percent
-#Carlos        return data
-#Carlos
+# Carlos    def _get_move_raw_values(self, bom_line, line_data):
+# Carlos        data = super(MrpProduction, self)._get_move_raw_values(bom_line, line_data)
+# Carlos        data['percent'] = bom_line.percent
+# Carlos        return data
+# Carlos
     @api.depends('move_raw_ids')
     def _compute_lots(self):
         for production in self:
             production.lot_stock_move_line_ids = []
             if production.move_raw_ids:
                 for move in production.move_raw_ids:
-                    move_line = production.env['stock.move.line'].search([('move_id', '=', move.id)])
+                    move_line = production.env['stock.move.line'].search(
+                        [('move_id', '=', move.id)])
                     production.lot_stock_move_line_ids += move_line
             else:
                 # Fabian Hernando Vera Carrillo
@@ -109,10 +119,11 @@ class MrpProduction(models.Model):
     def action_emulate_move_lines(self):
         self.mrp_production_simulation_lot_ids = False
         for move in self.move_raw_ids:
-            #Start Guardar los porcentajes dentro den campo percent 03-05-2022 developer: Routh Milano
-            mrp_bom_line = self.env['mrp.bom.line'].search([('id','=',move.bom_line_id.id)])
+            # Start Guardar los porcentajes dentro den campo percent 03-05-2022 developer: Routh Milano
+            mrp_bom_line = self.env['mrp.bom.line'].search(
+                [('id', '=', move.bom_line_id.id)])
             move.percent = mrp_bom_line.percent
-            #End Guardar los porcentajes dentro den campo percent 03-05-2022 developer: Routh Milano
+            # End Guardar los porcentajes dentro den campo percent 03-05-2022 developer: Routh Milano
             lots = []
             need_quantity = move.product_uom._compute_quantity(move.product_uom_qty,
                                                                move.product_id.uom_id,
@@ -123,13 +134,14 @@ class MrpProduction(models.Model):
             lots.extend(move._search_available_quantity(need_quantity, available_quantity, move.location_id,
                                                         package_id=forced_package_id, strict=False))
             for lot in lots:
-                lot_obj = self.env['stock.production.lot'].search([('id', '=', lot['lot_id'])])
+                lot_obj = self.env['stock.production.lot'].search(
+                    [('id', '=', lot['lot_id'])])
                 cre = {
                     'order_id': self.id,
                     'product_id': lot['product_id'],
                     'quantity': lot['product_uom_qty'],
                     'lot': lot_obj.name if lot_obj else " ",
-#Carlos                    'due_date': str(lot_obj.life_date) if lot_obj.life_date else " "
+                    # Carlos                    'due_date': str(lot_obj.life_date) if lot_obj.life_date else " "
                 }
                 self.env['mrp.production.simulation.lot'].create(cre)
 
@@ -156,18 +168,21 @@ class MrpProduction(models.Model):
             line = {
                 'number': str(num),
                 'product': str(move.product_id.name),
-                'code_product': str(move.product_id.default_code), #Agregar elemento al diccionario developer Routh Milano 03-05-2022
+                # Agregar elemento al diccionario developer Routh Milano 03-05-2022
+                'code_product': str(move.product_id.default_code),
                 'percent': str(move.percent),
                 'quantity': str(move.product_uom_qty),
-                'dough': str(move.product_uom.name), #Agregar elemento al diccionario developer Routh Milano 03-05-2022
+                # Agregar elemento al diccionario developer Routh Milano 03-05-2022
+                'dough': str(move.product_uom.name),
                 'quantity_lot': "",
-                'lot': str(move.move_line_ids.lot_id.name) if str(move.move_line_ids.lot_id.name)!='False' else "" ,
+                'lot': str(move.move_line_ids.lot_id.name) if str(move.move_line_ids.lot_id.name) != 'False' else "",
                 'due_date': "",
                 'head': True
             }
             lines.append(line)
 
-            matches_lots = [lot for lot in lot_ids if lot['product_id'] == move.product_id]
+            matches_lots = [
+                lot for lot in lot_ids if lot['product_id'] == move.product_id]
 
             for lot_move in matches_lots:
                 total_quantity_lot += lot_move.product_uom_qty if self.state in (
@@ -175,10 +190,10 @@ class MrpProduction(models.Model):
                 line = {
                     'number': "",
                     'product': "",
-                    'code_product': "", #Agregar elemento al diccionario developer Routh Milano 03-05-2022
+                    'code_product': "",  # Agregar elemento al diccionario developer Routh Milano 03-05-2022
                     'percent': "",
                     'quantity': "",
-                    'dough': "", #Agregar elemento al diccionario developer Routh Milano 03-05-2022
+                    'dough': "",  # Agregar elemento al diccionario developer Routh Milano 03-05-2022
                     'quantity_lot': str(lot_move.product_uom_qty) if self.state in ('confirmed') else lot_move.qty_done,
                     'lot': str(lot_move.lot_id.name),
                     'due_date': str(lot_move.due_date.strftime('%Y-%m-%d')) if lot_move.due_date else "",
