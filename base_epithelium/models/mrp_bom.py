@@ -77,9 +77,9 @@ class MrpBom(models.Model):
         if round(self.percent_total,5) > 100:
             raise exceptions.ValidationError(_("The total percentage exceeds 100%"))
     
-    @api.depends("size", "product_qty")
-    def _size_total(self):
-        self.size_total = self.size * self.product_qty
+    # @api.depends("size", "product_qty")
+    # def _size_total(self):
+    #     self.size_total = self.size * self.product_qty
 
     @api.onchange("product_tmpl_id")
     def value_size(self):

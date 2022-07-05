@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0+e-20211014\n"
+"Project-Id-Version: Odoo Server 14.0+e-20220311\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-03 16:40+0000\n"
-"PO-Revision-Date: 2022-05-03 16:40+0000\n"
+"POT-Creation-Date: 2022-06-30 16:24+0000\n"
+"PO-Revision-Date: 2022-06-30 16:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -167,6 +167,8 @@ msgid ""
 "Heavy\n"
 "                                        quantity"
 msgstr ""
+"GRAN\n"
+"                                        CANTIDAD"
 
 #. module: setting_mrp
 #: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__id
@@ -179,6 +181,8 @@ msgid ""
 "IN-PROCESS\n"
 "                                        CONTROL"
 msgstr ""
+"EN CONTROL\n"
+"                                        DE PROCESOS"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
@@ -206,6 +210,8 @@ msgid ""
 "MATERIALS\n"
 "                                        PREPARATION"
 msgstr ""
+"PREPARACIÓN DE\n"
+"                                        MATERIALES"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
@@ -310,6 +316,8 @@ msgid ""
 "Theoretical\n"
 "                                        Quantity(g)"
 msgstr ""
+"CANTIDAD\n"
+"                                        TEÓRICA(g)"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
@@ -322,3 +330,5 @@ msgid ""
 "Vo.\n"
 "                                        Bo. TECHNICAL DIRECTOR"
 msgstr ""
+"Vo.\n"
+"                                        Bo. DIRECTOR TÉCNICO"
