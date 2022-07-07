@@ -37,9 +37,13 @@ class QualityPoint(models.Model):
     @api.onchange('product_ids')
     def check_invima_products(self):
         if self.product_ids:
-            self.check_status = True
+            status = True
         else:
-            self.check_status = False
+            status = False
+        for product in self.product_ids:
+            status = status and product.check_status
+        self.check_status = status
+
 
     @api.onchange('product_tmpl_id')
     def check_invima_change(self):
