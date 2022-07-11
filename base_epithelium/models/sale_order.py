@@ -89,12 +89,12 @@ class SaleOrder(models.Model):
 
         return journal
 
-    @api.onchange('production_line_id')
-    def _clean_order_lines(self):
-        if self.production_line_id:
-            for line in self.order_line:
-                if line.product_id.check_status != self.production_line_id.check_status:
-                    self.order_line = None
+    # @api.onchange('production_line_id')
+    # def _clean_order_lines(self):
+    #     if self.production_line_id:
+    #         for line in self.order_line:
+    #             if line.product_id.check_status != self.production_line_id.check_status:
+    #                 self.order_line = None
 
     # def _create_invoices(self, grouped=False, final=False):
     #    invoice = super(SaleOrder, self)._create_invoices(grouped,final)
