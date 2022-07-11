@@ -8,7 +8,8 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
                 <xpath context="{'production_line_id': 'production_line_id'}" expr="//page/field[@name='order_line']/tree/field[@name='product_id']" position="attributes">
-                    <attribute name="domain">[('product_tmpl_id.name', '!=', 'Generico cotizador'),('sale_ok', '=', True)]</attribute>
+                    <attribute name="domain">[('product_tmpl_id.name', '!=', 'Generico cotizador'),('sale_ok', '=', True),
+                                              ('check_status', '=', check_status)]</attribute>
                 </xpath>
                 <!--Los dos campos siguientes se crean netamente para poder pasar la presentacion y la formula
                 farmaceutica a la lista de materias que se renueva cada vez que se oprime confirmar, esto es debido
