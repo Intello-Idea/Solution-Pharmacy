@@ -169,8 +169,8 @@ msgid ""
 "Heavy\n"
 "                                        quantity"
 msgstr ""
-"GRAN\n"
-"                                        CANTIDAD"
+"Cantidad\n"
+"                                        pesada"
 
 #. module: setting_mrp
 #: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__id
