@@ -14,7 +14,6 @@ class ProductTemplate(models.Model):
     dough = fields.Many2one("uom.uom", domain=['|', ("category_id.name", "=", "Volumen"),
                                                ("category_id.name", "=", "Peso")])
     size = fields.Float(string="Size")
-    seller_ids = fields.One2many('product.supplierinfo', 'product_tmpl_id', 'Vendors',domain=[('name.is_provider','=', True)], depends_context=('company',), help="Define vendor pricelists.")
 
     """Boolean Fields"""
     standard_manufacturing = fields.Boolean("Standard manufacturing")

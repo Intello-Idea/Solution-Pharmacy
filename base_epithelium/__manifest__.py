@@ -20,7 +20,7 @@
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'mrp_mps', 'sale', 'purchase', 'account', 'stock', 'product', 'product_expiry', 'web',
-                'sale_management', 'quality', 'quality_control', 'coding_products', 'contacts_setup'],
+                'sale_management', 'quality', 'quality_control', 'coding_products'],
     'application': False,
 
     # always loaded
