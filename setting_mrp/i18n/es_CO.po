@@ -54,7 +54,7 @@ msgid ""
 msgstr ""
 "<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">\n"
 "                                    Vigencia:</strong><br/><strong style=\"font-weight:700; padding-left:5px;\">Desde\n"
-"                                    Ene-22 to Ene-24</strong>"
+"                                    Oct-21 to Oct-23</strong>"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
@@ -63,7 +63,7 @@ msgid ""
 "FPRC-PRO-001-1</strong>"
 msgstr ""
 "<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Código: "
-"FPRC-PRO-002-1</strong>"
+"FPRC-PRO-001-1</strong>"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
