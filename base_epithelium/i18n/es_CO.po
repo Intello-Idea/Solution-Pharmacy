@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e-20220311\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-13 16:40+0000\n"
-"PO-Revision-Date: 2022-07-13 16:40+0000\n"
+"POT-Creation-Date: 2022-07-13 18:31+0000\n"
+"PO-Revision-Date: 2022-07-13 18:31+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -390,6 +390,15 @@ msgstr ""
 "                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\"><span class=\"topage\"/></strong>"
 
 #. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
+msgid ""
+"<strong style=\"font-weight:700; padding-left:5px;\">Validity:</strong><br/>\n"
+"                                    <strong style=\"font-weight:700; padding-left:5px;\">From Oct-21 to Oct-23</strong>"
+msgstr ""
+"<strong style=\"font-weight:700; padding-left:5px;\">Vigencia:</strong><br/>\n"
+"                                    <strong style=\"font-weight:700; padding-left:5px;\">Desde Oct-21 hasta Oct-23</strong>"
+
+#. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
 msgid ""
 "<strong style=\"font-weight:700; padding-"
@@ -401,7 +410,6 @@ msgstr ""
 "left:5px;\">Desde Ene-22 hasta Ene-24</strong>"
 
 #. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
 msgid ""
 "<strong style=\"font-weight:700; padding-"
