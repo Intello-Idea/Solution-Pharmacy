@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e-20220311\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-01 18:29+0000\n"
-"PO-Revision-Date: 2022-07-01 18:29+0000\n"
+"POT-Creation-Date: 2022-07-13 16:40+0000\n"
+"PO-Revision-Date: 2022-07-13 16:40+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -349,19 +349,19 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
 msgid ""
 "<strong style=\"font-weight:700; padding-left:5px;\">Code: FPRC-"
-"PRO-002-2</strong>"
+"PRO-001-2</strong>"
 msgstr ""
 "<strong style=\"font-weight:700; padding-left:5px;\">Código: FPRC-"
-"PRO-002-2</strong>"
+"PRO-001-2</strong>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
 msgid ""
 "<strong style=\"font-weight:700; padding-left:5px;\">Code: FPRC-"
-"PRO-002-3</strong>"
+"PRO-001-3</strong>"
 msgstr ""
 "<strong style=\"font-weight:700; padding-left:5px;\">Código: FPRC-"
-"PRO-002-3</strong>"
+"PRO-001-3</strong>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
@@ -371,7 +371,7 @@ msgstr ""
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
-msgid "<strong style=\"font-weight:700; padding-left:5px;\">ID: 72</strong>"
+msgid "<strong style=\"font-weight:700; padding-left:5px;\">ID: 27</strong>"
 msgstr ""
 
 #. module: base_epithelium
@@ -390,8 +390,6 @@ msgstr ""
 "                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\"><span class=\"topage\"/></strong>"
 
 #. module: base_epithelium
-#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
-#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
 msgid ""
 "<strong style=\"font-weight:700; padding-"
@@ -401,6 +399,18 @@ msgstr ""
 "<strong style=\"font-weight:700; padding-"
 "left:5px;\">Vigencia:</strong><br/><strong style=\"font-weight:700; padding-"
 "left:5px;\">Desde Ene-22 hasta Ene-24</strong>"
+
+#. module: base_epithelium
+#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
+#: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_material_dispensing_label
+msgid ""
+"<strong style=\"font-weight:700; padding-"
+"left:5px;\">Validity:</strong><br/><strong style=\"font-weight:700; padding-"
+"left:5px;\">From Oct-21 to Oct-23</strong>"
+msgstr ""
+"<strong style=\"font-weight:700; padding-"
+"left:5px;\">Vigencia:</strong><br/><strong style=\"font-weight:700; padding-"
+"left:5px;\">Desde Oct-21 hasta Oct-23</strong>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
@@ -723,6 +733,11 @@ msgstr "Rótulo Identificación Materiales Dispensados"
 #: model:ir.model.fields,field_description:base_epithelium.field_wizard_mrp_production__display_name
 msgid "Display Name"
 msgstr "Nombre Público"
+
+#. module: base_epithelium
+#: model:ir.model.fields,field_description:base_epithelium.field_stock_move_line__qty_done
+msgid "Done"
+msgstr "Terminado"
 
 #. module: base_epithelium
 #: model:ir.model.fields,field_description:base_epithelium.field_mrp_bom__dough
@@ -1236,9 +1251,10 @@ msgid "Request for Quotation No."
 msgstr "Solicitud de cotización No."
 
 #. module: base_epithelium
+#: model:ir.model.fields,field_description:base_epithelium.field_stock_move_line__product_uom_qty
 #: model_terms:ir.ui.view,arch_db:base_epithelium.mrp_production_form_view_base_epithelium
 msgid "Reserved"
-msgstr "Invertida"
+msgstr "Reservado"
 
 #. module: base_epithelium
 #: model:ir.model,name:base_epithelium.model_sale_order_option
