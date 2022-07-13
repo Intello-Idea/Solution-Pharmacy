@@ -170,7 +170,7 @@ msgid ""
 "                                        quantity"
 msgstr ""
 "Cantidad\n"
-"                                        PESADA (g)"
+"                                        Pesada (g)"
 
 #. module: setting_mrp
 #: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__id
