@@ -72,7 +72,7 @@ class Quotator(models.Model):
     def _compute_total_pharmaceutical(self):
         for line in self:
             line['total_pharmaceutical_form'] = line['value_pharmaceutical_form'] * \
-                line.pharmaceutical_form.value
+                line.pharmaceutical_form.value * 6
 ##Revisar##
 
     @api.depends('quotator_lines')
