@@ -170,7 +170,7 @@ msgid ""
 "                                        quantity"
 msgstr ""
 "Cantidad\n"
-"                                        pesada"
+"                                        PESADA (g)"
 
 #. module: setting_mrp
 #: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__id
@@ -318,8 +318,8 @@ msgid ""
 "Theoretical\n"
 "                                        Quantity(g)"
 msgstr ""
-"CANTIDAD\n"
-"                                        TEÓRICA(g)"
+"Cantidad\n"
+"                                        teórica(g)"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
