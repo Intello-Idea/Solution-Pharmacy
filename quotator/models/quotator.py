@@ -162,7 +162,7 @@ class Quotator(models.Model):
             'order_line': products,
             'raw_material': material,
             'medical_formula': self.medical_formula,
-            'production_line_id': self.line_production_id.id,
+            'production_line_id': 1,
             'final_client': self.patient,
             'form_pharmaceutical': self.pharmaceutical_form.id,
             'patient': self.patient,
