@@ -168,6 +168,7 @@ class Quotator(models.Model):
             'patient': self.patient,
             'pharmaceutical_presentation': self.presentation_id.id,
             'grams_pharmaceutical': self.value_pharmaceutical_form,
+            'payment_term_id': self.partner_id.property_payment_term_id.id
         }
         self.env['sale.order'].create(vals)
         self.state = 'posted'
