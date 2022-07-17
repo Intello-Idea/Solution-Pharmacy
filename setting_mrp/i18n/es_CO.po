@@ -83,7 +83,7 @@ msgstr "<span>Paciente:</span><br/>"
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
 msgid "<span>Produced by:</span>"
-msgstr "<span>Elaborado por:</span>"
+msgstr "<span>Elaborado Por:</span>"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
@@ -103,7 +103,7 @@ msgstr "<span>Fecha Revisión: </span>"
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
 msgid "<span>Reviewed by: </span>"
-msgstr "<span>Revisado por: </span>"
+msgstr "<span>Revisado Por: </span>"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
