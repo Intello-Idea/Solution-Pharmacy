@@ -339,7 +339,7 @@ msgstr "Documento origen"
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_product_identification_in_process
 msgid "PRODUCT IDENTIFICATION IN PROCESS"
-msgstr ""
+msgstr "IDENTIFICACIÓN PRODUCTO EN PROCESO"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
