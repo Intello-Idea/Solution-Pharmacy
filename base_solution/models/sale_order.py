@@ -27,7 +27,7 @@ class SaleOrder(models.Model):
                 values = {
                     'pharmaceutical_form': self.form_pharmaceutical.id,
                     'pharmaceutical_presentation': self.pharmaceutical_presentation.id,
-                    'size': self.grams_pharmaceutical,
+                    'size_total': self.grams_pharmaceutical,
                     'production_line_id': self.production_line_id.id,
                     'product_tmpl_id': self.order_line.product_id[index].product_tmpl_id.id,
                     'bom_line_ids': raw,
