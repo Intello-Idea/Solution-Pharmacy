@@ -20,6 +20,7 @@
         #agregar data antes del security sólo si existe o se requiere
         'security/ir.model.access.csv',
         'report/production_order_template.xml',
+        'report/product_identification_in_process.xml',
         'views/mrp_production_view.xml',
         #agregar wizard despues de views sólo si existe o se requiere
     ],

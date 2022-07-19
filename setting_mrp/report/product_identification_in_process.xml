@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- 
+            Start
+            Programmer: Routh Milano
+            Date: 17-07-2022
+            Requirement: REQ-SP-000014
+            Functionality: Template QWEB for Product Identification In Process
+         -->
+         <!-- Paper format Product Identification In Process-->
+        <record id="paperformat_product_identification_in_process" model="report.paperformat">
+            <field name="name">Paperformat Product Identification In Process</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">65</field>
+            <field name="page_width">125</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">2</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+        <!-- Product Identification In Process report -->
+        <report
+                id="action_report_product_identification_in_process"
+                model="mrp.production"
+                string="Product Identification In Process"
+                report_type="qweb-pdf"
+                name="setting_mrp.product_identification_in_process"
+                file="setting_mrp.product_identification_in_process"
+                print_report_name="'Identification Label - %s' % object.name"
+                paperformat="paperformat_product_identification_in_process"
+                menu="True"
+        />
+        <template id="internal_layout_product_identification_in_process">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div t-attf-class="header o_company_#{company.id}_layout">
+               
+                <div class="row" style="border: 1px solid black; font-family: Calibri, sans-serif; margin:0px 8px 0px 8px;">
+                    <div class="col-3" style="padding-top:20px; border-right: 1px solid black;">
+                    
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                                style="max-height: 40px; margin:0;"
+                                alt="Logo"/>
+                    </div>
+
+                            
+                    <div class="col-4 h-100 text-center" style="padding: 0;">
+                        <table class="w-100 p-3" style="text-align: center;">
+                            <tr>
+                                <td >
+                                    <h5 style="padding:0px 2px 0px 5px; font-size: 9px; font-weight:bold; padding-top:10px;">
+                                        PRODUCTION FORMAT
+                                    </h5>
+                                </td>
+                            </tr>
+                            <tr style="border-top:1px solid #000;">
+                                <td>
+                                    <h5 style="padding:0px 2px 0px 5px; font-size: 9px; font-weight:bold; padding-top:15px;">
+                                        PRODUCT IDENTIFICATION IN PROCESS
+                                    </h5>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-5" style="padding: 0;">
+                        <table class="w-100 p-3" style="text-align: left; border-left: 1px solid black; font-size: 9px;">
+                            <tr>
+                                <td><strong style="font-weight:700; padding-left:5px;">Code: FPRC-PRO-001-6</strong></td>
+                            </tr>
+                            <tr style="border-top:1px solid #000;">
+                                <td><strong style="font-weight:700; padding-left:5px;" >Version: 01</strong></td>
+                            </tr>
+                            <tr style="border-top:1px solid #000;">
+                                <td>
+                                    <strong style="font-weight:700; padding-left:5px;">Page:</strong>
+                                    <strong class="list-inline-item" style="font-weight:700;"><span class="page"/></strong>
+                                    <strong class="list-inline-item" style="font-weight:700;">of</strong>
+                                    <strong class="list-inline-item" style="font-weight:700;"><span class="topage"/></strong>
+                                </td>
+                            </tr>
+                            <tr style="border-top:1px solid #000;">
+                                <td><strong style="font-weight:700; padding-left:5px;">Validity:</strong><br></br><strong style="font-weight:700; padding-left:5px;">From Oct-21 to Oct-23</strong></td>
+                            </tr>
+                            <tr style="border-top:1px solid #000;">
+                                <td><strong style="font-weight:700; padding-left:5px;">ID: 69</strong></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>          
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+
+        <template id="product_identification_in_process">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="setting_mrp.internal_layout_product_identification_in_process">
+                        <div class="page pt-5" style="margin:0px 8px 0px 8px;">
+                            <br/>
+                            <br/>
+                            <table class="w-100 text-left" style="font-size: 10px; border: 1px solid black; font-family: Calibri, sans-serif; margin-top:10px; font-weight:700;">
+                                <tr>
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; width:20%;">
+                                        <span>Product: </span> 
+                                    </td>
+                                    
+                                    <td style="border:1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span t-field="o.product_id.name"/>
+                                    </td>
+                                        
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; width:20%;">
+                                        <span>Patient:</span><br/>
+                                    </td>
+                                    <t t-if="o.patient">
+                                        <td style="border:1px solid #000; padding-right:5px; padding-left:5px;"><span t-field="o.patient"/></td>
+                                    </t>
+                                    <t t-elif="o.patient_sale">
+                                        <td style="border:1px solid #000; padding-right:5px; padding-left:5px;"><span
+                                                t-field="o.patient_sale"/></td>
+                                    </t>
+                                    <t t-else="else">
+                                        <td style="border:1px solid #000;"></td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span>PO number:</span> 
+                                    </td>
+                                        
+                                    <td style="border:1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span t-field="o.name"/>
+                                    </td>
+                                        
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span>Date of issue:</span><br/>
+                                    </td>
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span t-esc="o.date_planned_start.day"/>
+                                            <t t-if="o.date_planned_start.month == 1"><span>-En-</span></t>
+                                            <t t-if="o.date_planned_start.month == 2"><span>-Febr-</span></t>
+                                            <t t-if="o.date_planned_start.month == 3"><span>-Mzo-</span></t>
+                                            <t t-if="o.date_planned_start.month == 4"><span>-Abr-</span></t>
+                                            <t t-if="o.date_planned_start.month == 5"><span>-My-</span></t>
+                                            <t t-if="o.date_planned_start.month == 6"><span>-Jun-</span></t>
+                                            <t t-if="o.date_planned_start.month == 7"><span>-Jul-</span></t>
+                                            <t t-if="o.date_planned_start.month == 8"><span>-Ag-</span></t>
+                                            <t t-if="o.date_planned_start.month == 9"><span>-Sept-</span></t>
+                                            <t t-if="o.date_planned_start.month == 10"><span>-Oct-</span></t>
+                                            <t t-if="o.date_planned_start.month == 11"><span>-Nov-</span></t>
+                                            <t t-if="o.date_planned_start.month == 12"><span>-Dic-</span></t>
+                                            <span t-esc="o.date_planned_start.year"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span>Qty: (unit):</span> 
+                                    </td>
+                                        
+                                    <td style="border:1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span t-field="o.qty_producing"/><br/>
+                                    </td>
+                                        
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span>Size:</span>
+                                    </td>
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span t-field="o.size"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span>Produced by:</span> 
+                                    </td>
+                                        
+                                    <td style="border:1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span></span>
+                                    </td>
+                                        
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span>Elaboration Date:</span>
+                                    </td>
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right:5px; padding-left:5px;">
+                                        <span style="margin-top:5px; margin-bottom:5px;">Passed: </span> 
+                                    </td>
+                                    <td style="padding-right:5px; padding-left:5px;">
+                                        <div style="border: 1px solid black; width:10%; margin-top:5px; margin-bottom:5px;" ><br/></div>
+                                    </td>
+                                    <td style="padding-right:5px; padding-left:5px;">
+                                        <span style="margin-top:5px; margin-bottom:5px;">Refused: </span> 
+                                    </td>
+                                    <td style="padding-right:5px; padding-left:5px;">
+                                        <div style="border: 1px solid black; width:25%; margin-top:5px; margin-bottom:5px;"><br/></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span>Reviewed by: </span> 
+                                    </td>
+                                        
+                                    <td style="border:1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span></span>
+                                    </td>
+                                        
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span>Review date: </span>
+                                    </td>
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
+                                        <span></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+        <!-- End Programmer: Routh Milano-->
+    </data>
+</odoo>
