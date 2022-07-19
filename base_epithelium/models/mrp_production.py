@@ -168,7 +168,8 @@ class MrpProduction(models.Model):
         for move in move_ids:
             num += 1
             total_percent += move.percent
-            total_quantity += move.product_uom_qty
+            if move.product_id.affect_bill_materials:
+                total_quantity += move.product_uom_qty
 
             line = {
                 'number': str(num),
