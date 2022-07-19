@@ -48,26 +48,26 @@ msgstr ""
 msgid ""
 "<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">\n"
 "                                    Validity:</strong><br/><strong style=\"font-weight:700; padding-left:5px;\">From\n"
-"                                    Ene-22 to Ene-24</strong>"
+"                                    Oct-21 to Oct-23</strong>"
 msgstr ""
 "<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">\n"
 "                                    Vigencia:</strong><br/><strong style=\"font-weight:700; padding-left:5px;\">Desde\n"
-"                                    Ene-22 to Ene-24</strong>"
+"                                    Oct-21 to Oct-23</strong>"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
 msgid ""
 "<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Code: "
-"FPRC-PRO-002-1</strong>"
+"FPRC-PRO-001-1</strong>"
 msgstr ""
 "<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Código: "
-"FPRC-PRO-002-1</strong>"
+"FPRC-PRO-001-1</strong>"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
 msgid ""
 "<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">ID: "
-"72</strong>"
+"27</strong>"
 msgstr ""
 
 #. module: setting_mrp
@@ -167,8 +167,8 @@ msgid ""
 "Heavy\n"
 "                                        quantity"
 msgstr ""
-"GRAN\n"
-"                                        CANTIDAD"
+"Cantidad\n"
+"                                        Pesada (g)"
 
 #. module: setting_mrp
 #: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__id
@@ -316,8 +316,8 @@ msgid ""
 "Theoretical\n"
 "                                        Quantity(g)"
 msgstr ""
-"CANTIDAD\n"
-"                                        TEÓRICA(g)"
+"Cantidad\n"
+"                                        teórica(g)"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
@@ -332,3 +332,8 @@ msgid ""
 msgstr ""
 "Vo.\n"
 "                                        Bo. DIRECTOR TÉCNICO"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "pH:"
+msgstr ""
