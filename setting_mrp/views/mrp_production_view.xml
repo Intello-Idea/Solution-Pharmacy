@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data> 
+        <!-- Herencia de vista mrp_production_form_view_base_epithelium 28-04-2022 Routh Milano -->
+        <record id="mrp_production_base_epithelium_form_view_setting_mrp" model="ir.ui.view">
+            <field name="name">mrp.production.base.epithelium.form.view.setting.mrp</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="base_epithelium.mrp_production_form_view_base_epithelium"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='size']" position="replace">
+                    <!--
+                        start
+                        Programmer: Routh Milano
+                        Date: 26-04-2022
+                        Requirement: Incluír campos nuevos y modificar existentes
+                    -->
+                    <label for="size" string="Size"/>
+                    <div>
+                        <field name="size" class="oe_inline"/>
+                        <field name="dough" nolabel="1" class="oe_inline"
+                               style="margin-left:5px; max-width:40%;"/>
+                    </div>
+                    <field name="bulk_size" force_save="1"/>
+                    <!--
+                        Programmer: Routh Milano Date: 26-04-2022
+                    -->
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mrp_production_form_view_setting_mrp" model="ir.ui.view">
+            <field name="name">mrp.production.form.view.setting.mrp</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <!--
+                    start
+                    Programmer: Routh Milano
+                    Date: 26-04-2022
+                    Requirement: Incluír campo nuevo de fecha de vencimiento
+                -->
+                <xpath expr="//sheet/group/group[@name='group_extra_info']/field[@name='user_id']" position="before">
+                    <field name="expiration_date_sp"/>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <!--
+                        start
+                        Programmer: Routh Milano
+                        Date: 26-04-2022
+                        Requirement: Incluír campos nuevos y modificar existentes
+                    -->
+                    <field name="partner_sale_id" attrs="{'invisible': [('partner_sale_id', '=', False)]}"/>
+                    <field name="partner_id" attrs="{'invisible': [('partner_sale_id', '!=', False)]}"/>
+                    <field name="client_code" attrs="{'invisible': [('partner_sale_id', '!=', False)]}"/>
+                    <field name="client_code_sale" attrs="{'invisible': [('partner_sale_id', '=', False)]}"/>
+                    <field name="patient" attrs="{'invisible': [('partner_sale_id', '!=', False)]}"/>
+                    <field name="patient_sale" attrs="{'invisible': [('partner_sale_id', '=', False)]}"/>
+                    
+                    <!--
+                        Programmer: Routh Milano Date: 26-04-2022
+                    -->
+                </xpath>
+                <!--
+                    end
+                    Programmer: Routh Milano Date: 26-04-2022
+                -->
+            </field>
+        </record>
+
+    </data>
+</odoo>

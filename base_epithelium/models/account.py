@@ -44,7 +44,15 @@ class AccountMove(models.Model):
 
     invoice_user_id = fields.Many2one('res.users', copy=False, tracking=True,
                                       string='Salesperson', default=lambda self: self.env.user)
-                                      
+
+    type = fields.Selection([("entry", "Asiento contable"),
+                             ("out_invoice", "Factura de cliente"),
+                             ("out_refund", "Nota crédito de cliente"),
+                             ("in_invoice", "Factura de proveedor"),
+                             ("in_refund", "Nota crédito de proveedor"),
+                             ("out_receipt", "Recibo de ventas"),
+                             ("in_receipt", "Recibo de compra")], string="Tipo de documento")
+
 
     @api.onchange('partner_id')
     def charge_vendor(self):

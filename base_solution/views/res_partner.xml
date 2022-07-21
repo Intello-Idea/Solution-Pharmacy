@@ -16,7 +16,7 @@
             <field name="name">Type client form</field>
             <field name="model">type.client</field>
             <field name="arch" type="xml">
-            <form string="Type client">
+            <form string="Tipo de cliente">
                 <sheet>
                     <group>
                         <group>

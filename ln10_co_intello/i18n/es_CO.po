@@ -4,23 +4,16 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0-20210927\n"
+"Project-Id-Version: Odoo Server 14.0+e-20211014\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-24 15:55+0000\n"
-"PO-Revision-Date: 2021-11-24 10:56-0500\n"
+"POT-Creation-Date: 2022-04-28 21:35+0000\n"
+"PO-Revision-Date: 2022-04-28 21:35+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: es_CO\n"
-"X-Generator: Poedit 2.3\n"
-
-#. module: ln10_co_intello
-#: model:ir.model.constraint,message:ln10_co_intello.constraint_book_account_name_Unique_book
-msgid "!you can not have more than one name for a book¡"
-msgstr "!No puede tener mas de un nombre por libro¡"
 
 #. module: ln10_co_intello
 #: model_terms:ir.ui.view,arch_db:ln10_co_intello.inherit_sale_report
@@ -171,47 +164,9 @@ msgid "Acandí"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_account_account
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_name__account_id
-msgid "Account"
-msgstr "Cuenta"
-
-#. module: ln10_co_intello
-#: model:ir.ui.menu,name:ln10_co_intello.menu_month_block_view
-msgid "Account Month Block "
-msgstr "Bloqueo por mes "
-
-#. module: ln10_co_intello
 #: model:ir.model,name:ln10_co_intello.model_account_move_reversal
 msgid "Account Move Reversal"
 msgstr "Revocación de movimiento en cuenta"
-
-#. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_account_print_journal
-msgid "Account Print Journal"
-msgstr "Contabilidad. Imprimir diario"
-
-#. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_account_report
-msgid "Account Report"
-msgstr "Informe financiero"
-
-#. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_account_financial_html_report_line
-msgid "Account Report (HTML Line)"
-msgstr "Informe de cuenta (línea HTML)"
-
-#. module: ln10_co_intello
-#: model:ir.actions.act_window,name:ln10_co_intello.action_accounting_book
-#: model:ir.ui.menu,name:ln10_co_intello.menu_account_multibook
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.accounting_book_tree
-msgid "Accounting Book"
-msgstr "Libros de contabilidad"
-
-#. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.accounting_book_form
-msgid "Accounting Book Name"
-msgstr "Nombre del libro de contabilidad"
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_606
@@ -222,11 +177,6 @@ msgstr ""
 #: model:res.city,name:ln10_co_intello.res_city_co_151
 msgid "Achí"
 msgstr ""
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu__action_id
-msgid "Action"
-msgstr "Acción"
 
 #. module: ln10_co_intello
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_financial_report_save__action_client
@@ -242,6 +192,11 @@ msgstr "Ventana de acciones"
 #. module: ln10_co_intello
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu_save__action_window_old
 msgid "Action Window Old"
+msgstr ""
+
+#. module: ln10_co_intello
+#: model:ir.model,name:ln10_co_intello.model_res_partner
+msgid "Add customer type field"
 msgstr ""
 
 #. module: ln10_co_intello
@@ -290,13 +245,15 @@ msgid "Aipe"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_347 model:res.city,name:ln10_co_intello.res_city_co_643
+#: model:res.city,name:ln10_co_intello.res_city_co_347
+#: model:res.city,name:ln10_co_intello.res_city_co_643
 #: model:res.city,name:ln10_co_intello.res_city_co_848
 msgid "Albania"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_460 model:res.city,name:ln10_co_intello.res_city_co_717
+#: model:res.city,name:ln10_co_intello.res_city_co_460
+#: model:res.city,name:ln10_co_intello.res_city_co_717
 msgid "Albán"
 msgstr ""
 
@@ -457,12 +414,6 @@ msgid "Apply Tax"
 msgstr "Aplicar impuesto"
 
 #. module: ln10_co_intello
-#: model:ir.actions.act_window,name:ln10_co_intello.action_multi_book_accounting
-#: model:ir.ui.menu,name:ln10_co_intello.menu_multi_book_accounting
-msgid "Approved accounts"
-msgstr "Cuentas homologas"
-
-#. module: ln10_co_intello
 #: model:ir.model.fields.selection,name:ln10_co_intello.selection__account_month_block__month__04
 msgid "April"
 msgstr "Abril"
@@ -538,7 +489,8 @@ msgid "Arenal"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1010 model:res.city,name:ln10_co_intello.res_city_co_15
+#: model:res.city,name:ln10_co_intello.res_city_co_1010
+#: model:res.city,name:ln10_co_intello.res_city_co_15
 #: model:res.city,name:ln10_co_intello.res_city_co_364
 msgid "Argelia"
 msgstr ""
@@ -554,7 +506,8 @@ msgid "Arjona"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_16 model:res.city,name:ln10_co_intello.res_city_co_820
+#: model:res.city,name:ln10_co_intello.res_city_co_16
+#: model:res.city,name:ln10_co_intello.res_city_co_820
 msgid "Armenia"
 msgstr ""
 
@@ -594,21 +547,6 @@ msgid "Autoriza del"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_account_auxiliary_report
-msgid "Auxiliary Report"
-msgstr "Reporte Auxiliar de Cuentas"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_result_sales__average_year
-msgid "Average x año"
-msgstr "Promedio por año"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_result_sales__average_semester
-msgid "Average x semester"
-msgstr "Promedio por semestre"
-
-#. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_430
 msgid "Ayapel"
 msgstr ""
@@ -629,7 +567,8 @@ msgid "Bajo baudó"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_365 model:res.city,name:ln10_co_intello.res_city_co_834
+#: model:res.city,name:ln10_co_intello.res_city_co_365
+#: model:res.city,name:ln10_co_intello.res_city_co_834
 msgid "Balboa"
 msgstr ""
 
@@ -654,7 +593,8 @@ msgid "Barbacoas"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_17 model:res.city,name:ln10_co_intello.res_city_co_850
+#: model:res.city,name:ln10_co_intello.res_city_co_17
+#: model:res.city,name:ln10_co_intello.res_city_co_850
 msgid "Barbosa"
 msgstr ""
 
@@ -700,11 +640,6 @@ msgid "Base"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.multi_book_accounting_form
-msgid "Base And Approved"
-msgstr "Base y aprobado"
-
-#. module: ln10_co_intello
 #: model:ir.model.fields,field_description:ln10_co_intello.field_product_pricelist_item__base_price
 msgid "Base Price"
 msgstr ""
@@ -740,7 +675,8 @@ msgid "Beltrán"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_200 model:res.city,name:ln10_co_intello.res_city_co_722
+#: model:res.city,name:ln10_co_intello.res_city_co_200
+#: model:res.city,name:ln10_co_intello.res_city_co_722
 msgid "Belén"
 msgstr ""
 
@@ -765,7 +701,8 @@ msgid "Betania"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_21 model:res.city,name:ln10_co_intello.res_city_co_853
+#: model:res.city,name:ln10_co_intello.res_city_co_21
+#: model:res.city,name:ln10_co_intello.res_city_co_853
 msgid "Betulia"
 msgstr ""
 
@@ -805,41 +742,11 @@ msgid "Bojayá"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1011 model:res.city,name:ln10_co_intello.res_city_co_366
+#: model:res.city,name:ln10_co_intello.res_city_co_1011
+#: model:res.city,name:ln10_co_intello.res_city_co_366
 #: model:res.city,name:ln10_co_intello.res_city_co_854
 msgid "Bolívar"
 msgstr ""
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu__book_id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_month_block__book
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_move__book
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_line__book
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_print_journal__book_id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_name__book
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_wizard__book_id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_report_wizard__book_id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_multi_book_account__book
-#: model:ir.model.fields,field_description:ln10_co_intello.field_own_accounts__book
-#: model:ir.model.fields,field_description:ln10_co_intello.field_report_account_auxiliary_wizard__book_id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_selection_book__book
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.report_account_wizard_view
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.view_account_month_block_form
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.view_month_block_search
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.view_multi_book_account_search
-msgid "Book"
-msgstr "Libro"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_account__book_account_name
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.view_inherit_account_account_form
-msgid "Book Account Name"
-msgstr "Nombre de cuenta por libro"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_accounting_book__book_principal
-msgid "Book Principal"
-msgstr "Libro principal"
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_409
@@ -852,7 +759,8 @@ msgid "Boyacá"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_205 model:res.city,name:ln10_co_intello.res_city_co_23
+#: model:res.city,name:ln10_co_intello.res_city_co_205
+#: model:res.city,name:ln10_co_intello.res_city_co_23
 msgid "Briceño"
 msgstr ""
 
@@ -872,8 +780,10 @@ msgid "Buenaventura"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_206 model:res.city,name:ln10_co_intello.res_city_co_431
-#: model:res.city,name:ln10_co_intello.res_city_co_821 model:res.city,name:ln10_co_intello.res_city_co_934
+#: model:res.city,name:ln10_co_intello.res_city_co_206
+#: model:res.city,name:ln10_co_intello.res_city_co_431
+#: model:res.city,name:ln10_co_intello.res_city_co_821
+#: model:res.city,name:ln10_co_intello.res_city_co_934
 msgid "Buenavista"
 msgstr ""
 
@@ -918,7 +828,8 @@ msgid "CUFE:"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_467 model:res.city,name:ln10_co_intello.res_city_co_855
+#: model:res.city,name:ln10_co_intello.res_city_co_467
+#: model:res.city,name:ln10_co_intello.res_city_co_855
 msgid "Cabrera"
 msgstr ""
 
@@ -968,7 +879,8 @@ msgid "Cajicá"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1109 model:res.city,name:ln10_co_intello.res_city_co_157
+#: model:res.city,name:ln10_co_intello.res_city_co_1109
+#: model:res.city,name:ln10_co_intello.res_city_co_157
 msgid "Calamar"
 msgstr ""
 
@@ -978,7 +890,8 @@ msgid "Calarcá"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_208 model:res.city,name:ln10_co_intello.res_city_co_27
+#: model:res.city,name:ln10_co_intello.res_city_co_208
+#: model:res.city,name:ln10_co_intello.res_city_co_27
 msgid "Caldas"
 msgstr ""
 
@@ -1033,19 +946,8 @@ msgid "Canalete"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.book_account_wizard_view
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.book_report_wizard_view
-msgid "Cancel"
-msgstr "Cancelar"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__net_sales__state__cancel
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__quarterly_sales__state__cancel
-msgid "Cancelled"
-msgstr "Cancelada"
-
-#. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1017 model:res.city,name:ln10_co_intello.res_city_co_129
+#: model:res.city,name:ln10_co_intello.res_city_co_1017
+#: model:res.city,name:ln10_co_intello.res_city_co_129
 msgid "Candelaria"
 msgstr ""
 
@@ -1150,11 +1052,6 @@ msgid "Category Value"
 msgstr "Valor de la categoria"
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_quarterly_sales__category
-msgid "Category product"
-msgstr "Categoria del producto"
-
-#. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_35
 msgid "Caucasia"
 msgstr ""
@@ -1215,11 +1112,6 @@ msgid "Charalá"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_account_coa_report
-msgid "Chart of Account Report"
-msgstr "Reporte de Plan de Cuentas"
-
-#. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_862
 msgid "Charta"
 msgstr ""
@@ -1227,10 +1119,11 @@ msgstr ""
 #. module: ln10_co_intello
 #: model:ir.model.fields,help:ln10_co_intello.field_res_company__country_enforce_cities
 msgid ""
-"Check this box to ensure every address created in that country has a 'City' chosen in the list of the country's cities."
+"Check this box to ensure every address created in that country has a 'City' "
+"chosen in the list of the country's cities."
 msgstr ""
-"Marque esta casilla para asegurarse de que cada dirección creada en ese país tenga una 'Ciudad' elegida en la lista de "
-"ciudades del país."
+"Marque esta casilla para asegurarse de que cada dirección creada en ese país"
+" tenga una 'Ciudad' elegida en la lista de ciudades del país."
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_36
@@ -1373,9 +1266,8 @@ msgid "Cisneros"
 msgstr ""
 
 #. module: ln10_co_intello
-#: code:addons/ln10_co_intello/models/res_partner.py:0 model:ir.model,name:ln10_co_intello.model_res_city
-#: model:ir.model.fields,field_description:ln10_co_intello.field_net_sales__city
-#: model:ir.model.fields,field_description:ln10_co_intello.field_result_sales__city
+#: code:addons/ln10_co_intello/models/res_partner.py:0
+#: model:ir.model,name:ln10_co_intello.model_res_city
 #: model_terms:ir.ui.view,arch_db:ln10_co_intello.company_dian_form_view
 #, python-format
 msgid "City"
@@ -1485,17 +1377,13 @@ msgid "Colombian Taxes Type defined by DIAN"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_l10n_co_reports_certification_report
-msgid "Colombian certification report"
-msgstr ""
-
-#. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_936
 msgid "Colosó"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1075 model:res.city,name:ln10_co_intello.res_city_co_724
+#: model:res.city,name:ln10_co_intello.res_city_co_1075
+#: model:res.city,name:ln10_co_intello.res_city_co_724
 msgid "Colón"
 msgstr ""
 
@@ -1516,18 +1404,22 @@ msgid "Companies"
 msgstr "Compañías"
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_39 model:res.city,name:ln10_co_intello.res_city_co_866
+#: model:res.city,name:ln10_co_intello.res_city_co_39
+#: model:res.city,name:ln10_co_intello.res_city_co_866
 msgid "Concepción"
 msgstr ""
 
 #. module: ln10_co_intello
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_bank_statement_line__reverse_concept
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move__reverse_concept
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_reversal__note_concept_dian
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_payment__reverse_concept
 msgid "Concept dian"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_40 model:res.city,name:ln10_co_intello.res_city_co_664
+#: model:res.city,name:ln10_co_intello.res_city_co_40
+#: model:res.city,name:ln10_co_intello.res_city_co_664
 msgid "Concordia"
 msgstr ""
 
@@ -1539,7 +1431,7 @@ msgstr ""
 #. module: ln10_co_intello
 #: model:ir.model,name:ln10_co_intello.model_res_config_settings
 msgid "Config Settings"
-msgstr "Opciones de Configuración"
+msgstr "Opciones de configuración"
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_867
@@ -1550,16 +1442,6 @@ msgstr ""
 #: model:res.city,name:ln10_co_intello.res_city_co_725
 msgid "Consacá"
 msgstr ""
-
-#. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_account_consolidated_journal
-msgid "Consolidated Journals Report"
-msgstr "Informe de diarios consolidados"
-
-#. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_res_partner
-msgid "Contact"
-msgstr "Contacto"
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_726
@@ -1622,21 +1504,6 @@ msgid "Cotorra"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_purchase_order__count_invoice
-msgid "Count Invoice"
-msgstr ""
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_multi_book_account__count_account_base
-msgid "Count account Base"
-msgstr "Cuenta cuenta Base"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_multi_book_account__count_approved_account
-msgid "Count account approved"
-msgstr "Cuenta aprobada"
-
-#. module: ln10_co_intello
 #: model:ir.model,name:ln10_co_intello.model_res_country
 #: model_terms:ir.ui.view,arch_db:ln10_co_intello.company_dian_form_view
 #: model_terms:ir.ui.view,arch_db:ln10_co_intello.partner_dian_form_view
@@ -1669,17 +1536,12 @@ msgid "Cravo Norte"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu__create_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu_save__create_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_dian_resolution__create_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_financial_report_save__create_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_month_block__create_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_taxes__create_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_taxes_line__create_uid
-#: model:ir.model.fields,field_description:ln10_co_intello.field_accounting_book__create_uid
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_name__create_uid
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_wizard__create_uid
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_report_wizard__create_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_crm_team_category__create_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_aplicationtaxestype__create_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_ciiucodes__create_uid
@@ -1688,25 +1550,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_nomenclaturedian__create_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_relationfiscalpositions__create_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_taxestype__create_uid
-#: model:ir.model.fields,field_description:ln10_co_intello.field_multi_book_account__create_uid
-#: model:ir.model.fields,field_description:ln10_co_intello.field_own_accounts__create_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_relation_account_move__create_uid
-#: model:ir.model.fields,field_description:ln10_co_intello.field_selection_book__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu__create_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu_save__create_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_dian_resolution__create_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_financial_report_save__create_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_month_block__create_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_taxes__create_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_taxes_line__create_date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_accounting_book__create_date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_name__create_date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_wizard__create_date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_report_wizard__create_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_crm_team_category__create_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_aplicationtaxestype__create_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_ciiucodes__create_date
@@ -1715,10 +1569,7 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_nomenclaturedian__create_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_relationfiscalpositions__create_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_taxestype__create_date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_multi_book_account__create_date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_own_accounts__create_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_relation_account_move__create_date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_selection_book__create_date
 msgid "Created on"
 msgstr "Creado en"
 
@@ -1824,26 +1675,6 @@ msgid "Curumaní"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_net_sales__customer
-#: model:ir.model.fields,field_description:ln10_co_intello.field_result_sales__customer
-msgid "Customer"
-msgstr "Asociado"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__net_sales__type__out_refund
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__quarterly_sales__type__out_refund
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__result_sales__type__out_refund
-msgid "Customer Credit Note"
-msgstr "Nota credito cliente"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__net_sales__type__out_invoice
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__quarterly_sales__type__out_invoice
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__result_sales__type__out_invoice
-msgid "Customer Invoice"
-msgstr "Factura cliente"
-
-#. module: ln10_co_intello
 #: model:ir.model.fields.selection,name:ln10_co_intello.selection__ln10_co_intello_diancodes__type__customs
 msgid "Customs"
 msgstr "Aduana"
@@ -1884,7 +1715,8 @@ msgid "Cómbita"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_160 model:res.city,name:ln10_co_intello.res_city_co_727
+#: model:res.city,name:ln10_co_intello.res_city_co_160
+#: model:res.city,name:ln10_co_intello.res_city_co_727
 #: model:res.city,name:ln10_co_intello.res_city_co_824
 msgid "Córdoba"
 msgstr ""
@@ -1971,13 +1803,6 @@ msgid "Dagua"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_net_sales__date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_quarterly_sales__date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_result_sales__date
-msgid "Date"
-msgstr "Fecha"
-
-#. module: ln10_co_intello
 #: model:ir.model.fields.selection,name:ln10_co_intello.selection__ln10_co_intello_diancodes__type__debitnote
 msgid "Debit Note Concept"
 msgstr "Concepto de Nota Crédito"
@@ -1995,22 +1820,13 @@ msgstr "Defina la relación de la posición fiscal"
 #. module: ln10_co_intello
 #: model:ir.model,name:ln10_co_intello.model_ln10_co_intello_aplicationtaxestype
 msgid "Define Tax Type application for Fiscal Position Relations"
-msgstr "Defina la aplicación de tipo de impuesto para relaciones de posición fiscal"
+msgstr ""
+"Defina la aplicación de tipo de impuesto para relaciones de posición fiscal"
 
 #. module: ln10_co_intello
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_relationfiscalpositions__dst_fiscal_position
 msgid "Destination Fiscal Position"
 msgstr "Posición Fiscal de Destino"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_accounting_book__detail
-msgid "Detail"
-msgstr "Detalle"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_accounting_book__detail_own_accounts
-msgid "Detail Own Accounts"
-msgstr "Detalle de cuentas propias"
 
 #. module: ln10_co_intello
 #: model:ir.model.fields,field_description:ln10_co_intello.field_res_partner__dian_address
@@ -2024,17 +1840,21 @@ msgid "Dibulla"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu__display_name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu_save__display_name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_dian_resolution__display_name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_financial_report_save__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_fiscal_position__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_invoice_report__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_journal__display_name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_month_block__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_move__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_reversal__display_name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_taxes__display_name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_taxes_line__display_name
-#: model:ir.model.fields,field_description:ln10_co_intello.field_accounting_book__display_name
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_name__display_name
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_wizard__display_name
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_report_wizard__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_payment__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_tax__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_crm_team__display_name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_crm_team_category__display_name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_aplicationtaxestype__display_name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_ciiucodes__display_name
@@ -2043,13 +1863,20 @@ msgstr ""
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_nomenclaturedian__display_name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_relationfiscalpositions__display_name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_taxestype__display_name
-#: model:ir.model.fields,field_description:ln10_co_intello.field_multi_book_account__display_name
-#: model:ir.model.fields,field_description:ln10_co_intello.field_net_sales__display_name
-#: model:ir.model.fields,field_description:ln10_co_intello.field_own_accounts__display_name
-#: model:ir.model.fields,field_description:ln10_co_intello.field_quarterly_sales__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_product_pricelist__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_product_pricelist_item__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_product_template__display_name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_relation_account_move__display_name
-#: model:ir.model.fields,field_description:ln10_co_intello.field_result_sales__display_name
-#: model:ir.model.fields,field_description:ln10_co_intello.field_selection_book__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_city__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_company__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_country__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_country_state__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_currency_rate__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_lang__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_partner__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_sale_order__display_name
+#: model:ir.model.fields,field_description:ln10_co_intello.field_uom_uom__display_name
 msgid "Display Name"
 msgstr "Mostrar Nombre"
 
@@ -2078,17 +1905,6 @@ msgstr ""
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_836
 msgid "Dosquebradas"
-msgstr ""
-
-#. module: ln10_co_intello
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__net_sales__state__draft
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__quarterly_sales__state__draft
-msgid "Draft"
-msgstr "Borrador"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_relation_account_move__dst_book
-msgid "Dst Book"
 msgstr ""
 
 #. module: ln10_co_intello
@@ -2271,7 +2087,8 @@ msgid "El Peñol"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_164 model:res.city,name:ln10_co_intello.res_city_co_482
+#: model:res.city,name:ln10_co_intello.res_city_co_164
+#: model:res.city,name:ln10_co_intello.res_city_co_482
 #: model:res.city,name:ln10_co_intello.res_city_co_873
 msgid "El Peñón"
 msgstr ""
@@ -2322,7 +2139,8 @@ msgid "El Tablón de Gómez"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_372 model:res.city,name:ln10_co_intello.res_city_co_736
+#: model:res.city,name:ln10_co_intello.res_city_co_372
+#: model:res.city,name:ln10_co_intello.res_city_co_736
 msgid "El Tambo"
 msgstr ""
 
@@ -2393,11 +2211,13 @@ msgstr ""
 
 #. module: ln10_co_intello
 #: code:addons/ln10_co_intello/models/product_pricelist.py:0
+#: code:addons/ln10_co_intello/models/product_pricelist.py:0
 #, python-format
 msgid "Error in price rule \n"
 msgstr "Error en la regla de precios \n"
 
 #. module: ln10_co_intello
+#: code:addons/ln10_co_intello/models/product_pricelist.py:0
 #: code:addons/ln10_co_intello/models/product_pricelist.py:0
 #, python-format
 msgid "Error in price rule of product "
@@ -2414,7 +2234,9 @@ msgid "Establishment"
 msgstr "Establecimiento"
 
 #. module: ln10_co_intello
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_bank_statement_line__exchange_rate
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move__exchange_rate
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_payment__exchange_rate
 msgid "Exchange rate"
 msgstr ""
 
@@ -2534,7 +2356,8 @@ msgid "Flandes"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_346 model:res.city,name:ln10_co_intello.res_city_co_373
+#: model:res.city,name:ln10_co_intello.res_city_co_346
+#: model:res.city,name:ln10_co_intello.res_city_co_373
 msgid "Florencia"
 msgstr ""
 
@@ -2569,12 +2392,6 @@ msgid "Fonseca"
 msgstr ""
 
 #. module: ln10_co_intello
-#: code:addons/ln10_co_intello/models/account_report.py:0
-#, python-format
-msgid "Form content is missing, this report cannot be printed."
-msgstr "Falta el contenido del formulario, este informe no se puede imprimir."
-
-#. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_1051
 msgid "Fortul"
 msgstr ""
@@ -2600,7 +2417,9 @@ msgid "Fresno"
 msgstr ""
 
 #. module: ln10_co_intello
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_bank_statement_line__from_sale_order
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move__from_sale_order
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_payment__from_sale_order
 msgid "From Sale Order"
 msgstr "Para Orden de Venta"
 
@@ -2717,11 +2536,6 @@ msgid "General Ledger"
 msgstr "Informe del libro mayor"
 
 #. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_account_general_ledger
-msgid "General Ledger Report"
-msgstr "Informe del libro mayor"
-
-#. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_616
 msgid "Gigante"
 msgstr ""
@@ -2762,7 +2576,8 @@ msgid "Gramalote"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_495 model:res.city,name:ln10_co_intello.res_city_co_53
+#: model:res.city,name:ln10_co_intello.res_city_co_495
+#: model:res.city,name:ln10_co_intello.res_city_co_53
 #: model:res.city,name:ln10_co_intello.res_city_co_698
 msgid "Granada"
 msgstr ""
@@ -2770,8 +2585,6 @@ msgstr ""
 #. module: ln10_co_intello
 #: model_terms:ir.ui.view,arch_db:ln10_co_intello.ciiu_codes_view_search
 #: model_terms:ir.ui.view,arch_db:ln10_co_intello.dian_codes_view_search
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.view_month_block_search
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.view_multi_book_account_search
 msgid "Group By"
 msgstr "Agrupar por"
 
@@ -2806,7 +2619,8 @@ msgid "Guachucal"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_54 model:res.city,name:ln10_co_intello.res_city_co_617
+#: model:res.city,name:ln10_co_intello.res_city_co_54
+#: model:res.city,name:ln10_co_intello.res_city_co_617
 #: model:res.city,name:ln10_co_intello.res_city_co_883
 msgid "Guadalupe"
 msgstr ""
@@ -2827,7 +2641,8 @@ msgid "Gualmatán"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_669 model:res.city,name:ln10_co_intello.res_city_co_699
+#: model:res.city,name:ln10_co_intello.res_city_co_669
+#: model:res.city,name:ln10_co_intello.res_city_co_699
 msgid "Guamal"
 msgstr ""
 
@@ -2947,12 +2762,6 @@ msgid "Hacarí"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_bank_statement_import_journal_creation__handle_book
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_journal__handle_book
-msgid "Handle Book"
-msgstr "Maneja libro"
-
-#. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_165
 msgid "Hatillo de Loba"
 msgstr ""
@@ -2998,32 +2807,26 @@ msgid "Hobo"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.accounting_book_form
-msgid "Homologous"
-msgstr "Homólogo"
-
-#. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_980
 msgid "Honda"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.groups,name:ln10_co_intello.access_main_hr_menu
-msgid "Hr Main Menu"
-msgstr "Menú principal"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu__id
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu_save__id
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_dian_resolution__id
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_financial_report_save__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_fiscal_position__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_invoice_report__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_journal__id
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_month_block__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_move__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_line__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_reversal__id
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_taxes__id
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_taxes_line__id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_accounting_book__id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_name__id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_wizard__id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_report_wizard__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_payment__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_tax__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_crm_team__id
 #: model:ir.model.fields,field_description:ln10_co_intello.field_crm_team_category__id
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_aplicationtaxestype__id
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_ciiucodes__id
@@ -3032,30 +2835,27 @@ msgstr "Menú principal"
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_nomenclaturedian__id
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_relationfiscalpositions__id
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_taxestype__id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_multi_book_account__id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_net_sales__id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_own_accounts__id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_quarterly_sales__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_product_pricelist__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_product_pricelist_item__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_product_template__id
 #: model:ir.model.fields,field_description:ln10_co_intello.field_relation_account_move__id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_result_sales__id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_selection_book__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_city__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_company__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_config_settings__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_country__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_country_state__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_currency_rate__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_lang__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_partner__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_sale_order__id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_uom_uom__id
 msgid "ID"
 msgstr ""
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_accounting_book__id_book
-msgid "ID Book"
-msgstr "ID Libro"
 
 #. module: ln10_co_intello
 #: model_terms:ir.ui.view,arch_db:ln10_co_intello.invoice_report_custom
 msgid "ID PROD"
 msgstr ""
-
-#. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.accounting_book_form
-msgid "ID and Name Book"
-msgstr "ID y Nombre de Libro"
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_959
@@ -3066,11 +2866,6 @@ msgstr ""
 #: model:res.city,name:ln10_co_intello.res_city_co_981
 msgid "Icononzo"
 msgstr ""
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu__id_book
-msgid "Id Book"
-msgstr "ID Libro"
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_741
@@ -3123,12 +2918,6 @@ msgid "Imués"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__net_sales__invoice_payment_state__in_payment
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__quarterly_sales__invoice_payment_state__in_payment
-msgid "In Payment"
-msgstr "En pago"
-
-#. module: ln10_co_intello
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_ciiucodes__industry_id
 #: model_terms:ir.ui.view,arch_db:ln10_co_intello.ciiu_codes_view_search
 msgid "Industry"
@@ -3145,12 +2934,6 @@ msgid "Initial Date"
 msgstr "Fecha inicial"
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_accounting_book__initials
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.accounting_book_form
-msgid "Initials"
-msgstr "Iniciales"
-
-#. module: ln10_co_intello
 #: model:res.groups,name:ln10_co_intello.make_invisible
 msgid "Invisible"
 msgstr ""
@@ -3162,26 +2945,17 @@ msgid "Invoice Resolution"
 msgstr "Resolución de factura"
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_net_sales__state
-#: model:ir.model.fields,field_description:ln10_co_intello.field_quarterly_sales__state
-msgid "Invoice Status"
-msgstr "Estado de la factura"
-
-#. module: ln10_co_intello
 #: code:addons/ln10_co_intello/models/account.py:0
 #, python-format
 msgid "Invoice resolution and resolution note cant equals"
-msgstr "La resolución de la factura y la resolución de nota crédito no pueden ser iguales"
+msgstr ""
+"La resolución de la factura y la resolución de nota crédito no pueden ser "
+"iguales"
 
 #. module: ln10_co_intello
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_invoice_report__invoiced_target
 msgid "Invoiced target"
 msgstr "Meta Facturación"
-
-#. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.book_report_wizard_view
-msgid "Invoices"
-msgstr ""
 
 #. module: ln10_co_intello
 #: model:ir.model,name:ln10_co_intello.model_account_invoice_report
@@ -3204,13 +2978,9 @@ msgid "Ipiales"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_print_journal__is_multi_book
-#: model:ir.model.fields,field_description:ln10_co_intello.field_report_account_auxiliary_wizard__is_multi_book
-msgid "Is Multi Book"
-msgstr ""
-
-#. module: ln10_co_intello
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_bank_statement_line__is_replicated
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move__is_replicated
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_payment__is_replicated
 msgid "Is Replicated"
 msgstr ""
 
@@ -3265,7 +3035,8 @@ msgid "Jenesano"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_241 model:res.city,name:ln10_co_intello.res_city_co_62
+#: model:res.city,name:ln10_co_intello.res_city_co_241
+#: model:res.city,name:ln10_co_intello.res_city_co_62
 msgid "Jericó"
 msgstr ""
 
@@ -3290,9 +3061,14 @@ msgid "Journal"
 msgstr "Diario"
 
 #. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_account_move model:ir.ui.menu,name:ln10_co_intello.menu_journal_entries
+#: model:ir.ui.menu,name:ln10_co_intello.menu_journal_entries
 msgid "Journal Entries"
 msgstr "Asientos contables"
+
+#. module: ln10_co_intello
+#: model:ir.model,name:ln10_co_intello.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento del Libro"
 
 #. module: ln10_co_intello
 #: model:ir.model,name:ln10_co_intello.model_account_move_line
@@ -3300,7 +3076,8 @@ msgid "Journal Item"
 msgstr "Apunte contable"
 
 #. module: ln10_co_intello
-#: code:addons/ln10_co_intello/models/account.py:0 model:ir.ui.menu,name:ln10_co_intello.menu_journal_item
+#: code:addons/ln10_co_intello/models/account.py:0
+#: model:ir.ui.menu,name:ln10_co_intello.menu_journal_item
 #, python-format
 msgid "Journal Items"
 msgstr "Apuntes contables"
@@ -3451,7 +3228,8 @@ msgid "La Palma"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_424 model:res.city,name:ln10_co_intello.res_city_co_892
+#: model:res.city,name:ln10_co_intello.res_city_co_424
+#: model:res.city,name:ln10_co_intello.res_city_co_892
 msgid "La Paz"
 msgstr ""
 
@@ -3501,7 +3279,8 @@ msgid "La Tola"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_66 model:res.city,name:ln10_co_intello.res_city_co_748
+#: model:res.city,name:ln10_co_intello.res_city_co_66
+#: model:res.city,name:ln10_co_intello.res_city_co_748
 #: model:res.city,name:ln10_co_intello.res_city_co_943
 msgid "La Unión"
 msgstr ""
@@ -3512,7 +3291,8 @@ msgid "La Uvita"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_379 model:res.city,name:ln10_co_intello.res_city_co_510
+#: model:res.city,name:ln10_co_intello.res_city_co_379
+#: model:res.city,name:ln10_co_intello.res_city_co_510
 msgid "La Vega"
 msgstr ""
 
@@ -3537,7 +3317,8 @@ msgid "La unión"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1030 model:res.city,name:ln10_co_intello.res_city_co_1093
+#: model:res.city,name:ln10_co_intello.res_city_co_1030
+#: model:res.city,name:ln10_co_intello.res_city_co_1093
 msgid "La victoria"
 msgstr ""
 
@@ -3573,17 +3354,21 @@ msgid "Languages"
 msgstr "Idiomas"
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu____last_update
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu_save____last_update
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_dian_resolution____last_update
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_financial_report_save____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_fiscal_position____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_invoice_report____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_journal____last_update
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_month_block____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_move____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_reversal____last_update
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_taxes____last_update
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_taxes_line____last_update
-#: model:ir.model.fields,field_description:ln10_co_intello.field_accounting_book____last_update
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_name____last_update
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_wizard____last_update
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_report_wizard____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_payment____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_tax____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_crm_team____last_update
 #: model:ir.model.fields,field_description:ln10_co_intello.field_crm_team_category____last_update
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_aplicationtaxestype____last_update
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_ciiucodes____last_update
@@ -3592,28 +3377,30 @@ msgstr "Idiomas"
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_nomenclaturedian____last_update
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_relationfiscalpositions____last_update
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_taxestype____last_update
-#: model:ir.model.fields,field_description:ln10_co_intello.field_multi_book_account____last_update
-#: model:ir.model.fields,field_description:ln10_co_intello.field_net_sales____last_update
-#: model:ir.model.fields,field_description:ln10_co_intello.field_own_accounts____last_update
-#: model:ir.model.fields,field_description:ln10_co_intello.field_quarterly_sales____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_product_pricelist____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_product_pricelist_item____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_product_template____last_update
 #: model:ir.model.fields,field_description:ln10_co_intello.field_relation_account_move____last_update
-#: model:ir.model.fields,field_description:ln10_co_intello.field_result_sales____last_update
-#: model:ir.model.fields,field_description:ln10_co_intello.field_selection_book____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_city____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_company____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_country____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_country_state____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_currency_rate____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_lang____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_res_partner____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_sale_order____last_update
+#: model:ir.model.fields,field_description:ln10_co_intello.field_uom_uom____last_update
 msgid "Last Modified on"
 msgstr "Última modificación el"
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu__write_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu_save__write_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_dian_resolution__write_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_financial_report_save__write_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_month_block__write_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_taxes__write_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_taxes_line__write_uid
-#: model:ir.model.fields,field_description:ln10_co_intello.field_accounting_book__write_uid
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_name__write_uid
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_wizard__write_uid
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_report_wizard__write_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_crm_team_category__write_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_aplicationtaxestype__write_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_ciiucodes__write_uid
@@ -3622,25 +3409,17 @@ msgstr "Última modificación el"
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_nomenclaturedian__write_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_relationfiscalpositions__write_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_taxestype__write_uid
-#: model:ir.model.fields,field_description:ln10_co_intello.field_multi_book_account__write_uid
-#: model:ir.model.fields,field_description:ln10_co_intello.field_own_accounts__write_uid
 #: model:ir.model.fields,field_description:ln10_co_intello.field_relation_account_move__write_uid
-#: model:ir.model.fields,field_description:ln10_co_intello.field_selection_book__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización por"
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu__write_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu_save__write_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_dian_resolution__write_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_financial_report_save__write_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_month_block__write_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_taxes__write_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_taxes_line__write_date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_accounting_book__write_date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_name__write_date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_wizard__write_date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_report_wizard__write_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_crm_team_category__write_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_aplicationtaxestype__write_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_ciiucodes__write_date
@@ -3649,10 +3428,7 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_nomenclaturedian__write_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_relationfiscalpositions__write_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_taxestype__write_date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_multi_book_account__write_date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_own_accounts__write_date
 #: model:ir.model.fields,field_description:ln10_co_intello.field_relation_account_move__write_date
-#: model:ir.model.fields,field_description:ln10_co_intello.field_selection_book__write_date
 msgid "Last Updated on"
 msgstr "Ultima actualización en"
 
@@ -3963,16 +3739,6 @@ msgid "Menu"
 msgstr "Menú"
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_book_menu__menu_item_id
-msgid "Menu Item"
-msgstr "Opción del menú"
-
-#. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_account_book_menu
-msgid "Menu and action for accounting book"
-msgstr ""
-
-#. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_381
 msgid "Mercaderes"
 msgstr ""
@@ -3993,7 +3759,8 @@ msgid "Min. Margin"
 msgstr "Min. Margen"
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1111 model:res.city,name:ln10_co_intello.res_city_co_249
+#: model:res.city,name:ln10_co_intello.res_city_co_1111
+#: model:res.city,name:ln10_co_intello.res_city_co_249
 msgid "Miraflores"
 msgstr ""
 
@@ -4058,16 +3825,6 @@ msgid "Moniquirá"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.view_account_month_block_form
-msgid "Mont And Year"
-msgstr "Mes y Año"
-
-#. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.view_mont_block_tree
-msgid "Mont Block"
-msgstr "Bloqueo de mes"
-
-#. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_70
 msgid "Montebello"
 msgstr ""
@@ -4103,20 +3860,8 @@ msgid "Month"
 msgstr "Mes"
 
 #. module: ln10_co_intello
-#: model:ir.actions.act_window,name:ln10_co_intello.action_month_block_view
-#: model:ir.model.fields,field_description:ln10_co_intello.field_accounting_book__month_block
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.accounting_book_form
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.view_account_month_block_form
-msgid "Month Block"
-msgstr "Bloqueo de mes"
-
-#. module: ln10_co_intello
-#: model:ir.ui.menu,name:ln10_co_intello.menu_action_result_sales_report_sales
-msgid "Monthly_result_sales"
-msgstr "Ventas mensuales"
-
-#. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_172 model:res.city,name:ln10_co_intello.res_city_co_383
+#: model:res.city,name:ln10_co_intello.res_city_co_172
+#: model:res.city,name:ln10_co_intello.res_city_co_383
 msgid "Morales"
 msgstr ""
 
@@ -4136,7 +3881,8 @@ msgid "Morroa"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_516 model:res.city,name:ln10_co_intello.res_city_co_754
+#: model:res.city,name:ln10_co_intello.res_city_co_516
+#: model:res.city,name:ln10_co_intello.res_city_co_754
 msgid "Mosquera"
 msgstr ""
 
@@ -4165,18 +3911,6 @@ msgstr ""
 #: model:res.city,name:ln10_co_intello.res_city_co_443
 msgid "Moñitos"
 msgstr ""
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_res_config_settings__multi_book
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.res_config_settings_accounting_view_form
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.view_multi_book_account_search
-msgid "Multi Book"
-msgstr "Multilibro"
-
-#. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_multi_book_account
-msgid "Multi Book Accounting"
-msgstr "Contabilidad de multilibro"
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_986
@@ -4222,8 +3956,6 @@ msgstr ""
 #. module: ln10_co_intello
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_dian_resolution__name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_month_block__name
-#: model:ir.model.fields,field_description:ln10_co_intello.field_accounting_book__name
-#: model:ir.model.fields,field_description:ln10_co_intello.field_book_account_name__name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_ciiucodes__name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_diancodes__name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_documenttype__name
@@ -4232,18 +3964,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_taxestype__name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_res_partner__name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_res_users__name
-#: model:ir.model.fields,field_description:ln10_co_intello.field_selection_book__name
 #: model_terms:ir.ui.view,arch_db:ln10_co_intello.partner_dian_form_view
 msgid "Name"
 msgstr "Nombre"
 
 #. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.own_account_form
-msgid "Name and Own Account"
-msgstr "Nombre y cuenta propia"
-
-#. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_517 model:res.city,name:ln10_co_intello.res_city_co_73
+#: model:res.city,name:ln10_co_intello.res_city_co_517
+#: model:res.city,name:ln10_co_intello.res_city_co_73
 #: model:res.city,name:ln10_co_intello.res_city_co_755
 msgid "Nariño"
 msgstr ""
@@ -4282,22 +4009,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:ln10_co_intello.field_product_pricelist_item__price_unit
 msgid "Net Price"
 msgstr "Precio Neto"
-
-#. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_net_sales model:ir.model,name:ln10_co_intello.model_result_sales
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.view_result_sales_pivot
-msgid "Net sales x moth"
-msgstr ""
-
-#. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.product_pricelist_item_inherit_view
-msgid "New Price ="
-msgstr "Nuevo Precio ="
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_selection_book__next_number
-msgid "Next Number"
-msgstr "Siguiente número"
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_519
@@ -4346,12 +4057,6 @@ msgid "Norosí"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__net_sales__invoice_payment_state__not_paid
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__quarterly_sales__invoice_payment_state__not_paid
-msgid "Not Paid"
-msgstr "No pagada"
-
-#. module: ln10_co_intello
 #: model:ir.model.fields.selection,name:ln10_co_intello.selection__account_month_block__month__11
 msgid "November"
 msgstr "Noviembre"
@@ -4367,7 +4072,9 @@ msgid "Nuevo Colón"
 msgstr ""
 
 #. module: ln10_co_intello
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_bank_statement_line__number
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move__number
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_payment__number
 msgid "Number"
 msgstr "Número"
 
@@ -4437,12 +4144,6 @@ msgid "Onzaga"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__net_sales__state__posted
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__quarterly_sales__state__posted
-msgid "Open"
-msgstr "Abierta"
-
-#. module: ln10_co_intello
 #: model:ir.model.fields,field_description:ln10_co_intello.field_ln10_co_intello_taxestype__operation
 msgid "Operation"
 msgstr "Operación"
@@ -4498,23 +4199,6 @@ msgid "Ovejas"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_own_accounts__accounting_account
-msgid "Own Account"
-msgstr "Cuenta propia"
-
-#. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_own_accounts
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.accounting_book_form
-msgid "Own Accounts"
-msgstr "Cuentas propias"
-
-#. module: ln10_co_intello
-#: model:ir.actions.act_window,name:ln10_co_intello.action_Own_Accounts
-#: model:ir.ui.menu,name:ln10_co_intello.menu_action_Own_accounts
-msgid "Own accounts"
-msgstr "Cuentas propias"
-
-#. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_259
 msgid "Pachavita"
 msgstr ""
@@ -4565,7 +4249,8 @@ msgid "Palermo"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_335 model:res.city,name:ln10_co_intello.res_city_co_627
+#: model:res.city,name:ln10_co_intello.res_city_co_335
+#: model:res.city,name:ln10_co_intello.res_city_co_627
 msgid "Palestina"
 msgstr ""
 
@@ -4645,13 +4330,6 @@ msgid "Parent Category"
 msgstr "Categoria padre"
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_net_sales__partner_id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_quarterly_sales__partner_id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_result_sales__partner_id
-msgid "Partner"
-msgstr "Cliente"
-
-#. module: ln10_co_intello
 #: model:ir.actions.server,name:ln10_co_intello.partner_ledger_action_server
 msgid "Partner Ledger"
 msgstr "Libro mayor de empresa"
@@ -4688,12 +4366,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:ln10_co_intello.partner_dian_form_view
 msgid "Payment Method"
 msgstr "Método de pago"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_net_sales__invoice_payment_state
-#: model:ir.model.fields,field_description:ln10_co_intello.field_quarterly_sales__invoice_payment_state
-msgid "Payment Status"
-msgstr "Estado del pago"
 
 #. module: ln10_co_intello
 #: model_terms:ir.ui.view,arch_db:ln10_co_intello.partner_dian_form_view
@@ -4853,7 +4525,9 @@ msgstr ""
 #. module: ln10_co_intello
 #: code:addons/ln10_co_intello/models/tax_mapping_modification.py:0
 #, python-format
-msgid "Please verify, Tax Type is not assigned in tax definition between Partner and Company Fiscal Position "
+msgid ""
+"Please verify, Tax Type is not assigned in tax definition between Partner "
+"and Company Fiscal Position "
 msgstr ""
 
 #. module: ln10_co_intello
@@ -4885,7 +4559,7 @@ msgstr ""
 #: code:addons/ln10_co_intello/models/account.py:0
 #, python-format
 msgid "Posted journal entry must have an unique sequence number per company."
-msgstr "El asiento contable validado debe tener un número de secuencia único por compañía."
+msgstr ""
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_760
@@ -4903,8 +4577,10 @@ msgid "Prado"
 msgstr ""
 
 #. module: ln10_co_intello
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_bank_statement_line__prefix
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_dian_resolution__prefix
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move__prefix
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_payment__prefix
 msgid "Prefix"
 msgstr "Prefijo"
 
@@ -4937,11 +4613,6 @@ msgid "Principal"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_quarterly_sales__product_id
-msgid "Product"
-msgstr "Producto"
-
-#. module: ln10_co_intello
 #: model:ir.model,name:ln10_co_intello.model_product_template
 msgid "Product Template"
 msgstr "Plantilla del Producto"
@@ -4952,7 +4623,8 @@ msgid "Product Unit of Measure"
 msgstr "Unidad de Medida del Producto"
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1088 model:res.city,name:ln10_co_intello.res_city_co_761
+#: model:res.city,name:ln10_co_intello.res_city_co_1088
+#: model:res.city,name:ln10_co_intello.res_city_co_761
 msgid "Providencia"
 msgstr ""
 
@@ -5027,7 +4699,8 @@ msgid "Puerto Carreño"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1103 model:res.city,name:ln10_co_intello.res_city_co_139
+#: model:res.city,name:ln10_co_intello.res_city_co_1103
+#: model:res.city,name:ln10_co_intello.res_city_co_139
 msgid "Puerto Colombia"
 msgstr ""
 
@@ -5087,7 +4760,8 @@ msgid "Puerto Parra"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_356 model:res.city,name:ln10_co_intello.res_city_co_709
+#: model:res.city,name:ln10_co_intello.res_city_co_356
+#: model:res.city,name:ln10_co_intello.res_city_co_709
 msgid "Puerto Rico"
 msgstr ""
 
@@ -5102,7 +4776,8 @@ msgid "Puerto Salgar"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1098 model:res.city,name:ln10_co_intello.res_city_co_807
+#: model:res.city,name:ln10_co_intello.res_city_co_1098
+#: model:res.city,name:ln10_co_intello.res_city_co_807
 msgid "Puerto Santander"
 msgstr ""
 
@@ -5142,11 +4817,6 @@ msgid "Purchase"
 msgstr "Compra"
 
 #. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_purchase_order
-msgid "Purchase Order"
-msgstr "Orden de Compra"
-
-#. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_993
 msgid "Purificación"
 msgstr ""
@@ -5162,7 +4832,8 @@ msgid "Pácora"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_260 model:res.city,name:ln10_co_intello.res_city_co_385
+#: model:res.city,name:ln10_co_intello.res_city_co_260
+#: model:res.city,name:ln10_co_intello.res_city_co_385
 msgid "Páez"
 msgstr ""
 
@@ -5175,11 +4846,6 @@ msgstr ""
 #: model:ir.model.fields.selection,name:ln10_co_intello.selection__ln10_co_intello_nomenclaturedian__type__qualifiying
 msgid "Qualifiying"
 msgstr "Calificación"
-
-#. module: ln10_co_intello
-#: model:ir.ui.menu,name:ln10_co_intello.menu_action_quarterly_sales_report_all
-msgid "Quarterly_sales"
-msgstr "Ventas trimestrales"
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_530
@@ -5273,12 +4939,12 @@ msgstr ""
 
 #. module: ln10_co_intello
 #: model:ir.model.fields,help:ln10_co_intello.field_res_company__verification_code
-#: model:ir.model.fields,help:ln10_co_intello.field_res_partner__verification
 #: model:ir.model.fields,help:ln10_co_intello.field_res_partner__verification_code
-#: model:ir.model.fields,help:ln10_co_intello.field_res_users__verification
 #: model:ir.model.fields,help:ln10_co_intello.field_res_users__verification_code
 msgid "Redundancy check to verify the vat number has been typed in correctly."
-msgstr "Verificación de redundancia para verificar que el número de iva se haya ingresado correctamente."
+msgstr ""
+"Verificación de redundancia para verificar que el número de iva se haya "
+"ingresado correctamente."
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_175
@@ -5302,19 +4968,8 @@ msgid "Remolino"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.book_account_wizard_view
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.book_report_wizard_view
-msgid "Render Report"
-msgstr "Generar Reporte"
-
-#. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_140
 msgid "Repelón"
-msgstr ""
-
-#. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_report_account_auxiliary_wizard
-msgid "Report Account Wizard"
 msgstr ""
 
 #. module: ln10_co_intello
@@ -5328,7 +4983,9 @@ msgid "Resolución DIAN No"
 msgstr ""
 
 #. module: ln10_co_intello
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_bank_statement_line__resolution_id
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move__resolution_id
+#: model:ir.model.fields,field_description:ln10_co_intello.field_account_payment__resolution_id
 msgid "Resolution"
 msgstr ""
 
@@ -5349,7 +5006,8 @@ msgid "Resolution Number"
 msgstr "Numero de resolución"
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1034 model:res.city,name:ln10_co_intello.res_city_co_710
+#: model:res.city,name:ln10_co_intello.res_city_co_1034
+#: model:res.city,name:ln10_co_intello.res_city_co_710
 msgid "Restrepo"
 msgstr ""
 
@@ -5384,7 +5042,8 @@ msgid "Retiro"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_534 model:res.city,name:ln10_co_intello.res_city_co_764
+#: model:res.city,name:ln10_co_intello.res_city_co_534
+#: model:res.city,name:ln10_co_intello.res_city_co_764
 msgid "Ricaurte"
 msgstr ""
 
@@ -5404,12 +5063,14 @@ msgid "Riohacha"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_85 model:res.city,name:ln10_co_intello.res_city_co_911
+#: model:res.city,name:ln10_co_intello.res_city_co_85
+#: model:res.city,name:ln10_co_intello.res_city_co_911
 msgid "Rionegro"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_337 model:res.city,name:ln10_co_intello.res_city_co_599
+#: model:res.city,name:ln10_co_intello.res_city_co_337
+#: model:res.city,name:ln10_co_intello.res_city_co_599
 msgid "Riosucio"
 msgstr ""
 
@@ -5504,7 +5165,8 @@ msgid "Sabanagrande"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1067 model:res.city,name:ln10_co_intello.res_city_co_142
+#: model:res.city,name:ln10_co_intello.res_city_co_1067
+#: model:res.city,name:ln10_co_intello.res_city_co_142
 #: model:res.city,name:ln10_co_intello.res_city_co_86
 msgid "Sabanalarga"
 msgstr ""
@@ -5535,7 +5197,8 @@ msgid "Saladoblanco"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_339 model:res.city,name:ln10_co_intello.res_city_co_678
+#: model:res.city,name:ln10_co_intello.res_city_co_339
+#: model:res.city,name:ln10_co_intello.res_city_co_678
 msgid "Salamina"
 msgstr ""
 
@@ -5567,16 +5230,17 @@ msgstr "Ventas"
 #. module: ln10_co_intello
 #: model:ir.model,name:ln10_co_intello.model_sale_order
 msgid "Sales Order"
-msgstr "Pedido de Venta"
+msgstr ""
+"#-#-#-#-#  es_CO.po (Odoo 9.0)  #-#-#-#-#\n"
+"Orden de Venta\n"
+"#-#-#-#-#  es_CO.po (Odoo 9.0)  #-#-#-#-#\n"
+"Pedido de Venta"
 
 #. module: ln10_co_intello
 #: model:ir.model,name:ln10_co_intello.model_crm_team
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_move_line__team_id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_net_sales__team_id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_quarterly_sales__team_id
-#: model:ir.model.fields,field_description:ln10_co_intello.field_result_sales__team_id
 msgid "Sales Team"
-msgstr "Equipo de Ventas"
+msgstr "Equipo de ventas"
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_88
@@ -5614,7 +5278,8 @@ msgid "San Alberto"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1087 model:res.city,name:ln10_co_intello.res_city_co_913
+#: model:res.city,name:ln10_co_intello.res_city_co_1087
+#: model:res.city,name:ln10_co_intello.res_city_co_913
 msgid "San Andrés"
 msgstr ""
 
@@ -5659,7 +5324,8 @@ msgid "San Benito Abad"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_536 model:res.city,name:ln10_co_intello.res_city_co_768
+#: model:res.city,name:ln10_co_intello.res_city_co_536
+#: model:res.city,name:ln10_co_intello.res_city_co_768
 msgid "San Bernardo"
 msgstr ""
 
@@ -5674,7 +5340,8 @@ msgid "San Calixto"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_453 model:res.city,name:ln10_co_intello.res_city_co_90
+#: model:res.city,name:ln10_co_intello.res_city_co_453
+#: model:res.city,name:ln10_co_intello.res_city_co_90
 msgid "San Carlos"
 msgstr ""
 
@@ -5684,7 +5351,8 @@ msgid "San Carlos de Guaroa"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_537 model:res.city,name:ln10_co_intello.res_city_co_811
+#: model:res.city,name:ln10_co_intello.res_city_co_537
+#: model:res.city,name:ln10_co_intello.res_city_co_811
 msgid "San Cayetano"
 msgstr ""
 
@@ -5719,7 +5387,8 @@ msgid "San Fernando"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1082 model:res.city,name:ln10_co_intello.res_city_co_538
+#: model:res.city,name:ln10_co_intello.res_city_co_1082
+#: model:res.city,name:ln10_co_intello.res_city_co_538
 #: model:res.city,name:ln10_co_intello.res_city_co_91
 msgid "San Francisco"
 msgstr ""
@@ -5835,7 +5504,8 @@ msgid "San Lorenzo"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_95 model:res.city,name:ln10_co_intello.res_city_co_999
+#: model:res.city,name:ln10_co_intello.res_city_co_95
+#: model:res.city,name:ln10_co_intello.res_city_co_999
 msgid "San Luis"
 msgstr ""
 
@@ -5860,7 +5530,8 @@ msgid "San Marcos"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_427 model:res.city,name:ln10_co_intello.res_city_co_714
+#: model:res.city,name:ln10_co_intello.res_city_co_427
+#: model:res.city,name:ln10_co_intello.res_city_co_714
 msgid "San Martín"
 msgstr ""
 
@@ -5875,7 +5546,8 @@ msgid "San Mateo"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1083 model:res.city,name:ln10_co_intello.res_city_co_918
+#: model:res.city,name:ln10_co_intello.res_city_co_1083
+#: model:res.city,name:ln10_co_intello.res_city_co_918
 msgid "San Miguel"
 msgstr ""
 
@@ -5890,7 +5562,8 @@ msgid "San Onofre"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_184 model:res.city,name:ln10_co_intello.res_city_co_770
+#: model:res.city,name:ln10_co_intello.res_city_co_184
+#: model:res.city,name:ln10_co_intello.res_city_co_770
 msgid "San Pablo"
 msgstr ""
 
@@ -5960,7 +5633,8 @@ msgid "San Zenón"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1037 model:res.city,name:ln10_co_intello.res_city_co_954
+#: model:res.city,name:ln10_co_intello.res_city_co_1037
+#: model:res.city,name:ln10_co_intello.res_city_co_954
 msgid "San pedro"
 msgstr ""
 
@@ -5975,7 +5649,8 @@ msgid "Santa Ana"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_101 model:res.city,name:ln10_co_intello.res_city_co_772
+#: model:res.city,name:ln10_co_intello.res_city_co_101
+#: model:res.city,name:ln10_co_intello.res_city_co_772
 #: model:res.city,name:ln10_co_intello.res_city_co_920
 msgid "Santa Bárbara"
 msgstr ""
@@ -6021,12 +5696,14 @@ msgid "Santa Marta"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_284 model:res.city,name:ln10_co_intello.res_city_co_633
+#: model:res.city,name:ln10_co_intello.res_city_co_284
+#: model:res.city,name:ln10_co_intello.res_city_co_633
 msgid "Santa María"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_186 model:res.city,name:ln10_co_intello.res_city_co_394
+#: model:res.city,name:ln10_co_intello.res_city_co_186
+#: model:res.city,name:ln10_co_intello.res_city_co_394
 msgid "Santa Rosa"
 msgstr ""
 
@@ -6076,7 +5753,8 @@ msgid "Santander de Quilichao"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1084 model:res.city,name:ln10_co_intello.res_city_co_812
+#: model:res.city,name:ln10_co_intello.res_city_co_1084
+#: model:res.city,name:ln10_co_intello.res_city_co_812
 msgid "Santiago"
 msgstr ""
 
@@ -6131,11 +5809,6 @@ msgid "Sativasur"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.accounting_book_form
-msgid "Save & Reload"
-msgstr "Guardar y recargar"
-
-#. module: ln10_co_intello
 #: model:ir.model.fields,field_description:ln10_co_intello.field_res_partner__second_name
 #: model:ir.model.fields,field_description:ln10_co_intello.field_res_users__second_name
 #: model_terms:ir.ui.view,arch_db:ln10_co_intello.partner_dian_form_view
@@ -6162,36 +5835,9 @@ msgid "Segovia"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.book_account_wizard_view
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.book_report_wizard_view
-msgid "Select Book"
-msgstr "Selecciona un Libro"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_bank_statement_import_journal_creation__selection_book
-#: model:ir.model.fields,field_description:ln10_co_intello.field_account_journal__selection_book
-msgid "Selection Book"
-msgstr "Libro de selección"
-
-#. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_selection_book
-msgid "Selection book for journal"
-msgstr "Selección de libro para diario"
-
-#. module: ln10_co_intello
 #: model:ir.model.fields.selection,name:ln10_co_intello.selection__account_month_block__month__09
 msgid "September"
 msgstr "Septiembre"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_selection_book__sequence
-msgid "Sequence"
-msgstr "Secuencia"
-
-#. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.view_inherit_account_journal_form
-msgid "Sequence For Book"
-msgstr "Secuencia por libro"
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_541
@@ -6359,11 +6005,6 @@ msgid "Sotará Paispamba"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_relation_account_move__src_book
-msgid "Src Book"
-msgstr ""
-
-#. module: ln10_co_intello
 #: model:ir.model.fields,field_description:ln10_co_intello.field_relation_account_move__src_move_id
 msgid "Src Move"
 msgstr ""
@@ -6519,7 +6160,8 @@ msgid "Substraction"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_398 model:res.city,name:ln10_co_intello.res_city_co_925
+#: model:res.city,name:ln10_co_intello.res_city_co_398
+#: model:res.city,name:ln10_co_intello.res_city_co_925
 #: model:res.city,name:ln10_co_intello.res_city_co_956
 msgid "Sucre"
 msgstr ""
@@ -6582,7 +6224,8 @@ msgid "Sutatenza"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1001 model:res.city,name:ln10_co_intello.res_city_co_397
+#: model:res.city,name:ln10_co_intello.res_city_co_1001
+#: model:res.city,name:ln10_co_intello.res_city_co_397
 msgid "Suárez"
 msgstr ""
 
@@ -6750,9 +6393,15 @@ msgid "Tesalia"
 msgstr ""
 
 #. module: ln10_co_intello
+#: code:addons/ln10_co_intello/models/res_partner.py:0
+#, python-format
+msgid "The CIIU primary code field is required"
+msgstr "El código primario CIIU es requerido"
+
+#. module: ln10_co_intello
 #: model:ir.model.fields,help:ln10_co_intello.field_res_city__key_dian
 msgid "The DIAN City code."
-msgstr ""
+msgstr "El código DIAN de la ciudad"
 
 #. module: ln10_co_intello
 #: model:ir.model.fields,help:ln10_co_intello.field_res_country_state__key_dian
@@ -6761,18 +6410,24 @@ msgstr "El código de estado DIAN."
 
 #. module: ln10_co_intello
 #: code:addons/ln10_co_intello/models/product_pricelist.py:0
+#: code:addons/ln10_co_intello/models/product_pricelist.py:0
 #, python-format
 msgid "The GPM must be greater than zero"
 msgstr "El GPM debe ser mayor a cero"
 
 #. module: ln10_co_intello
 #: code:addons/ln10_co_intello/models/account.py:0
+#: code:addons/ln10_co_intello/models/account.py:0
+#: code:addons/ln10_co_intello/models/account.py:0
+#: code:addons/ln10_co_intello/models/account.py:0
 #, python-format
 msgid "The Invoice date is not in the range of the Invoice Resolution"
-msgstr "La fecha de la factura no esta en el rango de la resolución de factura"
+msgstr ""
+"La fecha de la factura no esta en el rango de la resolución de factura"
 
 #. module: ln10_co_intello
-#: code:addons/ln10_co_intello/models/account.py:0 code:addons/ln10_co_intello/models/sale_order.py:0
+#: code:addons/ln10_co_intello/models/account.py:0
+#: code:addons/ln10_co_intello/models/sale_order.py:0
 #, python-format
 msgid "The amount of the sales order completes the client quota"
 msgstr "El monto de la orden de venta completa el cupo del cliente."
@@ -6780,8 +6435,36 @@ msgstr "El monto de la orden de venta completa el cupo del cliente."
 #. module: ln10_co_intello
 #: code:addons/ln10_co_intello/models/res_partner.py:0
 #, python-format
-msgid "The company has the fiscal responsibility \"Not responsible for IVA\", therefore it cannot have more."
-msgstr "La empresa tiene la responsabilidad fiscal \"No se hace responsable del IVA\", por lo que no puede tener más."
+msgid "The business registration field is required"
+msgstr "El contacto no tiene un registro comercial asociado"
+
+#. module: ln10_co_intello
+#: code:addons/ln10_co_intello/models/res_partner.py:0
+#, python-format
+msgid ""
+"The company has the fiscal responsibility \"Not responsible for IVA\", "
+"therefore it cannot have more."
+msgstr ""
+"La empresa tiene la responsabilidad fiscal \"No se hace responsable del "
+"IVA\", por lo que no puede tener más."
+
+#. module: ln10_co_intello
+#: code:addons/ln10_co_intello/models/res_partner.py:0
+#, python-format
+msgid "The fiscal position field is required"
+msgstr "El contacto no tiene una posición fiscal asociada"
+
+#. module: ln10_co_intello
+#: code:addons/ln10_co_intello/models/res_partner.py:0
+#, python-format
+msgid "The fiscal regime field is required"
+msgstr "El contacto no tiene un régimen fiscal asociado"
+
+#. module: ln10_co_intello
+#: code:addons/ln10_co_intello/models/res_partner.py:0
+#, python-format
+msgid "The fiscal responsibility field is required"
+msgstr "El contacto no tiene un responsabilidad fiscal asociada"
 
 #. module: ln10_co_intello
 #: code:addons/ln10_co_intello/models/ln10_co_intello.py:0
@@ -6803,15 +6486,26 @@ msgstr "El diario no cuenta con una resolución de factura"
 
 #. module: ln10_co_intello
 #: code:addons/ln10_co_intello/models/account.py:0
+#: code:addons/ln10_co_intello/models/account.py:0
 #, python-format
 msgid "The next sequence number is not in the invoice resolution range"
-msgstr "El numero de la secuencia no esta en el rango de la resolución de factura"
+msgstr ""
+"El numero de la secuencia no esta en el rango de la resolución de factura"
+
+#. module: ln10_co_intello
+#: code:addons/ln10_co_intello/models/res_partner.py:0
+#, python-format
+msgid "The sector field is required"
+msgstr "El contacto no tiene un sector asociado"
 
 #. module: ln10_co_intello
 #: code:addons/ln10_co_intello/models/account.py:0
+#: code:addons/ln10_co_intello/models/account.py:0
 #, python-format
 msgid "The sequence prefix and the Invoice Resolution prefix have to match"
-msgstr "El prefijo de la secuencia y el prefijo de la resolución de factura deben ser iguales"
+msgstr ""
+"El prefijo de la secuencia y el prefijo de la resolución de factura deben "
+"ser iguales"
 
 #. module: ln10_co_intello
 #: code:addons/ln10_co_intello/models/ln10_co_intello.py:0
@@ -6820,9 +6514,10 @@ msgid "The start date cannot be greater than the end date"
 msgstr "La fecha inicial no puede ser mayor a la fecha final"
 
 #. module: ln10_co_intello
-#: model:ir.model.constraint,message:ln10_co_intello.constraint_own_accounts_id book Detail_own
-msgid "This own account is already being used by another book"
-msgstr ""
+#: code:addons/ln10_co_intello/models/res_partner.py:0
+#, python-format
+msgid "The type of person field is required"
+msgstr "El contacto no tiene un tipo de persona asociada"
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_556
@@ -6880,6 +6575,11 @@ msgid "Tipacoque"
 msgstr ""
 
 #. module: ln10_co_intello
+#: model_terms:ir.ui.view,arch_db:ln10_co_intello.partner_dian_form_view
+msgid "Tipo de documento"
+msgstr ""
+
+#. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_191
 msgid "Tiquisio"
 msgstr ""
@@ -6910,7 +6610,8 @@ msgid "Togüí"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_112 model:res.city,name:ln10_co_intello.res_city_co_817
+#: model:res.city,name:ln10_co_intello.res_city_co_112
+#: model:res.city,name:ln10_co_intello.res_city_co_817
 msgid "Toledo"
 msgstr ""
 
@@ -7011,9 +6712,6 @@ msgstr ""
 
 #. module: ln10_co_intello
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_dian_resolution__type
-#: model:ir.model.fields,field_description:ln10_co_intello.field_net_sales__type
-#: model:ir.model.fields,field_description:ln10_co_intello.field_quarterly_sales__type
-#: model:ir.model.fields,field_description:ln10_co_intello.field_result_sales__type
 msgid "Type"
 msgstr "Tipo"
 
@@ -7076,19 +6774,6 @@ msgstr "Unidad de medida"
 #: model:res.city,name:ln10_co_intello.res_city_co_604
 msgid "Unión Panamericana"
 msgstr ""
-
-#. module: ln10_co_intello
-#: code:addons/ln10_co_intello/models/account_report.py:0
-#, python-format
-msgid "Unknown Partner"
-msgstr "Empresa desconocida"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_net_sales__price_subtotal
-#: model:ir.model.fields,field_description:ln10_co_intello.field_quarterly_sales__price_subtotal
-#: model:ir.model.fields,field_description:ln10_co_intello.field_result_sales__price_subtotal
-msgid "Untaxed Total"
-msgstr "Precio subtotal"
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_114
@@ -7161,7 +6846,8 @@ msgid "Valledupar"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_117 model:res.city,name:ln10_co_intello.res_city_co_361
+#: model:res.city,name:ln10_co_intello.res_city_co_117
+#: model:res.city,name:ln10_co_intello.res_city_co_361
 msgid "Valparaíso"
 msgstr ""
 
@@ -7169,16 +6855,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:ln10_co_intello.field_res_currency_rate__value
 msgid "Value"
 msgstr "Valor"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_result_sales__v_growth
-msgid "Value growth"
-msgstr "Valor de crecimiento"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_result_sales__variation
-msgid "Variation"
-msgstr "Variacion"
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_118
@@ -7191,26 +6867,8 @@ msgid "Venadillo"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__net_sales__type__in_invoice
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__quarterly_sales__type__in_invoice
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__result_sales__type__in_invoice
-msgid "Vendor Bill"
-msgstr "Factura de provedor"
-
-#. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.view_inherit_account_move_line_form
-msgid "Vendor Bills"
-msgstr ""
-
-#. module: ln10_co_intello
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__net_sales__type__in_refund
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__quarterly_sales__type__in_refund
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__result_sales__type__in_refund
-msgid "Vendor Credit Note"
-msgstr "Nota credito del proveedor"
-
-#. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_119 model:res.city,name:ln10_co_intello.res_city_co_522
+#: model:res.city,name:ln10_co_intello.res_city_co_119
+#: model:res.city,name:ln10_co_intello.res_city_co_522
 msgid "Venecia"
 msgstr ""
 
@@ -7230,12 +6888,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:ln10_co_intello.field_res_users__verification_code
 msgid "Verification Code"
 msgstr "Código de verificación"
-
-#. module: ln10_co_intello
-#: model:ir.model.fields,field_description:ln10_co_intello.field_res_partner__verification
-#: model:ir.model.fields,field_description:ln10_co_intello.field_res_users__verification
-msgid "Verification code"
-msgstr ""
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_1043
@@ -7308,8 +6960,10 @@ msgid "Villamaría"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:res.city,name:ln10_co_intello.res_city_co_1073 model:res.city,name:ln10_co_intello.res_city_co_194
-#: model:res.city,name:ln10_co_intello.res_city_co_656 model:res.city,name:ln10_co_intello.res_city_co_931
+#: model:res.city,name:ln10_co_intello.res_city_co_1073
+#: model:res.city,name:ln10_co_intello.res_city_co_194
+#: model:res.city,name:ln10_co_intello.res_city_co_656
+#: model:res.city,name:ln10_co_intello.res_city_co_931
 msgid "Villanueva"
 msgstr ""
 
@@ -7369,11 +7023,6 @@ msgid "With Verification Digit"
 msgstr "Con dígito de verificación"
 
 #. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.book_account_wizard_view
-msgid "Wizard Report"
-msgstr ""
-
-#. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_572
 msgid "Yacopí"
 msgstr ""
@@ -7405,8 +7054,6 @@ msgstr ""
 
 #. module: ln10_co_intello
 #: model:ir.model.fields,field_description:ln10_co_intello.field_account_month_block__year
-#: model:ir.model.fields,field_description:ln10_co_intello.field_multi_book_account__year
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.view_multi_book_account_search
 msgid "Year"
 msgstr "Año"
 
@@ -7506,11 +7153,6 @@ msgid "account_invoice_resolution_form"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_accounting_book
-msgid "accounting book for location colombia"
-msgstr "libro de contabilidad para localización Colombiana"
-
-#. module: ln10_co_intello
 #: model_terms:ir.ui.view,arch_db:ln10_co_intello.external_layout_invoice_report
 msgid "al"
 msgstr ""
@@ -7524,11 +7166,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:ln10_co_intello.external_layout_invoice_report
 msgid "del"
 msgstr ""
-
-#. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_book_account_name
-msgid "detail account for book"
-msgstr "detalle de cuenta por libro"
 
 #. module: ln10_co_intello
 #: model_terms:ir.ui.view,arch_db:ln10_co_intello.company_dian_form_view
@@ -7547,41 +7184,9 @@ msgid "month block for account in account move"
 msgstr ""
 
 #. module: ln10_co_intello
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__net_sales__invoice_payment_state__paid
-#: model:ir.model.fields.selection,name:ln10_co_intello.selection__quarterly_sales__invoice_payment_state__paid
-msgid "paid"
-msgstr "Pagada"
-
-#. module: ln10_co_intello
-#: model_terms:ir.ui.view,arch_db:ln10_co_intello.view_quarterly_sales_pivot
-msgid "quarterly Sales"
-msgstr ""
-
-#. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_quarterly_sales
-msgid "quarterly sales"
-msgstr ""
-
-#. module: ln10_co_intello
-#: model:ir.actions.act_window,name:ln10_co_intello.action_quarterly_sales
-msgid "quarterly_sales_action"
-msgstr "Accion ventas trimestrales"
-
-#. module: ln10_co_intello
 #: model:ir.model,name:ln10_co_intello.model_relation_account_move
 msgid "relation of account move in books"
 msgstr ""
-
-#. module: ln10_co_intello
-#: model:ir.model,name:ln10_co_intello.model_book_account_wizard
-#: model:ir.model,name:ln10_co_intello.model_book_report_wizard
-msgid "report for books"
-msgstr "Reporte por libros"
-
-#. module: ln10_co_intello
-#: model:ir.actions.act_window,name:ln10_co_intello.action_result_sales
-msgid "result.sale_action"
-msgstr "Accion ventas mensuales"
 
 #. module: ln10_co_intello
 #: model:ir.model,name:ln10_co_intello.model_account_financial_report_save
@@ -7592,17 +7197,6 @@ msgstr ""
 #: model:ir.model.constraint,message:ln10_co_intello.constraint_account_month_block_month_unique
 msgid "you can't have a repeated month and year for book!"
 msgstr "¡No puedes tener un mes y año repetidos por libro!"
-
-#. module: ln10_co_intello
-#: model:ir.model.constraint,message:ln10_co_intello.constraint_accounting_book_id book Unique
-msgid "you can't have two books with the same id!"
-msgstr ""
-
-#. module: ln10_co_intello
-#: model:ir.model.constraint,message:ln10_co_intello.constraint_accounting_book_id book Initials
-#: model:ir.model.constraint,message:ln10_co_intello.constraint_multi_book_account_id count account base
-msgid "you can't have two books with the same initials!"
-msgstr ""
 
 #. module: ln10_co_intello
 #: model:res.city,name:ln10_co_intello.res_city_co_781

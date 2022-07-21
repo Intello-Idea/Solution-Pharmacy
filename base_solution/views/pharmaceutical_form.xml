@@ -18,7 +18,7 @@
             <field name="inherit_id" ref="base_epithelium.pharmaceutical_form_tree"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
-                    <field name="value"/>
+                    <field name="value" invisible="1"/>
                 </xpath>
             </field>
         </record>
@@ -38,7 +38,7 @@
             <field name="inherit_id" ref="base_epithelium.pharmaceutical_presentation_tree"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
-                    <field name="value"/>
+                    <field name="value" invisible="1"/>
                 </xpath>
             </field>
         </record>

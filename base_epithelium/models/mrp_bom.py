@@ -17,12 +17,13 @@ class MrpBom(models.Model):
 
     production_line_id = fields.Many2one('production.lines', string='Production line', default=_default_production_line)
     check_status = fields.Boolean('I.', store=True) #,compute='_check_status'
-    dough = fields.Many2one("uom.uom", readonly=True)
+    dough = fields.Many2one("uom.uom", readonly=False)
     size = fields.Float(string="Size")
-    size_total = fields.Float(string="Size total", compute="_size_total")
-    percent_total = fields.Float(compute="_percent_total", store=True, digits=(12, 4))
+    size_total = fields.Float(string="Size total")
+    percent_total = fields.Float(compute="_percent_total", store=True, digits=(12,5))
     status_percent = fields.Selection([("0", "Total percentage is below 100"),
-                                       ("1", "The total percentage is the ideal")], store=True)
+                                       ("1", "The total percentage is the ideal"),
+                                       ("2", "The percentage is greater than 100")], store=True)
     standard_manufacturing = fields.Boolean(related="product_tmpl_id.standard_manufacturing", store=True)
     pharmaceutical_form = fields.Many2one('pharmaceutical.form',
                                           string="Pharmaceutical form")
@@ -59,114 +60,26 @@ class MrpBom(models.Model):
             # Bloque for: calcula el total de porcentajes
             for bom in mrp_bom.bom_line_ids:
                 percent = bom["percent"]
-                total_percent = round(total_percent + percent, 4)
+                total_percent = round(total_percent + percent, 5)
             # Bloque if: Cambia el estado del porcentaje dependiendo del total
             if total_percent < 100:
                 mrp_bom.status_percent = "0"
                 mrp_bom.percent_total = total_percent
+            elif total_percent == 100:
+                mrp_bom.status_percent = "1"
+                mrp_bom.percent_total = total_percent
             else:
-                if total_percent == 100:
-                    mrp_bom.status_percent = "1"
-                    mrp_bom.percent_total = total_percent
-                else:
-                    raise exceptions.ValidationError("The total percentage exceeds 100%")
-
-    @api.model_create_multi
-    def create(self, vals_list):
-        for val in vals_list:
-            if "standard_manufacturing" in val:
-                if val["standard_manufacturing"]:
-                    # Bloque if: Restringir la creacion de la lista si elporcentaje se excede de 100%
-                    if "percent_total" in val:
-                        if val["percent_total"] == 100:
-                            return super(MrpBom, self).create(val)
-                        else:
-                            raise exceptions.ValidationError(
-                                "The product is of standard manufacture, the total percentage must be equal to 100%")
-                    else:
-                        return super(MrpBom, self).create(val)
-                else:
-                    if "percent_total" in val:
-                        if val["percent_total"] <= 100:
-                            return super(MrpBom, self).create(val)
-                        else:
-                            raise exceptions.ValidationError("The total percentage exceeds 100%")
-                    else:
-                        return super(MrpBom, self).create(val)
-            else:
-                return super(MrpBom, self).create(val)
-
-    def write(self, vals):
-        # Bloque if: Restringir la creacion de la lista si elporcentaje se excede de 100%
-        if "standard_manufacturing" in vals:
-            if vals["standard_manufacturing"]:
-                # Bloque if: Restringir la creacion de la lista si elporcentaje se excede de 100%
-                if "percent_total" in vals:
-                    if vals["percent_total"] == 100:
-                        return super(MrpBom, self).write(vals)
-                    else:
-                        raise exceptions.ValidationError(
-                            "The product is of standard manufacture, the total percentage must be equal to 100%")
-                else:
-                    if "percent_total" in self:
-                        if self.percent_total == 100:
-                            return super(MrpBom, self).write(vals)
-                        else:
-                            raise exceptions.ValidationError(
-                                "The product is of standard manufacture, the total percentage must be equal to 100%")
-                    else:
-                        return super(MrpBom, self).write(vals)
-            else:
-                if "percent_total" in vals:
-                    if vals["percent_total"] <= 100:
-                        return super(MrpBom, self).write(vals)
-                    else:
-                        raise exceptions.ValidationError("The total percentage exceeds 100%")
-                else:
-                    if "percent_total" in self:
-                        if self.percent_total <= 100:
-                            return super(MrpBom, self).write(vals)
-                        else:
-                            raise exceptions.ValidationError("The total percentage exceeds 100%")
-                    else:
-                        return super(MrpBom, self).write(vals)
-        else:
-            if "standard_manufacturing" in self:
-                if self.standard_manufacturing:
-                    # Bloque if: Restringir la creacion de la lista si elporcentaje se excede de 100%
-                    if "percent_total" in vals:
-                        if vals["percent_total"] == 100:
-                            return super(MrpBom, self).write(vals)
-                        else:
-                            raise exceptions.ValidationError(
-                                "The product is of standard manufacture, the total percentage must be equal to 100%")
-                    else:
-                        if "percent_total" in self:
-                            if self.percent_total == 100:
-                                return super(MrpBom, self).write(vals)
-                            else:
-                                raise exceptions.ValidationError(
-                                    "The product is of standard manufacture, the total percentage must be equal to 100%")
-                        else:
-                            return super(MrpBom, self).write(vals)
-                else:
-                    if "percent_total" in vals:
-                        if vals["percent_total"] <= 100:
-                            return super(MrpBom, self).write(vals)
-                        else:
-                            raise exceptions.ValidationError("The total percentage exceeds 100%")
-                    else:
-                        if "percent_total" in self:
-                            if self.percent_total <= 100:
-                                return super(MrpBom, self).write(vals)
-                            else:
-                                raise exceptions.ValidationError("The total percentage exceeds 100%")
-                        else:
-                            return super(MrpBom, self).write(vals)
-
-    @api.depends("size", "product_qty")
-    def _size_total(self):
-        self.size_total = self.size * self.product_qty
+                mrp_bom.status_percent = "2"
+                mrp_bom.percent_total = total_percent
+    
+    @api.constrains("percent_total")
+    def _validate_percent_total(self):
+        if round(self.percent_total,5) > 100:
+            raise exceptions.ValidationError(_("The total percentage exceeds 100%"))
+    
+    # @api.depends("size", "product_qty")
+    # def _size_total(self):
+    #     self.size_total = self.size * self.product_qty
 
     @api.onchange("product_tmpl_id")
     def value_size(self):
@@ -214,7 +127,7 @@ class MrpBomLine(models.Model):
     affect_bill_materials = fields.Boolean('Affects bill of materials', related='product_id.affect_bill_materials')
     check_change_terms = fields.Selection(
         selection=[('percent', 'percent'), ('product_qty', 'product qty'), ('none', 'none')], default='none')
-    product_qty = fields.Float('Quantity', default=1.0, digits='Precision Mrp', required=True)
+    product_qty = fields.Float('Quantity', default=1.0, digits='Precision Mrp Five', required=True)
 
     @api.depends('product_qty')
     @api.onchange('product_id', 'percent')

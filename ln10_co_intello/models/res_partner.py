@@ -78,6 +78,11 @@ class Partner(models.Model):
 
     payment_type = fields.Selection(string='Payment Type', selection=[('1', 'Cash'), ('2', 'Credit')], default='1')
 
+    # Fabian Hernando Vera Carrillo
+    # 2022-04-13
+    # Se agrego el campo codigo del cliente
+    # client_code = fields.Char(string='Client code')
+
     # person_type = fields.Many2one('ln10_co_intello.persontype', ondelete='set null', string='Person Type')
     person_type = fields.Many2one('ln10_co_intello.diancodes', ondelete='cascade', string='Person Type',
                                   domain=[('type', '=', 'persontype')])
@@ -91,7 +96,7 @@ class Partner(models.Model):
                                              domain=[('type', '=', 'fiscalresponsibility')])
     payment_method = fields.Many2many('ln10_co_intello.diancodes', relation='model_payment', column1='partner_id',
                                       column2='id', ondelete='cascade', string='Payment Method',
-                                      domain=[('type', '=', 'paymentmethod')])
+                                      domain=[('type', '=', 'paymentmethod')], required=True)
 
     commercial_registration = fields.Char(string="Commercial Registration")
     code_ciiu_primary = fields.Many2one('ln10_co_intello.ciiucodes', ondelete='cascade', string='Primary CIIU Code',
@@ -126,6 +131,11 @@ class Partner(models.Model):
         self.name = full_name.strip()
 
         # self.name = ' '.join(names).strip().replace('  ', ' ')
+
+    @api.onchange('city_id')
+    def onchange_city_id(self):
+        for rec in self:
+            self.zip = rec.city_id.zipcode
 
     @api.onchange('gen_quota_client')
     def onchange_gen_quota_client(self):
@@ -236,8 +246,26 @@ class Partner(models.Model):
     def _check_valid_mail(self):
         self._validate_mail()
 
+    # Fabian Hernando Vera Carrillo
+    # 2022-04-13
+    # Se agrego la validacion de que el campo codigo cliente sea numerico
+    # @api.constrains('client_code')
+    # def _check_client_code(self):
+    #     for rec in self:
+    #         if rec.client_code != '':
+    #             try:
+    #                 int(rec.client_code)
+    #             except:
+    #                 raise exceptions.Warning(
+    #                     _('Client code must be number'))
+
+    # Fabian Hernando Vera Carrillo
+    # 2022-04-13
+    # Se agrego la validacion de que el codigo del cliente sea unico
     _sql_constraints = [
         ('document_type_number_uniq', 'UNIQUE(document_type,vat)', 'Duplicate Document Type and VAT is not allowed!')]
+
+    # ('client_code_uniq','UNIQUE(client_code)',_('Duplicate Client code is not allowed!'))]
 
     # ,'name_document_number_uniq', 'UNIQUE(name,vat)', 'Duplicate Name and VAT is not allowed!']
 
@@ -387,10 +415,20 @@ class Partner(models.Model):
         print(action.partner_id)
 
     def validate_fields_invoice(self):
-        if self.property_account_position_id and self.person_type and self.fiscal_regime and self.fiscal_responsibility and self.commercial_registration and self.industry_id and self.code_ciiu_primary:
-            pass
-        else:
-            raise exceptions.Warning("Compruebe los siguientes campos")
+        if not self.property_account_position_id:
+            raise exceptions.Warning(_("The fiscal position field is required"))
+        if not self.person_type:
+            raise exceptions.Warning(_("The type of person field is required"))
+        if not self.fiscal_regime:
+            raise exceptions.Warning(_("The fiscal regime field is required"))
+        if not self.fiscal_responsibility:
+            raise exceptions.Warning(_("The fiscal responsibility field is required"))
+        if not self.commercial_registration:
+            raise exceptions.Warning(_("The business registration field is required"))
+        if not self.industry_id:
+            raise exceptions.Warning(_("The sector field is required"))
+        if not self.code_ciiu_primary:
+            raise exceptions.Warning(_("The CIIU primary code field is required"))
 
     @api.constrains('fiscal_responsibility')
     @api.onchange('fiscal_responsibility')
@@ -406,6 +444,9 @@ class Partner(models.Model):
                     raise exceptions.ValidationError(_(
                         'The company has the fiscal responsibility "Not responsible for IVA", therefore it cannot have more.'))
 
+_region_specific_vat_codes = {
+    'xi',
+}
 
 class PartnerQuota(models.Model):
     _inherit = 'res.partner'
@@ -415,6 +456,33 @@ class PartnerQuota(models.Model):
     quota_client_spent = fields.Float(string='Quota client spent', readonly="1", compute='_compute_quota_client_spent')
     quota_total = fields.Float(string='Quota total', compute="_validation")
     quota_total_remaining = fields.Float(string="Quota total remaining", compute='_compute_remaining')
+
+    @api.constrains('vat', 'country_id')
+    def check_vat(self):
+        if self.env.context.get('company_id'):
+            company = self.env['res.company'].browse(self.env.context['company_id'])
+        else:
+            company = self.env.company
+        eu_countries = self.env.ref('base.europe').country_ids
+        for partner in self:
+            if not partner.vat:
+                continue
+            if company.vat_check_vies and partner.commercial_partner_id.country_id in eu_countries:
+                check_func = self.vies_vat_check
+            else:
+                check_func = self.simple_vat_check
+
+            failed_check = False
+            vat_country_code, vat_number = self._split_vat(partner.vat)
+            vat_has_legit_country_code = self.env['res.country'].search([('code', '=', vat_country_code.upper())])
+            if not vat_has_legit_country_code:
+                vat_has_legit_country_code = vat_country_code.lower() in _region_specific_vat_codes
+            if vat_has_legit_country_code:
+                failed_check = not check_func(vat_country_code, vat_number)
+            partner_country_code = partner.commercial_partner_id.country_id.code
+            if (not vat_has_legit_country_code or failed_check) and partner_country_code:
+                failed_check = not check_func(partner_country_code.lower(), partner.vat)
+        return True
 
     @api.depends('quota_client', "extra_quota_client")
     def _validation(self):

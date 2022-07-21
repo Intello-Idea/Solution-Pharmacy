@@ -20,6 +20,9 @@
                     <field name="status_percent" style="color: green"
                            attrs="{'invisible': [('status_percent', '!=', '1'),('id', '!=', True)]}"
                            readonly="1"/>
+                    <field name="status_percent" style="color: orange"
+                           attrs="{'invisible': [('status_percent', '!=', '2'),('id', '!=', True)]}"
+                           readonly="1"/>
                 </xpath>
                 <xpath expr="//field[@name='bom_line_ids']//tree//field[@name='product_qty']" position="before">
                     <field name="affect_bill_materials" invisible="1"/>
@@ -29,20 +32,20 @@
                 <xpath expr="//field[@name='product_tmpl_id']" position="after">
                     <field name="pharmaceutical_form"/>
                     <field name="pharmaceutical_presentation"/>
-                    <label for="size" string="Size"/>
-                    <div>
-                        <field name="size" class="oe_inline"
-                               attrs="{'readonly': [('standard_manufacturing', '=', True)]}"
-                               force_save="1"/>
-                        <field name="dough" nolabel="1" class="oe_inline"
-                               style="margin-left:5px; max-width:40%;"/>
-                    </div>
+<!--                    <label for="size" string="Size"/>-->
+<!--                    <div>-->
+<!--                        <field name="size" class="oe_inline"-->
+<!--                               attrs="{'readonly': [('standard_manufacturing', '=', True)]}"-->
+<!--                               force_save="1"/>-->
+<!--                        <field name="dough" nolabel="1" class="oe_inline"-->
+<!--                               style="margin-left:5px; max-width:40%;"/>-->
+<!--                    </div>-->
                 </xpath>
                 <xpath expr="//div[@class='o_row']" position="after">
                     <label for="size_total" string="Size"/>
                     <div>
                         <field name="size_total" class="oe_inline"
-                               force_save="1"/>
+                               force_save="1" readonly="False"/>
                         <field name="dough" nolabel="1" class="oe_inline"
                                style="margin-left:5px; max-width:40%;"/>
                     </div>
@@ -68,10 +71,15 @@
                     <field name="pharmaceutical_presentation"/>
                     <field name="size"/>
                 </xpath>
+                <xpath expr="//sheet/group/group[1]/field[@name='bom_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': False}</attribute>
+                </xpath>
+                <!--
                 <xpath expr="//field[@name='company_id']" position="after">
                     <field name="partner_id"/>
                     <field name="patient"/>
                 </xpath>
+                -->
                 <xpath expr="//field[@name='date_planned_start']" position="before">
                     <field name="check_standard_manufacturing" invisible="1"/>
                     <field name="due_date" attrs="{'readonly':[('check_standard_manufacturing','=',False)]}"
@@ -114,8 +122,8 @@
 <!--                    <button name="plan_without_stock"
                             attrs="{'invisible': ['|', ('state', '!=', 'confirmed'), ('routing_id', '=', False)]}"
                             type="object" string="Plan" class="oe_highlight"/>    -->
-                        <button name="plan_without_stock"
-                            attrs="{'invisible': [('state', '!=', 'confirmed')]}" type="object" string="Plan" class="oe_highlight"/> 
+<!--                        <button name="plan_without_stock"-->
+<!--                            attrs="{'invisible': [('state', '!=', 'confirmed')]}" type="object" string="Plan" class="oe_highlight"/> -->
                 </xpath>
             </field>
         </record>

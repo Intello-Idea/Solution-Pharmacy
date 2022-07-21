@@ -16,55 +16,56 @@
         </t>
         <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
         <div t-attf-class="header o_company_#{company.id}_layout">
-            <div class="row" style="border: 1px solid #000;">
-                <div class="col-3 align-items-center" style="border-right: 1px solid black;">
-                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
-                         style="max-height: 90px; margin: auto;"
-                         alt="Logo"/>
-                </div>
-                <div class="col-5 h-100 text-center"
-                     style="height:100% !important; margin-top: 20px!important;">
-                    <h5 style="margin-top: 12px;"><b>PURCHASE ORDER FORM</b>
-                        <!--                        <br/>-->
-                        <!--                        <span style="font-size: 15px;">-->
-                        <!--                            No. <span t-field="o.name"/>-->
-                        <!--                        </span>-->
-                    </h5>
+            <div class="row" style="border: 1px solid #000; font-family: serif; font-size:12px; margin-left:0.5px; margin-right:0.5px;">
+                <div class="col-3 align-items-center" style="padding-top:20px; border-right: 1px solid black;">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                                style="max-height: 90px; margin-left: auto; margin-right: auto; display: block;"
+                                alt="Logo"/>
+                        </div>
+                <div class="col-5 h-100 text-center" style="padding: 0;">
+                    <table class="w-100" style="text-align: center;">
+                        <tr>
+                            <td>
+                                <h5 style="padding-top:10px;" class="w-15"><b>PURCHASE</b>
+                                                   <br></br>
+                                                  <b>FORM</b>
+                                    <!--                        <br/>-->
+                                    <!--                        <span style="font-size: 15px;">-->
+                                    <!--                            No. <span t-field="o.name"/>-->
+                                    <!--                        </span>-->
+                                </h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-top:1px solid #000;">
+                                <h5 style="padding-top:13px;"><b class="w-15">PURCHASE ORDER</b></h5>
+                            </td>
+                        </tr>
+                    </table>
+                    
                 </div>
                 <div class="col-4" style="padding: 0;">
-                    <table class="w-100" style="text-align: center; border-left: 1px solid black">
-                        <thead styl="border: 1px solid black">
-                            <th style="" colspan="2"><strong>FTO-COM-002-3</strong></th>
-                        </thead>
-                        <tbody>
+                    <table class="w-100" style="text-align: left; border-left: 1px solid black; padding-right:0px;">
                             <tr>
-                                <td class="w-25" style="border: 1px solid black"><strong>Date</strong></td>
-                                <td class="w-75"
-                                    style="border-left: 1px solid black; border-top: 1px solid black;">
-                                    <span>27.09.16</span>
-                                </td>
+                                <td style="" colspan="2"><strong style="font-weight:700; padding-left:5px;" class="w-15">Code: FTO-COM-002-3</strong></td>
                             </tr>
-
                             <tr>
-                                <td class="w-25" style="border: 1px solid black"><strong>State</strong></td>
-                                <td class="w-75"
-                                    style="border-left: 1px solid black; border-top: 1px solid black;">
-                                    <span>Approved</span>
+                                <td style="border-top:1px solid #000;"><strong style="font-weight:700; padding-left:5px;" class="w-15">Version: 01</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="border-top:1px solid #000;">
+                                    <strong style="font-weight:700; padding-left:5px;" class="w-15">Page:</strong>
+                                    <strong class="list-inline-item w-15" style="font-weight:700;"><span class="page"/></strong>
+                                    <strong class="list-inline-item w-15" style="font-weight:700;">of</strong>
+                                    <strong class="list-inline-item w-15" style="font-weight:700;"><span class="topage"/></strong>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="w-25"
-                                    style="border-left: 1px solid black; border-right: 1px solid black; border-top: 1px solid black;">
-                                    <strong>Page</strong>
-                                </td>
-                                <td class=" w-75"
-                                    style="border-left: 1px solid black; border-top: 1px solid black;">
-                                    <span class="list-inline-item"><span class="page"/></span>
-                                    <span class="list-inline-item">de</span>
-                                    <span class="list-inline-item"><span class="topage"/></span>
-                                </td>
+                                <td style="border-top:1px solid #000;"><strong style="font-weight:700; padding-left:5px;" class="w-15">Validity:</strong><br></br><strong style="font-weight:700; padding-left:5px;">From Oct-21 to Oct-23</strong></td>
                             </tr>
-                        </tbody>
+                            <tr>
+                                <td style="border-top:1px solid #000;"><strong style="font-weight:700; padding-left:5px;" class="w-15">ID: 68</strong></td>
+                            </tr>
                     </table>
                 </div>
             </div>
@@ -106,9 +107,9 @@
         <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
         <div t-attf-class="header o_company_#{company.id}_layout">
             <div class="row" style="border: 1px solid #000;">
-                <div class="col-3 align-items-center" style="border-right: 1px solid black;">
+                <div class="col-3 align-items-center" style="padding-top:20px; border-right: 1px solid black;">
                     <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
-                         style="max-height: 90px; margin: auto;"
+                         style="max-height: 90px; margin-left: auto; margin-right: auto; display: block;"
                          alt="Logo"/>
                 </div>
                 <div class="col-9 h-100 text-center"
@@ -334,6 +335,10 @@
                                 <td class="w-35" style="border: 1px solid black; width: 35%; padding-left: 5px;">
                                     <span t-field="o.picking_type_id.name"/>
                                 </td>
+                            </tr>
+                            <tr style="border:1px solid #000;">
+                                <td style="border:1px solid #000;"><strong>Issued by:</strong></td>
+                                <td colspan="4" style="border:1px solid #000;"><span t-field="o.user_id"/></td>
                             </tr>
                         </tbody>
                     </table>

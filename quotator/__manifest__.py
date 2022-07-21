@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'contacts', 'product', 'sale', 'sale_management', 'stock', 'base_solution'],
+    'depends': ['base', 'contacts', 'product', 'sale', 'sale_management', 'stock', 'base_solution', 'contacts_setup'],
 
     # always loaded
     'data': [
@@ -28,6 +28,7 @@
         'views/views.xml',
         'views/templates.xml',
         'views/quotator.xml',
+        'views/purchase_order.xml',
         'security/groups_security.xml',
         'views/sale_order.xml',
         'data/ir_sequence_data.xml',
