@@ -47,7 +47,7 @@
         'views/product_pricelist_view.xml',
         'views/res_config_settings.xml',
         # 'views/purchase_order_view.xml',
-        'views/crm_team_inherit_view.xml',
+        #'views/crm_team_inherit_view.xml',
         'report/sale_report_template.xml',
         'report/report_invoice.xml',
         'wizard/account_move_reversal_view.xml',
