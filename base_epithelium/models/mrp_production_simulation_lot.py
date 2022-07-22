@@ -7,7 +7,7 @@ class MrpProductionSimulationLot(models.Model):
 
     order_id = fields.Many2one('mrp.production')
     product_id = fields.Many2one('product.product')
-    quantity = fields.Float()
+    quantity = fields.Float(digits='Product Unit of Measure Five')
     lot = fields.Char(string='Lot')
     due_date = fields.Char()
 
