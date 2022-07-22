@@ -409,7 +409,7 @@
     </template>
 
 
-    <report id="invoice_custom_report" string="Sale invoice" model="account.move" report_type="qweb-pdf"
-            name="ln10_co_intello.invoice_report_custom" file="ln10_co_intello.invoice_report_custom"/>
+<!--    <report id="invoice_custom_report" string="Sale invoice" model="account.move" report_type="qweb-pdf"-->
+<!--            name="ln10_co_intello.invoice_report_custom" file="ln10_co_intello.invoice_report_custom"/>-->
 
 </odoo>
