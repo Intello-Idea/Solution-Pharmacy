@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e-20220311\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-17 19:15+0000\n"
-"PO-Revision-Date: 2022-07-17 19:15+0000\n"
+"POT-Creation-Date: 2022-07-25 21:36+0000\n"
+"PO-Revision-Date: 2022-07-25 21:36+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -42,6 +42,40 @@ msgstr ""
 "                                                  <b>FORMATO</b>"
 
 #. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
+msgid ""
+"<span style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">\n"
+"                                    Validity:</span><br/><span style=\"font-weight:700; padding-left:5px;\">From\n"
+"                                    Oct-21 to Oct-23</span>"
+msgstr ""
+"<span style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">\n"
+"                                    Validity:</span><br/><span style=\"font-weight:700; padding-left:5px;\">Desde\n"
+"                                    Oct-21 hasta Oct-23</span>"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
+msgid ""
+"<span style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Code: "
+"FPRC-PRO-001-1</span>"
+msgstr ""
+"<span style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Código: "
+"FPRC-PRO-001-1</span>"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
+msgid ""
+"<span style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">ID: "
+"27</span>"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_product_identification_in_process
+msgid ""
+"<span style=\"font-weight:700; padding-left:5px;\">Vigencia: <br/> <span "
+"style=\"padding-left:5px;\">Desde Oct-21 a Oct-23</span></span>"
+msgstr ""
+
+#. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
 msgid "<span style=\"margin-top:5px; margin-bottom:5px;\">Passed: </span>"
 msgstr "<span style=\"margin-top:5px; margin-bottom:5px;\">Aprobado: </span>"
@@ -50,6 +84,66 @@ msgstr "<span style=\"margin-top:5px; margin-bottom:5px;\">Aprobado: </span>"
 #: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
 msgid "<span style=\"margin-top:5px; margin-bottom:5px;\">Refused: </span>"
 msgstr "<span style=\"margin-top:5px; margin-bottom:5px;\">Rechazado: </span>"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
+msgid "<span>-Abr-</span>"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
+msgid "<span>-Ag-</span>"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
+msgid "<span>-Dic-</span>"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
+msgid "<span>-En-</span>"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
+msgid "<span>-Febr-</span>"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
+msgid "<span>-Jul-</span>"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
+msgid "<span>-Jun-</span>"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
+msgid "<span>-My-</span>"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
+msgid "<span>-Mzo-</span>"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
+msgid "<span>-Nov-</span>"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
+msgid "<span>-Oct-</span>"
+msgstr ""
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
+msgid "<span>-Sept-</span>"
+msgstr ""
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
@@ -61,6 +155,11 @@ msgstr ""
 "                                        a instructivo de elaboración</span>"
 
 #. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "<span>Components</span>"
+msgstr "<span>COMPONENTES</span>"
+
+#. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
 msgid "<span>Date of issue:</span><br/>"
 msgstr "<span>Fecha Emisión:</span><br/>"
@@ -69,6 +168,16 @@ msgstr "<span>Fecha Emisión:</span><br/>"
 #: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
 msgid "<span>Elaboration Date:</span>"
 msgstr "<span>Fecha Elabor:</span>"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "<span>Heavy amount (g)</span>"
+msgstr "CANTIDAD PESADA(g)"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "<span>Lot</span>"
+msgstr "LOTE"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
@@ -113,33 +222,6 @@ msgstr "<span>Tamaño (g):</span>"
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
 msgid ""
-"<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">\n"
-"                                    Validity:</strong><br/><strong style=\"font-weight:700; padding-left:5px;\">From\n"
-"                                    Oct-21 to Oct-23</strong>"
-msgstr ""
-"<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">\n"
-"                                    Vigencia:</strong><br/><strong style=\"font-weight:700; padding-left:5px;\">Desde\n"
-"                                    Oct-21 to Oct-23</strong>"
-
-#. module: setting_mrp
-#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
-msgid ""
-"<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Code: "
-"FPRC-PRO-001-1</strong>"
-msgstr ""
-"<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Código: "
-"FPRC-PRO-001-1</strong>"
-
-#. module: setting_mrp
-#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
-msgid ""
-"<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">ID: "
-"27</strong>"
-msgstr ""
-
-#. module: setting_mrp
-#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
-msgid ""
 "<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Page:</strong>\n"
 "                                    <strong class=\"list-inline-item w-15\" style=\"font-weight:700;\"><span class=\"page\"/></strong>\n"
 "                                    <strong class=\"list-inline-item w-15\" style=\"font-weight:700;\">of</strong>\n"
@@ -159,15 +241,6 @@ msgstr ""
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_product_identification_in_process
-msgid ""
-"<strong style=\"font-weight:700; padding-left:5px;\">Code: FPRC-"
-"PRO-001-6</strong>"
-msgstr ""
-"<strong style=\"font-weight:700; padding-left:5px;\">Código: FPRC-"
-"PRO-001-6</strong>"
-
-#. module: setting_mrp
-#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_product_identification_in_process
 msgid "<strong style=\"font-weight:700; padding-left:5px;\">ID: 69</strong>"
 msgstr ""
 
@@ -183,17 +256,6 @@ msgstr ""
 "                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\"><span class=\"page\"/></strong>\n"
 "                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\">de</strong>\n"
 "                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\"><span class=\"topage\"/></strong>"
-
-#. module: setting_mrp
-#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_product_identification_in_process
-msgid ""
-"<strong style=\"font-weight:700; padding-"
-"left:5px;\">Validity:</strong><br/><strong style=\"font-weight:700; padding-"
-"left:5px;\">From Oct-21 to Oct-23</strong>"
-msgstr ""
-"<strong style=\"font-weight:700; padding-"
-"left:5px;\">Vígencia:</strong><br/><strong style=\"font-weight:700; padding-"
-"left:5px;\">Desde Oct-21 hasta Oct-23</strong>"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_product_identification_in_process
@@ -238,13 +300,13 @@ msgstr "Cliente:"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
-msgid "Components"
-msgstr "Componentes"
-
-#. module: setting_mrp
-#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
 msgid "Conditioning"
 msgstr "ACONDICIONAMIENTO"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_product_identification_in_process
+msgid "Código: FPRC-PRO-001-6"
+msgstr ""
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
@@ -282,15 +344,6 @@ msgid "Expiration Date"
 msgstr "Fecha de Vencimiento"
 
 #. module: setting_mrp
-#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
-msgid ""
-"Heavy\n"
-"                                        quantity"
-msgstr ""
-"Cantidad\n"
-"                                        PESADA (g)"
-
-#. module: setting_mrp
 #: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__id
 msgid "ID"
 msgstr ""
@@ -310,11 +363,6 @@ msgstr "Última Modificación el"
 #: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
 msgid "Logo"
 msgstr ""
-
-#. module: setting_mrp
-#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
-msgid "Lot"
-msgstr "Lote"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
@@ -415,6 +463,11 @@ msgstr "Orden de producción"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
+msgid "Qa"
+msgstr "CONTROL DE CALIDAD"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
 msgid "Quantity to produce:"
 msgstr "Cantidad a Producir:"
 
@@ -434,8 +487,8 @@ msgid ""
 "Theoretical\n"
 "                                        Quantity(g)"
 msgstr ""
-"Cantidad\n"
-"                                        teórica(g)"
+"CANTIDAD\n"
+"                                        TEÓRICA(g)"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
