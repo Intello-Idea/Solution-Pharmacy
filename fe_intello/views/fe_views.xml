@@ -15,11 +15,15 @@
                 <!--                            ('type','not in',('out_invoice','out_refund')),('state','!=','posted'),('send_status','=',True)]}"/>-->
                 <!--                </xpath>-->
 
+                <xpath expr="//group[@id='header_left_group']/div" position="before">
+                    <field name="type" invisible="0"/>
+                    <field name="production_line_id" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}"
+                           options="{'no_create': True, 'no_create_edit':True}"/>
+                </xpath>
                 <xpath expr="//field[@name='ref']" position="after">
                     <!-- Fields invisible -->
                     <field name="check_is_active" invisible="1"/>
                     <field name="check_is_online" invisible="1"/>
-                    <field name="type" invisible="0"/>
 
                     <field name="payment_type_1" placeholder="Payment Type"
                            attrs="{'invisible': [('type', '!=', 'out_invoice')]}"/>
