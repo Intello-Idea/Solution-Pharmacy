@@ -40,6 +40,9 @@
                     Date: 26-04-2022
                     Requirement: Incluír campo nuevo de fecha de vencimiento
                 -->
+                <xpath expr="//sheet/group/group[@name='group_extra_info']/field[@name='user_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': True}</attribute>
+                </xpath>
                 <xpath expr="//sheet/group/group[@name='group_extra_info']/field[@name='user_id']" position="before">
                     <field name="expiration_date_sp"/>
                 </xpath>

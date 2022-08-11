@@ -122,22 +122,22 @@
                         <div class="page pt-5" style="margin:0px 0px 0px 0px;">
                             <table class="w-100 text-left" style="font-size: 7px; border: 1px solid black; font-family: Calibri, sans-serif; margin-top:13px;">
                                 <tr>
-                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; width:24%; font-weight:700; font-size: 7px; ">
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; width:24%; font-weight:700; font-size: 6px; ">
                                         <span>Product: </span> 
                                     </td>
                                     
-                                    <td style="border:1px solid black; padding-right:5px; padding-left:5px; font-size: 7px; ">
+                                    <td style="border:1px solid black; padding-right:5px; padding-left:5px; font-size: 6px; ">
                                         <span t-field="o.product_id.name"/>
                                     </td>
                                         
-                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; width:25%; font-weight:700; font-size: 7px;">
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; width:25%; font-weight:700; font-size: 6px;">
                                         <span>Patient:</span><br/>
                                     </td>
                                     <t t-if="o.patient">
-                                        <td style="border:1px solid #000; padding-right:5px; padding-left:5px; font-size: 7px;"><span t-field="o.patient"/></td>
+                                        <td style="border:1px solid #000; padding-right:5px; padding-left:5px; font-size: 6px;"><span t-field="o.patient"/></td>
                                     </t>
                                     <t t-elif="o.patient_sale">
-                                        <td style="border:1px solid #000; padding-right:5px; padding-left:5px; font-size: 7px;"><span
+                                        <td style="border:1px solid #000; padding-right:5px; padding-left:5px; font-size: 6px;"><span
                                                 t-field="o.patient_sale"/></td>
                                     </t>
                                     <t t-else="else">
@@ -145,18 +145,18 @@
                                     </t>
                                 </tr>
                                 <tr>
-                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 7px;">
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 6px;">
                                         <span>PO number:</span> 
                                     </td>
                                         
-                                    <td style="border:1px solid black; padding-right:5px; padding-left:5px; font-size: 7px;">
+                                    <td style="border:1px solid black; padding-right:5px; padding-left:5px; font-size: 6px;">
                                         <span t-field="o.name"/>
                                     </td>
                                         
-                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 7px;">
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 6px;">
                                         <span>Date of issue:</span><br/>
                                     </td>
-                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-size: 4px;">
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-size: 6px;">
                                         <span t-esc="o.date_planned_start.day"/>
                                             <t t-if="o.date_planned_start.month == 1"><span>-En-</span></t>
                                             <t t-if="o.date_planned_start.month == 2"><span>-Febr-</span></t>
@@ -174,53 +174,53 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 7px;">
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 6px;">
                                         <span>Qty: (unit):</span> 
                                     </td>
                                         
-                                    <td style="border:1px solid black; padding-right:5px; padding-left:5px; font-size: 7px;">
-                                        <span t-field="o.qty_producing"/><br/>
+                                    <td style="border:1px solid black; padding-right:5px; padding-left:5px; font-size: 6px;">
+                                        <span t-esc="'{0:,.0f}'.format(o.qty_producing)"/><br/>
                                     </td>
                                         
-                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 7px;">
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 6px;">
                                         <span>Size:</span>
                                     </td>
-                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-size: 7px;">
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-size: 6px;">
                                         <span t-field="o.size"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 7px;">
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 6px;">
                                         <span>Produced by:</span> 
                                     </td>
                                         
-                                    <td style="border:1px solid black; padding-right:5px; padding-left:5px; font-size: 7px;">
+                                    <td style="border:1px solid black; padding-right:5px; padding-left:5px; font-size: 6px;">
                                         <span></span>
                                     </td>
                                         
-                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 7px;">
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 6px;">
                                         <span>Elaboration Date:</span>
                                     </td>
-                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-size: 7px;">
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-size: 6px;">
                                         <span></span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="padding-right:5px; padding-left:5px; font-weight:700; font-size: 7px;">
+                                    <td style="padding-right:5px; padding-left:5px; font-weight:700; font-size: 6px;">
                                         <span style="margin-top:5px; margin-bottom:5px;">Passed: </span> 
                                     </td>
-                                    <td style="padding-right:5px; padding-left:5px;">
-                                        <div style="border: 1px solid black; width:20%; margin:2px;" ><br/></div>
+                                    <td style="padding-right:5px; padding-left:5px; padding-bottom:5px;">
+                                        <img src="/setting_mrp/static/src/img/cuadrado.png" style="width:10px; height:10px;"/>
                                     </td>
-                                    <td style="padding-right:5px; padding-left:5px; font-weight:700; font-size: 7px;">
+                                    <td style="padding-right:5px; padding-left:5px; font-weight:700; font-size: 6px;">
                                         <span style="margin-top:5px; margin-bottom:5px;">Refused: </span> 
                                     </td>
-                                    <td style="padding-right:5px; padding-left:5px; padding-top:5px;">
-                                        <div style="border: 1px solid black; margin:2px;"><br/></div>
+                                    <td style="padding-right:5px; padding-left:5px; padding-top:5px; padding-botton:5px;">
+                                        <img src="/setting_mrp/static/src/img/cuadrado.png" style="width:10px; height:10px;"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 7px;">
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 6px;">
                                         <span>Reviewed by: </span> 
                                     </td>
                                         
@@ -228,7 +228,7 @@
                                         <span></span>
                                     </td>
                                         
-                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 7px;">
+                                    <td style="border: 1px solid black; padding-right:5px; padding-left:5px; font-weight:700; font-size: 6px;">
                                         <span>Review date: </span>
                                     </td>
                                     <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
