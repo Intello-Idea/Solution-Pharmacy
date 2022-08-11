@@ -21,8 +21,6 @@
             <field name="arch" type="xml">
 
                 <xpath expr="//group[@id='header_left_group']/div" position="before">
-                    <field name="production_line_id" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}"
-                           options="{'no_create': True, 'no_create_edit':True}"/>
                     <field name="check_status" invisible="1"/>
                     <field name="sale_check_status" invisible="1"/>
                 </xpath>
