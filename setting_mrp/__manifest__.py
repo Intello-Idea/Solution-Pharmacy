@@ -22,6 +22,7 @@
         'report/production_order_template.xml',
         'report/product_identification_in_process.xml',
         'views/mrp_production_view.xml',
+        'views/mrp_bom.xml',
         #agregar wizard despues de views sólo si existe o se requiere
     ],
 
