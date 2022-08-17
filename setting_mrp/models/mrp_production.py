@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import fields, models, api
+from odoo import fields, models, api, _
 from odoo.tools import  UserError
 
 
@@ -13,6 +13,11 @@ class MrpProduction(models.Model):
         Requirement: REQ-SP-000007
         Functionality: Agregar campos nuevos para obtener cliente y paciente desde la orden de venta y sino agregar manualmente 
     """
+    '''
+    @api.model
+    def _get_default_picking_type(self):
+        return self.bom_id.operation_type.id
+    '''
 
     partner_sale_id = fields.Many2one('res.partner', string='Client', related="procurement_group_id.partner_id", store=True)
     partner_id = fields.Many2one('res.partner', string='Partner')
@@ -24,6 +29,11 @@ class MrpProduction(models.Model):
     expiration_date_sp = fields.Date(string="Expiration Date")
     client_code = fields.Char(string='Client Code', related="partner_id.client_code", store=True)
     client_code_sale = fields.Char(string='Client Code', related="partner_sale_id.client_code", store=True)
+    '''
+    picking_type_id = fields.Many2one(
+        'stock.picking.type', 'Operation Type',
+        default=_get_default_picking_type, required=True, check_company=True)
+    '''
 
     #Función computada que calcula el tamaño a granel basado en la cantidad a producir por el tamaño
     @api.depends('product_id')
