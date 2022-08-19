@@ -45,15 +45,26 @@ class MrpProduction(models.Model):
     @api.model
     def create(self, values):
         if not values.get('name', False) or values['name'] == _('New'):
-            picking_type_id = values.get(
-                'picking_type_id') or self._get_default_picking_type()
-            picking_type_id = self.env['stock.picking.type'].browse(
-                picking_type_id)
-
+            
+            if self.env['mrp.bom'].search([('id', '=', int(values['bom_id']))]).operation_type:
+                picking_type_id = self.env['mrp.bom'].search([('id', '=', int(values['bom_id']))]).operation_type
+                location_src_id = picking_type_id.default_location_src_id
+                location_dest_id = picking_type_id.default_location_dest_id
+                values['picking_type_id'] = picking_type_id.id
+                values['location_src_id'] = location_src_id.id
+                values['location_dest_id'] = location_dest_id.id
+            else:
+                picking_type_id = values.get(
+                    'picking_type_id') or self._get_default_picking_type()
+                picking_type_id = self.env['stock.picking.type'].browse(
+                    picking_type_id)
             seq_code = 'mrp.production'
             if self.env['mrp.bom'].search([('id', '=', int(values['bom_id']))]).check_status:
                 seq_code += '.i'
 
+            print('******************')
+            print(self.env['mrp.bom'].search([('id', '=', int(values['bom_id']))]).operation_type)
+            print('******************')
             if picking_type_id:
                 values['name'] = picking_type_id.sequence_id.next_by_id()
             else:
