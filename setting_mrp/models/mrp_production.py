@@ -44,3 +44,8 @@ class MrpProduction(models.Model):
             print(mrp_product.product_uom_qty)
 
     #End Programmer: Routh Milano
+
+    def action_draft(self):
+        for rec in self:
+            if rec.state == 'confirmed':
+                rec.update({'state': 'draft'})
