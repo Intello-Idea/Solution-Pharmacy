@@ -175,7 +175,21 @@
                                     -->
                                     <tr>
                                         <td style="width: 50%; border: 1px solid black; padding-right:5px; padding-left:5px;">
-                                            <span>Entry date: </span> <span t-field="o.picking_id.date_done" t-options='{"widget": "date"}'/>
+                                            <span>Entry date: </span> 
+                                            <span t-esc="o.picking_id.date_done.day"/>
+                                            <t t-if="o.picking_id.date_done.month == 1"><span>-Ene-</span></t>
+                                            <t t-if="o.picking_id.date_done.month == 2"><span>-Febr-</span></t>
+                                            <t t-if="o.picking_id.date_done.month == 3"><span>-Mar-</span></t>
+                                            <t t-if="o.picking_id.date_done.month == 4"><span>-Abr-</span></t>
+                                            <t t-if="o.picking_id.date_done.month == 5"><span>-May-</span></t>
+                                            <t t-if="o.picking_id.date_done.month == 6"><span>-Jun-</span></t>
+                                            <t t-if="o.picking_id.date_done.month == 7"><span>-Jul-</span></t>
+                                            <t t-if="o.picking_id.date_done.month == 8"><span>-Ago-</span></t>
+                                            <t t-if="o.picking_id.date_done.month == 9"><span>-Sept-</span></t>
+                                            <t t-if="o.picking_id.date_done.month == 10"><span>-Oct-</span></t>
+                                            <t t-if="o.picking_id.date_done.month == 11"><span>-Nov-</span></t>
+                                            <t t-if="o.picking_id.date_done.month == 12"><span>-Dic-</span></t>
+                                            <span t-esc="o.picking_id.date_done.year"/>
                                         </td>
                                         
                                         <td style="border:1px solid black; padding-right:5px; padding-left:5px;">
@@ -202,9 +216,24 @@
 
                                     <tr>
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
-                                                <span>Due date: </span>
-                                                <br/>
-                                                <span t-field="o.expiration_date" t-options='{"widget": "date"}'/>
+                                            <span>Due date: </span>
+                                            <br/>
+                                            <t t-if="o.expiration_date">
+                                                <span t-esc="o.expiration_date.day"/>
+                                                <t t-if="o.expiration_date.month == 1"><span>-Ene-</span></t>
+                                                <t t-if="o.expiration_date.month == 2"><span>-Febr-</span></t>
+                                                <t t-if="o.expiration_date.month == 3"><span>-Mar-</span></t>
+                                                <t t-if="o.expiration_date.month == 4"><span>-Abr-</span></t>
+                                                <t t-if="o.expiration_date.month == 5"><span>-May-</span></t>
+                                                <t t-if="o.expiration_date.month == 6"><span>-Jun-</span></t>
+                                                <t t-if="o.expiration_date.month == 7"><span>-Jul-</span></t>
+                                                <t t-if="o.expiration_date.month == 8"><span>-Ago-</span></t>
+                                                <t t-if="o.expiration_date.month == 9"><span>-Sept-</span></t>
+                                                <t t-if="o.expiration_date.month == 10"><span>-Oct-</span></t>
+                                                <t t-if="o.expiration_date.month == 11"><span>-Nov-</span></t>
+                                                <t t-if="o.expiration_date.month == 12"><span>-Dic-</span></t>
+                                                <span t-esc="o.expiration_date.year"/>
+                                            </t>
                                         </td>
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;" colspan="2">
                                                 <span>N° Analysis: </span>
@@ -218,7 +247,7 @@
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
                                                 <span>Net: </span>
                                                 <br/>
-                                                <span t-field="o.qty_done"/><span t-field="o.product_uom_id.name"/>
+                                                <span t-esc="'{0:,.0f}'.format(o.qty_done)"/><span t-field="o.product_uom_id.name"/>
                                         </td>
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
                                                 <span>Tare: </span>

@@ -301,7 +301,7 @@
                                             <t t-if="line.product_counterpart">
                                                 <td><t t-esc="line.product_counterpart.name"/></td>
                                             </t>
-                                            <t t-else="line.product_counterpart">
+                                            <t t-else="">
                                                 <td><t t-esc="line.product_id.name"/></td>
                                             </t>
                                             <td><t t-esc="int(line.quantity)"/></td>

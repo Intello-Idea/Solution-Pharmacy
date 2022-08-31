@@ -46,6 +46,13 @@ class MrpProduction(models.Model):
     #End Programmer: Routh Milano
 
     def action_draft(self):
-        for rec in self:
-            if rec.state == 'confirmed':
-                rec.update({'state': 'draft'})
+        self.update({'state': 'draft'})
+        stock_move = self.env['stock.move'].search([('reference', '=', self.name)])
+        if len(stock_move):
+            for rec in stock_move:
+                rec.update({'state':'draft'})
+        
+    def action_confirm(self):
+        self.update({'state': 'confirmed'})
+        rec = super(MrpProduction, self).action_confirm()
+        return rec

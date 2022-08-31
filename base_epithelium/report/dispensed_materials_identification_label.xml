@@ -112,18 +112,18 @@
                                         </td>
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px; width: 20%;">
                                             <span t-esc="o.date_planned_start.day"/>
-                                            <t t-if="o.date_planned_start.month == 1"><span>-Enero-</span></t>
-                                            <t t-if="o.date_planned_start.month == 2"><span>-Febrero-</span></t>
-                                            <t t-if="o.date_planned_start.month == 3"><span>-Marzo-</span></t>
-                                            <t t-if="o.date_planned_start.month == 4"><span>-Abril-</span></t>
-                                            <t t-if="o.date_planned_start.month == 5"><span>-Mayo-</span></t>
-                                            <t t-if="o.date_planned_start.month == 6"><span>-Junio-</span></t>
-                                            <t t-if="o.date_planned_start.month == 7"><span>-Julio-</span></t>
-                                            <t t-if="o.date_planned_start.month == 8"><span>-Agosto-</span></t>
-                                            <t t-if="o.date_planned_start.month == 9"><span>-Septiembre-</span></t>
-                                            <t t-if="o.date_planned_start.month == 10"><span>-Octubre-</span></t>
-                                            <t t-if="o.date_planned_start.month == 11"><span>-Noviembre-</span></t>
-                                            <t t-if="o.date_planned_start.month == 12"><span>-Diciembre-</span></t>
+                                            <t t-if="o.date_planned_start.month == 1"><span>-Ene-</span></t>
+                                            <t t-if="o.date_planned_start.month == 2"><span>-Febr-</span></t>
+                                            <t t-if="o.date_planned_start.month == 3"><span>-Mar-</span></t>
+                                            <t t-if="o.date_planned_start.month == 4"><span>-Abr-</span></t>
+                                            <t t-if="o.date_planned_start.month == 5"><span>-May-</span></t>
+                                            <t t-if="o.date_planned_start.month == 6"><span>-Jun-</span></t>
+                                            <t t-if="o.date_planned_start.month == 7"><span>-Jul-</span></t>
+                                            <t t-if="o.date_planned_start.month == 8"><span>-Ago-</span></t>
+                                            <t t-if="o.date_planned_start.month == 9"><span>-Sept-</span></t>
+                                            <t t-if="o.date_planned_start.month == 10"><span>-Oct-</span></t>
+                                            <t t-if="o.date_planned_start.month == 11"><span>-Nov-</span></t>
+                                            <t t-if="o.date_planned_start.month == 12"><span>-Dic-</span></t>
                                             <span t-esc="o.date_planned_start.year"/>
                                         </td>
                                         <td style="border:1px solid black; padding-right:5px; padding-left:5px; width: 30%;">
