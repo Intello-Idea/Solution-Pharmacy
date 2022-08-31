@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e-20220311\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-14 17:08+0000\n"
-"PO-Revision-Date: 2022-08-14 17:08+0000\n"
+"POT-Creation-Date: 2022-08-30 16:51+0000\n"
+"PO-Revision-Date: 2022-08-30 16:51+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -67,13 +67,18 @@ msgid "<span style=\"margin-top:5px; margin-bottom:5px;\">Refused: </span>"
 msgstr "<span style=\"margin-top:5px; margin-bottom:5px;\">Rechazado: </span>"
 
 #. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_product_identification_in_process
+msgid "<span style=\"padding-top:2px; padding-left:5px;\">ID: 69</span>"
+msgstr ""
+
+#. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
 msgid "<span>-Abr-</span>"
 msgstr ""
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.product_identification_in_process
-msgid "<span>-Ag-</span>"
+msgid "<span>-Ago-</span>"
 msgstr ""
 
 #. module: setting_mrp
@@ -201,6 +206,15 @@ msgid "<span>Size:</span>"
 msgstr "<span>Tamaño (g):</span>"
 
 #. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_product_identification_in_process
+msgid ""
+"<strong style=\"font-weight:700; padding-left:5px\">Página:</strong>\n"
+"                                    <strong style=\"font-weight:700;\"><span class=\"page\"/></strong>\n"
+"                                    <strong style=\"font-weight:700;\">de</strong>\n"
+"                                    <strong style=\"font-weight:700;\"><span class=\"topage\"/></strong>"
+msgstr ""
+
+#. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_sp
 msgid ""
 "<strong style=\"font-weight:700; padding-left:5px;\" class=\"w-15\">Page:</strong>\n"
@@ -224,24 +238,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_product_identification_in_process
 msgid "<strong style=\"font-weight:700; padding-left:5px;\">Version: 01</strong>"
 msgstr "<strong style=\"font-weight:700; padding-left:5px;\">Versión: 01</strong>"
-
-#. module: setting_mrp
-#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_product_identification_in_process
-msgid "<strong style=\"font-weight:700; padding-top:2px;\">ID: 69</strong>"
-msgstr "<strong style=\"font-weight:700; padding-left:5px;\">Versión: 01</strong>"
-
-#. module: setting_mrp
-#: model_terms:ir.ui.view,arch_db:setting_mrp.internal_layout_product_identification_in_process
-msgid ""
-"<strong style=\"font-weight:700;\">Page:</strong>\n"
-"                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\"><span class=\"page\"/></strong>\n"
-"                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\">of</strong>\n"
-"                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\"><span class=\"topage\"/></strong>"
-msgstr ""
-"<strong style=\"font-weight:700; padding-left:5px;\">Página:</strong>\n"
-"                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\"><span class=\"page\"/></strong>\n"
-"                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\">de</strong>\n"
-"                                    <strong class=\"list-inline-item\" style=\"font-weight:700;\"><span class=\"topage\"/></strong>"
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
@@ -380,6 +376,7 @@ msgstr "Número de OP:"
 
 #. module: setting_mrp
 #: model:ir.model.fields,field_description:setting_mrp.field_mrp_bom__operation_type
+#: model:ir.model.fields,field_description:setting_mrp.field_mrp_production__picking_type_id
 msgid "Operation Type"
 msgstr "Tipo de Operación"
 
@@ -469,6 +466,11 @@ msgstr "Orden de producción"
 #: model_terms:ir.ui.view,arch_db:setting_mrp.report_production_order_sp
 msgid "Quantity to produce:"
 msgstr "Cantidad a Producir:"
+
+#. module: setting_mrp
+#: model_terms:ir.ui.view,arch_db:setting_mrp.mrp_production_form_view_setting_mrp
+msgid "Restablecer a Borrador"
+msgstr ""
 
 #. module: setting_mrp
 #: model_terms:ir.ui.view,arch_db:setting_mrp.mrp_production_base_epithelium_form_view_setting_mrp

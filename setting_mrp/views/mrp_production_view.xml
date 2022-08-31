@@ -7,7 +7,6 @@
             <field name="model">mrp.production</field>
             <field name="inherit_id" ref="base_epithelium.mrp_production_form_view_base_epithelium"/>
             <field name="arch" type="xml">
-
                 <xpath expr="//field[@name='size']" position="replace">
                     <!--
                         start
@@ -34,6 +33,9 @@
             <field name="model">mrp.production</field>
             <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
             <field name="arch" type="xml">
+                <xpath expr="//header/button[@name='action_cancel']" position="before">
+                    <button name="action_draft" type="object" string="Restablecer a Borrador" attrs="{'invisible': ['|', ('id', '=', False), ('state', 'in', ('draft','done', 'cancel'))]}"/>
+                </xpath>
                 <!--
                     start
                     Programmer: Routh Milano
