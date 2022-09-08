@@ -130,47 +130,20 @@ class Quotator(models.Model):
             raise UserError(_("There are no selected raw materials"))
 
     def send_quotation(self):
-        material = []
-        products = []
-        product = {
-            'product_id': self.env['product.product'].search([('name', '=', 'Generico cotizador')]).id,
-            'name': self.final_product,
-            'product_uom_qty': self.product_qty,
-            'price_unit': self.total/self.product_qty,
-            'price_subtotal': self.total,
-            'default_value': self.total,
+        
+        view = self.env.ref('quotator.view_send_sale_order')
+        # TDE FIXME: a return in a loop, what a good idea. Really.
+        context = self._context.copy()
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'send.sale.order.wizard',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'views': [(view.id, 'form')],
+            'view_id': view.id,
+            'target': 'new',        
+            'context': context,
         }
-        products.append((0, 0, product))
-        for line in self.quotator_lines:
-            raw = {
-                'product_id': line.product_id.id,
-                'product_qty': line.material_qty,
-                'percentage': line.percentage,
-                'price_unit': 0,
-                'appointment_id': line.quotator_id.id,
-                'category': line.category,
-                'sale_order': line.sale_order,
-            }
-            material.append((0, 0, raw))
-        vals = {
-            'quotator_reference': self.name,
-            'user_id': self.user.id,
-            'partner_id': self.partner_id.id,
-            'date_order': self.quotator_date,
-            'validity_date': self.expiration_date,
-            'pricelist_id': self.partner_id.property_product_pricelist.id,
-            'order_line': products,
-            'raw_material': material,
-            'medical_formula': self.medical_formula,
-            'production_line_id': self.line_production_id.id,
-            'final_client': self.patient,
-            'form_pharmaceutical': self.pharmaceutical_form.id,
-            'patient': self.patient,
-            'pharmaceutical_presentation': self.presentation_id.id,
-            'grams_pharmaceutical': self.value_pharmaceutical_form,
-        }
-        self.env['sale.order'].create(vals)
-        self.state = 'posted'
 
     def action_cancel(self):
         self.state = 'cancel'
