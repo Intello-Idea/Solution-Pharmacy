@@ -35,6 +35,9 @@ class SaleOrder(models.Model):
                 record_ids = self.env['mrp.bom'].search([('product_tmpl_id', '=', self.order_line.product_id[index].product_tmpl_id.id)])
 
                 record = self.env['mrp.bom'].search([('product_tmpl_id', '=', self.order_line[index].product_id.product_tmpl_id.id)]).bom_line_ids.bom_id
+                fabr_I = self.env['stock.picking.type'].search([('name','=','Fabricación I')])[0].id
+                fabr = self.env['stock.picking.type'].search([('name','=','Fabricación')])[0].id
+                record.update({'operation_type': fabr if '(OT)' in self.production_line_id.name else fabr_I})
                 delete = self.env['mrp.bom.line'].search([('bom_id', '=', record._origin.id)])
                 delete.unlink()
                 for record in record_ids:

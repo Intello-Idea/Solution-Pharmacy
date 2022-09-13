@@ -34,6 +34,7 @@
         'data/ir_sequence_data.xml',
         'reports/sale_report_templates.xml',
         'views/discount_rates.xml',
+        'wizard/send_sale_order.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

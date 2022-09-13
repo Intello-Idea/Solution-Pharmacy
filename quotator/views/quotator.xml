@@ -50,6 +50,7 @@
                 <field name="expiration_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                 <field name="pharmaceutical_form" options="{'no_create_edit': True, 'no_create': True}"/>
                 <field name="subtotal_grams"/>
+                <field name="sale_reference" attrs="{'readonly': True}"/>
                 <field name="line_production_id" invisible="1"/>
               </group>
             </group>

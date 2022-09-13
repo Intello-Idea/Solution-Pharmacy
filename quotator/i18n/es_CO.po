@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e-20220311\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-01 18:30+0000\n"
-"PO-Revision-Date: 2022-07-01 18:30+0000\n"
+"POT-Creation-Date: 2022-09-08 20:15+0000\n"
+"PO-Revision-Date: 2022-09-08 20:15+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: quotator
+#: code:addons/Solution-Pharmacy/quotator/models/quotator_lines.py:0
 #: code:addons/quotator/models/quotator_lines.py:0
 #, python-format
 msgid "!! You do not have, selected a client !!"
@@ -39,6 +40,11 @@ msgstr "Advertencia de acceso"
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__message_needaction
 msgid "Action Needed"
+msgstr ""
+
+#. module: quotator
+#: model:ir.actions.act_window,name:quotator.action_send_sale_order
+msgid "Action Send Sale Order"
 msgstr ""
 
 #. module: quotator
@@ -83,6 +89,7 @@ msgstr ""
 
 #. module: quotator
 #: model_terms:ir.ui.view,arch_db:quotator.form
+#: model_terms:ir.ui.view,arch_db:quotator.view_send_sale_order
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -108,11 +115,17 @@ msgid "Company"
 msgstr "Compañia"
 
 #. module: quotator
+#: model_terms:ir.ui.view,arch_db:quotator.view_send_sale_order
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_discount_rates__create_uid
 #: model:ir.model.fields,field_description:quotator.field_discount_rates_line__create_uid
 #: model:ir.model.fields,field_description:quotator.field_quotator_lines__create_uid
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__create_uid
 #: model:ir.model.fields,field_description:quotator.field_raw_material__create_uid
+#: model:ir.model.fields,field_description:quotator.field_send_sale_order_wizard__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
@@ -122,6 +135,7 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:quotator.field_quotator_lines__create_date
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__create_date
 #: model:ir.model.fields,field_description:quotator.field_raw_material__create_date
+#: model:ir.model.fields,field_description:quotator.field_send_sale_order_wizard__create_date
 msgid "Created on"
 msgstr "Creado en"
 
@@ -153,6 +167,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:quotator.field_raw_material__display_name
 #: model:ir.model.fields,field_description:quotator.field_sale_order__display_name
 #: model:ir.model.fields,field_description:quotator.field_sale_order_line__display_name
+#: model:ir.model.fields,field_description:quotator.field_send_sale_order_wizard__display_name
 msgid "Display Name"
 msgstr "Nombre Público"
 
@@ -234,6 +249,7 @@ msgstr "Grupo especialista"
 #: model:ir.model.fields,field_description:quotator.field_raw_material__id
 #: model:ir.model.fields,field_description:quotator.field_sale_order__id
 #: model:ir.model.fields,field_description:quotator.field_sale_order_line__id
+#: model:ir.model.fields,field_description:quotator.field_send_sale_order_wizard__id
 msgid "ID"
 msgstr ""
 
@@ -272,6 +288,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:quotator.field_raw_material____last_update
 #: model:ir.model.fields,field_description:quotator.field_sale_order____last_update
 #: model:ir.model.fields,field_description:quotator.field_sale_order_line____last_update
+#: model:ir.model.fields,field_description:quotator.field_send_sale_order_wizard____last_update
 msgid "Last Modified on"
 msgstr "Última Modificación el"
 
@@ -281,6 +298,7 @@ msgstr "Última Modificación el"
 #: model:ir.model.fields,field_description:quotator.field_quotator_lines__write_uid
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__write_uid
 #: model:ir.model.fields,field_description:quotator.field_raw_material__write_uid
+#: model:ir.model.fields,field_description:quotator.field_send_sale_order_wizard__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización por"
 
@@ -290,8 +308,14 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:quotator.field_quotator_lines__write_date
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__write_date
 #: model:ir.model.fields,field_description:quotator.field_raw_material__write_date
+#: model:ir.model.fields,field_description:quotator.field_send_sale_order_wizard__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
+
+#. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_send_sale_order_wizard__line_production_id
+msgid "Line Production"
+msgstr "Linea de Producción"
 
 #. module: quotator
 #: model_terms:ir.ui.view,arch_db:quotator.discount_form
@@ -351,6 +375,9 @@ msgid "Name"
 msgstr ""
 
 #. module: quotator
+#: code:addons/Solution-Pharmacy/quotator/models/quotator.py:0
+#: code:addons/Solution-Pharmacy/quotator/models/quotator.py:0
+#: code:addons/Solution-Pharmacy/quotator/models/quotator.py:0
 #: code:addons/quotator/models/quotator.py:0
 #: code:addons/quotator/models/quotator.py:0
 #: code:addons/quotator/models/quotator.py:0
@@ -509,6 +536,16 @@ msgid "Security Token"
 msgstr ""
 
 #. module: quotator
+#: model_terms:ir.ui.view,arch_db:quotator.view_send_sale_order
+msgid "Select new production line"
+msgstr "Seleccione nueva linea de producción"
+
+#. module: quotator
+#: model_terms:ir.ui.view,arch_db:quotator.view_send_sale_order
+msgid "Send To Sale Order"
+msgstr ""
+
+#. module: quotator
 #: model_terms:ir.ui.view,arch_db:quotator.form
 msgid "Send quotator"
 msgstr "Enviar cotizacion"
@@ -554,6 +591,7 @@ msgid "Subtotal price"
 msgstr "Precio subtotal"
 
 #. module: quotator
+#: code:addons/Solution-Pharmacy/quotator/models/quotator.py:0
 #: code:addons/quotator/models/quotator.py:0
 #, python-format
 msgid "The expiration date cannot be less than the application creation date"
@@ -562,12 +600,14 @@ msgstr ""
 "aplicación."
 
 #. module: quotator
+#: code:addons/Solution-Pharmacy/quotator/models/quotator.py:0
 #: code:addons/quotator/models/quotator.py:0
 #, python-format
 msgid "The percentages are not correct"
 msgstr "Los porcentajes no son correctos"
 
 #. module: quotator
+#: code:addons/Solution-Pharmacy/quotator/models/quotator.py:0
 #: code:addons/quotator/models/quotator.py:0
 #, python-format
 msgid "There are no selected raw materials"
@@ -635,6 +675,11 @@ msgstr ""
 #: model:ir.actions.act_window,name:quotator.action_window
 msgid "quotes"
 msgstr "Cotizaciones"
+
+#. module: quotator
+#: model:ir.model,name:quotator.model_send_sale_order_wizard
+msgid "send.sale.order.wizard"
+msgstr ""
 
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__value_pharmaceutical_form

@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <record id="view_send_sale_order" model="ir.ui.view">
+        <field name="name">Send Sale Order</field>
+        <field name="model">send.sale.order.wizard</field>
+        <field name="arch" type="xml">
+        <form string="Send To Sale Order">
+                <p class="oe_gray">
+                        Select new production line
+                </p>
+                <group>
+                        <group>
+                                <field name="line_production_id"/>
+                        </group>
+                </group>
+                <footer>
+                        <button name="confirm" 
+                                string="Confirm" 
+                                type="object" 
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+        </form>
+        </field>
+        </record>
+
+        <record id="action_send_sale_order" model="ir.actions.act_window">
+	        <field name="name">Action Send Sale Order</field>
+	        <field name="res_model">send.sale.order.wizard</field>
+	        <field name="view_mode">form</field>
+	        <field name="target">new</field>
+        </record>
+        
+    </data>
+</odoo>
