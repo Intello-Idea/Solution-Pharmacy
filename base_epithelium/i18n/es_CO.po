@@ -339,14 +339,14 @@ msgstr "<strong style=\"font-weight:700; padding-left:5px;\">Versión: 01</stron
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
 msgid ""
 "<strong style=\"font-weight:700; padding-left:5px;\">Code: FCOC-"
-"PRO-011-1</strong>"
+"PRO-008-4</strong>"
 msgstr ""
 "<strong style=\"font-weight:700; padding-left:5px;\">Código: FCOC-"
-"PRO-011-1</strong>"
+"PRO-008-4</strong>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
-msgid "<strong style=\"font-weight:700; padding-left:5px;\">ID: 107</strong>"
+msgid "<strong style=\"font-weight:700; padding-left:5px;\">ID: 92</strong>"
 msgstr ""
 
 #. module: base_epithelium

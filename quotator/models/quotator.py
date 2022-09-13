@@ -48,6 +48,7 @@ class Quotator(models.Model):
         ('posted', 'Open'),
         ('cancel', 'Cancelled')
     ], string='Status', readonly=True, copy=False, index=True, tracking=3, default='draft')
+    sale_reference = fields.Char(string='Referencia de venta')
 
     @api.model
     def create(self, vals):
