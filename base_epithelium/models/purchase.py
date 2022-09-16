@@ -58,10 +58,13 @@ class PurchaseOrder(models.Model):
 
         return res
 
-    def action_view_invoice(self):
-        result = super(PurchaseOrder, self).action_view_invoice()
+    """
+    #Se comenta este metodo ya que no existe el contexto llamado default_purchase_check_status
+    def action_view_invoice(self, invoices=False):
+        result = super(PurchaseOrder, self).action_view_invoice(invoices)
         result['context']['default_purchase_check_status'] = self.check_status
         return result
+    """
 
     @api.onchange('check_status')
     def _clean_order_lines(self):
