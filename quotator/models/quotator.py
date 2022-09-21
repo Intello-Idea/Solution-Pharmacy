@@ -73,8 +73,9 @@ class Quotator(models.Model):
     def _compute_total_pharmaceutical(self):
         for line in self:
             line['total_pharmaceutical_form'] = line['value_pharmaceutical_form'] * \
-                line.pharmaceutical_form.value * 6
-##Revisar##
+                                                line.pharmaceutical_form.value * 6
+
+    ##Revisar##
 
     @api.depends('quotator_lines')
     def _compute_subtotal_pharmaceutical(self):
@@ -107,17 +108,17 @@ class Quotator(models.Model):
         percentages = self.env['discount.rates'].search(
             [('type_id.id', "=", self.partner_id.client_type.id)])
         presentation = self.presentation_id.value + \
-            ((self.presentation_id.value*percentages['percentage'])/100)
+                       ((self.presentation_id.value * percentages['percentage']) / 100)
         pharmaceutical = self.total_pharmaceutical_form + \
-            ((self.total_pharmaceutical_form*percentages['percentage'])/100)
-        total = suma+presentation+pharmaceutical
+                         ((self.total_pharmaceutical_form * percentages['percentage']) / 100)
+        total = suma + presentation + pharmaceutical
         for line in percentages.lines_price:
-            if self.subtotal_grams in range(line['start'], line['final']+1):
+            if self.subtotal_grams in range(line['start'], line['final'] + 1):
                 if total < line['base_price']:
                     total = line['base_price']
                 else:
                     total = total
-        self.total = round(total/100)*100
+        self.total = round(total / 100) * 100
 
     @api.constrains('quotator_date')
     def _validation_date(self):
@@ -131,7 +132,7 @@ class Quotator(models.Model):
             raise UserError(_("There are no selected raw materials"))
 
     def send_quotation(self):
-        
+
         view = self.env.ref('quotator.view_send_sale_order')
         # TDE FIXME: a return in a loop, what a good idea. Really.
         context = self._context.copy()
@@ -142,10 +143,12 @@ class Quotator(models.Model):
             'view_mode': 'form',
             'views': [(view.id, 'form')],
             'view_id': view.id,
-            'target': 'new',        
+            'target': 'new',
             'context': context,
         }
+        sale_order = self.env['sale.order'].create(vals)
+        self.state = 'posted'
+        self.sale_reference = sale_order.name
 
     def action_cancel(self):
         self.state = 'cancel'
-
