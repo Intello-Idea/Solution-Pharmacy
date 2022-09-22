@@ -16,14 +16,14 @@ class SendSaleOrderWizard(models.TransientModel):
 
     def confirm(self):
         id = int(self._context['active_id'])
-        quotator = self.env['quotator.own'].search([('id','=',id)])
+        quotator = self.env['quotator.own'].search([('id', '=', id)])
         material = []
         products = []
         product = {
             'product_id': self.env['product.product'].search([('name', '=', 'Generico cotizador')]).id,
             'name': quotator.final_product,
             'product_uom_qty': quotator.product_qty,
-            'price_unit': quotator.total/quotator.product_qty,
+            'price_unit': quotator.total / quotator.product_qty,
             'price_subtotal': quotator.total,
             'default_value': quotator.total,
         }
@@ -39,7 +39,7 @@ class SendSaleOrderWizard(models.TransientModel):
                 'sale_order': line.sale_order,
             }
             material.append((0, 0, raw))
-        
+
         vals = {
             'quotator_reference': quotator.name,
             'user_id': quotator.user.id,
@@ -57,6 +57,5 @@ class SendSaleOrderWizard(models.TransientModel):
             'pharmaceutical_presentation': quotator.presentation_id.id,
             'grams_pharmaceutical': quotator.value_pharmaceutical_form,
         }
-        self.env['sale.order'].create(vals)
-        quotator.update({'state':'posted'})
-
+        sale_order = self.env['sale.order'].create(vals)
+        quotator.update({'state': 'posted', 'sale_reference': sale_order.name})

@@ -136,6 +136,9 @@ class Quotator(models.Model):
         view = self.env.ref('quotator.view_send_sale_order')
         # TDE FIXME: a return in a loop, what a good idea. Really.
         context = self._context.copy()
+        # self.state = 'posted'
+        # sale_order = self.env['sale.order'].create(vals)
+        # self.sale_reference = sale_order.name
         return {
             'type': 'ir.actions.act_window',
             'res_model': 'send.sale.order.wizard',
@@ -146,9 +149,8 @@ class Quotator(models.Model):
             'target': 'new',
             'context': context,
         }
-        sale_order = self.env['sale.order'].create(vals)
-        self.state = 'posted'
-        self.sale_reference = sale_order.name
+
+
 
     def action_cancel(self):
         self.state = 'cancel'
