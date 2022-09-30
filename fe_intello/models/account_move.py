@@ -246,9 +246,8 @@ class AccountMove(models.Model):
         if not self.invoice_date:
             message += "<li>" + self._fields['invoice_date'].string + "</li>"
             status = True
-        if not self.invoice_user_id.name:
-            message += "<li>" + self._fields['invoice_user_id'].string + "</li>"
-            status = True
+        if not self.invoice_user_id.name and self.partner_id.category_id.name != 'Proveedor':
+            raise exceptions.ValidationError("Campo vendedor es requerido")
         if not self.date:
             message += "<li>" + self._fields['date'].string + "</li>"
             status = True
@@ -299,6 +298,7 @@ class AccountMove(models.Model):
 
     # Inherit Buttons
     def action_post(self):
+        print("Se ejecuto el metodo")
         if self.type in ['out_invoice', 'out_refund']:
             parameter = self.env['ir.config_parameter'].sudo()
             fe_online = parameter.get_param('res.config.settings.fe_online')
@@ -468,6 +468,9 @@ class AccountMove(models.Model):
         return qr_code_url
 
     def send_representation_document(self):
+        pass
+
+    def insert_event_dian(self):
         pass
 
     def attach_pdf_invoice(self):

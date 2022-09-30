@@ -40,9 +40,11 @@
                 </xpath>
 
                 <xpath expr="//field[@name='invoice_user_id']" position="attributes">
+<!--                    <field name="invoice_user_id" attrs="{'required': True}"/>-->
+<!--                    <field name="invoice_user_id" attrs="{'required': [( parent)]}"/>-->
                     <attribute name="force_save">1</attribute>
                     <attribute name="readonly">1</attribute>
-                    <attribute name="required">1</attribute>
+<!--                    <attribute name="required">('is_provider', '=', True)</attribute>-->
                 </xpath>
 
                 <xpath expr="//field[@name='team_id']" position="attributes">
