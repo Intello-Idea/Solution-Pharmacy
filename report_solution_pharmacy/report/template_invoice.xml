@@ -1,0 +1,350 @@
+<odoo>
+    <template id="proforma_invoice">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="company" t-value="doc.company_id"/>
+                <t t-set="partner" t-value="doc.partner_id"/>
+                <t t-set="invoice" t-value="doc"/>
+                <t t-set="invoice_lines" t-value="doc.invoice_line_ids"/>
+                <t t-call="report_solution_pharmacy.invoices"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="invoices">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <div class="header" style="font-size: 12px !important;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <img style="max-height:100px;max-width:100%" t-att-src="image_data_uri(company.logo)" class="float-left"/>
+                    </div>
+                    <div class="col-4">
+                        <h5><span t-field="company.name" style="text-transform: capitalize;"/></h5>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <h5 style="font-size:16px; text-transform: capitalize;"><span style="" t-field="company.street"/></h5>
+                        <h5 style="font-size:14px;"> 
+                            <span name="company_address" style=" text-align:right;" t-field="company.partner_id.country_id"/>, 
+                            <span name="company_address" style=" text-align:right;" t-field="company.partner_id.state_id"/>, 
+                            <span name="company_address" style=" text-align:right;" t-field="company.partner_id.city_id"/>
+                        </h5>
+                    
+                
+                    </div>
+                    <div class="col-5">
+                        <div><span>NIT</span> <span style=" text-align:right;" t-field="company.partner_id.vat"/>  <span style=" text-align:right;" t-field="company.partner_id.verification_code"/></div>
+                        <div><span>Autorización de numeración de facturación electrónica</span></div>
+                        <div><span>No.</span><span t-field="docs.resolution_id.resolution"/> <span>del </span> <span t-field="docs.resolution_id.ini_date"/><span> al </span> <span t-field="docs.resolution_id.fin_date"/></div>
+                        <div><span>Habilita numeración de:</span> <span t-field="docs.resolution_id.prefix"/>-<span t-field="docs.resolution_id.ini_number"/> al <span t-field="docs.resolution_id.prefix"/>-<span t-field="docs.resolution_id.fin_number"/></div>
+                        <div><span>Régimen:</span> <span t-field="company.partner_id.property_account_position_id"/></div>
+                        <div><span>Responsabilidad fiscal:</span> <span t-field="company.partner_id.fiscal_responsibility"/></div>
+                    </div>
+                </div>
+                <div class="row"  style="margin-top:20px;">
+                    <div class="col-6 border border-dark">
+                        <div style="padding:5px;border-width:2px !important;">
+                            <span style="text-align:center;">ACTIVIDAD ECONOMICA 2100</span><br/>
+                            <span style="text-align:center;">PBX 537 0246 - 755 9133</span><br/>
+                            <span style="text-align:center;">CELULAR: 315 633 92 42</span><br/>
+                            <span style="text-align:center;">NO SOMOS GRANDES CONTRIBUYENTES</span>
+                        </div>
+                        <div style="padding:5px;border-width:2px !important;">
+                            <t t-call="report_solution_pharmacy.customer_boxes"/>
+                        </div>
+                    </div>
+                    <div class="col-6 border border-dark">
+                        <div style="padding:5px;border-width:2px !important;">
+                            <t t-call="report_solution_pharmacy.invoice_boxes"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="doc and doc._name" t-att-data-oe-id="doc and doc.id" t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+            <div class="page" style="font-size: 12px !important;">
+                <div style="height:3px;"/>
+                <t t-call="report_solution_pharmacy.invoice_tables"/>
+                <t t-call="report_solution_pharmacy.box_totals_data"/>
+            </div>
+        </div>
+        <div class="footer" style="font-size: 12px !important;">
+            <t t-call="report_solution_pharmacy.footer"/>
+        </div>
+    </template>
+
+    <template id="customer_boxes">
+        <t t-set="contact_info" t-value="partner.child_ids.filtered(lambda r: r.type == 'contact')"/>
+        <t t-if="contact_info">
+            <t t-set="contact_info" t-value="contact_info[0]"/>
+        </t>
+        <t t-else="">
+            <t t-set="contact_info" t-value="partner"/>
+        </t>
+        <table style="width:100%">
+            <tr>
+                <td style="width:50%;">
+                    <strong>Cliente</strong>
+                </td>
+                <td style="width:60%;">
+                    <span t-field="partner.name"/>
+                </td>
+            </tr>
+            <tr>
+                <td/>
+                <td>
+                    <span t-if="partner.vat" t-field="partner.vat"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Dirección:</strong>
+                </td>
+                <td>
+                    <span t-if="partner.street" t-field="partner.street"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Código Cliente:</strong>
+                </td>
+                <td>
+                   <span/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Teléfono:</strong>
+                </td>
+                <td>
+                    <span t-if="partner.phone" t-field="partner.phone"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Ciudad:</strong>
+                </td>
+                <td>
+                    <span t-if="partner.city_id" t-field="partner.city_id"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Departamento:</strong>
+                </td>
+                <td>
+                    <span/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>País:</strong>
+                </td>
+                <td>
+                    <span t-if="partner.country_id" t-field="partner.country_id"/>
+                </td>
+            </tr>
+        </table>
+    </template>
+
+    <template id="invoice_boxes">
+        <!--
+        <t t-if="shipping_data">
+           <t t-set="shipping_data" t-value="order.get_shipping_data()"/>
+        </t>
+        -->
+        <table style="width:100%">
+            <tbody>
+                <tr>
+                    <td style="width:60%;"><strong>Factura Electronica de Venta No:</strong></td>
+                    <td style="width:50%;"><span t-if="invoice and invoice.name" t-esc="invoice.name"/></td>
+                </tr>
+                <tr>
+                    <td><strong>Fecha de emisión:</strong></td>
+                    <!--<td><span t-if="invoice and invoice.date" t-esc="invoice.date.strftime('%d-%b-%Y')"/></td>-->
+                </tr>
+                <tr>
+                    <td><strong>Fecha de validación DIAN:</strong></td>
+                    <!--<td><span t-if="shipping_data" t-esc="shipping_data['tracking']"/></td>-->
+                </tr>
+                <tr>
+                    <td><strong>Fecha de vencimiento:</strong></td>
+                    <!--<td><span t-if="order and order.name" t-field="order.name"/></td>-->
+                </tr>
+                <tr>
+                    <td><strong>Plazo (Días): </strong></td>
+                    <!--<td><span t-if="order and order.client_order_ref" t-field="order.client_order_ref"/></td>-->
+                </tr>
+                <tr>
+                    <td><strong>Código de Moneda: </strong></td>
+                    <!--<td><span t-if="order and order.incoterm" t-field="order.incoterm.code"/></td>-->
+                </tr>
+                <tr>
+                    <td><strong>Tasa de Cambio: </strong></td>
+                    <!--<td><span t-if="order and order.payment_term_id" t-field="order.payment_term_id.name"/></td>-->
+                </tr>
+                <tr>
+                    <td><strong>Orden de Compra: </strong></td>
+                    <!--<td><span t-if="order and order.currency_id" t-field="order.currency_id.name"/></td>-->
+                </tr>
+                <tr>
+                    <td><strong>Remisión: </strong></td>
+                    <!--<td><span t-if="shipping_data" t-esc="shipping_data['shipvia']"/></td>-->
+                </tr>
+                <tr>
+                    <td><strong>Pedido: </strong></td>
+                    <!--<td><span t-if="shipping_data" t-esc="shipping_data['shipvia']"/></td>-->
+                </tr>
+                <tr>
+                    <td><strong>Asesor: </strong></td>
+                    <!--<td><span t-if="shipping_data" t-esc="shipping_data['shipvia']"/></td>-->
+                </tr>
+                <tr>
+                    <td><strong>Aviso de Recibo: </strong></td>
+                    <!--<td><span t-if="shipping_data" t-esc="shipping_data['shipvia']"/></td>-->
+                </tr>
+            </tbody>
+        </table>
+    </template>
+
+    <template id="invoice_tables">
+        <table style="width:100%; border-collapse: collapse;" class="border border-dark">
+            <thead>
+                <th class="text-center border border-dark align-middle" style="width:5%;">
+                    Item
+                </th>
+                <th class="text-center border border-dark align-middle" style="width:5%;">
+                    Descripción
+                </th>
+                <th class="text-center border border-dark align-middle" style="width:5%;">
+                    Cant
+                </th>
+                <th class="text-center border border-dark align-middle" style="width:5%;">
+                    Unidad de Medida
+                </th>
+                <th class="text-center border border-dark align-middle" style="width:7.5%;">
+                    Precio Unitario
+                </th>
+                <th class="text-center border border-dark align-middle" style="width:7.5%;">
+                    Desc%
+                </th>
+                <th class="text-center border border-dark align-middle" style="width:7.5%;">
+                    Valor Total
+                </th>
+            </thead>
+            <tbody>
+                <t t-set="prod_count" t-value="0"/>
+                
+                <t t-foreach="invoice_lines" t-as="line">
+                    <tr>
+                        <t t-set="prod_count" t-value="prod_count + 1"/>
+                        <td class="text-center border border-dark align-middle" style="">
+                            <span t-esc="prod_count"/>
+                        </td>
+                        <td class="text-center border border-dark align-middle" style="">
+                            <span t-field="line.product_id.code"/>
+                            <span>-</span>
+                            <span t-field="line.product_id.name"/>
+                        </td>
+                        <td class="text-center border border-dark align-middle" style="">
+                            <span t-esc="'{0:,.0f}'.format(line.quantity)"/>
+                        </td>
+                        <td class="text-center border border-dark align-middle" style="">
+                            <span t-field="line.product_uom_id"/>
+                        </td>
+                        <td class="text-center border border-dark align-middle" style=";">
+                            <span t-esc="'{0:,.0f}'.format(line.price_unit)"/>
+                        </td>
+                        <td class="text-center border border-dark align-middle" style="">
+                            <span t-field="line.discount"/>
+                        </td>
+                        <td class="text-center border border-dark align-middle" style="">
+                            <span t-esc="'{0:,.0f}'.format(line.price_subtotal)"/>
+                        </td>
+                    </tr>
+                </t>
+            </tbody>
+        </table>
+    </template>
+
+    <template id="box_totals_data">
+        <div class="totals_data" style="font-size: 12px !important;">
+            
+            <div class="row"  style="margin-top:20px;">
+                <div class="col-6">
+                    <div style="padding:5px;" class="border border-dark">
+                        <span style="text-align:center;"><strong>Observaciones</strong></span> <span t-field="docs.narration"/><br/>
+                        <span style="text-align:center;">ORDEN DE COMPRA: </span><br/>
+                        <span style="text-align:center;">ORDEN DE PEDIDO: </span><br/>
+                        <span style="text-align:center;">REMISION: </span><br/>
+                        <span style="text-align:center;"><strong>Forma de pago:</strong></span> <span t-field="docs.payment_type_1"/><br/>
+                        <span style="text-align:center;"><strong>Medio de pago:</strong> <span t-field="docs.payment_method"/></span><br/>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div style="padding:5px;" class="border border-dark">
+                        <span style="text-align:center;"><strong>Subtotal:</strong></span><br/>
+                    </div>
+                    <div style="padding:5px;" class="border border-dark">
+                        <span style="text-align:center;"><strong>Impuestos:</strong></span><br/>
+                        <span style="text-align:center;"><strong>Retenciones:</strong></span><br/>
+                        <span style="text-align:center;"><strong>Cargos de la factura:</strong></span><br/>
+                        <span style="text-align:center;"><strong>Descuentos de la factura:</strong></span><br/>
+                        <span style="text-align:center;"><strong>Anticipos:</strong></span><br/>
+                        <span style="text-align:center;"><strong>Total</strong> </span> <span t-field="docs.amount_total"/><br/>
+                        <span style="text-align:center;"><strong>Neto a pagar</strong> </span><br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="footer">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <div class="container">
+            <div class="row">
+                <div class="col-3  border border-dark">
+                    <span>QR</span>
+                </div>
+                <div class="col-4 border border-dark"  style="text-align:center;">
+                     <div style="height:40px;"/>
+                    <hr style="background-color:black;"/>
+                    <span style=" text-align:center;" t-field="company.partner_id"/> 
+                </div>
+                <div class="col-5 border border-dark" style="text-align:center;">
+                     <div style="height:40px;"/>
+                    <hr style="background-color:black;"/>
+                    <span style=" text-align:center;">RECIBIDA ACEPTADA, FIRMA Y SELLO</span> 
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>
