@@ -13,14 +13,11 @@
             <field name="margin_right">2</field>
             <field name="header_line" eval="False"/>
             <field name="header_spacing">120</field>
-            <field name="dpi">90</field>
+            <field name="dpi">85</field>
         </record>
 
-        <report id="report_invoice"
-            model="account.move"
-            string="Export Invoice"
-            report_type="qweb-pdf"
-            paperformat="paperformat_proforma_invoice"
-            name="report_solution_pharmacy.proforma_invoice"/>
+        <record id="account.account_invoices" model="ir.actions.report">
+            <field name="paperformat_id" ref="report_solution_pharmacy.paperformat_proforma_invoice"/>
+        </record>
     </data>
 </odoo>

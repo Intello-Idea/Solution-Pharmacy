@@ -1,14 +1,25 @@
 <odoo>
-    <template id="proforma_invoice">
-        <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="doc">
-                <t t-set="company" t-value="doc.company_id"/>
-                <t t-set="partner" t-value="doc.partner_id"/>
-                <t t-set="invoice" t-value="doc"/>
-                <t t-set="invoice_lines" t-value="doc.invoice_line_ids"/>
-                <t t-call="report_solution_pharmacy.invoices"/>
+    <template id="report_invoice_with_payments_inherit" inherit_id="account.report_invoice_with_payments">
+        <xpath expr="//t[@t-call='web.html_container']" position="replace">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-set="lang" t-value="doc.partner_id.lang"/>
+                    <t t-set="company" t-value="doc.company_id"/>
+                    <t t-set="partner" t-value="doc.partner_id"/>
+                    <t t-set="invoice" t-value="doc"/>
+                    <t t-set="order" t-value="sale_orders[doc.id]"/>
+                    <t t-set="invoice_lines" t-value="doc.invoice_line_ids"/>
+                    <t t-set="date_venc" t-value="date"/>
+                    <t t-set="descuento" t-value="desc"/>
+                    <t t-set="tax" t-value="tax"/>
+                    <t t-set="tax_value" t-value="tax_value"/>
+                    <t t-set="picking" t-value="picking"/>
+                    <t t-set="print_with_payments" t-value="True"/>
+                    <t t-set='qr_code_url' t-value='qr_code_url'/>
+                    <t t-call="report_solution_pharmacy.invoices"/>
+                </t>
             </t>
-        </t>
+        </xpath> 
     </template>
 
     <template id="invoices">
@@ -59,9 +70,9 @@
                 <div class="row"  style="margin-top:20px;">
                     <div class="col-6 border border-dark">
                         <div style="padding:5px;border-width:2px !important;">
-                            <span style="text-align:center;">ACTIVIDAD ECONOMICA 2100</span><br/>
-                            <span style="text-align:center;">PBX 537 0246 - 755 9133</span><br/>
-                            <span style="text-align:center;">CELULAR: 315 633 92 42</span><br/>
+                            <span style="text-align:center;">ACTIVIDAD ECONOMICA </span><span t-if="partner.code_ciiu_primary" t-field="partner.code_ciiu_primary.code"/><br/>
+                            <span style="text-align:center;">PBX </span><span t-if="partner.phone" t-field="partner.phone"/><br/>
+                            <span style="text-align:center;">CELULAR: </span> <span t-if="partner.mobile" t-field="partner.mobile"/><br/>
                             <span style="text-align:center;">NO SOMOS GRANDES CONTRIBUYENTES</span>
                         </div>
                         <div style="padding:5px;border-width:2px !important;">
@@ -78,9 +89,9 @@
         </div>
         <div class="article" t-att-data-oe-model="doc and doc._name" t-att-data-oe-id="doc and doc.id" t-att-data-oe-lang="doc and doc.env.context.get('lang')">
             <div class="page" style="font-size: 12px !important;">
-                <div style="height:3px;"/>
                 <t t-call="report_solution_pharmacy.invoice_tables"/>
                 <t t-call="report_solution_pharmacy.box_totals_data"/>
+                <t t-call="report_solution_pharmacy.leyenda_cufe"/>
             </div>
         </div>
         <div class="footer" style="font-size: 12px !important;">
@@ -102,21 +113,37 @@
                     <strong>Cliente</strong>
                 </td>
                 <td style="width:60%;">
-                    <span t-field="partner.name"/>
+                    <t t-if='partner.name'>
+                        <span t-field="partner.name"/>
+                    </t>
+                    <t t-else=''>
+                        <t t-if="partner.parent_id">
+                            <span t-field="partner.parent_id.name"/>
+                        </t>
+                    </t>
                 </td>
             </tr>
             <tr>
                 <td/>
                 <td>
-                    <span t-if="partner.vat" t-field="partner.vat"/>
+                    <span t-if="partner.document_type" t-field="partner.document_type"/> <span t-if="partner.vat" t-field="partner.vat"/> <span t-if="partner.verification_code" t-field="partner.verification_code"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <strong>Dirección:</strong>
+                    <strong>Dirección Entrega:</strong>
                 </td>
                 <td>
-                    <span t-if="partner.street" t-field="partner.street"/>
+                    <span t-if="doc.partner_shipping_id.street" t-field="doc.partner_shipping_id.street"/>
+                    <span t-else="" t-field="doc.partner_id.street"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Dirección Facturación:</strong>
+                </td>
+                <td>
+                    <span t-if="doc.partner_id.street" t-field="doc.partner_id.street"/>
                 </td>
             </tr>
             <tr>
@@ -124,7 +151,8 @@
                     <strong>Código Cliente:</strong>
                 </td>
                 <td>
-                   <span/>
+                    <span t-if="partner.client_code" t-field="partner.client_code"/>
+
                 </td>
             </tr>
             <tr>
@@ -137,18 +165,10 @@
             </tr>
             <tr>
                 <td>
-                    <strong>Ciudad:</strong>
+                    <strong>Celular:</strong>
                 </td>
                 <td>
-                    <span t-if="partner.city_id" t-field="partner.city_id"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Departamento:</strong>
-                </td>
-                <td>
-                    <span/>
+                    <span t-if="partner.mobile" t-field="partner.mobile"/>
                 </td>
             </tr>
             <tr>
@@ -159,15 +179,26 @@
                     <span t-if="partner.country_id" t-field="partner.country_id"/>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <strong>Departamento:</strong>
+                </td>
+                <td>
+                    <span t-if="partner.country_id" t-field="partner.state_id"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Ciudad:</strong>
+                </td>
+                <td>
+                    <span t-if="partner.city_id" t-field="partner.city_id"/>
+                </td>
+            </tr>
         </table>
     </template>
 
     <template id="invoice_boxes">
-        <!--
-        <t t-if="shipping_data">
-           <t t-set="shipping_data" t-value="order.get_shipping_data()"/>
-        </t>
-        -->
         <table style="width:100%">
             <tbody>
                 <tr>
@@ -176,47 +207,31 @@
                 </tr>
                 <tr>
                     <td><strong>Fecha de emisión:</strong></td>
-                    <!--<td><span t-if="invoice and invoice.date" t-esc="invoice.date.strftime('%d-%b-%Y')"/></td>-->
-                </tr>
-                <tr>
-                    <td><strong>Fecha de validación DIAN:</strong></td>
-                    <!--<td><span t-if="shipping_data" t-esc="shipping_data['tracking']"/></td>-->
+                    <td><span t-if="invoice and invoice.invoice_date" t-esc="invoice.invoice_date.strftime('%d-%b-%Y')"/></td>
                 </tr>
                 <tr>
                     <td><strong>Fecha de vencimiento:</strong></td>
-                    <!--<td><span t-if="order and order.name" t-field="order.name"/></td>-->
+                    <td><span t-if="date_venc" t-esc="date_venc.strftime('%d-%b-%Y')"/></td>
                 </tr>
                 <tr>
                     <td><strong>Plazo (Días): </strong></td>
-                    <!--<td><span t-if="order and order.client_order_ref" t-field="order.client_order_ref"/></td>-->
-                </tr>
-                <tr>
-                    <td><strong>Código de Moneda: </strong></td>
-                    <!--<td><span t-if="order and order.incoterm" t-field="order.incoterm.code"/></td>-->
-                </tr>
-                <tr>
-                    <td><strong>Tasa de Cambio: </strong></td>
-                    <!--<td><span t-if="order and order.payment_term_id" t-field="order.payment_term_id.name"/></td>-->
-                </tr>
-                <tr>
-                    <td><strong>Orden de Compra: </strong></td>
-                    <!--<td><span t-if="order and order.currency_id" t-field="order.currency_id.name"/></td>-->
+                    <td><span t-if="invoice and invoice.invoice_payment_term_id" t-field="invoice.invoice_payment_term_id"/></td>
                 </tr>
                 <tr>
                     <td><strong>Remisión: </strong></td>
-                    <!--<td><span t-if="shipping_data" t-esc="shipping_data['shipvia']"/></td>-->
+                    <td><span t-if="picking" t-esc="picking.name"/></td>
                 </tr>
                 <tr>
                     <td><strong>Pedido: </strong></td>
-                    <!--<td><span t-if="shipping_data" t-esc="shipping_data['shipvia']"/></td>-->
+                    <td><span t-if="order and order.name" t-field="order.name"/></td>
                 </tr>
                 <tr>
-                    <td><strong>Asesor: </strong></td>
-                    <!--<td><span t-if="shipping_data" t-esc="shipping_data['shipvia']"/></td>-->
+                    <td><strong>Vendedor: </strong></td>
+                    <td><span t-if="invoice.partner_id.user_id" t-esc="invoice.partner_id.user_id.name"/></td>
                 </tr>
                 <tr>
-                    <td><strong>Aviso de Recibo: </strong></td>
-                    <!--<td><span t-if="shipping_data" t-esc="shipping_data['shipvia']"/></td>-->
+                    <td><strong>Cotización Cotizador #:</strong></td>
+                    <td><span t-if="order and order.quotator_reference" t-field="order.quotator_reference"/></td>
                 </tr>
             </tbody>
         </table>
@@ -225,13 +240,13 @@
     <template id="invoice_tables">
         <table style="width:100%; border-collapse: collapse;" class="border border-dark">
             <thead>
-                <th class="text-center border border-dark align-middle" style="width:5%;">
+                <th class="text-center border border-dark align-middle" style="width:3%;">
                     Item
                 </th>
-                <th class="text-center border border-dark align-middle" style="width:5%;">
+                <th class="text-center border border-dark align-middle" style="width:13.5%;">
                     Descripción
                 </th>
-                <th class="text-center border border-dark align-middle" style="width:5%;">
+                <th class="text-center border border-dark align-middle" style="width:3%;">
                     Cant
                 </th>
                 <th class="text-center border border-dark align-middle" style="width:5%;">
@@ -240,7 +255,7 @@
                 <th class="text-center border border-dark align-middle" style="width:7.5%;">
                     Precio Unitario
                 </th>
-                <th class="text-center border border-dark align-middle" style="width:7.5%;">
+                <th class="text-center border border-dark align-middle" style="width:3%;">
                     Desc%
                 </th>
                 <th class="text-center border border-dark align-middle" style="width:7.5%;">
@@ -267,7 +282,7 @@
                         <td class="text-center border border-dark align-middle" style="">
                             <span t-field="line.product_uom_id"/>
                         </td>
-                        <td class="text-center border border-dark align-middle" style=";">
+                        <td class="text-center border border-dark align-middle" style="">
                             <span t-esc="'{0:,.0f}'.format(line.price_unit)"/>
                         </td>
                         <td class="text-center border border-dark align-middle" style="">
@@ -289,28 +304,40 @@
                 <div class="col-6">
                     <div style="padding:5px;" class="border border-dark">
                         <span style="text-align:center;"><strong>Observaciones</strong></span> <span t-field="docs.narration"/><br/>
-                        <span style="text-align:center;">ORDEN DE COMPRA: </span><br/>
-                        <span style="text-align:center;">ORDEN DE PEDIDO: </span><br/>
-                        <span style="text-align:center;">REMISION: </span><br/>
                         <span style="text-align:center;"><strong>Forma de pago:</strong></span> <span t-field="docs.payment_type_1"/><br/>
                         <span style="text-align:center;"><strong>Medio de pago:</strong> <span t-field="docs.payment_method"/></span><br/>
                     </div>
                 </div>
                 <div class="col-6">
                     <div style="padding:5px;" class="border border-dark">
-                        <span style="text-align:center;"><strong>Subtotal:</strong></span><br/>
+                        <span style="text-align:center;"><strong>Subtotal:</strong></span> <span t-field="docs.amount_untaxed"/><br/>
                     </div>
                     <div style="padding:5px;" class="border border-dark">
-                        <span style="text-align:center;"><strong>Impuestos:</strong></span><br/>
-                        <span style="text-align:center;"><strong>Retenciones:</strong></span><br/>
-                        <span style="text-align:center;"><strong>Cargos de la factura:</strong></span><br/>
-                        <span style="text-align:center;"><strong>Descuentos de la factura:</strong></span><br/>
-                        <span style="text-align:center;"><strong>Anticipos:</strong></span><br/>
+                        <span style="text-align:center;"><strong>Descuentos de la factura:</strong></span><span>$</span> <span t-esc="descuento"/><br/>
+                        <t t-if="tax">
+                            <t t-foreach="tax" t-as="taxes">
+                                <strong><span t-esc="taxes"/>: </strong>
+                                <span t-esc="tax_value[taxes]"/><br/>
+                            </t>
+                        </t>
                         <span style="text-align:center;"><strong>Total</strong> </span> <span t-field="docs.amount_total"/><br/>
-                        <span style="text-align:center;"><strong>Neto a pagar</strong> </span><br/>
                     </div>
                 </div>
             </div>
+        </div>
+    </template>
+
+    <template id="leyenda_cufe">
+        <div style="margin-top:300px;"/>
+        <div class="container">
+            <span>
+                Este documento corresponde a la representación gráfica de una factura electrónica.
+            </span><br/>
+            <span>
+                Confirme el CUFE mediante lectura de este código bidimensional:
+            </span><br/>
+            <span>CUFE:</span><br/>
+            <span t-if="invoice.send_registry" t-field="invoice.send_registry.cufe"/>
         </div>
     </template>
 
@@ -332,7 +359,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-3  border border-dark">
-                    <span>QR</span>
+                    <div style="text-align:center;">
+                        <img width="90" height="90" t-att-src="qr_code_url"/>
+                    </div>
                 </div>
                 <div class="col-4 border border-dark"  style="text-align:center;">
                      <div style="height:40px;"/>
