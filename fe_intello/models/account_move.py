@@ -39,6 +39,17 @@ class AccountMove(models.Model):
                                                              ('8', 'Delivered')], default='0',
                                                   copy=False)
 
+    electronic_document_event_status = fields.Selection(string='Electronic document event status',
+                                                        selection=[
+                                                            ('0', 'Evento no iniciado'),
+                                                            ('1', 'Acuse de recibido de factura electrónica de venta'),
+                                                            ('2', 'Aceptación expresa'),
+                                                            ('3', 'Reclamo de la factura electrónica de venta'),
+                                                            ('4', 'Recibo del bien y/o prestación de servicio'),
+                                                        ],
+                                                        default='0',
+                                                        copy=False)
+
     # Method for notification messages
     def notification(self, tittle, message):
         """Crea la notificación en forma de sticker"""
@@ -246,9 +257,8 @@ class AccountMove(models.Model):
         if not self.invoice_date:
             message += "<li>" + self._fields['invoice_date'].string + "</li>"
             status = True
-        if not self.invoice_user_id.name:
-            message += "<li>" + self._fields['invoice_user_id'].string + "</li>"
-            status = True
+        if not self.invoice_user_id.name and self.partner_id.category_id.name != 'Proveedor':
+            raise exceptions.ValidationError("Campo vendedor es requerido")
         if not self.date:
             message += "<li>" + self._fields['date'].string + "</li>"
             status = True
@@ -299,6 +309,7 @@ class AccountMove(models.Model):
 
     # Inherit Buttons
     def action_post(self):
+        print("Se ejecuto el metodo")
         if self.type in ['out_invoice', 'out_refund']:
             parameter = self.env['ir.config_parameter'].sudo()
             fe_online = parameter.get_param('res.config.settings.fe_online')
@@ -469,6 +480,16 @@ class AccountMove(models.Model):
 
     def send_representation_document(self):
         pass
+
+    def insert_event_dian_acknowledgment(self):
+        pass
+    def insert_event_dian_acceptance(self):
+        pass
+    def insert_event_dian_claim(self):
+        pass
+    def insert_event_dian_received(self):
+        pass
+
 
     def attach_pdf_invoice(self):
         pdf = self.env.ref('account.account_invoices')._render_qweb_pdf(self.ids)
