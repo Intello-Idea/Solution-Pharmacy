@@ -79,7 +79,7 @@ class AccountMove(models.Model):
     sale_check_status = fields.Boolean('I.', related='production_line_id.check_status', readonly=False)
     purchase_check_status = fields.Boolean('I.', default=default_purchase_check_status)
     check_status = fields.Boolean(compute='_check_status_related', store=True)
-
+    referred_doctor = fields.Many2one('res.partner', string='Referred Doctor')
 #Carlos    @api.onchange('production_line_id', 'purchase_check_status', 'sale_check_status')
 #Carlos    def _journal_validate_invima(self):
 #Carlos        """

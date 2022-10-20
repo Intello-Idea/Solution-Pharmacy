@@ -34,7 +34,7 @@
 
                 <xpath expr="//field[@name='user_id']" position="attributes">
                     <attribute name="force_save">1</attribute>
-                    <attribute name="readonly">1</attribute>
+                    <!--<attribute name="readonly">1</attribute>-->
                     <attribute name="required">1</attribute>
                 </xpath>
 

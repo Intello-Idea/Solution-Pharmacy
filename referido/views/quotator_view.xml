@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="quotator_inherit_form">
+            <field name="name">Quotator Inherit</field>
+            <field name="model">quotator.own</field>
+            <field name="inherit_id" ref="quotator.form" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[1]/group[2]/field[@name='subtotal_grams']" position="before">
+                    <field name="referred_doctor" domain="[('doctor', '=', True)]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
