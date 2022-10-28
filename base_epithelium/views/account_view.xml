@@ -50,10 +50,6 @@
                     <attribute name="readonly">1</attribute>
                 </xpath>
 
-                <xpath expr="//field[@name='invoice_user_id']" position="before">
-                    <field name="referred_doctor"/>
-                </xpath>
-
             </field>
         </record>
 

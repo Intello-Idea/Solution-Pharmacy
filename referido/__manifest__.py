@@ -10,10 +10,10 @@
     'category': 'Uncategorized',
     'version': '0.1',
 
-    'depends': ['base', 'sale', 'quotator'],
+    'depends': ['base', 'sale', 'quotator', 'account'],
 
     'data': [
-        #'views/account_view.xml',
+        'views/account_view.xml',
         'views/quotator_view.xml',
         'views/res_partner_view.xml',
         'views/sale_view.xml',
