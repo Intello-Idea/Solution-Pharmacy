@@ -27,7 +27,8 @@
         'security/ir.model.access.csv',
         'views/fe_mf_config_view.xml',
         'views/account_views.xml',
-        'views/res_config_settings_views.xml'
+        'views/res_config_settings_views.xml',
+        'wizard/send_event_invoice.xml'
     ],
 
     # only loaded in demonstration mode

@@ -58,6 +58,9 @@ class SendSaleOrderWizard(models.TransientModel):
             'grams_pharmaceutical': quotator.value_pharmaceutical_form,
             'user_id': quotator.partner_id.user_id.id,
             'team_id': quotator.partner_id.team_id.id,
+            'referred_doctor': quotator.referred_doctor.id,
+            'payment_term_id': quotator.partner_id.property_payment_term_id.id,
+
         }
         sale_order = self.env['sale.order'].create(vals)
         quotator.update({'state': 'posted', 'sale_reference': sale_order.name})

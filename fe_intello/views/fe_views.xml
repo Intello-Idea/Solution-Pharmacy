@@ -7,17 +7,13 @@
             <field name="inherit_id" ref="account.view_move_form"/>
             <field name="arch" type="xml">
 
+
                 <!-- xpath buttons -->
-                <!--                <xpath expr="//button[@name='action_invoice_register_payment']" position="after">-->
-                <!--                    <button name="process_document" type="object" class="btn btn-primary"-->
-                <!--                            string="Send to DIAN"-->
-                <!--                            attrs="{'invisible': ['|','|','|','|',('check_is_active','=',False),('check_is_online','=',True),-->
-                <!--                            ('type','not in',('out_invoice','out_refund')),('state','!=','posted'),('send_status','=',True)]}"/>-->
-                <!--                </xpath>-->
 
                 <xpath expr="//group[@id='header_left_group']/div" position="before">
                     <field name="type" invisible="0"/>
-                    <field name="production_line_id" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}"
+                    <field name="production_line_id"
+                           attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}"
                            options="{'no_create': True, 'no_create_edit':True}"/>
                 </xpath>
                 <xpath expr="//field[@name='ref']" position="after">
@@ -40,9 +36,27 @@
                     <page string="Electronic Invoice" name="electronic_invoice">
                         <!-- fields invisible -->
                         <header>
+                            <button name="insert_event_dian_acknowledgment" type="object" class="btn btn-primary"
+                                    string="Acuse de recibido de factura electrónica de venta"
+                                    attrs="{'invisible':['|',('electronic_document_event_status','not in',('0')),
+                                     ('payment_type_1', '!=', '2')]}"/>
+                            <button name="insert_event_dian_acceptance" type="object" class="btn btn-primary"
+                                    string="Aceptación expresa"
+                                    attrs="{'invisible':['|',('electronic_document_event_status','not in',('0')),
+                                    ('payment_type_1', '!=', '2')]}"/>
+                            <button name="insert_event_dian_claim" type="object" class="btn btn-primary"
+                                    string="Reclamo de la factura electrónica de venta"
+                                    attrs="{'invisible':['|',('electronic_document_event_status','not in','0'),
+                                    ('payment_type_1', '!=', '2')]}"/>
+                            <button name="insert_event_dian_received" type="object" class="btn btn-primary"
+                                    string="Recibo del bien y/o prestación de servicio"
+                                    attrs="{'invisible':['|',('electronic_document_event_status','not in','1'),
+                                    ('payment_type_1', '!=', '2')]}"/>
                             <button name="send_representation_document" type="object"
                                     string="Send Graphic Representation"
                                     attrs="{'invisible':[('electronic_document_status','not in',('5','6'))]}"/>
+                            <field name="electronic_document_event_status" widget="statinfo"
+                                   attrs="{'invisible': True}"/>
                             <field name="electronic_document_status" widget="statusbar"
                                    statusbar_visible="0,1,2,3,4,5,6,7,8"/>
                         </header>

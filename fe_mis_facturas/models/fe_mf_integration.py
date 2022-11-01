@@ -202,7 +202,6 @@ class FeMfMethods(models.AbstractModel):
                     }
                     lines.append(product)
 
-
         if template_id == 91:
             for line in posted_document.invoice_line_ids:
                 if not line.display_type:
@@ -464,6 +463,36 @@ class FeMfMethods(models.AbstractModel):
                     ";" if responsibility_con != " " else " ") + responsibility.key_dian
             return responsibility_con.strip()
 
+    def generate_event_structure(self, posted_document, invoice_result, type_event, reason_id=0):
+        structure = {
+            "IdentificationType": posted_document.invoice_user_id.document_type.key_dian,
+            "Identification": int(posted_document.invoice_user_id.vat),
+            "DV": int(posted_document.invoice_user_id.verification_code),
+            "RegistrationName": posted_document.invoice_user_id.name,
+            "RegitrationLastname": posted_document.invoice_user_id.name,
+            "Function": "",
+            "Dependence": "",
+            "Cufe": invoice_result.cufe,
+            "ReceivedDate": invoice_result.status_date,
+            "TypeEventID": type_event,
+            "ReasonId": reason_id
+        }
+        return structure
+
+    def insert_event(self, url, token, posted_document, invoice_result, type_event, reason_id=0):
+        schema_id = posted_document.company_id.partner_id.document_type.key_dian
+        id_number = posted_document.company_id.partner_id.vat
+        url_service = url + "InsertEvent?SchemaID=" + str(schema_id) + "&IDnumber=" + str(id_number)
+        payload = self.generate_event_structure(posted_document, invoice_result, type_event, reason_id)
+        headers = {
+            'Authorization': token,
+            'Content-Type': 'application/json'
+        }
+        response = requests.request("POST", url_service, headers=headers, json=payload)
+        if response.status_code == 400:
+            raise exceptions.UserError("Error al insertar el evento: " + "\n\n" + response.json()['Message'])
+        print(response.json())
+
     def insert_invoice(self, url, token, posted_document, gr, documents):
         """
         Función que envia la factura al servicio de Mis Facturas
@@ -499,7 +528,8 @@ class FeMfMethods(models.AbstractModel):
         }
         posted_document.cu_electronic_document_detail_dian(posted_document.id, detail_send, 2)
         posted_document.send_status = True
-
+        if response.status_code == 400:
+            raise exceptions.UserError("Error al insertar factura: " + "\n\n" + response.json()['Message'])
         if response.status_code == 200:
             time.sleep(2)
             electronic_document = self.get_electronic_document(url, token, posted_document,
@@ -553,6 +583,9 @@ class FeMfMethods(models.AbstractModel):
             'is_attachment': True,
         }
         posted_document.cu_electronic_document_detail_dian(posted_document.id, detail_send, 2)
+
+        if response.status_code == 400:
+            raise exceptions.UserError("Error al insertar la nota: " + "\n\n" + response.json()['Message'])
 
         if response.status_code == 200:
             time.sleep(2)
@@ -658,6 +691,28 @@ class FeMfMethods(models.AbstractModel):
             send = self.insert_note(parameter['url'], parameter['token'], posted_document,
                                     parameter_settings['fe_own_gr'])
 
+        return send
+
+    def send_event_document(self, posted_document, type_event, reason_id=0):
+        parameter = self._get_parameters_connection()
+        parameter_settings = self._get_parameters_settings()
+        send = None
+        # if posted_document.type == 'out_invoice':
+        invoice_result = self.env['electronic.document.dian'].search([('invoice', '=', posted_document.id)])
+        print(invoice_result['document_key'])
+        invoice_result_status_from_mis_facturas = self.get_electronic_document(parameter['url'], 
+                                                                               parameter['token'], 
+                                                                               posted_document, 
+                                                                               invoice_result['document_key'], 
+                                                                               1)
+        if invoice_result_status_from_mis_facturas.status_code == 400:
+            raise exceptions.ValidationError("No se pudo obtener la informacion de la factura")
+        invoice_result_status_from_mis_facturas = invoice_result_status_from_mis_facturas.json()
+        if not invoice_result_status_from_mis_facturas['CUFE']:
+            raise exceptions.ValidationError("Aún no se ha de la factura")
+        invoice_result['cufe'] = invoice_result_status_from_mis_facturas['CUFE']
+        send = self.insert_event(parameter['url'], parameter['token'], posted_document, invoice_result, type_event,
+                                 reason_id)
         return send
 
     def send_rg_electronic_document(self, b64, posted_document):

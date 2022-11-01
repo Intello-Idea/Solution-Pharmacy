@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <record id="view_send_event_invoice" model="ir.ui.view">
+        <field name="name">Send Event Invoice</field>
+        <field name="model">send.event.invoice.wizard</field>
+        <field name="arch" type="xml">
+        <form string="Send Event Invoice">
+                <p class="oe_gray">
+                        Select type claim
+                </p>
+                <group>
+                        <group>
+                                <field name="type_claim_event"/>
+                        </group>
+                </group>
+                <footer>
+                        <button name="send"
+                                string="Enviar"
+                                type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+        </form>
+        </field>
+        </record>
+
+        <record id="action_send_event_invoice" model="ir.actions.act_window">
+	        <field name="name">Action Send Event Invoice</field>
+	        <field name="res_model">send.event.invoice.wizard</field>
+	        <field name="view_mode">form</field>
+	        <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>
