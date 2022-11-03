@@ -83,7 +83,7 @@
 
         <template id="quality_label">
             <t t-call="web.html_container">
-                <t t-foreach="docs.move_line_nosuggest_ids" t-as="o">
+                <t t-foreach="docs.move_line_ids_without_package" t-as="o">
                     <t t-call="base_epithelium.internal_layout_quality_label">
                         <div class="page pt-5" style="margin:0px 8px 0px 8px;">
 
@@ -176,24 +176,24 @@
                                     <tr>
                                         <td style="width: 50%; border: 1px solid black; padding-right:5px; padding-left:5px;">
                                             <span>Entry date: </span> 
-                                            <span t-esc="o.picking_id.date_done.day"/>
-                                            <t t-if="o.picking_id.date_done.month == 1"><span>-Ene-</span></t>
-                                            <t t-if="o.picking_id.date_done.month == 2"><span>-Febr-</span></t>
-                                            <t t-if="o.picking_id.date_done.month == 3"><span>-Mar-</span></t>
-                                            <t t-if="o.picking_id.date_done.month == 4"><span>-Abr-</span></t>
-                                            <t t-if="o.picking_id.date_done.month == 5"><span>-May-</span></t>
-                                            <t t-if="o.picking_id.date_done.month == 6"><span>-Jun-</span></t>
-                                            <t t-if="o.picking_id.date_done.month == 7"><span>-Jul-</span></t>
-                                            <t t-if="o.picking_id.date_done.month == 8"><span>-Ago-</span></t>
-                                            <t t-if="o.picking_id.date_done.month == 9"><span>-Sept-</span></t>
-                                            <t t-if="o.picking_id.date_done.month == 10"><span>-Oct-</span></t>
-                                            <t t-if="o.picking_id.date_done.month == 11"><span>-Nov-</span></t>
-                                            <t t-if="o.picking_id.date_done.month == 12"><span>-Dic-</span></t>
-                                            <span t-esc="o.picking_id.date_done.year"/>
+                                            <span t-esc="docs.date_done.day"/>
+                                            <t t-if="docs.date_done.month == 1"><span>-Ene-</span></t>
+                                            <t t-if="docs.date_done.month == 2"><span>-Febr-</span></t>
+                                            <t t-if="docs.date_done.month == 3"><span>-Mar-</span></t>
+                                            <t t-if="docs.date_done.month == 4"><span>-Abr-</span></t>
+                                            <t t-if="docs.date_done.month == 5"><span>-May-</span></t>
+                                            <t t-if="docs.date_done.month == 6"><span>-Jun-</span></t>
+                                            <t t-if="docs.date_done.month == 7"><span>-Jul-</span></t>
+                                            <t t-if="docs.date_done.month == 8"><span>-Ago-</span></t>
+                                            <t t-if="docs.date_done.month == 9"><span>-Sept-</span></t>
+                                            <t t-if="docs.date_done.month == 10"><span>-Oct-</span></t>
+                                            <t t-if="docs.date_done.month == 11"><span>-Nov-</span></t>
+                                            <t t-if="docs.date_done.month == 12"><span>-Dic-</span></t>
+                                            <span t-esc="docs.date_done.year"/>
                                         </td>
                                         
                                         <td style="border:1px solid black; padding-right:5px; padding-left:5px;">
-                                                <span>N° Entrance: </span><br/><span t-field="o.picking_id.name"/>
+                                                <span>N° Entrance: </span><br/><span t-field="docs.name"/>
                                         </td>
                                         
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
@@ -205,7 +205,7 @@
                                     <tr>
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
                                             <span>Material name:</span> <br/>
-                                            <span t-field="o.picking_id.product_id.default_code"/>
+                                            <span t-field="o.product_id.default_code"/>
                                         </td>
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;" colspan="2">
                                                 <span>Lot: </span>
@@ -218,21 +218,21 @@
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
                                             <span>Due date: </span>
                                             <br/>
-                                            <t t-if="o.expiration_date">
-                                                <span t-esc="o.expiration_date.day"/>
-                                                <t t-if="o.expiration_date.month == 1"><span>-Ene-</span></t>
-                                                <t t-if="o.expiration_date.month == 2"><span>-Febr-</span></t>
-                                                <t t-if="o.expiration_date.month == 3"><span>-Mar-</span></t>
-                                                <t t-if="o.expiration_date.month == 4"><span>-Abr-</span></t>
-                                                <t t-if="o.expiration_date.month == 5"><span>-May-</span></t>
-                                                <t t-if="o.expiration_date.month == 6"><span>-Jun-</span></t>
-                                                <t t-if="o.expiration_date.month == 7"><span>-Jul-</span></t>
-                                                <t t-if="o.expiration_date.month == 8"><span>-Ago-</span></t>
-                                                <t t-if="o.expiration_date.month == 9"><span>-Sept-</span></t>
-                                                <t t-if="o.expiration_date.month == 10"><span>-Oct-</span></t>
-                                                <t t-if="o.expiration_date.month == 11"><span>-Nov-</span></t>
-                                                <t t-if="o.expiration_date.month == 12"><span>-Dic-</span></t>
-                                                <span t-esc="o.expiration_date.year"/>
+                                            <t t-if="o.lot_id.expiration_date">
+                                                <span t-esc="o.lot_id.expiration_date.day"/>
+                                                <t t-if="o.lot_id.expiration_date.month == 1"><span>-Ene-</span></t>
+                                                <t t-if="o.lot_id.expiration_date.month == 2"><span>-Febr-</span></t>
+                                                <t t-if="o.lot_id.expiration_date.month == 3"><span>-Mar-</span></t>
+                                                <t t-if="o.lot_id.expiration_date.month == 4"><span>-Abr-</span></t>
+                                                <t t-if="o.lot_id.expiration_date.month == 5"><span>-May-</span></t>
+                                                <t t-if="o.lot_id.expiration_date.month == 6"><span>-Jun-</span></t>
+                                                <t t-if="o.lot_id.expiration_date.month == 7"><span>-Jul-</span></t>
+                                                <t t-if="o.lot_id.expiration_date.month == 8"><span>-Ago-</span></t>
+                                                <t t-if="o.lot_id.expiration_date.month == 9"><span>-Sept-</span></t>
+                                                <t t-if="o.lot_id.expiration_date.month == 10"><span>-Oct-</span></t>
+                                                <t t-if="o.lot_id.expiration_date.month == 11"><span>-Nov-</span></t>
+                                                <t t-if="o.lot_id.expiration_date.month == 12"><span>-Dic-</span></t>
+                                                <span t-esc="o.lot_id.expiration_date.year"/>
                                             </t>
                                         </td>
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;" colspan="2">
@@ -256,7 +256,7 @@
 
                                     <tr>
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;" colspan="2">
-                                            <span> Storage Conditions: </span> <span t-field="o.picking_id.note"/>
+                                            <span> Storage Conditions: </span> <span t-field="docs.note"/>
                                         </td>
                                         <td style="border: 1px solid black; padding-right:5px; padding-left:5px;">
                                             <span>Analyzed: </span>
