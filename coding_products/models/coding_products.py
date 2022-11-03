@@ -57,36 +57,36 @@ class Product(models.Model):
 
     @api.model
     def create(self, vals):
-        if vals.get('product_group'):
-            prod_group = self.env['product.group'].search([("id", "=", vals["product_group"])])
-            if not prod_group:
-                raise exceptions.Warning('No ha seleccionado un Grupo de Producto válido')
+        #if vals.get('product_group'):
+        prod_group = self.env['product.group'].search([("id", "=", vals.get("product_group"))])
+        if not prod_group:
+            raise exceptions.Warning('No ha seleccionado un Grupo de Producto válido')
 
-            if len(str(prod_group.consecutive + 1)) > prod_group.range_zeros:
-                raise exceptions.Warning('Los dígitos del consecutivo exceden el rango')
+        if len(str(prod_group.consecutive + 1)) > prod_group.range_zeros:
+            raise exceptions.Warning('Los dígitos del consecutivo exceden el rango')
+        else:
+            zeros = prod_group.range_zeros - len(str(prod_group.consecutive + 1))
+            # print(zeros)
+            zerosl = ""
+            for i in range(zeros):
+                zerosl = zerosl + "0"
+            # print(zerosl)
+            if prod_group.is_automatic == True:
+                vals["default_code"] = prod_group.initials + zerosl + str(prod_group.consecutive + 1)
             else:
-                zeros = prod_group.range_zeros - len(str(prod_group.consecutive + 1))
-                # print(zeros)
-                zerosl = ""
-                for i in range(zeros):
-                    zerosl = zerosl + "0"
-                # print(zerosl)
-                if prod_group.is_automatic == True:
-                    vals["default_code"] = prod_group.initials + zerosl + str(prod_group.consecutive + 1)
-                else:
-                    if not (vals["default_code"]):
-                        raise exceptions.Warning(
-                            'El Grupo de Producto, seleccionado no es automático, debe escribir la referencia')
+                if not (vals["default_code"]):
+                    raise exceptions.Warning(
+                        'El Grupo de Producto, seleccionado no es automático, debe escribir la referencia')
 
-                product = super(Product, self).create(vals)
+            product = super(Product, self).create(vals)
 
-                if product:
-                    if self._name == 'product.template':
-                        prod_group.write({
-                            "consecutive": prod_group.consecutive + 1
-                        })
+            if product:
+                if self._name == 'product.template':
+                    prod_group.write({
+                        "consecutive": prod_group.consecutive + 1
+                    })
 
-                return product
+            return product
 
     @api.depends('product_group')
     def _compute_default_code(self):
@@ -117,31 +117,30 @@ class ProductProduct(models.Model):
 
     @api.model
     def create(self, vals):
-        if vals.get('product_group'):
-            product = super(ProductProduct, self).create(vals)
-            prod_group = product.product_group
+        product = super(ProductProduct, self).create(vals)
+        prod_group = product.product_group
+        #print(vals.get('product_group'))
+        if not prod_group:
+            raise exceptions.Warning('No ha seleccionado un Grupo de Producto válido')
 
-            if not prod_group:
-                raise exceptions.Warning('No ha seleccionado un Grupo de Producto válido')
-
-            if len(str(prod_group.consecutive + 1)) > prod_group.range_zeros:
-                raise exceptions.Warning('Los dígitos del consecutivo exceden el rango')
+        if len(str(prod_group.consecutive + 1)) > prod_group.range_zeros:
+            raise exceptions.Warning('Los dígitos del consecutivo exceden el rango')
+        else:
+            zeros = prod_group.range_zeros - len(str(prod_group.consecutive + 1))
+            # print(zeros)
+            zerosl = ""
+            for i in range(zeros):
+                zerosl = zerosl + "0"
+            # print(zerosl)
+            if prod_group.is_automatic == True:
+                product.default_code = product.product_tmpl_id.default_code
+                product.code = product.product_tmpl_id.default_code
             else:
-                zeros = prod_group.range_zeros - len(str(prod_group.consecutive + 1))
-                # print(zeros)
-                zerosl = ""
-                for i in range(zeros):
-                    zerosl = zerosl + "0"
-                # print(zerosl)
-                if prod_group.is_automatic == True:
-                    product.default_code = product.product_tmpl_id.default_code
-                    product.code = product.product_tmpl_id.default_code
-                else:
-                    if not product.default_code:
-                        raise exceptions.Warning(
-                            'El Grupo de Producto, seleccionado no es automático, debe escribir la referencia')
+                if not product.default_code:
+                    raise exceptions.Warning(
+                        'El Grupo de Producto, seleccionado no es automático, debe escribir la referencia')
 
-                return product
+            return product
 
     @api.onchange('product_group')
     def _compute_default_code(self):
