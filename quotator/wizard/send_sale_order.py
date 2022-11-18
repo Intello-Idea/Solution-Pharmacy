@@ -55,7 +55,7 @@ class SendSaleOrderWizard(models.TransientModel):
             'form_pharmaceutical': quotator.pharmaceutical_form.id,
             'patient': quotator.patient,
             'pharmaceutical_presentation': quotator.presentation_id.id,
-            'grams_pharmaceutical': quotator.value_pharmaceutical_form,
+            'grams_pharmaceutical': quotator.subtotal_grams, #quotator.value_pharmaceutical_form,
             'user_id': quotator.partner_id.user_id.id,
             'team_id': quotator.partner_id.team_id.id,
             'referred_doctor': quotator.referred_doctor.id,
