@@ -7,6 +7,13 @@ from odoo.exceptions import ValidationError, UserError
 class SendSaleOrderWizard(models.TransientModel):
     _name = "send.sale.order.wizard"
 
+    def _default_check(self):
+
+        parameter = self.env['ir.config_parameter'].sudo()
+        print(parameter.get_param('res.config.settings.check_status'))
+        return parameter.get_param('res.config.settings.check_status')
+
+    check_status = fields.Boolean(default=_default_check)
     line_production_id = fields.Many2one('production.lines', required=True)
 
     """
