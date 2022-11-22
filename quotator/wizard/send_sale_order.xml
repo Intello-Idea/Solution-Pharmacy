@@ -10,7 +10,9 @@
                 </p>
                 <group>
                         <group>
-                                <field name="line_production_id"/>
+                                <field name="check_status" invisible="1"/>
+
+                                <field name="line_production_id" domain="['|',('check_status', '=', check_status),('check_status', '=', True)]"/>
                         </group>
                 </group>
                 <footer>
