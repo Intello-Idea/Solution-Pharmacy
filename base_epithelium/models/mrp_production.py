@@ -88,6 +88,10 @@ class MrpProduction(models.Model):
                     #         values['patient'] = sale_order_patient_line.name
 
         production = super(MrpProduction, self).create(values)
+        if production['origin']:
+            sale_order = self.env['sale.order'].search([('name', '=', production['origin'])])
+            if sale_order:
+                production['user_id']=sale_order.create_uid
         return production
 
     @api.onchange('bom_id')
