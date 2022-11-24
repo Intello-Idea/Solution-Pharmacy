@@ -10,7 +10,7 @@ class QuotatorLine(models.Model):
 
     product_id = fields.Many2one('product.product', string="Product", required=True, domain=[('product_group.name','=','Activos')])
     percentage = fields.Float(string="Percentage(%)", digits="Product Unit of Measure Five", required=True, default=0)
-    quotator_id = fields.Many2one('quotator.own', string="Quotator id", store=True)
+    quotator_id = fields.Many2one('quotator.own', string="Quotator id", store=True, ondelete='cascade')
     category = fields.Char(string="Category", related="product_id.product_tmpl_id.categ_id.complete_name")
     material_qty = fields.Float(string="Quantity", default=1.0, digits="Product Unit of Measure Five", compute="_compute_qty", store=True)
     price_unit = fields.Float('Unit Price', required=True, default=0.0, compute="_update_price", store=True)
