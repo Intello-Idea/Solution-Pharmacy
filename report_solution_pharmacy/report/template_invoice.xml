@@ -14,6 +14,7 @@
                     <t t-set="tax" t-value="tax"/>
                     <t t-set="tax_value" t-value="tax_value"/>
                     <t t-set="picking" t-value="picking"/>
+                    <t t-set="quotator" t-value="quotator"/>
                     <t t-set="print_with_payments" t-value="True"/>
                     <t t-set='qr_code_url' t-value='qr_code_url'/>
                     <t t-call="report_solution_pharmacy.invoices"/>
@@ -272,9 +273,14 @@
                             <span t-esc="prod_count"/>
                         </td>
                         <td class="text-center border border-dark align-middle" style="">
-                            <span t-field="line.product_id.code"/>
-                            <span>-</span>
-                            <span t-field="line.name"/>
+                            <t t-if="line.check_status">
+                                <span t-field="line.product_id.code"/>
+                                <span>-</span>
+                                <span t-field="line.name"/>
+                            </t>
+                            <t t-else="">
+                                <span t-field="line.name"/>
+                            </t>
                         </td>
                         <td class="text-center border border-dark align-middle" style="">
                             <span t-esc="'{0:,.0f}'.format(line.quantity)"/>

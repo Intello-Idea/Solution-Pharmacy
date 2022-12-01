@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_delivery_document" inherit_id='stock.report_delivery_document'>
+        <xpath expr="//table[@name='stock_move_line_table']" position="replace">
+            <table class="table table-sm mt48" t-if="o.move_line_ids and o.state=='done'" name="stock_move_line_table">
+                <t t-set="has_serial_number" t-value="False"/>
+                <t t-set="sale" t-value="sale_orders"/>
+                 <span t-esc="sale"/>
+                <t t-set="has_serial_number" t-value="o.move_line_ids.mapped('lot_id')" groups="stock.group_lot_on_delivery_slip"/>
+                <thead>
+                    <tr>
+                        <th name="th_sml_product"><strong>Product</strong></th>
+                        <t name="lot_serial" t-if="has_serial_number">
+                            <th>
+                                Lot/Serial Number
+                            </th>
+                        </t>
+                        <th name="th_sml_quantity" class="text-center"><strong>Quantity</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-if="o.has_packages" name="has_packages">
+                        <t t-set="packages" t-value="o.move_line_ids.mapped('result_package_id')"/>
+                        <t t-foreach="packages" t-as="package">
+                            <t t-call="stock.stock_report_delivery_package_section_line"/>
+                            <t t-set="package_move_lines" t-value="o.move_line_ids.filtered(lambda l: l.result_package_id == package)"/>
+                            <t t-if="has_serial_number">
+                                <tr t-foreach="package_move_lines" t-as="move_line">
+                                    <t t-call="stock.stock_report_delivery_has_serial_move_line"/>
+                                </tr>
+                            </t>
+                            <t t-else="">
+                                <t t-set="aggregated_lines" t-value="package_move_lines._get_aggregated_product_quantities()"/>
+                                <t t-call="stock.stock_report_delivery_aggregated_move_lines"/>
+                            </t>
+                        </t>                                
+                        <t t-set="move_lines" t-value="o.move_line_ids.filtered(lambda l: not l.result_package_id)"/>
+                        <t t-if="move_lines" name="no_package_move_lines">
+                            <t t-call="stock.stock_report_delivery_no_package_section_line" name="no_package_section"/>
+                            <t t-if="has_serial_number">
+                                <tr t-foreach="move_lines" t-as="move_line">
+                                    <t t-call="stock.stock_report_delivery_has_serial_move_line"/>
+                                </tr>
+                            </t>
+                            <t t-else="">
+                                <t t-set="aggregated_lines" t-value="move_lines._get_aggregated_product_quantities()"/>
+                                <t t-if="aggregated_lines">
+                                    <t t-call="stock.stock_report_delivery_aggregated_move_lines"/>
+                                </t>
+                            </t>
+                        </t>
+                    </t>
+                    <t t-else="">
+                        <t t-if="has_serial_number">
+                            <tr t-foreach="o.move_line_ids" t-as="move_line">
+                                <t t-call="stock.stock_report_delivery_has_serial_move_line"/>
+                            </tr>
+                        </t>
+                        <t t-else="" name="aggregated_move_lines">
+                            <t t-set="aggregated_lines" t-value="o.move_ids_without_package"/>
+                            <t t-call="stock.stock_report_delivery_aggregated_move_lines"/>
+                        </t>
+                    </t>
+                </tbody>
+            </table>
+        </xpath>
+
+        <xpath expr="//table[@name='stock_backorder_table']" position="replace">
+            
+            <table class="table table-sm" name="stock_backorder_table">
+                <thead>
+                    <tr>
+                        <th name="th_sb_product"><strong>Product</strong></th>
+                        <th name="th_sb_quantity" class="text-center"><strong>Quantity</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="backorders" t-as="backorder">
+                        <t t-set="bo_lines" t-value="backorder.move_lines.filtered(lambda x: x.product_uom_qty)"/>
+                        <tr t-foreach="bo_lines" t-as="bo_line">
+                            <td>
+                                <t t-if="bo_line.product_counterpart">
+                                    <span t-field="bo_line.product_id.default_code"/> -
+                                    <span t-field="bo_line.product_counterpart"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-field="bo_line.description_picking"/>
+                                </t>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="bo_line.product_uom_qty"/>
+                                <span t-field="bo_line.product_uom"/>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+        </xpath>
+    </template>
+    
+    <template id="stock_report_delivery_aggregated_move_lines" inherit_id='stock.stock_report_delivery_aggregated_move_lines'>
+        <xpath expr="//tr[@t-foreach='aggregated_lines']" position="replace">
+            <t t-foreach="aggregated_lines" t-as="line">
+                <tr>
+                    <td>
+                        <span t-field="line.product_id.default_code"/> -
+                        <t t-if="line.product_counterpart">
+                            <span t-field="line.product_counterpart.name"/>
+                        </t>
+                        <t t-else="">   
+                            <t t-if="line.sale_line_id">
+                                <t t-if="line.sale_line_id.product_id.name == 'Generico cotizador'">
+                                    <span t-field="line.sale_line_id.name"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-field="line.name"/>
+                                </t>
+                            </t>
+                            <t t-else="">
+                                <span t-field="line.name"/>
+                            </t>
+                        </t>
+                    </td>
+                    <td class="text-center" name="move_line_aggregated_qty_done">
+                        <span t-field="line.quantity_done"/>
+                        <span t-field="line.product_uom"/>
+                    </td>
+                </tr>
+            </t>
+        </xpath>
+    </template>
+</odoo>
