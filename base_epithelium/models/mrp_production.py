@@ -243,7 +243,7 @@ class MrpProduction(models.Model):
         doc = etree.XML(res['arch'])
         for node in doc.xpath("//field[@name='product_id']"):
             if check_status:
-                node.set('domain', "[('check_status', '=', True)]")
+                node.set('domain', "[('bom_ids','!=', False),('bom_ids.active','=', True),('bom_ids.type','=', 'normal'),('type','in',['product','consu']),'|',('company_id','=',False),('company_id','=',company_id),('check_status', '=', True)]")
             else:
                 ''' 
                     Programmer: Routh Milano
