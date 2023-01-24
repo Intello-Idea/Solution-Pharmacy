@@ -191,14 +191,24 @@ class FeMfMethods(models.AbstractModel):
                         "LineChargeTotal": 0.0,
                         "LineTotalTaxes": line_total_taxes,
                         "LineTotal": (line.price_subtotal - line.discount) + line_total_taxes,
-                        "LineExtensionAmount": line.price_subtotal - line.discount,
+                        "LineExtensionAmount": line.price_subtotal,
                         "MeasureUnitCode": line.product_id.uom_id.dian_code.key_dian,
                         "FreeOFChargeIndicator": line.sale_line_ids.bonus,
                         "AdditionalReference": [],
                         "Note": "",
                         "AdditionalProperty": [],
                         "TaxesInformation": taxes,
-                        "AllowanceCharge": []
+                        "AllowanceCharge": [
+                            {
+                                "Id": 9,
+                                "ChargeIndicator": False,
+                                "AllowanceChargeReasonCode": 9,
+                                "AllowanceChargeReason": "Descuento general",
+                                "MultiplierFactorNumeric": line.discount,
+                                "Amount": ((line.quantity * line.price_unit) * line.discount) / 100,
+                                "BaseAmount": (line.quantity * line.price_unit)
+                            }
+                        ]
                     }
                     lines.append(product)
 
@@ -241,14 +251,24 @@ class FeMfMethods(models.AbstractModel):
                         "LineChargeTotal": 0.0,
                         "LineTotalTaxes": line_total_taxes,
                         "LineTotal": (line.price_subtotal - line.discount) + line_total_taxes,
-                        "LineExtensionAmount": line.price_subtotal - line.discount,
+                        "LineExtensionAmount": line.price_subtotal,
                         "MeasureUnitCode": line.product_id.uom_id.dian_code.key_dian,
                         "FreeOFChargeIndicator": line.sale_line_ids.bonus,
                         "AdditionalReference": [],
                         "Note": "",
                         "AdditionalProperty": [],
                         "TaxesInformation": taxes,
-                        "AllowanceCharge": []
+                        "AllowanceCharge": [
+                            {
+                                "Id": 9,
+                                "ChargeIndicator": False,
+                                "AllowanceChargeReasonCode": 9,
+                                "AllowanceChargeReason": "Descuento general",
+                                "MultiplierFactorNumeric": line.discount,
+                                "Amount": ((line.quantity * line.price_unit) * line.discount) / 100,
+                                "BaseAmount": (line.quantity * line.price_unit)
+                            }
+                        ]
                     }
                     lines.append(product)
 
