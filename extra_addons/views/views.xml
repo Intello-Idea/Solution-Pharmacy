@@ -12,6 +12,21 @@
             <attribute name="invisible">1</attribute>
           </xpath>
       </field>
+    </record>
+
+  <record id="extra_addons.material_list" model="ir.ui.view">  
+    <field name="name">update material list</field>
+    <field name="model">mrp.bom</field>
+    <field name="inherit_id" ref="mrp.mrp_bom_form_view"></field>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='type']" position="after">
+          <field name="operation_type"/>
+      </xpath>
+      <xpath expr="//page[@name='miscellaneous']/group[1]/group[1]/field[@name='operation_type']" position="attributes">
+        <attribute name="invisible">1</attribute>
+      </xpath>
+    </field>
   </record>
+
   </data>
 </odoo>
