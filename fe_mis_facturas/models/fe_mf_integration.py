@@ -330,7 +330,7 @@ class FeMfMethods(models.AbstractModel):
                     "AdditionalAccountID": int(posted_document.partner_id.person_type.key_dian),
                     "TaxLevelCodeListName": int(
                         posted_document.partner_id.property_account_position_id.key_dian.key_dian),
-                    "PostalZone": int(posted_document.partner_id.zip),
+                    "PostalZone": posted_document.partner_id.zip,
                     "TaxSchemeCode": "01" if posted_document.partner_id.property_account_position_id.key_dian.key_dian == '48' else 'ZY',
                     "TaxSchemeName": "IVA" if posted_document.partner_id.property_account_position_id.key_dian.key_dian == '48' else 'No causa',
                     "FiscalResponsabilities": self.fiscal_responsabilities(posted_document),
@@ -419,7 +419,7 @@ class FeMfMethods(models.AbstractModel):
                     "AdditionalAccountID": int(posted_document.partner_id.person_type.key_dian),
                     "TaxLevelCodeListName": int(
                         posted_document.partner_id.property_account_position_id.key_dian.key_dian),
-                    "PostalZone": int(posted_document.partner_id.zip),
+                    "PostalZone": posted_document.partner_id.zip,
                     "TaxSchemeCode": "01" if posted_document.partner_id.property_account_position_id.key_dian.key_dian == '48' else 'ZY',
                     "TaxSchemeName": "IVA" if posted_document.partner_id.property_account_position_id.key_dian == '48' else 'No causa',
                     "FiscalResponsabilities": self.fiscal_responsabilities(posted_document),
