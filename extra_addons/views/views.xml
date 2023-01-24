@@ -1,0 +1,33 @@
+<odoo>
+  <data>
+
+    <record id="extra_addons.mrp" model="ir.ui.view">
+      <field name="name">origin mrp</field>
+      <field name="model">mrp.production</field>
+      <field name="inherit_id" ref="mrp.mrp_production_form_view"></field>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='patient']" position="after">
+            <field name="origin"/>
+        </xpath>
+        <xpath expr="//page[@name='miscellaneous']/group[1]/group[2]/field[@name='origin']" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>
+      </field>
+    </record>
+    
+    <record id="extra_addons.lista_materiales" model="ir.ui.view">
+      <field name="name">update material list</field>
+      <field name="model">mrp.bom</field>
+      <field name="inherit_id" ref="mrp.mrp_bom_form_view"></field>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='type']" position="after">
+            <field name="operation_type"/>
+        </xpath>
+        <xpath expr="//page[@name='miscellaneous']/group[1]/group[1]/field[@name='operation_type']" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>
