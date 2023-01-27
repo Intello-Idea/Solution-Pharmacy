@@ -103,7 +103,7 @@
             <t t-foreach="aggregated_lines.sorted(lambda f: f.product_id.name)" t-as="line">
                 <tr>
                     <td>
-                        <span t-field="line.product_id.default_code"/> -
+                        <!--<span t-field="line.product_id.default_code"/> -
                         <t t-if="line.product_counterpart">
                             <span t-field="line.product_counterpart.name"/>
                         </t>
@@ -119,7 +119,8 @@
                             <t t-else="">
                                 <span t-field="line.name"/>
                             </t>
-                        </t>
+                        </t>-->
+                        <t t-if="line.product_id.name" t-esc="line.product_id.name"/>
                     </td>
                     <td class="text-center" name="move_line_aggregated_qty_done">
                         <span t-field="line.quantity_done"/>
