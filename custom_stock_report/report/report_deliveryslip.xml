@@ -80,7 +80,7 @@
                         <tr t-foreach="bo_lines" t-as="bo_line">
                             <td>
                                 <t t-if="bo_line.product_counterpart">
-                                    <span t-field="bo_line.product_id.default_code"/> -
+                                    <!--<span t-field="bo_line.product_id.default_code"/>-->
                                     <span t-field="bo_line.product_counterpart"/>
                                 </t>
                                 <t t-else="">
@@ -130,4 +130,11 @@
             </t>
         </xpath>
     </template>
+
+    <template id="custom_stock_report.change_show_line" inherit_id="stock.stock_report_delivery_has_serial_move_line">
+        <xpath expr="//t[@t-name='stock.stock_report_delivery_has_serial_move_line']/td[1]/span[1]" position="replace">
+            <span t-field="move_line.product_id.name"/>
+        </xpath>
+    </template>
+    
 </odoo>
