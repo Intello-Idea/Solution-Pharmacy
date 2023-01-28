@@ -15,6 +15,7 @@
                                 Lot/Serial Number
                             </th>
                         </t>
+                        <th name="th_order_production"><strong>Production Order</strong></th>
                         <th name="th_sml_quantity" class="text-center"><strong>Quantity</strong></th>
                     </tr>
                 </thead>
@@ -127,6 +128,16 @@
                             <t t-if="line.product_id.name" t-esc="line.product_id.name"/>
                         </t>
                     </td>
+                    <td class="text-center">
+                        <t>
+                            <t t-if="o.origin">
+                                <t t-esc="o.get_production_order(line)"></t>
+                            </t>
+                            <t t-else="">
+                                <span></span>
+                            </t>
+                        </t>
+                    </td>
                     <td class="text-center" name="move_line_aggregated_qty_done">
                         <span t-field="line.quantity_done"/>
                         <span t-field="line.product_uom"/>
@@ -139,6 +150,18 @@
     <template id="custom_stock_report.change_show_line" inherit_id="stock.stock_report_delivery_has_serial_move_line">
         <xpath expr="//t[@t-name='stock.stock_report_delivery_has_serial_move_line']/td[1]/span[1]" position="replace">
             <span t-field="move_line.product_id.name"/>
+        </xpath>
+        <xpath expr="//t[@t-name='stock.stock_report_delivery_has_serial_move_line']/td[2]" position="before">
+            <td>
+                <t>
+                    <t t-if="o.origin">
+                        <t t-esc="5"></t>
+                    </t>
+                    <t t-else="">
+                        <span></span>
+                    </t>
+                </t>
+            </td>
         </xpath>
     </template>
 
