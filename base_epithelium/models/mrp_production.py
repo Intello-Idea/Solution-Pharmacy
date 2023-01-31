@@ -196,7 +196,7 @@ class MrpProduction(models.Model):
                 # Agregar elemento al diccionario developer Routh Milano 03-05-2022
                 'dough': str(move.product_uom.name),
                 'quantity_lot': "",
-                'lot': str(move.move_line_ids.lot_id.name) if str(move.move_line_ids.lot_id.name) != 'False' else "",
+                'lot': str(move.move_line_ids[0].lot_id.name) if str(move.move_line_ids[0].lot_id.name) != 'False' else "",
                 'due_date': "",
                 'head': True
             }
