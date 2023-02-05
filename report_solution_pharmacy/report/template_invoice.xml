@@ -224,7 +224,7 @@
                 </tr>
                 <tr>
                     <td><strong>Pedido: </strong></td>
-                    <td><span t-if="order and order.name" t-field="order.name"/></td>
+                    <td><span t-if="o.invoice_origin" t-esc="o.invoice_origin"/></td>
                 </tr>
                 <tr>
                     <td><strong>Vendedor: </strong></td>
@@ -239,6 +239,7 @@
     </template>
 
     <template id="invoice_tables">
+        <br></br>
         <table style="width:100%; border-collapse: collapse;" class="border border-dark">
             <thead>
                 <th class="text-center border border-dark align-middle" style="width:3%;">
@@ -330,11 +331,19 @@
                     </div>
                 </div>
             </div>
+            <div class="row" style="margin-top:40px;">
+                <div class="col-12">
+                    <p>
+                        <strong>SON: <![CDATA[&nbsp;]]></strong><span t-esc="o.amount_to_text()"/>
+                    </p>
+                </div>
+            </div>
         </div>
     </template>
 
     <template id="leyenda_cufe">
-        <div style="margin-top:300px;"/>
+        <div style="margin-top:170px;"/>
+        <br></br>
         <div class="container">
             <span>
                 Este documento corresponde a la representación gráfica de una factura electrónica.
