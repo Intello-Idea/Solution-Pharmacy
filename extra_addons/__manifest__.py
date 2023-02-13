@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'mrp', 'setting_mrp'],
+    'depends': ['base', 'mrp', 'setting_mrp', 'referido'],
 
     # always loaded
     'data': [
