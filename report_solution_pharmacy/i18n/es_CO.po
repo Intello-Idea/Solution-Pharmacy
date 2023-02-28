@@ -1,0 +1,289 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* report_solution_pharmacy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-11 15:59+0000\n"
+"PO-Revision-Date: 2023-02-11 15:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoices
+msgid ""
+"<br/>\n"
+"                            <span style=\"text-align:center;\">CELULAR: </span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoices
+msgid ""
+"<br/>\n"
+"                            <span style=\"text-align:center;\">NO SOMOS GRANDES CONTRIBUYENTES</span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoices
+msgid ""
+"<br/>\n"
+"                            <span style=\"text-align:center;\">PBX </span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.box_totals_data
+msgid ""
+"<br/>\n"
+"                        <span style=\"text-align:center;\"><strong>Forma de pago:</strong></span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.footer
+msgid ""
+"<span style=\" text-align:center;\">RECIBIDA ACEPTADA, FIRMA Y SELLO</span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.box_totals_data
+msgid ""
+"<span style=\"text-align:center;\"><strong>Descuentos de la "
+"factura:</strong></span><span>$</span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.box_totals_data
+msgid "<span style=\"text-align:center;\"><strong>Observaciones</strong></span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.box_totals_data
+msgid "<span style=\"text-align:center;\"><strong>Subtotal:</strong></span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.box_totals_data
+msgid "<span style=\"text-align:center;\"><strong>Total</strong> </span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoices
+msgid "<span style=\"text-align:center;\">ACTIVIDAD ECONOMICA </span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.leyenda_cufe
+msgid ""
+"<span>\n"
+"                Este documento corresponde a la representación gráfica de una factura electrónica.\n"
+"            </span><br/>\n"
+"            <span>\n"
+"                Confirme el CUFE mediante lectura de este código bidimensional:\n"
+"            </span><br/>\n"
+"            <span>CUFE:</span><br/>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoices
+msgid "<span> al </span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoices
+msgid "<span>Autorización de numeración de facturación electrónica</span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoices
+msgid "<span>Habilita numeración de:</span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoices
+msgid "<span>NIT</span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoices
+msgid "<span>No.</span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoices
+msgid "<span>Responsabilidad fiscal:</span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoices
+msgid "<span>Régimen:</span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoices
+msgid "<span>del </span>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.customer_boxes
+msgid "<strong>Celular:</strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.customer_boxes
+msgid "<strong>Ciudad:</strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.customer_boxes
+msgid "<strong>Cliente</strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoice_boxes
+msgid "<strong>Cotización Cotizador #:</strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.customer_boxes
+msgid "<strong>Código Cliente:</strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.customer_boxes
+msgid "<strong>Departamento:</strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.customer_boxes
+msgid "<strong>Dirección Entrega:</strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.customer_boxes
+msgid "<strong>Dirección Facturación:</strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoice_boxes
+msgid "<strong>Factura Electronica de Venta No:</strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoice_boxes
+msgid "<strong>Fecha de emisión:</strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoice_boxes
+msgid "<strong>Fecha de vencimiento:</strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.box_totals_data
+msgid "<strong>Medio de pago:</strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.customer_boxes
+msgid "<strong>País:</strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoice_boxes
+msgid "<strong>Pedido: </strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoice_boxes
+msgid "<strong>Plazo (Días): </strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoice_boxes
+msgid "<strong>Remisión: </strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.box_totals_data
+msgid "<strong>SON: &amp;nbsp;</strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.customer_boxes
+msgid "<strong>Teléfono:</strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoice_boxes
+msgid "<strong>Vendedor: </strong>"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoice_tables
+msgid "Cant"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoice_tables
+msgid "Desc%"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoice_tables
+msgid "Descripción"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model:ir.model.fields,field_description:report_solution_pharmacy.field_report_account_report_invoice_with_payments__display_name
+msgid "Display Name"
+msgstr "Nombre Público"
+
+#. module: report_solution_pharmacy
+#: model:ir.model.fields,field_description:report_solution_pharmacy.field_report_account_report_invoice_with_payments__id
+msgid "ID"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model:ir.model,name:report_solution_pharmacy.model_report_account_report_invoice_with_payments
+msgid "Invoice"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoice_tables
+msgid "Item"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model:ir.model.fields,field_description:report_solution_pharmacy.field_report_account_report_invoice_with_payments____last_update
+msgid "Last Modified on"
+msgstr "Última Modificación el"
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.box_totals_data
+msgid "Please use the following communication for your payment :"
+msgstr "Por favor utilice la siguiente referencia al realizar su pago:"
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoice_tables
+msgid "Precio Unitario"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoice_tables
+msgid "Unidad de Medida"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoice_tables
+msgid "Valor Total"
+msgstr ""
+
+#. module: report_solution_pharmacy
+#: model_terms:ir.ui.view,arch_db:report_solution_pharmacy.invoices
+msgid "al"
+msgstr ""

@@ -336,6 +336,9 @@
                     <p>
                         <strong>SON: <![CDATA[&nbsp;]]></strong><span t-esc="o.amount_to_text()"/>
                     </p>
+                    <p t-if="o.move_type in ('out_invoice', 'in_refund') and o.payment_reference" name="payment_communication">
+                        Please use the following communication for your payment : <b><span t-field="o.payment_reference"/></b>
+                    </p>
                 </div>
             </div>
         </div>
