@@ -23,11 +23,23 @@ class InvoiceReport(models.AbstractModel):
 
        
         for doc in docs:
-            orders = self.env['sale.order'].search([('invoice_ids','=',doc.id)])
+            orders = self.env['sale.order'].search([('invoice_ids','=',doc.id),('state', '=', 'done')])
             order = orders[0] if len(orders) == 1 else False
             sale_orders[doc.id] = order
-            if order and order.delivery_count == 1:
-                picking = self.env['stock.picking'].search([('sale_id','=',order.id)],limit=1)
+
+            picking_ref = []
+            result = ''
+            if orders:
+                for line in orders:
+                    picking = self.env['stock.picking'].search([('sale_id','=',line.id), ('state', '=', 'done')])
+                    for record in picking:
+                        picking_ref.append(record.name)
+
+                if picking_ref:
+                    result_picking = ''
+                    for item in picking_ref:
+                        result_picking += item + ', '
+                    result = result_picking[:-2]
             
             for rec in doc.invoice_payment_term_id.line_ids:
                 day += rec.days
@@ -51,6 +63,6 @@ class InvoiceReport(models.AbstractModel):
             'desc': desc,
             'tax': tax,
             'tax_value': tax_value,
-            'picking': picking,
+            'picking': result,
             'qr_code_url':qr_code_url
         }

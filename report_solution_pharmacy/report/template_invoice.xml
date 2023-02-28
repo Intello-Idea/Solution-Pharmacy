@@ -220,7 +220,7 @@
                 </tr>
                 <tr>
                     <td><strong>Remisión: </strong></td>
-                    <td><span t-if="picking" t-esc="picking.name"/></td>
+                    <td><span t-if="picking" t-esc="picking"/></td>
                 </tr>
                 <tr>
                     <td><strong>Pedido: </strong></td>
