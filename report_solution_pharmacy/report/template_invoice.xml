@@ -68,27 +68,27 @@
                         <div><span>Responsabilidad fiscal:</span> <span t-field="company.partner_id.fiscal_responsibility"/></div>
                     </div>
                 </div>
-                <div class="row"  style="margin-top:20px;">
-                    <div class="col-6 border border-dark">
-                        <div style="padding:5px;border-width:2px !important;">
-                            <span style="text-align:center;">ACTIVIDAD ECONOMICA </span><span t-if="partner.code_ciiu_primary" t-field="partner.code_ciiu_primary.code"/><br/>
-                            <span style="text-align:center;">PBX </span><span t-if="partner.phone" t-field="partner.phone"/><br/>
-                            <span style="text-align:center;">CELULAR: </span> <span t-if="partner.mobile" t-field="partner.mobile"/><br/>
-                            <span style="text-align:center;">NO SOMOS GRANDES CONTRIBUYENTES</span>
-                        </div>
-                        <div style="padding:5px;border-width:2px !important;">
-                            <t t-call="report_solution_pharmacy.customer_boxes"/>
-                        </div>
+            </div>  
+        </div>
+        <div class="article" t-att-data-oe-model="doc and doc._name" t-att-data-oe-id="doc and doc.id" t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+            <div class="row" style="margin-top:20px; font-size: 12px !important; margin: 2px;">
+                <div class="col-6 border border-dark">
+                    <div style="padding:5px;border-width:2px !important;">
+                        <span style="text-align:center;">ACTIVIDAD ECONOMICA </span><span t-if="partner.code_ciiu_primary" t-field="partner.code_ciiu_primary.code"/><br/>
+                        <span style="text-align:center;">PBX </span><span t-if="partner.phone" t-field="partner.phone"/><br/>
+                        <span style="text-align:center;">CELULAR: </span> <span t-if="partner.mobile" t-field="partner.mobile"/><br/>
+                        <span style="text-align:center;">NO SOMOS GRANDES CONTRIBUYENTES</span>
                     </div>
-                    <div class="col-6 border border-dark">
-                        <div style="padding:5px;border-width:2px !important;">
-                            <t t-call="report_solution_pharmacy.invoice_boxes"/>
-                        </div>
+                    <div style="padding:5px;border-width:2px !important;">
+                        <t t-call="report_solution_pharmacy.customer_boxes"/>
+                    </div>
+                </div>
+                <div class="col-6 border border-dark">
+                    <div style="padding:5px;border-width:2px !important;">
+                        <t t-call="report_solution_pharmacy.invoice_boxes"/>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="article" t-att-data-oe-model="doc and doc._name" t-att-data-oe-id="doc and doc.id" t-att-data-oe-lang="doc and doc.env.context.get('lang')">
             <div class="page" style="font-size: 12px !important;">
                 <t t-call="report_solution_pharmacy.invoice_tables"/>
                 <t t-call="report_solution_pharmacy.box_totals_data"/>
