@@ -115,8 +115,16 @@
                             <table class="w-100" style="border:1px solid #000;">
                                 <tr style="border:1px solid #000;">
                                     <td style="border:1px solid #000;">Product to produce:</td>
-                                    <td colspan="2" style="border:1px solid #000;"><span
-                                            t-field="o.product_id.name"/></td>
+                                    <t t-if="o.production_line_id.code in ('B', 'BI')">
+                                        <td colspan="2" style="border:1px solid #000;"><span
+                                            t-esc="o.product_id.default_code"/>
+                                        </td>
+                                    </t>
+                                    <t t-else="">
+                                        <td colspan="2" style="border:1px solid #000;">
+                                            <span t-esc="o.product_id.default_code"/><span>- </span><span t-field="o.product_id.name"/>
+                                        </td>
+                                    </t>
                                     <td style="border:1px solid #000; width:20%;">Op number:</td>
                                     <td style="border:1px solid #000; width:20%;"><span t-field="o.name"/></td>
                                 </tr>
