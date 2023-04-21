@@ -234,7 +234,7 @@
                                     <td style="border:1px solid #000; text-align: center;" colspan="2"><span>According
                                         to Elaboration Procedure</span></td>
                                     <td style="border:1px solid #000;" colspan="1">C.instructivo:</td>
-                                    <td style="border:1px solid #000;" colspan="1"><t
+                                    <td style="border:1px solid #000 text-align: center;" colspan="1"><t
                                                     t-esc="o.instruction_code"/></td>
                                 </tr>
                                 <tr style="border:1px solid #000; height: 60px;">
