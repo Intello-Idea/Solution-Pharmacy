@@ -46,7 +46,7 @@
                     <attribute name="attrs">{'readonly': True}</attribute>
                 </xpath>
                 <xpath expr="//sheet/group/group[@name='group_extra_info']/field[@name='user_id']" position="before">
-                    <field name="expiration_date_sp"/>
+                    <field name="expiration_date_sp" force_save="1"/>
                 </xpath>
                 <xpath expr="//field[@name='company_id']" position="after">
                     <!--

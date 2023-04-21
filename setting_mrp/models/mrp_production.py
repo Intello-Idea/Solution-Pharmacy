@@ -2,6 +2,7 @@
 
 from odoo import fields, models, api, _
 from odoo.tools import  UserError
+from dateutil.relativedelta import relativedelta
 
 
 class MrpProduction(models.Model):
@@ -13,11 +14,11 @@ class MrpProduction(models.Model):
         Requirement: REQ-SP-000007
         Functionality: Agregar campos nuevos para obtener cliente y paciente desde la orden de venta y sino agregar manualmente 
     """
-    
+
     @api.model
     def _get_default_picking_type(self):
         return self.bom_id.operation_type.id
-    
+
 
     partner_sale_id = fields.Many2one('res.partner', string='Client', related="procurement_group_id.partner_id", store=True)
     partner_id = fields.Many2one('res.partner', string='Partner')
@@ -26,14 +27,16 @@ class MrpProduction(models.Model):
     patient_sale = fields.Many2one('res.partner', string='Patient', related="partner_sale_id", store=True)
     bulk_size = fields.Float(string="Bulk Size", compute='_compute_bulk_size', readonly=True, default=[],
                                               copy=False, store=True)
-    expiration_date_sp = fields.Date(string="Expiration Date")
+    expiration_date_sp = fields.Date(string="Expiration Date",
+                                     compute='_calculate_expiration_date',
+                                     store=True)
     client_code = fields.Char(string='Client Code', related="partner_id.client_code", store=True)
     client_code_sale = fields.Char(string='Client Code', related="partner_sale_id.client_code", store=True)
-    
+
     picking_type_id = fields.Many2one(
         'stock.picking.type', 'Operation Type',
         default=_get_default_picking_type, required=True, check_company=True)
-    
+
 
     #Función computada que calcula el tamaño a granel basado en la cantidad a producir por el tamaño
     @api.depends('product_id')
@@ -51,8 +54,21 @@ class MrpProduction(models.Model):
         if len(stock_move):
             for rec in stock_move:
                 rec.update({'state':'draft'})
-        
+
     def action_confirm(self):
         self.update({'state': 'confirmed'})
         rec = super(MrpProduction, self).action_confirm()
         return rec
+
+    @api.depends('product_id')
+    def _calculate_expiration_date(self):
+        for line in self:
+            product = line.product_id
+            if product:
+                product_shelf_life =\
+                    product.product_tmpl_id.product_shelf_life
+                if product_shelf_life and line.date_planned_start:
+                    line.expiration_date_sp = line.date_planned_start +\
+                        relativedelta(months=product_shelf_life)
+                else:
+                    line.expiration_date_sp = line.date_planned_start
