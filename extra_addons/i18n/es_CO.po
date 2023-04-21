@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-21 01:10+0000\n"
-"PO-Revision-Date: 2023-04-21 01:10+0000\n"
+"POT-Creation-Date: 2023-04-21 01:30+0000\n"
+"PO-Revision-Date: 2023-04-21 01:30+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,15 +24,22 @@ msgstr "Lista de materiales"
 #: model:ir.model.fields,field_description:extra_addons.field_account_move__display_name
 #: model:ir.model.fields,field_description:extra_addons.field_mrp_bom__display_name
 #: model:ir.model.fields,field_description:extra_addons.field_mrp_production__display_name
+#: model:ir.model.fields,field_description:extra_addons.field_product_template__display_name
 #: model:ir.model.fields,field_description:extra_addons.field_sale_order__display_name
 #: model:ir.model.fields,field_description:extra_addons.field_stock_picking__display_name
 msgid "Display Name"
 msgstr "Nombre Público"
 
 #. module: extra_addons
+#: model:ir.model.fields,field_description:extra_addons.field_mrp_production__expiration_date_sp
+msgid "Expiration Date"
+msgstr "Fecha de Vencimiento"
+
+#. module: extra_addons
 #: model:ir.model.fields,field_description:extra_addons.field_account_move__id
 #: model:ir.model.fields,field_description:extra_addons.field_mrp_bom__id
 #: model:ir.model.fields,field_description:extra_addons.field_mrp_production__id
+#: model:ir.model.fields,field_description:extra_addons.field_product_template__id
 #: model:ir.model.fields,field_description:extra_addons.field_sale_order__id
 #: model:ir.model.fields,field_description:extra_addons.field_stock_picking__id
 msgid "ID"
@@ -53,6 +60,7 @@ msgstr "Asiento del Libro"
 #: model:ir.model.fields,field_description:extra_addons.field_account_move____last_update
 #: model:ir.model.fields,field_description:extra_addons.field_mrp_bom____last_update
 #: model:ir.model.fields,field_description:extra_addons.field_mrp_production____last_update
+#: model:ir.model.fields,field_description:extra_addons.field_product_template____last_update
 #: model:ir.model.fields,field_description:extra_addons.field_sale_order____last_update
 #: model:ir.model.fields,field_description:extra_addons.field_stock_picking____last_update
 msgid "Last Modified on"
@@ -62,6 +70,17 @@ msgstr "Última Modificación el"
 #: model:ir.model.fields,field_description:extra_addons.field_mrp_bom__operation_type
 msgid "Operation Type"
 msgstr "Tipo de Operación"
+
+#. module: extra_addons
+#: model:ir.model,name:extra_addons.model_product_template
+msgid "Product Template"
+msgstr "Plantilla del Producto"
+
+#. module: extra_addons
+#: model:ir.model.fields,field_description:extra_addons.field_product_product__product_shelf_life
+#: model:ir.model.fields,field_description:extra_addons.field_product_template__product_shelf_life
+msgid "Product shelf life(meses)"
+msgstr "Vida útil producto (meses)"
 
 #. module: extra_addons
 #: model:ir.model,name:extra_addons.model_mrp_production
