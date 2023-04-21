@@ -7,11 +7,15 @@
       <field name="inherit_id" ref="mrp.mrp_production_form_view"></field>
       <field name="arch" type="xml">
         <xpath expr="//field[@name='patient']" position="after">
-            <field name="origin"/>
-            <field name="instruction_code"/>
+          <field name="origin"/>
+          <field name="instruction_code"/>
         </xpath>
         <xpath expr="//page[@name='miscellaneous']/group[1]/group[2]/field[@name='origin']" position="attributes">
           <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//field[@name='bom_id']" position="after">
+          <field name="tm_id" invisible="1"/>
+          <field name="homologos" domain="[('product_id.id', '=', tm_id), ('customer.id', '=', partner_id)]"/>
         </xpath>
       </field>
     </record>
