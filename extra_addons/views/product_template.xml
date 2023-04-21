@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="extra_addons.product_template" model="ir.ui.view">
+            <field name="name">extra addons product template</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="base_epithelium.product_template_inherit_view_form"></field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='check_status']" position="after">
+                    <field name="product_shelf_life"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
