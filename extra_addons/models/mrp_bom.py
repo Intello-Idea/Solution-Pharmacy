@@ -6,6 +6,7 @@ class MrpBom(models.Model):
     _inherit = 'mrp.bom'
 
     operation_type = fields.Many2one('stock.picking.type', string='Operation Type', domain="[('code', '=', 'mrp_operation')]" )
+    instruction_code = fields.Char(string="Instruction code")
 
     @api.onchange('production_line_id')
     def filter_operation_typess(self):

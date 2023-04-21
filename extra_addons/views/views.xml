@@ -8,6 +8,7 @@
       <field name="arch" type="xml">
         <xpath expr="//field[@name='patient']" position="after">
             <field name="origin"/>
+            <field name="instruction_code"/>
         </xpath>
         <xpath expr="//page[@name='miscellaneous']/group[1]/group[2]/field[@name='origin']" position="attributes">
           <attribute name="invisible">1</attribute>
@@ -22,6 +23,7 @@
       <field name="arch" type="xml">
         <xpath expr="//field[@name='type']" position="after">
           <field name="operation_type" options="{'no_open':True, 'no_create': True}" attrs="{'readonly': [('production_line_id', '=', False)]}"/>
+          <field name="instruction_code"/>
         </xpath>
       </field>
     </record>
