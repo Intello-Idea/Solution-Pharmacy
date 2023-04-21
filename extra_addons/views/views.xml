@@ -15,7 +15,7 @@
         </xpath>
       </field>
     </record>
-    
+
     <record id="extra_addons.lista_materiales" model="ir.ui.view">
       <field name="name">update material list</field>
       <field name="model">mrp.bom</field>
@@ -24,6 +24,7 @@
         <xpath expr="//field[@name='type']" position="after">
           <field name="operation_type" options="{'no_open':True, 'no_create': True}" attrs="{'readonly': [('production_line_id', '=', False)]}"/>
           <field name="instruction_code"/>
+          <field name="composition"/>
         </xpath>
       </field>
     </record>
