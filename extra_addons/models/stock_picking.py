@@ -16,3 +16,8 @@ class Stockpiking(models.Model):
                 result = order.name
 
         return result
+
+class StockMove(models.Model):
+    _inherit = 'stock.move'
+
+    fase = fields.Char(string="Fase")

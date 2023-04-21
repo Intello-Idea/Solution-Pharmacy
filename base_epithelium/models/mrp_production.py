@@ -191,6 +191,7 @@ class MrpProduction(models.Model):
                 'product': str(move.product_id.name),
                 # Agregar elemento al diccionario developer Routh Milano 03-05-2022
                 'code_product': str(move.product_id.default_code),
+                'fase': move.fase,
                 'percent': str(move.percent),
                 'quantity': str(move.product_uom_qty),
                 # Agregar elemento al diccionario developer Routh Milano 03-05-2022

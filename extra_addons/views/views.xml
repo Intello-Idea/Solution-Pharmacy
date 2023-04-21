@@ -17,6 +17,9 @@
           <field name="tm_id" invisible="1"/>
           <field name="homologos" domain="[('product_id.id', '=', tm_id), ('customer.id', '=', partner_id)]"/>
         </xpath>
+        <xpath expr="//page[@name='components']/field[@name='move_raw_ids']/tree/field[@name='product_id']" position="before">
+          <field name="fase"/>
+        </xpath>
       </field>
     </record>
 
@@ -29,6 +32,9 @@
           <field name="operation_type" options="{'no_open':True, 'no_create': True}" attrs="{'readonly': [('production_line_id', '=', False)]}"/>
           <field name="instruction_code"/>
           <field name="composition"/>
+        </xpath>
+        <xpath expr="//page[@name='components']/field[@name='bom_line_ids']/tree/field[@name='product_id']" position="before">
+          <field name="fase"/>
         </xpath>
       </field>
     </record>

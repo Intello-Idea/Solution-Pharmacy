@@ -17,3 +17,8 @@ class MrpBom(models.Model):
             if line.production_line_id:
                 domain = [('check_status', '=', self.production_line_id.check_status), ('code', '=', 'mrp_operation')]
         return {'domain': {'operation_type': domain}}
+
+class MrpBomLine(models.Model):
+    _inherit = 'mrp.bom.line'
+
+    fase = fields.Char(string="Fase")
