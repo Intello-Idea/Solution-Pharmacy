@@ -45,7 +45,7 @@ class MrpProduction(models.Model):
     @api.model
     def create(self, values):
         if not values.get('name', False) or values['name'] == _('New'):
-            
+
             if self.env['mrp.bom'].search([('id', '=', int(values['bom_id']))]).operation_type:
                 picking_type_id = self.env['mrp.bom'].search([('id', '=', int(values['bom_id']))]).operation_type
                 location_src_id = picking_type_id.default_location_src_id
@@ -225,7 +225,7 @@ class MrpProduction(models.Model):
 
             totals = {
                 'total_percent': str(round(total_percent, 0)),
-                'total_quantity': str(round(total_quantity, 0)),
+                'total_quantity': str(round(total_quantity, 5)),
                 'total_quantity_lot': str(round(total_quantity_lot, 0))
             }
 
