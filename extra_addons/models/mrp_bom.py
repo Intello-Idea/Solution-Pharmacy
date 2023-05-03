@@ -8,6 +8,7 @@ class MrpBom(models.Model):
     operation_type = fields.Many2one('stock.picking.type', string='Operation Type', domain="[('code', '=', 'mrp_operation')]" )
     instruction_code = fields.Char(string="Instruction code")
     composition = fields.Char(string="Composition")
+    size_total = fields.Float(string="Size total", digits='Product Unit of Measure')
 
     @api.onchange('production_line_id')
     def filter_operation_typess(self):
