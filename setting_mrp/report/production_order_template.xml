@@ -193,7 +193,7 @@
                                     <th style="border:1px solid #000; text-align: center;" colspan="7">DISPENSACIÓN DE MATERIALES</th>
                                 </tr>
                                 <tr style="border:1px solid #000;">
-                                    <th style="text-align: center; border:1px solid #000;"><span>Fase</span></th>
+                                    <th style="text-align: center; border:1px solid #000;"><span>FASE</span></th>
                                     <th style="text-align: center; border:1px solid #000;" colspan="2"><span>Components</span></th>
                                     <th style="text-align: center; border:1px solid #000;" scope="col">%</th>
                                     <th style="text-align: center; border:1px solid #000;" scope="col">Theoretical
@@ -240,7 +240,7 @@
                                     <td style="border:1px solid #000; text-align: center;" colspan="4"><span>According
                                         to Elaboration Procedure</span></td>
                                     <td style="border:1px solid #000;" colspan="1">C.instructivo:</td>
-                                    <td style="border:1px solid #000 text-align: center;" colspan="1"><t
+                                    <td style="border:1px solid #000; text-align: center;" colspan="1"><t
                                                     t-esc="o.instruction_code"/></td>
                                 </tr>
                                 <tr style="border:1px solid #000; height: 60px;">
@@ -263,19 +263,17 @@
                                     <td style="border:1px solid #000;" colspan="6"></td>
                                 </tr>
                                 <tr style="border:1px solid #000; height: 40px;">
-                                    <td style="border:1px solid #000;"><span/></td>
-                                    <td style="border:1px solid #000;"><span/></td>
-                                    <td style="border:1px solid #000;"><span/></td>
-                                    <td style="border:1px solid #000;"><span/></td>
-                                    <td style="border:1px solid #000;"><span/></td>
-                                    <td style="border:1px solid #000;"><span/></td>
-                                    <td style="border:1px solid #000;"><span/></td>
+                                    <td style="border:1px solid #000;" scope="col"><span/></td>
+                                    <td style="border:1px solid #000;" colspan="2"><span/></td>
+                                    <td style="border:1px solid #000;" colspan="2"><span/></td>
+                                    <td style="border:1px solid #000;" colspan="1"><span/></td>
+                                    <td style="border:1px solid #000;" scope="col"><span/></td>
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <th style="text-align: center; border:1px solid #000;" scope="col">Dispensing</th>
                                     <th style="text-align: center; border:1px solid #000;" colspan="2">Elaboration</th>
-                                    <th style="text-align: center; border:1px solid #000;" scope="col">Packing</th>
-                                    <th style="text-align: center; border:1px solid #000;" scope="col" colspan="2">
+                                    <th style="text-align: center; border:1px solid #000;" colspan="2">Packing</th>
+                                    <th style="text-align: center; border:1px solid #000;" colspan="1">
                                         Conditioning</th>
                                     <th style="text-align: center; border:1px solid #000;" scope="col" >
                                         CONTROL DE<br/>CALIDAD</th>
