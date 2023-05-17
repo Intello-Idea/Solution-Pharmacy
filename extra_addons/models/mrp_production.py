@@ -15,3 +15,14 @@ class MrpProduction(models.Model):
                                                                bom_line)
         data['fase'] = bom_line.fase
         return data
+
+    @api.model
+    def create(self, vls):
+        res = super(MrpProduction, self).create(vls)
+        if 'origin' in vls:
+            stock_move = self.env['sale.order'].search([('name', '=', vls.get('origin'))])
+            if stock_move:
+                for record in stock_move.order_line:
+                    if res.move_dest_ids in record.move_ids:
+                        res.homologos = record.product_counterpart.id
+        return res
