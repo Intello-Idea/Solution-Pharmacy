@@ -27,6 +27,8 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/views.xml',
-        'views/product_template.xml'
+        'views/product_template.xml',
+        'report/dispensed_materials_identification.xml',
+        'report/material_dispensing_label_inherit.xml'
     ]
 }

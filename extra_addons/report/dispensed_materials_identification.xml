@@ -1,0 +1,16 @@
+<odoo>
+    <template id="dispensed_materials_identification_inherit" inherit_id="base_epithelium.dispensed_materials_identification_label">
+        <xpath expr="//*[@t-call='base_epithelium.internal_layout_mrp_dispensed_materials_identification_label']/div[1]/div[1]/table[1]/tr[1]/td[2]" position="replace">
+            <t t-if="o.production_line_id.code in ('B', 'BI')">
+                <td style="width: 70%; border: 1px solid black; padding-right:5px; padding-left:5px;" colspan="3">
+                    <span t-field="o.product_id.default_code"/>
+                </td>
+            </t>
+            <t t-else="">
+                <td style="width: 70%; border: 1px solid black; padding-right:5px; padding-left:5px;" colspan="3">
+                    <span t-esc="o.product_id.default_code"/><span> - </span><span t-field="o.product_id.name"/>
+                </td>
+            </t>
+        </xpath>
+    </template>
+</odoo>
