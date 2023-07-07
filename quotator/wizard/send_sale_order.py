@@ -15,6 +15,8 @@ class SendSaleOrderWizard(models.TransientModel):
 
     check_status = fields.Boolean(default=_default_check)
     line_production_id = fields.Many2one('production.lines', required=True)
+    create_product = fields.Boolean('Create product')
+    product_name = fields.Char('Product name')
 
     """
         Se pasó la función que estaba dentro del modulo de base_solution dentro de quotator.py
@@ -71,3 +73,31 @@ class SendSaleOrderWizard(models.TransientModel):
         }
         sale_order = self.env['sale.order'].create(vals)
         quotator.update({'state': 'posted', 'sale_reference': sale_order.name})
+        if self.create_product:
+            self._product_create(quotator)
+        
+    def _product_create(self, quotator):
+        group_product = self.env['product.group'].search([])
+        result_group_product = group_product.filtered(lambda x: x.name in self.line_production_id.name)
+        routes_ids = self.env['stock.location.route'].search([('name',
+                                                               'in',
+                                                               ['Fabricar', 'Obtener Bajo Pedido (MTO)'])])
+        product = self.env['product.template'].create({
+            'name': self.product_name,
+            'purchase_ok': False,
+            'product_group': result_group_product.id,
+            'route_ids': [(6, 0, routes_ids.ids)]
+        })
+        self.env['mrp.bom'].create({
+            'production_line_id': self.line_production_id.id,
+            'product_tmpl_id': product.id,
+            'pharmaceutical_form': quotator.pharmaceutical_form.id,
+            'pharmaceutical_presentation': quotator.presentation_id.id,
+            'product_qty': 1,
+            'size_total': quotator.subtotal_grams,
+            'bom_line_ids': [(0, 0, {
+                'product_id': e.product_id.id,
+                'percent': e.percentage,
+                'product_qty': e.material_qty
+            }) for e in quotator.quotator_lines] 
+        })
