@@ -86,6 +86,7 @@ class SendSaleOrderWizard(models.TransientModel):
             'name': self.product_name,
             'purchase_ok': False,
             'product_group': result_group_product.id,
+            'type': 'product',
             'route_ids': [(6, 0, routes_ids.ids)]
         })
         self.env['mrp.bom'].create({
