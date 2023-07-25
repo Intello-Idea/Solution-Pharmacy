@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0+e-20220311\n"
+"Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 20:15+0000\n"
-"PO-Revision-Date: 2022-09-08 20:15+0000\n"
+"POT-Creation-Date: 2023-07-25 21:18+0000\n"
+"PO-Revision-Date: 2023-07-25 21:18+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: quotator
-#: code:addons/Solution-Pharmacy/quotator/models/quotator_lines.py:0
 #: code:addons/quotator/models/quotator_lines.py:0
 #, python-format
 msgid "!! You do not have, selected a client !!"
@@ -105,6 +104,11 @@ msgid "Category"
 msgstr "Categoria"
 
 #. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_send_sale_order_wizard__check_status
+msgid "Check Status"
+msgstr ""
+
+#. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__partner_id
 msgid "Client"
 msgstr "Cliente"
@@ -118,6 +122,11 @@ msgstr "Compañia"
 #: model_terms:ir.ui.view,arch_db:quotator.view_send_sale_order
 msgid "Confirm"
 msgstr "Confirmar"
+
+#. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_send_sale_order_wizard__create_product
+msgid "Create product"
+msgstr "Crear producto"
 
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_discount_rates__create_uid
@@ -375,9 +384,6 @@ msgid "Name"
 msgstr ""
 
 #. module: quotator
-#: code:addons/Solution-Pharmacy/quotator/models/quotator.py:0
-#: code:addons/Solution-Pharmacy/quotator/models/quotator.py:0
-#: code:addons/Solution-Pharmacy/quotator/models/quotator.py:0
 #: code:addons/quotator/models/quotator.py:0
 #: code:addons/quotator/models/quotator.py:0
 #: code:addons/quotator/models/quotator.py:0
@@ -460,6 +466,11 @@ msgid "Product"
 msgstr "Producto"
 
 #. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_send_sale_order_wizard__product_name
+msgid "Product name"
+msgstr "Nombre del producto"
+
+#. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__line_production_id
 msgid "Production Lines"
 msgstr ""
@@ -511,6 +522,16 @@ msgid "Referencia de la cotización"
 msgstr ""
 
 #. module: quotator
+#: model:ir.model.fields,field_description:quotator.field_quotator_own__sale_reference
+msgid "Referencia de venta"
+msgstr ""
+
+#. module: quotator
+#: model_terms:ir.ui.view,arch_db:quotator.solution_pharmacy_add_page_saleorder
+msgid "Reporting"
+msgstr ""
+
+#. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__activity_user_id
 msgid "Responsible User"
 msgstr "Usuario responsable"
@@ -528,7 +549,7 @@ msgstr "Orden de Venta"
 #. module: quotator
 #: model:ir.model,name:quotator.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Línea Orden de Venta"
+msgstr "Línea de Orden de Venta"
 
 #. module: quotator
 #: model:ir.model.fields,field_description:quotator.field_quotator_own__access_token
@@ -591,7 +612,6 @@ msgid "Subtotal price"
 msgstr "Precio subtotal"
 
 #. module: quotator
-#: code:addons/Solution-Pharmacy/quotator/models/quotator.py:0
 #: code:addons/quotator/models/quotator.py:0
 #, python-format
 msgid "The expiration date cannot be less than the application creation date"
@@ -600,14 +620,12 @@ msgstr ""
 "aplicación."
 
 #. module: quotator
-#: code:addons/Solution-Pharmacy/quotator/models/quotator.py:0
 #: code:addons/quotator/models/quotator.py:0
 #, python-format
 msgid "The percentages are not correct"
 msgstr "Los porcentajes no son correctos"
 
 #. module: quotator
-#: code:addons/Solution-Pharmacy/quotator/models/quotator.py:0
 #: code:addons/quotator/models/quotator.py:0
 #, python-format
 msgid "There are no selected raw materials"
