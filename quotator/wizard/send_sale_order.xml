@@ -13,6 +13,10 @@
                                 <field name="check_status" invisible="1"/>
 
                                 <field name="line_production_id" domain="['|',('check_status', '=', check_status),('check_status', '=', True)]"/>
+                                <field name="create_product"/>
+                        </group>
+                        <group>
+                                <field name="product_name" attrs="{'invisible': [('create_product', '=', False)], 'required': [('create_product', '=', True)]}"/>
                         </group>
                 </group>
                 <footer>
