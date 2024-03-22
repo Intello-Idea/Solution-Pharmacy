@@ -194,8 +194,8 @@
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <th style="text-align: center; border:1px solid #000;"><span>FASE</span></th>
-                                    <th style="text-align: center; border:1px solid #000;" colspan="2"><span>Components</span></th>
-                                    <th style="text-align: center; border:1px solid #000;" scope="col">%</th>
+                                    <th style="text-align: center; border:1px solid #000;" colspan="1"><span>Components</span></th>
+                                    <th style="text-align: center; border:1px solid #000;" colspan="2">%</th>
                                     <th style="text-align: center; border:1px solid #000;" scope="col">Theoretical
                                         Quantity(g)</th>
                                      <th style="text-align: center; border:1px solid #000;" scope="col">VERF POR:</th>
