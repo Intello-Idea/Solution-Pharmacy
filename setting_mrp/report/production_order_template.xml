@@ -141,7 +141,7 @@
                                     <t t-else="else">
                                         <td colspan="3" style="border:1px solid #000;"></td>
                                     </t>
-                                    <td style="border:1px solid #000;" colspan="2">Date of issue:</td>
+                                    <td style="border:1px solid #000;" colspan="3">Date of issue:</td>
                                     <td style="border:1px solid #000;"><span t-field="o.date_planned_start"
                                                                              t-options='{"widget": "date", "format": "dd MMM Y"}'/></td>
                                 </tr>
@@ -157,7 +157,7 @@
                                     <t t-else="else">
                                         <td colspan="3" style="border:1px solid #000;"></td>
                                     </t>
-                                    <td style="border:1px solid #000;" colspan="2">Due date:</td>
+                                    <td style="border:1px solid #000;" colspan="3">Due date:</td>
                                     <td style="border:1px solid #000;"><span t-field="o.expiration_date_sp"
                                                                              t-options='{"widget": "date", "format": "dd MMM Y"}'/></td>
                                 </tr>
@@ -173,19 +173,19 @@
                                     <td style="border:1px solid #000;">Quantity to produce:</td>
                                     <td style="border:1px solid #000;" colspan="4"><span t-esc="'{0:,.0f}'.format(o.product_qty)"/><span>
                                         /</span><span t-field="o.product_uom_id"/></td>
-                                    <td style="border:1px solid #000;" colspan="1">Bulk size:</td>
+                                    <td style="border:1px solid #000;" colspan="2">Bulk size:</td>
                                     <td style="border:1px solid #000;"><span t-field="o.bulk_size"/></td>
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <td style="border:1px solid #000; width:20%;">Size:</td>
                                     <td style="border:1px solid #000; width:20%;" colspan="2"><span t-field="o.size"/><span>
                                         /</span><span t-field="o.dough"/></td>
-                                    <td style="border:1px solid #000;" colspan="2">Issued by:</td>
+                                    <td style="border:1px solid #000;" colspan="3">Issued by:</td>
                                     <td style="border:1px solid #000;" colspan="2"><span t-field="o.user_id"/></td>
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <td style="border:1px solid #000;">Origin document:</td>
-                                    <td colspan="2" style="border:1px solid #000;"><span t-field="o.origin"/></td>
+                                    <td colspan="3" style="border:1px solid #000;"><span t-field="o.origin"/></td>
                                     <td style="border:1px solid #000;">Homologo:</td>
                                     <td colspan="3" style="border:1px solid #000;"><span t-field="o.homologos"/></td>
                                 </tr>
@@ -207,7 +207,7 @@
                                         <tr style="">
                                             <td style="border:1px solid #000; text-align: center;"><t
                                                     t-esc="line['fase']"/></td>
-                                            <td style="border:1px solid #000; text-align: center;" colspan="1"><t
+                                            <td style="border:1px solid #000; text-align: center;" colspan="2"><t
                                                     t-esc="line['code_product']"/></td>
                                             <td style="border:1px solid #000; text-align: center;" colspan="1"><t
                                                     t-esc="line['percent']"/></td>
@@ -235,14 +235,14 @@
                                     <td style="border:1px solid #000;" colspan="2">Number of units obtained:</td>
                                     <td style="border:1px solid #000;" colspan="2"></td>
                                     <td style="border:1px solid #000;">Performance:</td>
-                                    <td style="border:1px solid #000;" colspan="2"></td>
+                                    <td style="border:1px solid #000;" colspan="3"></td>
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <td style="border:1px solid #000;">Procedure:</td>
                                     <td style="border:1px solid #000; text-align: center;" colspan="4"><span>According
                                         to Elaboration Procedure</span></td>
                                     <td style="border:1px solid #000;" colspan="1">C.instructivo:</td>
-                                    <td style="border:1px solid #000 text-align: center;" colspan="1"><t
+                                    <td style="border:1px solid #000 text-align: center;" colspan="2"><t
                                                     t-esc="o.instruction_code"/></td>
                                 </tr>
                                 <tr style="border:1px solid #000; height: 60px;">
@@ -258,17 +258,17 @@
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <td style="border:1px solid #000;">pH:</td>
-                                    <td style="border:1px solid #000;" colspan="6"></td>
+                                    <td style="border:1px solid #000;" colspan="7"></td>
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <td style="border:1px solid #000;">Peso promedio:</td>
-                                    <td style="border:1px solid #000;" colspan="6"></td>
+                                    <td style="border:1px solid #000;" colspan="7"></td>
                                 </tr>
                                 <tr style="border:1px solid #000; height: 40px;">
                                     <td style="border:1px solid #000;" scope="col"><span/></td>
                                     <td style="border:1px solid #000;" colspan="2"><span/></td>
                                     <td style="border:1px solid #000;" colspan="2"><span/></td>
-                                    <td style="border:1px solid #000;" colspan="1"><span/></td>
+                                    <td style="border:1px solid #000;" colspan="2"><span/></td>
                                     <td style="border:1px solid #000;" scope="col"><span/></td>
                                 </tr>
                                 <tr style="border:1px solid #000;">
