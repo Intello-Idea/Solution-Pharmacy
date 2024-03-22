@@ -198,7 +198,7 @@
                                     <th style="text-align: center; border:1px solid #000;" scope="col">%</th>
                                     <th style="text-align: center; border:1px solid #000;" scope="col">Theoretical
                                         Quantity(g)</th>
-                                    <th style="text-align: center; border:1px solid #000;" scope="col">VERF POR:</th>
+                                     <th style="text-align: center; border:1px solid #000;" scope="col">VERF POR:</th>
                                     <th style="text-align: center; border:1px solid #000;" scope="col"><span>Heavy amount (g)</span></th>
                                     <th style="text-align: center; border:1px solid #000;" scope="col"><span>Lot</span></th>
                                 </tr>
@@ -207,18 +207,15 @@
                                         <tr style="">
                                             <td style="border:1px solid #000; text-align: center;"><t
                                                     t-esc="line['fase']"/></td>
-                                            <td style="border:1px solid #000; text-align: center;" colspan="2"><t
+                                            <td style="border:1px solid #000; text-align: center;" colspan="1"><t
                                                     t-esc="line['code_product']"/></td>
                                             <td style="border:1px solid #000; text-align: center;" colspan="1"><t
                                                     t-esc="line['percent']"/></td>
                                             <td style="border:1px solid #000; text-align: center;" colspan="1"><t
                                                     t-esc="line['quantity']"/> <t t-esc="line['dough']"/></td>
-                                            <td style="border:1px solid #000; text-align: center;" colspan="2">
-                                            </td>
-
+                                             <td style="border:1px solid #000; text-align: center;"></td>
                                             <td style="border:1px solid #000; text-align: center;"></td>
-                                            <td style="border:1px solid #000; text-align: center;"></td>
-                                            <td style="border:1px solid #000; text-align: center;" colspan="2"><t
+                                            <td style="border:1px solid #000; text-align: center;" colspan="1"><t
                                                     t-esc="line['lot']"/></td>
                                         </tr>
                                     </t>
