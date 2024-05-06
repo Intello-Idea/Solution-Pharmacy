@@ -199,8 +199,9 @@
                                     <th style="text-align: center; border:1px solid #000;" scope="col">Theoretical
                                         Quantity(g)</th>
                                     <th style="text-align: center; border:1px solid #000;" scope="col"><span>Heavy amount (g)</span></th>
-                                     <th style="text-align: center; border:1px solid #000;" scope="col">VERF POR:</th>
+                                     
                                     <th style="text-align: center; border:1px solid #000;" scope="col"><span>Lot</span></th>
+                                    <th style="text-align: center; border:1px solid #000;" scope="col">VERF POR:</th>
                                 </tr>
                                 <t t-foreach="o.get_composition_table()[0]" t-as="line">
                                     <t t-if="line['head']">
@@ -214,9 +215,10 @@
                                             <td style="border:1px solid #000; text-align: center;" colspan="1"><t
                                                     t-esc="line['quantity']"/> <t t-esc="line['dough']"/></td>
                                             <td style="border:1px solid #000; text-align: center;"></td>
-                                            <td style="border:1px solid #000; text-align: center;"></td>
-                                            <td style="border:1px solid #000; text-align: center;" colspan="1"><t
+                                            <td style="border:1px solid #000; text-align: center;" ><t
                                                     t-esc="line['lot']"/></td>
+                                            <td style="border:1px solid #000; text-align: center;" colspan="1"></td>
+                                        
                                         </tr>
                                     </t>
                                 </t>
@@ -262,7 +264,9 @@
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <td style="border:1px solid #000;">Peso promedio:</td>
-                                    <td style="border:1px solid #000;" colspan="7"></td>
+                                    <td style="border:1px solid #000;" colspan="3"></td>
+                                    <td style="border:1px solid #000;">Verificaado por:</td>
+                                    <td style="border:1px solid #000;" colspan="3"></td>
                                 </tr>
                                 <tr style="border:1px solid #000; height: 40px;">
                                     <td style="border:1px solid #000;" scope="col"><span/></td>
@@ -286,7 +290,7 @@
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <th style="text-align: center; border:1px solid #000;" scope="col" colspan="4">
-                                        VERIFICACION JEFE DE PRODUCCION</th>
+                                        VERIFICACIN JEFE DE PRODUCCION</th>
                                     <th style="text-align: center; border:1px solid #000;" scope="col" colspan="4">Vo.
                                         Bo. DIRECTOR TECNICO</th>
                                 </tr>
