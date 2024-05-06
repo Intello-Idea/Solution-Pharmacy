@@ -265,7 +265,7 @@
                                 <tr style="border:1px solid #000;">
                                     <td style="border:1px solid #000;">Peso promedio:</td>
                                     <td style="border:1px solid #000;" colspan="3"></td>
-                                    <td style="border:1px solid #000;" colspan="2">Verificado por:</td>
+                                    <td style="border:1px solid #000;text-align: center;" colspan="2" >Verificado por:</td>
                                     <td style="border:1px solid #000;" colspan="2"></td>
                                 </tr>
                                 <tr style="border:1px solid #000; height: 40px;">
