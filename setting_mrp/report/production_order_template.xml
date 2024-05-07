@@ -186,11 +186,11 @@
                                 <tr style="border:1px solid #000;">
                                     <td style="border:1px solid #000;">Origin document:</td>
                                     <td colspan="3" style="border:1px solid #000;"><span t-field="o.origin"/></td>
-                                    <td style="border:1px solid #000;">Homologo:</td>
+                                    <td style="border:1px solid #000;">Homológo:</td>
                                     <td colspan="3" style="border:1px solid #000;"><span t-field="o.homologos"/></td>
                                 </tr>
                                 <tr style="border:1px solid #000;">
-                                    <th style="border:1px solid #000; text-align: center;" colspan="7">DISPENSACIÓN DE MATERIALES</th>
+                                    <th style="border:1px solid #000; text-align: center;" colspan="8">DISPENSACIÓN DE MATERIALES</th>
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <th style="text-align: center; border:1px solid #000;"><span>FASE</span></th>
@@ -252,7 +252,7 @@
                                     <td style="border:1px solid #000;" colspan="7"></td>
                                 </tr>
                                 <tr style="border:1px solid #000;">
-                                    <th style="border:1px solid #000; text-align: center;" colspan="7">CONTROLES EN PROCESO</th>
+                                    <th style="border:1px solid #000; text-align: center;" colspan="8">CONTROLES EN PROCESO</th>
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <td style="border:1px solid #000;">Appearance:</td>
@@ -290,9 +290,9 @@
                                 </tr>
                                 <tr style="border:1px solid #000;">
                                     <th style="text-align: center; border:1px solid #000;" scope="col" colspan="4">
-                                        VERIFICACIN JEFE DE PRODUCCION</th>
+                                        VERIFICACIÓN JEFE DE PRODUCCIÓN</th>
                                     <th style="text-align: center; border:1px solid #000;" scope="col" colspan="4">Vo.
-                                        Bo. DIRECTOR TECNICO</th>
+                                        Bo. DIRECTOR TÉCNICO</th>
                                 </tr>
                             </table>
                         </div>
