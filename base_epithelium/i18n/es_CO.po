@@ -375,7 +375,14 @@ msgstr ""
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_quality_label
-
+msgid ""
+"<strong style=\"font-weight:700; padding-"
+"left:5px;\">Validity:</strong><br/><strong style=\"font-weight:700; padding-"
+"left:5px;\">From Ene-22 to Ene-24</strong>"
+msgstr ""
+"<strong style=\"font-weight:700; padding-"
+"left:5px;\">Vigencia:</strong><br/><strong style=\"font-weight:700; padding-"
+"left:5px;\">Desde Dic-23 a Dic-28</strong>"
 
 #. module: base_epithelium
 #: model_terms:ir.ui.view,arch_db:base_epithelium.internal_layout_mrp_dispensed_materials_identification_label
