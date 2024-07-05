@@ -249,7 +249,7 @@
                                                     t-esc="o.instruction_code"/></td>
                                 </tr>
                                 <tr style="border:1px solid #000; height: 60px;">
-                                    <td style="border:1px solid #000;"><h1>Observations:</h1></td>
+                                    <td><h1 style="padding-top:13px;"><b class="w-15">Observations:</b></h1></td>
                                     <td style="border:1px solid #000;" colspan="7"></td>
                                 </tr>
                                 <tr style="border:1px solid #000;">
